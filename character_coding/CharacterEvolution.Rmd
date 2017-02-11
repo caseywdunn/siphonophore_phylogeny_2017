@@ -1,0 +1,129 @@
+---
+title: "## Evolutionary History of the Main Biological Characters of Siphonophores"
+author: "Alejandro Damian Serrano"
+date: "2/11/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#Packages BASIC
+library('magrittr')
+library('tidyverse')
+library('stringr')
+
+#Packages BIO-PHYLO
+library('vegan')
+library("ape")
+library("ggtree")
+library("phangorn")
+library("phytools")
+library("picante")
+library("geiger")
+library("phylobase")
+library("fields")
+library("adephylo")
+library("geomorph")
+
+#Working directory
+setwd("~/Dropbox/siphonophore_phylogeny_2017/character_coding")
+
+#Load data
+read.csv('main_characters.csv', header = T, sep = ',') -> cdata
+rownames(cdata) = cdata$Species
+
+#Load tree
+tree = read.tree('ultimatephylo2017.tre')
+tree$tip.label = str_replace_all(tree$tip.label,'_',' ')
+tree <- drop.tip(tree, which(!(tree$tip.label %in% rownames(cdata))))
+ultratree <- chronos(tree)
+
+#Temporarily prune data
+cdata %<>% filter(rownames(.) %in% tree$tip.label)
+rownames(cdata) = cdata$Species
+cdata %<>% .[-1]
+
+#Named vectors for variables
+sex = cdata$Sex
+names(sex) = rownames(cdata)
+
+nectosome = cdata$Nectosome
+names(nectosome) = rownames(cdata)
+
+necto_pos = cdata$Nectosome.position
+names(necto_pos) = rownames(cdata)
+
+necto_types = cdata$Nectophores
+names(necto_types) = rownames(cdata)
+
+palpons = cdata$Palpons
+names(palpons) = rownames(cdata)
+
+tentilla = cdata$Tentilla
+names(tentilla) = rownames(cdata)
+
+pneuma = cdata$Pneumatophore
+names(pneuma) = rownames(cdata)
+
+vrange = cdata$Vertical.range
+names(vrange) = rownames(cdata)
+
+bracts = cdata$Bract.types
+names(bracts) = rownames(cdata)
+
+#Depth pruned data
+dpruned_data = cdata[which(!is.na(cdata$Depth.Median)), ]
+dpruned_tree <- drop.tip(ultratree, which(!(tree$tip.label %in% rownames(dpruned_data))))
+dpruned_data <- dpruned_data[match(dpruned_tree$tip.label, rownames(dpruned_data)),]
+
+depth_median = dpruned_data$Depth.Median
+names(depth_median) = rownames(dpruned_data)
+
+depth_mean = dpruned_data$Depth.Mean
+names(depth_mean) = rownames(dpruned_data)
+
+depth_min = dpruned_data$Depth.Min
+names(depth_min) = rownames(dpruned_data)
+
+depth_max = dpruned_data$Depth.Max
+names(depth_max) = rownames(dpruned_data)
+
+depth_sd = dpruned_data$Depth.StdDev
+names(depth_sd) = rownames(dpruned_data)
+
+depth_range = depth_max - depth_min
+
+abundance = dpruned_data$Depth.Count
+names(abundance) = rownames(dpruned_data)
+
+```
+
+##The Tree:
+```{r, echo=F}
+par(ask=F)
+par(mfrow=c(1,1))
+plotTree(ultratree, lwd = 4)
+
+```
+
+
+Siphonohores...
+
+## Stochastic mapping plots
+
+###Sex distribution:
+
+```{r, echo=F}
+#Simmap SEX
+plotTree(ultratree, lwd = 4)
+make.simmap(ultratree, sex, nsim = 100) -> sex_sim
+sex_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Dioeicous", "Monoeicous")
+nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(sex_sim)
+
+```
+

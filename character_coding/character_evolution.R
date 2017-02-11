@@ -64,6 +64,31 @@ names(vrange) = rownames(cdata)
 bracts = cdata$Bract.types
 names(bracts) = rownames(cdata)
 
+#Depth pruned data
+dpruned_data = cdata[which(!is.na(cdata$Depth.Median)), ]
+dpruned_tree <- drop.tip(ultratree, which(!(tree$tip.label %in% rownames(dpruned_data))))
+dpruned_data <- dpruned_data[match(dpruned_tree$tip.label, rownames(dpruned_data)),]
+
+depth_median = dpruned_data$Depth.Median
+names(depth_median) = rownames(dpruned_data)
+
+depth_mean = dpruned_data$Depth.Mean
+names(depth_mean) = rownames(dpruned_data)
+
+depth_min = dpruned_data$Depth.Min
+names(depth_min) = rownames(dpruned_data)
+
+depth_max = dpruned_data$Depth.Max
+names(depth_max) = rownames(dpruned_data)
+
+depth_sd = dpruned_data$Depth.StdDev
+names(depth_sd) = rownames(dpruned_data)
+
+depth_range = depth_max - depth_min
+
+abundance = dpruned_data$Depth.Count
+names(abundance) = rownames(dpruned_data)
+
 ### Plots ###
 par(ask=F)
 par(mfrow=c(1,1))
@@ -180,31 +205,6 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 #Contmap bract types
 contMap(ultratree, bracts)
 <Return>
-
-#Contmap depth
-dpruned_data = cdata[which(!is.na(cdata$Depth.Median)), ]
-dpruned_tree <- drop.tip(ultratree, which(!(tree$tip.label %in% rownames(dpruned_data))))
-dpruned_data <- dpruned_data[match(dpruned_tree$tip.label, rownames(dpruned_data)),]
-
-depth_median = dpruned_data$Depth.Median
-names(depth_median) = rownames(dpruned_data)
-
-depth_mean = dpruned_data$Depth.Mean
-names(depth_mean) = rownames(dpruned_data)
-
-depth_min = dpruned_data$Depth.Min
-names(depth_min) = rownames(dpruned_data)
-
-depth_max = dpruned_data$Depth.Max
-names(depth_max) = rownames(dpruned_data)
-
-depth_sd = dpruned_data$Depth.StdDev
-names(depth_sd) = rownames(dpruned_data)
-
-depth_range = depth_max - depth_min
-
-abundance = dpruned_data$Depth.Count
-names(abundance) = rownames(dpruned_data)
 
 #Contmap for depth vars
 depth_value = depth_median
