@@ -19,7 +19,7 @@ library("adephylo")
 library("geomorph")
 
 #Working directory
-setwd("~/Dropbox/SiphPhylogeny2017")
+setwd("~/Dropbox/siphonophore_phylogeny_2017/character_coding")
 
 #Load data
 read.csv('main_characters.csv', header = T, sep = ',') -> cdata
@@ -262,21 +262,35 @@ f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(2,5:7)]
 rownames(f_cdata) = rownames(cdata)
 names(f_cdata)[4] = "Float"
 gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 3)
+<Return>
 
 ### Analyses ###
+#Flat branch length tree
 flat_tree = tree
 flat_tree$edge.length = rep(mean(flat_tree$edge.length),length(flat_tree$edge.length))
 
+#Phylogenetic signal in bract number
 phylosignal(bracts, ultratree)
 physignal(bracts, ultratree)
 
+#Phylogenetic signal in Nectosome, Palpons, tentilla
+multiPhylosignal(as.matrix(cdata[,c(2,5,6)]), ultratree)
+
+#Phylogenetic signal in VARS depth values
 physignal(dpruned_data[,c(13,14,15,17,18)], dpruned_tree)
 physignal(depth_range, dpruned_tree)
 multiPhylosignal(dpruned_data[,c(13,14,15,17,18)], dpruned_tree)
 
+#Phylogenetic PCA for depth Data
 phyl.pca(dpruned_tree, dpruned_data[,c(13,14,15,17,18)], mode="corr") %>% biplot
+<Return>
 
+#Phylogenetic ANOVA for depth detween character-sharing groups
 phylANOVA(dpruned_tree, dpruned_data$Nectosome.position, as.numeric(depth_median))
-
-
+phylANOVA(dpruned_tree, dpruned_data$Sex, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Nectosome, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Nectophores, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Palpons, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Tentilla, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Pneumatophore, as.numeric(depth_median))
 
