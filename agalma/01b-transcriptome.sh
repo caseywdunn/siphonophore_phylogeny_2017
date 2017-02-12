@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -t 36:00:00
+#SBATCH -t 72:00:00
 #SBATCH -c 20
 #SBATCH --mem=120G
 #SBATCH -C intel
