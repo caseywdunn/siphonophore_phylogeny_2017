@@ -112,12 +112,17 @@ Siphonohores...
 
 ## Stochastic mapping plots
 
+```{r, include=F}
+#Make simmap objects
+make.simmap(ultratree, sex, nsim = 100) -> sex_sim
+
+```
+
 ###Sex distribution:
 
 ```{r, echo=F}
 #Simmap SEX
 plotTree(ultratree, lwd = 4)
-make.simmap(ultratree, sex, nsim = 100) -> sex_sim
 sex_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red")
 names(colors) = c("Dioeicous", "Monoeicous")
@@ -127,3 +132,51 @@ densityMap(sex_sim)
 
 ```
 
+###Presence of palpons:
+```{r, echo=F}
+#Simmap PALPONS
+plotTree(ultratree, lwd = 4)
+make.simmap(ultratree, palpons, nsim = 100) -> palpons_sim
+palpons_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Absent", "Present")
+nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(palpons_sim)
+```
+
+###Presence of tentilla:
+```{r, echo=F}
+#Simmap TENTILLA
+plotTree(ultratree, lwd = 4)
+make.simmap(ultratree, tentilla, nsim = 100) -> tentilla_sim
+tentilla_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Absent", "Present")
+nodelabels(pie=(describe.simmap(tentilla_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(tentilla_sim)
+```
+
+###Presence of Nectophores:
+```{r, echo=F}
+
+```
+
+###Position of Nectosome:
+```{r, echo=F}
+
+```
+
+###Nectophore number and types:
+
+
+###Presence of Pneumatophore:
+```{r, echo=F}
+
+```
+
+###Ocean Depth Zone:
+```{r, echo=F}
+
+```
