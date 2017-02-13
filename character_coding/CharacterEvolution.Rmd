@@ -112,9 +112,17 @@ Siphonohores...
 
 ## Stochastic mapping plots
 
-```{r, include=F}
+```{r, echo=F}
 #Make simmap objects
 make.simmap(ultratree, sex, nsim = 100) -> sex_sim
+make.simmap(ultratree, palpons, nsim = 100) -> palpons_sim
+make.simmap(ultratree, tentilla, nsim = 100) -> tentilla_sim
+make.simmap(ultratree, nectosome, nsim = 100) -> nectosome_sim
+make.simmap(ultratree, necto_pos, nsim = 100) -> necto_pos_sim
+make.simmap(ultratree, necto_types, nsim = 100) -> necto_types_sim
+make.simmap(ultratree, pneuma, nsim = 100, pts=T) -> pneuma_sim
+make.simmap(ultratree, bracts, nsim = 100) -> bracts_sim
+make.simmap(ultratree, vrange, nsim = 100) -> vrange_sim
 
 ```
 
@@ -136,7 +144,6 @@ densityMap(sex_sim)
 ```{r, echo=F}
 #Simmap PALPONS
 plotTree(ultratree, lwd = 4)
-make.simmap(ultratree, palpons, nsim = 100) -> palpons_sim
 palpons_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red")
 names(colors) = c("Absent", "Present")
@@ -149,7 +156,6 @@ densityMap(palpons_sim)
 ```{r, echo=F}
 #Simmap TENTILLA
 plotTree(ultratree, lwd = 4)
-make.simmap(ultratree, tentilla, nsim = 100) -> tentilla_sim
 tentilla_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red")
 names(colors) = c("Absent", "Present")
@@ -160,23 +166,68 @@ densityMap(tentilla_sim)
 
 ###Presence of Nectophores:
 ```{r, echo=F}
-
+#Simmap NECTOSOME
+plotTree(ultratree, lwd = 4)
+nectosome_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Absent", "Present")
+nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(nectosome_sim)
 ```
 
 ###Position of Nectosome:
 ```{r, echo=F}
-
+#SIMMAP NECTOSOME POSITION
+plotTree(ultratree, lwd = 4)
+necto_pos_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red", "green")
+names(colors) = c("Dorsal", "No nectosome", "Ventral")
+nodelabels(pie=(describe.simmap(necto_pos_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
 
 ###Nectophore number and types:
-
+```{r, echo=F}
+#Simmap NECTOPHORE TYPES
+plotTree(ultratree, lwd = 4)
+necto_types_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red", "green", "blue")
+names(colors) = c("Multiple of one type", "None", "Two of one type", "Two of two types")
+nodelabels(pie=(describe.simmap(necto_types_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+```
 
 ###Presence of Pneumatophore:
 ```{r, echo=F}
-
+#Simmap PNEUMATOPHORE
+plotTree(ultratree, lwd = 4)
+pneuma_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Absent", "Present")
+nodelabels(pie=(describe.simmap(pneuma_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(pneuma_sim)
 ```
 
-###Ocean Depth Zone:
-```{r, echo=F}
+###Number of Bract types:
+```{r}
+#Simmap bract-types
+plotTree(ultratree, lwd = 4)
+bracts_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red", "green3", "blue")
+names(colors) = c("No bracts", "1", "2", "4")
+nodelabels(pie=(describe.simmap(bracts_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+```
 
+###Ocean Depth Zones:
+```{r, echo=F}
+#Simmap Vertical.Range
+plotTree(ultratree, lwd = 4)
+vrange_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "cyan", "blue", "green", "red")
+names(colors) = c("Bathypelagic", "Surface", "Mesopelagic", "Epipelagic", "Deep benthic")
+nodelabels(pie=(describe.simmap(vrange_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
