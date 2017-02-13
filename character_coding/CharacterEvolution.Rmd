@@ -126,11 +126,7 @@ make.simmap(ultratree, vrange, nsim = 100) -> vrange_sim
 
 ```
 
-When we reconstruct the evolutionary history of sex distribution in siphonophore species, we obtain the following results:
-```{r sex_results} 
-make.simmap(ultratree, sex, nsim = 100)
-``` 
-
+When we reconstruct the evolutionary history of different traits in siphonophore species, we obtain the following results:
 
 ###Sex distribution:
 
@@ -217,7 +213,7 @@ densityMap(pneuma_sim)
 ```
 
 ###Number of Bract types:
-```{r bract_types}
+```{r bract_types, echo=F, message=F, warning=F}
 #Simmap bract-types
 plotTree(ultratree, lwd = 4)
 bracts_sim %>% plotSimmap(lwd = 4, add = T)
@@ -239,7 +235,7 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 ```
 
 ##Continuous traits: Brownian motion reconstructions
-
+###Number of bract types reconstruction:
 ```{r cont_bract_types, echo=F, message=F, warning=F}
 contMap(ultratree, bracts)
 ```
@@ -247,7 +243,7 @@ contMap(ultratree, bracts)
 ###Median depth reconstruction:
 ```{r median_cont, echo=F, message=F, warning=F}
 depth_value = depth_median
-depthmap <- contMap(dpruned_tree, depth_value) %>% setMap(colors=c("cyan","blue","black"))
+depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap)
 ```
 
@@ -255,10 +251,12 @@ plot(depthmap)
 ```{r depth_phylomorpho, echo=F, message=F, warning=F}
 par(oma=rep(4,4))
 phylomorphospace(depthmap$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=depthmap$cols, fsize=0.8, label = "horizontal")
+```
 
-#with time from root...
+###Bathymetrics phylomorphospace with time from root as color
+```{r depth_phylochronomorpho, echo=F, message=F, warning=F}
 evotime = fastBM(dpruned_tree,nsim=2)
-evotime_map <- contMap(dpruned_tree,evotime[,1])
+evotime_map <- contMap(dpruned_tree,evotime[,1], plot=F)
 evotime_map$cols[]<-rainbow(1001,start=0.7,end=0)
 phylomorphospace(evotime_map$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=evotime_map$cols, fsize=0.8, label = "horizontal")
 #add.color.bar(2,evotime_map$cols,title="Time from the root", lims=c(0,2000),digits=5)
@@ -334,7 +332,6 @@ multiPhylosignal(as.matrix(cdata[,c(2,5,6,7)]), ultratree)
 ###Phylogenetic signal in VARS bathymetrics
 ```{r phylosig_depth, echo=F, message=F, warning=F}
 physignal(dpruned_data[,c(13,14,15,17,18)], dpruned_tree)
-physignal(depth_range, dpruned_tree)
 multiPhylosignal(dpruned_data[,c(13,14,15,17,18)], dpruned_tree)
 ```
 
