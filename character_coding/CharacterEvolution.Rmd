@@ -270,7 +270,7 @@ plot(depthmap)
 ###Bathymetrics phylomorphospace
 ```{r depth_phylomorpho, echo=F, fig.height=12, fig.width=20, message=F, warning=F}
 par(oma=rep(3,4))
-phylomorphospace(depthmap$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=depthmap$cols, fsize=0.8, label = "horizontal")
+phylomorphospace(depthmap$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=depthmap$cols, fsize=1, label = "horizontal")
 ```
 
 ###Bathymetrics phylomorphospace with time from root as color
@@ -278,7 +278,7 @@ phylomorphospace(depthmap$tree, cbind(depth_max, depth_min), xlab="Minimum depth
 evotime = fastBM(dpruned_tree,nsim=2)
 evotime_map <- contMap(dpruned_tree,evotime[,1], plot=F)
 evotime_map$cols[]<-rainbow(1001,start=0.7,end=0)
-phylomorphospace(evotime_map$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=evotime_map$cols, fsize=0.8, label = "horizontal")
+phylomorphospace(evotime_map$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=evotime_map$cols, fsize=1, label = "horizontal")
 #add.color.bar(2,evotime_map$cols,title="Time from the root", lims=c(0,2000),digits=5)
 ```
 
@@ -315,10 +315,40 @@ fancyTree(dpruned_tree,type="scattergram",X=cbind(depth_max, depth_min, depth_ra
 ```{r ggtree_sex, echo=F, message=F, warning=F}
 exp_tree = ultratree
 exp_tree$edge.length = 10*ultratree$edge.length
-dd = data.frame(taxa  = tree$tip.label, trait = sex)
+dd = data.frame(taxa  = tree$tip.label, trait = sex[match(tree$tip.label, names(sex))])
 p = ggtree(exp_tree, layout="rectangular") + xlim(NA, 23)
 p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + geom_tippoint(aes(color=trait), alpha=0.25)
-p+theme(legend.position="right") + guides(color=guide_legend(title="Sex", reverse=T)) 
+p+theme(legend.position="right") + guides(color=guide_legend(title="Sex distribution", reverse=T)) 
+```
+
+###Pneumatophore presence across siphonophore taxa
+```{r ggtree_pneuma, echo=F, message=F, warning=F}
+exp_tree = ultratree
+exp_tree$edge.length = 10*ultratree$edge.length
+dd = data.frame(taxa  = tree$tip.label, trait = as.factor(pneuma[match(tree$tip.label, names(pneuma))]))
+p = ggtree(exp_tree, layout="rectangular") + xlim(NA, 23)
+p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + geom_tippoint(aes(color=trait), alpha=0.25)
+p+theme(legend.position="right") + guides(color=guide_legend(title="Pneumatophore", reverse=T)) 
+```
+
+###Tentilla presence across siphonophore taxa
+```{r ggtree_tentillq, echo=F, message=F, warning=F}
+exp_tree = ultratree
+exp_tree$edge.length = 10*ultratree$edge.length
+dd = data.frame(taxa  = tree$tip.label, trait = as.factor(tentilla[match(tree$tip.label, names(tentilla))]))
+p = ggtree(exp_tree, layout="rectangular") + xlim(NA, 23)
+p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + geom_tippoint(aes(color=trait), alpha=0.25)
+p+theme(legend.position="right") + guides(color=guide_legend(title="Tentilla", reverse=T)) 
+```
+
+###Palpon presence across siphonophore taxa
+```{r ggtree_palpon, echo=F, message=F, warning=F}
+exp_tree = ultratree
+exp_tree$edge.length = 10*ultratree$edge.length
+dd = data.frame(taxa  = tree$tip.label, trait = as.factor(palpons[match(tree$tip.label, names(palpons))]))
+p = ggtree(exp_tree, layout="rectangular") + xlim(NA, 23)
+p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + geom_tippoint(aes(color=trait), alpha=0.25)
+p+theme(legend.position="right") + guides(color=guide_legend(title="Palpons", reverse=T)) 
 ```
 
 ###Overview grid of main binary traits
@@ -355,7 +385,6 @@ binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5,6,7)]), ultratree)
 ```{r phylosig_binaries, echo=F, message=F, warning=F}
 binaries_phylosig
 ```
-
 
 ```{r phylosig_depth_declare, message=F, warning=F, include=FALSE}
 depth_physig = physignal(dpruned_data[,c(13,14,15,17,18)], dpruned_tree)
