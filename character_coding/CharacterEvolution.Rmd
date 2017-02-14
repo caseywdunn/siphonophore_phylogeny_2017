@@ -108,11 +108,6 @@ plotTree(ultratree, lwd = 4)
 
 Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features.
 
-<<<<<<< HEAD
-=======
-Siphonohores...
-
->>>>>>> 0947e0e747e75cb9e84c0cdebbe7644061604355
 ##Stochastic trait mapping:
 ```{r simmap_making, echo=F, message=F, warning=F}
 #Make simmap objects
@@ -151,7 +146,7 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 densityMap(sex_sim)
 ```
 
-Posterior probabilities of states (1 Dioeic)
+Posterior probabilities of states (0 Dioecious, 1 Monoecious).
 
 ###SIMMAP Presence of palpons:
 ```{r palpons, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
@@ -165,6 +160,8 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 densityMap(palpons_sim)
 ```
 
+Posterior probabilities of states (1 Present, 0 Absent).
+
 ###SIMMAP Presence of tentilla:
 ```{r tentilla, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
 #Simmap TENTILLA
@@ -177,6 +174,10 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 densityMap(tentilla_sim)
 ```
 
+Posterior probabilities of states (1 Present, 0 Absent).
+
+Physalia physalis may have reduced tentilla, which would indicate there was only one loss of tentilla at the branch leading to Apolemia.
+
 ###SIMMAP Presence of Nectophores:
 ```{r nectosome, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
 #Simmap NECTOSOME
@@ -188,6 +189,8 @@ nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(nectosome_sim)
 ```
+
+Posterior probabilities of states (1 Present, 0 Absent).
 
 ###SIMMAP Position of Nectosome:
 ```{r nectosome_position, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
@@ -223,6 +226,10 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 densityMap(pneuma_sim)
 ```
 
+Posterior probabilities of states (1 Present, 0 Absent).
+
+It is not clear whether or not the stem group of siphonophores had a pneumatophore.
+
 ###SIMMAP Number of Bract types:
 ```{r bract_types, echo=F, fig.height=7, fig.width=12, message=F, warning=F}
 #Simmap bract-types
@@ -251,6 +258,7 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 ```{r cont_bract_types, echo=F, message=F, warning=F}
 contMap(ultratree, bracts)
 ```
+Trait = Number of Bract Types
 
 ###Median depth reconstruction:
 ```{r median_cont, echo=F, message=F, warning=F}
