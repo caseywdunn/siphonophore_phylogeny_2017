@@ -1,7 +1,6 @@
 ---
-title: "## Evolutionary History of the Main Biological Characters of Siphonophores"
+title: "## Evolutionary History of Siphonophore Biology"
 author: "Alejandro Damian Serrano"
-date: "2/11/2017"
 output: html_document
 ---
 
@@ -107,9 +106,13 @@ plotTree(ultratree, lwd = 4)
 
 ```
 
+Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features.
 
+<<<<<<< HEAD
+=======
 Siphonohores...
 
+>>>>>>> 0947e0e747e75cb9e84c0cdebbe7644061604355
 ##Stochastic trait mapping:
 ```{r simmap_making, echo=F, message=F, warning=F}
 #Make simmap objects
@@ -296,7 +299,7 @@ phenogram(dpruned_tree,c(contTrait,A$ace),add=TRUE, colors=setNames("black",1))
 ```
 
 ###Bathymetrics scattergram array
-```{r depth_scattergram, echo=F, message=F, warning=F}
+```{r depth_scattergram, echo=F, fig.height=11, fig.width=15, message=F, warning=F}
 fancyTree(dpruned_tree,type="scattergram",X=cbind(depth_max, depth_min, depth_range, depth_median),control=list(spin=FALSE))
 ```
 
