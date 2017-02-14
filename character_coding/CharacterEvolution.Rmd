@@ -100,7 +100,7 @@ names(abundance) = rownames(dpruned_data)
 ```
 
 ##The Tree:
-```{r, echo=F}
+```{r ultratree, echo=F, message=F, warning=F}
 par(ask=F)
 par(mfrow=c(1,1))
 plotTree(ultratree, lwd = 4)
@@ -112,12 +112,27 @@ Siphonohores...
 
 ## Stochastic mapping plots
 
+```{r simmap_making, echo=F, message=F, warning=F}
+#Make simmap objects
+make.simmap(ultratree, sex, nsim = 100) -> sex_sim
+make.simmap(ultratree, palpons, nsim = 100) -> palpons_sim
+make.simmap(ultratree, tentilla, nsim = 100) -> tentilla_sim
+make.simmap(ultratree, nectosome, nsim = 100) -> nectosome_sim
+make.simmap(ultratree, necto_pos, nsim = 100) -> necto_pos_sim
+make.simmap(ultratree, necto_types, nsim = 100) -> necto_types_sim
+make.simmap(ultratree, pneuma, nsim = 100, pts=T) -> pneuma_sim
+make.simmap(ultratree, bracts, nsim = 100) -> bracts_sim
+make.simmap(ultratree, vrange, nsim = 100) -> vrange_sim
+
+```
+
+When we reconstruct the evolutionary history of different traits in siphonophore species, we obtain the following results:
+
 ###Sex distribution:
 
-```{r, echo=F}
+```{r sex, echo=F, message=F, warning=F}
 #Simmap SEX
 plotTree(ultratree, lwd = 4)
-make.simmap(ultratree, sex, nsim = 100) -> sex_sim
 sex_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red")
 names(colors) = c("Dioeicous", "Monoeicous")
@@ -127,3 +142,212 @@ densityMap(sex_sim)
 
 ```
 
+###Presence of palpons:
+```{r palpons, echo=F, message=F, warning=F}
+#Simmap PALPONS
+plotTree(ultratree, lwd = 4)
+palpons_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Absent", "Present")
+nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(palpons_sim)
+```
+
+###Presence of tentilla:
+```{r tentilla, echo=F, message=F, warning=F}
+#Simmap TENTILLA
+plotTree(ultratree, lwd = 4)
+tentilla_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Absent", "Present")
+nodelabels(pie=(describe.simmap(tentilla_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(tentilla_sim)
+```
+
+###Presence of Nectophores:
+```{r nectosome, echo=F, message=F, warning=F}
+#Simmap NECTOSOME
+plotTree(ultratree, lwd = 4)
+nectosome_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Absent", "Present")
+nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(nectosome_sim)
+```
+
+###Position of Nectosome:
+```{r nectosome_position, echo=F, message=F, warning=F}
+#SIMMAP NECTOSOME POSITION
+plotTree(ultratree, lwd = 4)
+necto_pos_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red", "green")
+names(colors) = c("Dorsal", "No nectosome", "Ventral")
+nodelabels(pie=(describe.simmap(necto_pos_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+```
+
+###Nectophore number and types:
+```{r nectophore_number_types, echo=F, message=F, warning=F}
+#Simmap NECTOPHORE TYPES
+plotTree(ultratree, lwd = 4)
+necto_types_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red", "green", "blue")
+names(colors) = c("Multiple of one type", "None", "Two of one type", "Two of two types")
+nodelabels(pie=(describe.simmap(necto_types_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+```
+
+###Presence of Pneumatophore:
+```{r pneumatophore, echo=F, message=F, warning=F}
+#Simmap PNEUMATOPHORE
+plotTree(ultratree, lwd = 4)
+pneuma_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Absent", "Present")
+nodelabels(pie=(describe.simmap(pneuma_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(pneuma_sim)
+```
+
+###Number of Bract types:
+```{r bract_types, echo=F, message=F, warning=F}
+#Simmap bract-types
+plotTree(ultratree, lwd = 4)
+bracts_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red", "green3", "blue")
+names(colors) = c("No bracts", "1", "2", "4")
+nodelabels(pie=(describe.simmap(bracts_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+```
+
+###Ocean Depth Zones:
+```{r depth_zones, echo=F, message=F, warning=F}
+#Simmap Vertical.Range
+plotTree(ultratree, lwd = 4)
+vrange_sim %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "cyan", "blue", "green", "red")
+names(colors) = c("Bathypelagic", "Surface", "Mesopelagic", "Epipelagic", "Deep benthic")
+nodelabels(pie=(describe.simmap(vrange_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+```
+
+##Continuous traits: Brownian motion reconstructions
+###Number of bract types reconstruction:
+```{r cont_bract_types, echo=F, message=F, warning=F}
+contMap(ultratree, bracts)
+```
+
+###Median depth reconstruction:
+```{r median_cont, echo=F, message=F, warning=F}
+depth_value = depth_median
+depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
+plot(depthmap)
+```
+
+###Bathymetrics phylomorphospace
+```{r depth_phylomorpho, echo=F, message=F, warning=F}
+par(oma=rep(4,4))
+phylomorphospace(depthmap$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=depthmap$cols, fsize=0.8, label = "horizontal")
+```
+
+###Bathymetrics phylomorphospace with time from root as color
+```{r depth_phylochronomorpho, echo=F, message=F, warning=F}
+evotime = fastBM(dpruned_tree,nsim=2)
+evotime_map <- contMap(dpruned_tree,evotime[,1], plot=F)
+evotime_map$cols[]<-rainbow(1001,start=0.7,end=0)
+phylomorphospace(evotime_map$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=evotime_map$cols, fsize=0.8, label = "horizontal")
+#add.color.bar(2,evotime_map$cols,title="Time from the root", lims=c(0,2000),digits=5)
+```
+
+###Abundance of each taxon in the Monterey Bay sampling site
+```{r counts_bars, echo=F, message=F, warning=F}
+par(oma=rep(1,4))
+log_abundance = log(abundance)
+log_abundance["Physalia physalis"] = 0
+plotBranchbyTrait(dpruned_tree, log_abundance, mode = "tips")
+```
+
+###Uncertainty inclusive traitgram for depth range
+```{r uncertainty_depth, echo=F, message=F, warning=F}
+contTrait <- depth_range
+A<-fastAnc(dpruned_tree,contTrait,CI=TRUE)
+paintree<-paintSubTree(dpruned_tree,node=length(dpruned_tree$tip)+1,"1")
+trans<-as.character(floor(0:50/2))
+trans[as.numeric(trans)<10]<- paste("0", trans[as.numeric(trans)<10],sep="")
+# plot
+for(i in 0:50){
+  p<-i/length(trans)
+  phenogram(dpruned_tree,c(contTrait,(1-p)*A$CI95[,1]+p*A$ace), colors=setNames(paste("#0000ff",trans[i+1],sep=""),1), add=i>0)
+  phenogram(dpruned_tree,c(contTrait,(1-p)*A$CI95[,2]+p*A$ace), colors=setNames(paste("#0000ff",trans[i+1],sep=""),1), add=TRUE)
+}
+phenogram(dpruned_tree,c(contTrait,A$ace),add=TRUE, colors=setNames("black",1))
+```
+
+###Bathymetrics scattergram array
+```{r depth_scattergram, echo=F, message=F, warning=F}
+fancyTree(dpruned_tree,type="scattergram",X=cbind(depth_max, depth_min, depth_range, depth_median),control=list(spin=FALSE))
+```
+
+###Distribution of sex across siphonophore taxa
+```{r ggtree_sex, echo=F, message=F, warning=F}
+exp_tree = ultratree
+exp_tree$edge.length = 10*ultratree$edge.length
+dd = data.frame(taxa  = tree$tip.label, trait = sex)
+p = ggtree(exp_tree, layout="rectangular") + xlim(NA, 23)
+p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + geom_tippoint(aes(color=trait), alpha=0.25)
+p+theme(legend.position="right") + guides(color=guide_legend(title="Sex", reverse=T)) 
+```
+
+###Overview of main binary traits
+```{r ggtree_bin_heatmap, echo=F, message=F, warning=F}
+p <- ggtree(ultratree)
+p <- p + geom_tiplab(size=3)
+f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(2,5:7)]
+rownames(f_cdata) = rownames(cdata)
+names(f_cdata)[4] = "Float"
+gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 3)
+```
+
+##Phylogenetic signal in the character data
+###Agnostic branch length tree generation
+```{r flat_tree}
+flat_tree = tree
+flat_tree$edge.length = rep(mean(flat_tree$edge.length), length(flat_tree$edge.length))
+```
+
+###Phylogenetic signal in bract number
+```{r phylosig_bracts}
+phylosignal(bracts, ultratree)
+physignal(bracts, ultratree)
+```
+
+###Phylogenetic signal in Nectosome, Palpons, Tentilla, and Pneumetophore
+```{r phylosig_binaries, echo=F, message=F, warning=F}
+multiPhylosignal(as.matrix(cdata[,c(2,5,6,7)]), ultratree)
+```
+
+###Phylogenetic signal in VARS bathymetrics
+```{r phylosig_depth, echo=F, message=F, warning=F}
+physignal(dpruned_data[,c(13,14,15,17,18)], dpruned_tree)
+multiPhylosignal(dpruned_data[,c(13,14,15,17,18)], dpruned_tree)
+```
+
+###Phylogenetic PCA for bathymetrics
+```{r pPCA_depth, echo=F, message=F, warning=F}
+phyl.pca(dpruned_tree, dpruned_data[,c(13,14,15,17,18)], mode="corr") %>% biplot
+```
+
+###Phylogenetic ANOVA for depth
+Each phylogenetic ANOVA compares variance of depth (continuous variable) within and between groups clustered by their categorical biological traits.
+```{r phylANOVA_depth, echo=F, message=F, warning=F}
+phylANOVA(dpruned_tree, dpruned_data$Nectosome.position, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Sex, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Nectosome, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Nectophores, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Palpons, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Tentilla, as.numeric(depth_median))
+phylANOVA(dpruned_tree, dpruned_data$Pneumatophore, as.numeric(depth_median))
+```

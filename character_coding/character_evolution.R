@@ -98,7 +98,7 @@ plotTree(ultratree, lwd = 4)
 
 #Simmap SEX
 make.simmap(ultratree, sex, nsim = 100) -> sex_sim
-sex_sim %>% plotSimmap(lwd = 4, add = T)
+sex_sim %>% plotSimmap(lwd = 4, add = T) %>% invisible
 colors = c("black", "red")
 names(colors) = c("Dioeicous", "Monoeicous")
 nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
