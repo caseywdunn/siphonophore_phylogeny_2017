@@ -24,6 +24,7 @@ library("phylobase")
 library("fields")
 library("adephylo")
 library("geomorph")
+library("phylolm")
 
 #Working directory
 setwd("~/Dropbox/siphonophore_phylogeny_2017/character_coding")
@@ -438,5 +439,6 @@ dp_sex[dp_sex==2] = 0        # 0 = Monoecious, 1 = Dioecious
 #Vx <- Vy <- Cxy <- rep(0,length(dpruned_tree$tip.label))
 #pgls.Ives(dpruned_tree, dp_sex, depth_median, Vx, Vy, Cxy)
 pGLS = pgls.Ives(dpruned_tree, rep(dp_sex,3), rep(depth_median,3))
+phylolm(depth_median~dp_sex,data=as.data.frame(cbind(depth_median,dp_sex)),phy=dpruned_tree,model="BM",measurement_error=TRUE,boot=100)
 gls(dp_sex ~ depth_median)
 ```
