@@ -428,3 +428,15 @@ z_tentilla
 print("Depth vs Pneumatophore")
 z_float
 ```
+
+###PGLS
+```{r pgls_depth_sex, echo=F, message=F, warning=F}
+dp_sex <- dpruned_data$Sex
+dp_sex = as.numeric(dp_sex)
+names(dp_sex) = names(depth_median)
+dp_sex[dp_sex==2] = 0        # 0 = Monoecious, 1 = Dioecious
+#Vx <- Vy <- Cxy <- rep(0,length(dpruned_tree$tip.label))
+#pgls.Ives(dpruned_tree, dp_sex, depth_median, Vx, Vy, Cxy)
+pGLS = pgls.Ives(dpruned_tree, rep(dp_sex,3), rep(depth_median,3))
+gls(dp_sex ~ depth_median)
+```
