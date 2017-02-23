@@ -217,7 +217,13 @@ The phylogenetic relationships between siphonophores species presented here is b
 
 ## Character Evolution
 
-Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features.
+Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features. 
+
+In our previous siphonophore phylogenetic analysis [@Dunn:2005dy] there were several characters for which their evolutionary history was left equivocal, due to unresolved relationships between physonects. With our current cladistic resolution, we were able to determine the following results:
+
+###Evolution of Monoecy
+
+Haeckel XXX noticed for the first time that some siphonophores were monoeicous and others were dioiecious. Our analyses in 2005 reconstructed this character and found a great amount of phylogenetic conservatism, with an unambiguous resolution of the MRCA as dioecious, and the appearance of monoecy in several taxa and clades (including Calycophorae) within the polytomy. Figure X shows the evolution of sex distribution in siphonophores under the current better-resolved tree model, and it strongly indicates that monoecy in siphonophores from a dioecious ancestor occured twice, in the branch leading to Calycophorae and in the branch leading to Agalmatids (sensu lato). There is a small probability for an alternative scenario featuring a single gain of monoecy before the split of Calycophorae, with a subsequent derived shift back to dioecy in the Marrus-Erenna clade.
 
 ## Conclusion
 
