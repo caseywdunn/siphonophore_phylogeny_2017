@@ -230,16 +230,18 @@ Haeckel XXX noticed for the first time that some siphonophores were monoeicous a
 
 ###The Gain and Loss of Tentilla
 
-The most complex nematocyst batteries of Cnidaria can arguably be found among the siphonophores, hanging in regularly spaced tentacle side branches called tentilla. Most hydrozoans, including the clade that contains siphonophores, bear simple tentacles (tentacles with no side branches). Is is still an open question whether the most recent common ancestor (MRCA) of Siphonophora had simple or branched tentacles. The only two siphonophore genera lacking tentilla are *Physalia* and *Apolemia*, at each side of the earliest split in the siphonophore tree, with an immediate sister group with all members bearing tentilla (*Rhizophysidae* and *{Bargmannia, Diphyes}*) (FigXX). Figure X shows the evolution of this character on the current phylogeny, indicating a most-likely tentilla bearing MRCA, with two independent losses.
+The most complex nematocyst batteries of Cnidaria can arguably be found among the siphonophores, hanging in regularly spaced tentacle side branches called tentilla. Most hydrozoans, including the clade that contains siphonophores, bear simple tentacles (tentacles with no side branches). Is is still an open question whether the most recent common ancestor (MRCA) of Siphonophora had simple or branched tentacles. The only two siphonophore genera lacking tentilla are *Physalia* and *Apolemia*, at each side of the earliest split in the siphonophore tree, with an immediate sister group with all members bearing tentilla (*Rhizophysidae* and *{Bargmannia, Diphyes}*) (FigXX). Figure X shows the evolution of this character on the current phylogeny, indicating a most-likely tentilla bearing MRCA, with two independent losses. However, this reconstruction bears some uncertainty on the state of the MRCA, suggesting a ~30% probability of 2 independent gains of tentilla in the branches leading to *Rhizophysidae* and *{Bargmannia, Diphyes}*.
 
-A key issue here is how we code for absence of tentilla, especially in the case of *Physalia physalis*. The tentacles of this species, when uncoiled, show very prominent, evenly spaced, 3D bands which contain all active and functionally arranged nematocysts used by the organism for prey capture. We suspect these may be reduced tentilla. So far we do not have enough tissue-specific gene expression and histological data to accurately resolve this question. However, when we code *Physalia physalis* as tentilla bearing, the results for the character reconstraction change radically (Figure X), indicating there was a single loss of tentilla in the branch leading to *Apolemiidae*.
+A key issue here is how we code for absence of tentilla, especially for the case of *Physalia physalis*. The tentacles of this species, when uncoiled, show very prominent, evenly spaced, 3D bands which contain all active and functionally arranged nematocysts used by the organism for prey capture. We suspect these may be reduced tentilla. So far we do not have enough tissue-specific gene expression and histological data to accurately resolve this question. However, when we code *Physalia physalis* as tentilla bearing, the results for the character reconstraction change radically (Figure X), indicating there was a single loss of tentilla in the branch leading to *Apolemiidae*. The main implication of this scenario is the unambiguous tentilla-bearing state of the MRCA.
 
 ###The Evolution of Vertical Habitat Use
 
-Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (ref , *Bargmannia sp* 3888m VARS unpublished). While there are some pleustonic (*Physalia*) and benthic (*Rhodaliidae*) siphonophores, the phylogeny suggests the siphonophore MRCA was planktonic, as most extant taxa are. Some interesting questions arise from these facts, including 1) what was the bathymetric niche of the siphonophore MRCA, and 2) how did siphonophore's vertical habitat use of the water columns evolve along the phylogeny. 
+Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (ref , *Bargmannia sp* 3888m VARS unpublished). While there are some pleustonic (*Physalia*) and benthic (*Rhodaliidae*) siphonophores, the phylogeny suggests the siphonophore MRCA was planktonic, as most extant taxa are. Some interesting questions arise from these facts, including 1) what was the bathymetric niche of the siphonophore MRCA, and 2) how did siphonophore's vertical habitat use of the water columns evolve along the phylogeny. Our results indicate a mesopelagic MRCA, with several convergent transition events to epipelagic and bathypelagic waters. There was only a single transition to benthic lifestyle on the stem of *Rhodaliidae*.
 
 ##Discussion
 
+
+The strong phylogenetic signal in the characters traditinally used for taxonomic diagnostics is a positive indicator of the applicability and unambiguity of these characters.
 
 ## Conclusions
 
@@ -294,6 +296,9 @@ names(palpons) = rownames(cdata)
 tentilla = cdata$Tentilla
 names(tentilla) = rownames(cdata)
 
+tentilla2 = tentilla
+tentilla2['Physalia physalis'] = 1 #In the scenario where we consider Physalias knobs reduced not lost tentilla
+
 pneuma = cdata$Pneumatophore
 names(pneuma) = rownames(cdata)
 
@@ -347,6 +352,8 @@ print("SIMMAP Palpons")
 make.simmap(ultratree, palpons, nsim = 100) -> palpons_sim
 print("SIMMAP Tentilla")
 make.simmap(ultratree, tentilla, nsim = 100) -> tentilla_sim
+print("SIMMAP Tentilla2")
+make.simmap(ultratree, tentilla2, nsim = 100) -> tentilla_sim2
 print("SIMMAP Nectosome")
 make.simmap(ultratree, nectosome, nsim = 100) -> nectosome_sim
 print("SIMMAP Nectosome Position")
@@ -406,7 +413,21 @@ densityMap(tentilla_sim)
 
 Posterior probabilities of states (1 Present, 0 Absent).
 
-Physalia physalis may have reduced tentilla, which would indicate there was only one loss of tentilla at the branch leading to Apolemia.
+*Physalia physalis* may have reduced tentilla, which would indicate there was only one loss of tentilla at the branch leading to *Apolemia*.
+
+SIMMAP Presence of tentilla - *Physalia* corrected:
+```{r tentilla2, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
+#Simmap TENTILLA
+plotTree(ultratree, lwd = 4)
+tentilla_sim2 %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Absent", "Present")
+nodelabels(pie=(describe.simmap(tentilla_sim2, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(tentilla_sim2)
+```
+
+Posterior probabilities of states (1 Present, 0 Absent).
 
 SIMMAP Presence of Nectophores:
 ```{r nectosome, echo=F, message=F,fig.height=7, fig.width=12, warning=F}

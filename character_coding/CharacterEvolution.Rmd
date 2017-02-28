@@ -63,6 +63,9 @@ names(palpons) = rownames(cdata)
 tentilla = cdata$Tentilla
 names(tentilla) = rownames(cdata)
 
+tentilla2 = tentilla
+tentilla2['Physalia physalis'] = 1
+
 pneuma = cdata$Pneumatophore
 names(pneuma) = rownames(cdata)
 
@@ -118,6 +121,8 @@ print("SIMMAP Palpons")
 make.simmap(ultratree, palpons, nsim = 100) -> palpons_sim
 print("SIMMAP Tentilla")
 make.simmap(ultratree, tentilla, nsim = 100) -> tentilla_sim
+print("SIMMAP Tentilla2")
+make.simmap(ultratree, tentilla2, nsim = 100) -> tentilla_sim2
 print("SIMMAP Nectosome")
 make.simmap(ultratree, nectosome, nsim = 100) -> nectosome_sim
 print("SIMMAP Nectosome Position")
@@ -178,6 +183,20 @@ densityMap(tentilla_sim)
 Posterior probabilities of states (1 Present, 0 Absent).
 
 Physalia physalis may have reduced tentilla, which would indicate there was only one loss of tentilla at the branch leading to Apolemia.
+
+SIMMAP Presence of tentilla - *Physalia* corrected:
+```{r tentilla2, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
+#Simmap TENTILLA
+plotTree(ultratree, lwd = 4)
+tentilla_sim2 %>% plotSimmap(lwd = 4, add = T)
+colors = c("black", "red")
+names(colors) = c("Absent", "Present")
+nodelabels(pie=(describe.simmap(tentilla_sim2, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(tentilla_sim2)
+```
+
+Posterior probabilities of states (1 Present, 0 Absent).
 
 ###SIMMAP Presence of Nectophores:
 ```{r nectosome, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
