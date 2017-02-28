@@ -223,16 +223,20 @@ In our previous siphonophore phylogenetic analysis [@Dunn:2005dy] there were sev
 
 ###Evolution of Monoecy
 
-Haeckel XXX noticed for the first time that some siphonophores were monoeicous and others were dioiecious. Our analyses in 2005 reconstructed this character and found a great amount of phylogenetic conservatism, with an unambiguous resolution of the MRCA as dioecious, and the appearance of monoecy in several taxa and clades (including Calycophorae) within the polytomy. Figure X shows the evolution of sex distribution in siphonophores under the current better-resolved tree model, and it strongly indicates that monoecy in siphonophores from a dioecious ancestor occured twice, in the branch leading to Calycophorae and in the branch leading to Agalmatids (sensu lato). There is a small probability for an alternative scenario featuring a single gain of monoecy before the split of Calycophorae, with a subsequent derived shift back to dioecy in the Marrus-Erenna clade.
+Haeckel XXX noticed for the first time that some siphonophores were monoeicous and others were dioiecious. Our analyses in 2005 reconstructed this character and found a great amount of phylogenetic conservatism, with an unambiguous resolution of the MRCA as dioecious, and the appearance of monoecy in several taxa and clades (including Calycophorae) within the polytomy. Figure X shows the evolution of sex distribution in siphonophores under the current better-resolved tree model, and it strongly indicates that monoecy in siphonophores from a dioecious ancestor occured twice, in the branch leading to Calycophorae and in the branch leading to Agalmatids (sensu lato). There is a small probability for an alternative scenario featuring a single gain of monoecy before the split of Calycophorae, with a subsequent derived shift back to dioecy in the *Marrus-Erenna* clade.
 
 ###The Evolution of Zooid Types
 
 
-###The Acquisition of Tentilla
+###The Gain and Loss of Tentilla
 
+The most complex nematocyst batteries of Cnidaria can arguably be found among the siphonophores, hanging in regularly spaced tentacle side branches called tentilla. Most hydrozoans, including the clade that contains siphonophores, bear simple tentacles (tentacles with no side branches). Is is still an open question whether the most recent common ancestor (MRCA) of Siphonophora had simple or branched tentacles. The only two siphonophore genera lacking tentilla are *Physalia* and *Apolemia*, at each side of the earliest split in the siphonophore tree, with an immediate sister group with all members bearing tentilla (*Rhizophysidae* and *{Bargmannia, Diphyes}*) (FigXX). Figure X shows the evolution of this character on the current phylogeny, indicating a most-likely tentilla bearing MRCA, with two independent losses.
+
+A key issue here is how we code for absence of tentilla, especially in the case of *Physalia physalis*. The tentacles of this species, when uncoiled, show very prominent, evenly spaced, 3D bands which contain all active and functionally arranged nematocysts used by the organism for prey capture. We suspect these may be reduced tentilla. So far we do not have enough tissue-specific gene expression and histological data to accurately resolve this question. However, when we code *Physalia physalis* as tentilla bearing, the results for the character reconstraction change radically (Figure X), indicating there was a single loss of tentilla in the branch leading to *Apolemiidae*.
 
 ###The Evolution of Vertical Habitat Use
 
+Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (ref , *Bargmannia sp* 3888m VARS unpublished). While there are some pleustonic (*Physalia*) and benthic (*Rhodaliidae*) siphonophores, the phylogeny suggests the siphonophore MRCA was planktonic, as most extant taxa are. Some interesting questions arise from these facts, including 1) what was the bathymetric niche of the siphonophore MRCA, and 2) how did siphonophore's vertical habitat use of the water columns evolve along the phylogeny. 
 
 ##Discussion
 
