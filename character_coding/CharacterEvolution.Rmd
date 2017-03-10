@@ -25,6 +25,8 @@ library("fields")
 library("adephylo")
 library("geomorph")
 library("phylolm")
+library("FactoMineR")
+library("factoextra")
 
 #Working directory
 setwd("~/Dropbox/siphonophore_phylogeny_2017/character_coding")
@@ -417,8 +419,27 @@ depth_multisig
 ```
 
 ###Phylogenetic PCA for bathymetrics
-```{r pPCA_depth, echo=F, fig.height=18, fig.width=18, message=F, warning=F}
+```{r pPCA_depth, echo=F, fig.height=10, fig.width=19, message=F, warning=F}
 phyl.pca(dpruned_tree, dpruned_data[,c(13,14,15,17,18)], mode="corr") %>% biplot
+
+dpruned_data[,c(13,14,15,17,18)] %>% PCA(graph=F) -> Zpca
+Zpca %>% fviz_screeplot(addlabels=T)
+Zpca %>% fviz_contrib(choice="var", axes=1, sort.val="desc")
+Zpca %>% fviz_pca_biplot( col.var="contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE)
+
+phyl.pca(dpruned_tree, dpruned_data[,c(13,14,15,17,18)], mode="corr") -> ppcaZ
+prcomp( dpruned_data[,c(13,14,15,17,18)]) -> rpcaZ
+rpcaZ$rotation = ppcaZ$L
+rpcaZ$x = ppcaZ$S
+rpcaZ$scale = TRUE
+
+rpcaZ %>% fviz_screeplot(addlabels=T)
+rpcaZ %>% fviz_contrib(choice="var", axes=1, sort.val="desc")
+rpcaZ %>% fviz_pca_biplot( col.var="contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE)
+
+rpcaZ %>% fviz_pca_ind(repulse = T)
+
+
 ```
 
 ###Phylogenetic ANOVA for depth
