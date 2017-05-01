@@ -2,7 +2,7 @@
 #SBATCH -t 20
 #SBATCH --mem=8G
 
-export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170209.sqlite"
+export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501.sqlite"
 
 ASSEMBLE_IDS=$(agalma diagnostics runid -n assemble)
 IMPORT_IDS=$(agalma diagnostics runid -n import)

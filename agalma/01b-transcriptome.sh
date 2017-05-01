@@ -3,11 +3,11 @@
 #SBATCH -c 20
 #SBATCH --mem=120G
 #SBATCH -C intel
-#SBATCH --array=1-30
+#SBATCH --array=1-39
 
 set -e
 
-export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170209.sqlite"
+export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501.sqlite"
 export BIOLITE_RESOURCES="threads=${SLURM_CPUS_ON_NODE},memory=${SLURM_MEM_PER_NODE}M"
 
 IDS=(

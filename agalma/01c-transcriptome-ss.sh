@@ -7,11 +7,12 @@
 
 set -e
 
-export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170209.sqlite"
+module load agalma/1.0.0
+
+export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501.sqlite"
 export BIOLITE_RESOURCES="threads=${SLURM_CPUS_ON_NODE},memory=${SLURM_MEM_PER_NODE}M"
 
 IDS=(
-	HWI-ST625-159-C4MVCACXX-5-CGATGT
 	HWI-ST625-159-C4MVCACXX-5-CCGTCC
 	HWI-ST625-159-C4MVCACXX-5-AGTTCC
 	HWI-ST625-159-C4MVCACXX-5-GTCCGC
