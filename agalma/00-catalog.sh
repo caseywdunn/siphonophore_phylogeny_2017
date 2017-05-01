@@ -1,7 +1,4 @@
 #!/bin/bash
-#SBATCH -t 6:00:00
-#SBATCH -c 12
-#SBATCH --mem=24G
 
 module load agalma/1.0.0
 
