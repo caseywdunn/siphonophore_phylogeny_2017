@@ -4,6 +4,7 @@
 #SBATCH --mem=24G
 #SBATCH -C intel
 #SBATCH --array=1-3
+sleep $((SLURM_ARRAY_TASK_ID*60))
 
 module load agalma/1.0.0
 

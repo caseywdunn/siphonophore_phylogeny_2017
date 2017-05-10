@@ -3,7 +3,8 @@
 #SBATCH -c 20
 #SBATCH --mem=120G
 #SBATCH -C intel
-#SBATCH --array=1-10
+#SBATCH --array=1-9
+sleep $((SLURM_ARRAY_TASK_ID*60))
 
 set -e
 
