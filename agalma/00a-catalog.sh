@@ -1,7 +1,5 @@
 #!/bin/bash
 
-module load agalma/1.0.0
-
 set -e
 
 export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501.sqlite"

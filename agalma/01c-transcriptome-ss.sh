@@ -2,13 +2,12 @@
 #SBATCH -t 72:00:00
 #SBATCH -c 20
 #SBATCH --mem=120G
+#SBATCH --qos=epscor-condo
 #SBATCH -C intel
 #SBATCH --array=1-9
 sleep $((SLURM_ARRAY_TASK_ID*60))
 
 set -e
-
-module load agalma/1.0.0
 
 export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501.sqlite"
 export BIOLITE_RESOURCES="threads=${SLURM_CPUS_ON_NODE},memory=${SLURM_MEM_PER_NODE}M"
