@@ -2,7 +2,6 @@
 #SBATCH -t 96:00:00
 #SBATCH -N 8
 #SBATCH -c 16
-#SBATCH --qos=epscor-condo
 #SBATCH --mem=60G
 #SBATCH -C intel
 
@@ -17,6 +16,10 @@ ID=SiphonophoraTree
 mkdir -p $ID
 cd $ID
 
+agalma homologize --id $ID
+agalma multalign --id $ID
+agalma genetree --id $ID
+agalma treeinform --id $ID
 agalma homologize --id $ID
 agalma multalign --id $ID
 agalma genetree --id $ID --bootstrap 100

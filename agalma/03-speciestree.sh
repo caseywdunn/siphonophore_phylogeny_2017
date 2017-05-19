@@ -4,8 +4,6 @@
 #SBATCH --mem=120G
 #SBATCH -C intel
 
-module load agalma/1.0.0
-
 
 set -e
 
