@@ -1,6 +1,7 @@
 #!/bin/bash
-#SBATCH -t 48:00:00
+#SBATCH -t 96:00:00
 #SBATCH -c 20
+#SBATCH --qos=epscor-condo
 #SBATCH --mem=120G
 #SBATCH -C intel
 

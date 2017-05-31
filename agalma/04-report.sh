@@ -1,5 +1,6 @@
 #!/bin/bash
-#SBATCH -t 15
+#SBATCH -t 50
+#SBATCH --qos=epscor-condo
 
 set -e
 

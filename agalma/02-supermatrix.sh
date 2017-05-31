@@ -2,6 +2,7 @@
 #SBATCH -t 96:00:00
 #SBATCH -N 8
 #SBATCH -c 16
+#SBATCH --qos=epscor-condo
 #SBATCH --mem=60G
 #SBATCH -C intel
 
