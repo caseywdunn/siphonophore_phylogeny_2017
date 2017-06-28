@@ -3,15 +3,15 @@
 #SBATCH -c 20
 #SBATCH --mem=120G
 #SBATCH -C intel
-#SBATCH --array=1-10
+#SBATCH --array=1-9
+sleep $((SLURM_ARRAY_TASK_ID*60))
 
 set -e
 
-export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170209.sqlite"
+export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501.sqlite"
 export BIOLITE_RESOURCES="threads=${SLURM_CPUS_ON_NODE},memory=${SLURM_MEM_PER_NODE}M"
 
 IDS=(
-	HWI-ST625-159-C4MVCACXX-5-CGATGT
 	HWI-ST625-159-C4MVCACXX-5-CCGTCC
 	HWI-ST625-159-C4MVCACXX-5-AGTTCC
 	HWI-ST625-159-C4MVCACXX-5-GTCCGC

@@ -1,9 +1,10 @@
 #!/bin/bash
-#SBATCH -t 15
+#SBATCH -t 50
+#SBATCH --qos=epscor-condo
 
 set -e
 
-export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170209.sqlite"
+export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501.sqlite"
 
 mkdir -p reports
 
