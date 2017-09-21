@@ -8,11 +8,11 @@
 
 set -e
 
-export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501.sqlite"
+export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501_reduced.sqlite"
 export BIOLITE_RESOURCES="threads=${SLURM_CPUS_ON_NODE},memory=${SLURM_MEM_PER_NODE}M"
 export BIOLITE_HOSTLIST=$(hostlist -e -s, $SLURM_NODELIST)
 
-ID=SiphonophoraTree
+ID=SiphonophoraTree_reduced
 
 mkdir -p $ID
 cd $ID
@@ -26,4 +26,4 @@ agalma multalign --id $ID
 agalma genetree --id $ID --bootstrap 100
 agalma treeprune --id $ID
 agalma multalign --id $ID
-agalma supermatrix --id $ID --proportion 0.5
+agalma supermatrix --id $ID --proportion 0.6

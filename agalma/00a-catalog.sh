@@ -2,7 +2,7 @@
 
 set -e
 
-export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501.sqlite"
+export AGALMA_DB="/gpfs/data/cdunn/analyses/agalma-siphonophora-20170501_reduced.sqlite"
 
 agalma catalog insert -p /gpfs/data/cdunn/sequences/sra/siphonophora/concatenated/Agalma_R1.fastq /gpfs/data/cdunn/sequences/sra/siphonophora/concatenated/Agalma_R2.fastq -s 'Agalma elegans' -n '316166' -d '51383' -e 'FEG0371|FEG0372' -l 'FEG0371|FEG0372' -c 'Brown Genomics Core' -t 'NGZ and SGZ' -q 'Illumina HiSeq 2000' --note '' -b 'transcriptome' --sample_prep 'Trizol | Illumina TruSeq RNA Sample Prep Kit RNA Purification Beads ; 2 rounds | Illumina TruSeq RNA Sample Prep Kit' --id 'HWI-ST625-73-C0JUVACXX-7-AGALMA2' -v 'BW02-agalma-1'
 agalma catalog insert -p /gpfs/data/cdunn/sequences/sra/siphonophora/concatenated/Bargmannia_R1.fastq /gpfs/data/cdunn/sequences/sra/siphonophora/concatenated/Bargmannia_R2.fastq -s 'Bargmannia elongata' -n '316231' -d '51386' -e 'FEG311|FEG312|FEG292|FEG295|FEG296' -l 'FEG311|FEG312|FEG292|FEG295|FEG296' -c 'Brown Genomics Core' -t 'mix' -q 'Illumina HiSeq 2000' --note '' -b 'transcriptome' --sample_prep 'mix, see individual sample numbers | Illumina TruSeq RNA Sample Prep Kit' --id 'HWI-ST625-51-C02UNACXX-8-BARGMANNIA'
