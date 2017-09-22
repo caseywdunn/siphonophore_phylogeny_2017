@@ -16,6 +16,6 @@ module load phylobayes/1.7b-mpi
 
 #change chain number to run any number of chains (I ran 2)
 
-srun pb_mpi -d /gpfs/data/cdunn/cmunro/siphonophore_phylogeny_2017/agalma/SiphonophoraTree_reduced/speciestree-127/alignment.phy -cat -gtr chain2_trimmed60
+srun pb_mpi -d /gpfs/data/cdunn/cmunro/siphonophore_phylogeny_2017/agalma/Outfiles/alignment.phy -cat -gtr chain2_trimmed60
 
 
