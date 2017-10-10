@@ -29,7 +29,8 @@ library("FactoMineR")
 library("factoextra")
 
 #Working directory
-setwd("~/Dropbox/siphonophore_phylogeny_2017/character_coding")
+#setwd("~/Dropbox/siphonophore_phylogeny_2017/character_coding")
+setwd("character_coding")
 
 #Load data
 read.csv('main_characters.csv', header = T, sep = ',') -> cdata
@@ -420,15 +421,15 @@ depth_multisig
 
 ###Phylogenetic PCA for bathymetrics
 ```{r pPCA_depth, echo=F, fig.height=10, fig.width=19, message=F, warning=F}
-phyl.pca(dpruned_tree, dpruned_data[,c(13,14,15,17,18)], mode="corr") %>% biplot
+phyl.pca(dpruned_tree, dpruned_data[,c(14,15,16,18,19)], mode="corr") %>% biplot
 
-dpruned_data[,c(13,14,15,17,18)] %>% PCA(graph=F) -> Zpca
+dpruned_data[,c(14,15,16,18,19)] %>% PCA(graph=F) -> Zpca
 Zpca %>% fviz_screeplot(addlabels=T)
 Zpca %>% fviz_contrib(choice="var", axes=1, sort.val="desc")
 Zpca %>% fviz_pca_biplot( col.var="contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE)
 
-phyl.pca(dpruned_tree, dpruned_data[,c(13,14,15,17,18)], mode="corr") -> ppcaZ
-prcomp( dpruned_data[,c(13,14,15,17,18)]) -> rpcaZ
+phyl.pca(dpruned_tree, dpruned_data[,c(14,15,16,18,19)], mode="corr") -> ppcaZ
+prcomp( dpruned_data[,c(14,15,16,18,19)]) -> rpcaZ
 rpcaZ$rotation = ppcaZ$L
 rpcaZ$x = ppcaZ$S
 rpcaZ$scale = TRUE
