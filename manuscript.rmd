@@ -27,20 +27,20 @@ output:
 	# Graphics
 	library( cowplot )
 	library( ggtree )
-	library( GGally )
+#	library( GGally )
 	library( fields ) # tim.colors
 	library( seriation )
 	library( gridExtra )
-	library( RGraphics )
+#	library( RGraphics )
   library( factoextra )
   library( FactoMineR )
 
 	# Biological
-	library( edgeR )
+#	library( edgeR )
 	library( treeio )
 	library( hutan )	# https://github.com/caseywdunn/hutan
 	library( ape )
-	library( agalmar )	# https://github.com/caseywdunn/agalmar
+#	library( agalmar )	# https://github.com/caseywdunn/agalmar
 	library( picante )  # cor.table
 	library( phytools ) # phylosig
   library( vegan )
@@ -272,11 +272,9 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 ### Supplementary Analyses
 
 ```{r char_evo_setup, include=F, echo=F}
-#Working directory
-setwd("~/Dropbox/siphonophore_phylogeny_2017/character_coding")
 
 #Load data
-read.csv('main_characters.csv', header = T, sep = ',') -> cdata
+read.csv('character_coding/main_characters.csv', header = T, sep = ',') -> cdata
 rownames(cdata) = cdata$Species
 
 #Load tree
@@ -284,6 +282,7 @@ tree = species_ultrametric
 tree$tip.label = str_replace_all(tree$tip.label,'_',' ')
 tree <- drop.tip(tree, which(!(tree$tip.label %in% rownames(cdata))))
 ultratree <- chronos(tree)
+class( ultratree ) = "phylo"
 
 #Temporarily prune data
 cdata %<>% filter(rownames(.) %in% tree$tip.label)
