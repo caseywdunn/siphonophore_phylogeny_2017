@@ -36,4 +36,3 @@ RUN install2.r --error \
     phylolm
 
 RUN Rscript -e "library(devtools); devtools::install_github('caseywdunn/hutan')"
-RUN Rscript -e "library(devtools); devtools::install_github('caseywdunn/agalmar')"

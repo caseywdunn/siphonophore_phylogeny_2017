@@ -35,11 +35,9 @@ output:
   library( FactoMineR )
 
 	# Biological
-#	library( edgeR )
 	library( treeio )
 	library( hutan )	# https://github.com/caseywdunn/hutan
 	library( ape )
-#	library( agalmar )	# https://github.com/caseywdunn/agalmar
 	library( picante )  # cor.table
 	library( phytools ) # phylosig
   library( vegan )
