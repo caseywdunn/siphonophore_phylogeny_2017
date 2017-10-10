@@ -4,7 +4,6 @@ csl: systematic-biology.csl
 output:
   pdf_document:
     fig_caption: yes
-    latex_engine: xelatex
 ---
 
 
