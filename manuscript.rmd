@@ -650,8 +650,8 @@ binaries_phylosig
 ```
 
 ```{r phylosig_depth_declare, message=F, warning=F, include=FALSE}
-depth_physig = physignal(dpruned_data[,c(13,14,15,17,18)], dpruned_tree)
-depth_multisig = multiPhylosignal(dpruned_data[,c(13,14,15,17,18)], dpruned_tree)
+depth_physig = physignal(dpruned_data[,c(14,15,16,18,19)], dpruned_tree)
+depth_multisig = multiPhylosignal(dpruned_data[,c(14,15,16,18,19)], dpruned_tree)
 ```
 Phylogenetic signal in VARS bathymetrics
 ```{r phylosig_depth, echo=F, message=F, warning=F}
