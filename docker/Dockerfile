@@ -22,7 +22,6 @@ RUN install2.r --error \
     factoextra \
     FactoMineR \
     edgeR \
-    treeio \
     ape \
     picante \
     phytools \
