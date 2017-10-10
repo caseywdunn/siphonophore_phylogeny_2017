@@ -48,7 +48,6 @@ output:
   library( phangorn )
   library( geiger )
   library( phylobase )
-  library( fields )
   library( adephylo )
   library( geomorph ) #physig
   library( phylolm )
