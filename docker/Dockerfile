@@ -8,7 +8,6 @@ RUN apt-get update \
   lmodern \
   texlive-latex-extra \
   texlive-fonts-recommended \
-  default-jdk \
   imagemagick
 
 
@@ -18,10 +17,8 @@ RUN install2.r --error \
     -r 'http://www.bioconductor.org/packages/release/bioc' \
     cowplot \
     ggtree \
-    GGally \
     fields \
     seriation \
-    RGraphics \
     factoextra \
     FactoMineR \
     edgeR \
