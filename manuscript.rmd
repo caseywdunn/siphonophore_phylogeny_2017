@@ -92,7 +92,7 @@ output:
     }
   )
   
-  phylobayes_trees = unlist( phylobayes_tree,recursive=FALSE )
+  phylobayes_trees = unlist( phylobayes_trees,recursive=FALSE )
 
 ```
 
