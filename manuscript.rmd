@@ -49,7 +49,12 @@ output:
   library( phylolm )
 
 	# Configure knitr, see http://yihui.name/knitr/options
-	opts_knit$set( progress = TRUE, verbose = TRUE )
+	opts_knit$set( 
+	  progress = TRUE, 
+	  verbose = TRUE, 
+	  include=FALSE, 
+	  cache=TRUE
+	 )
 
 	# Set system computational parameters
 	cores = detectCores() - 1
@@ -59,13 +64,35 @@ output:
 	set.seed( 23456 )
 
 	# Set paths to input data
-	input_file_ml = "agalma/Outfiles/RAxML_bipartitions.alignment.fa"
+	tree_path = "agalma/Outfiles/"
+	input_file_ml = paste( tree_path, "RAxML_bipartitions.alignment.fa", sep="" )
+	input_file_bootstraps = paste( tree_path, "RAxML_bootstrap.alignment.fa", sep="" )
+	
+	input_files_phylobayes = list.files( 
+	  path=tree_path, 
+	  pattern="chain\\d+_trimmed60_poisson.treelist" 
+	 )
+	
+	# Analysis parameters
+	burn_in = 400
 
 ```
 
-```{r load_data, include=FALSE, cache=TRUE}
+```{r load_data}
 
 	species_tree = ape::read.tree( input_file_ml )
+  bootstrap_trees = ape::read.tree( input_file_bootstraps )
+  
+  phylobayes_trees = sapply(
+    input_files_phylobayes,
+    function( pb ) {
+      ape::read.tree( 
+        paste( tree_path, pb, sep = "" ) 
+      )[ -(1:burn_in)  ]
+    }
+  )
+  
+  phylobayes_trees = unlist( phylobayes_tree,recursive=FALSE )
 
 ```
 
@@ -80,9 +107,6 @@ output:
 	    resolve.root=TRUE 
 	   )
 
-  #medusozoa_node = getMRCA( species_tree, c("Alatina_alata", "Nanomia_bijuga") )
-	
-  #species_tree = phytools::reroot( species_tree, medusozoa_node )
   
   # Repartition length of edges descended from root so they are non-zero
 	species_tree = hutan::slide_root_edges( species_tree )
