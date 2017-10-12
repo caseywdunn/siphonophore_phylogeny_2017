@@ -26,11 +26,9 @@ output:
 	# Graphics
 	library( cowplot )
 	library( ggtree )
-#	library( GGally )
 	library( fields ) # tim.colors
 	library( seriation )
 	library( gridExtra )
-#	library( RGraphics )
   library( factoextra )
   library( FactoMineR )
 
@@ -50,10 +48,12 @@ output:
 
 	# Configure knitr, see http://yihui.name/knitr/options
 	opts_knit$set( 
-	  progress = TRUE, 
-	  verbose = TRUE, 
+	  progress=TRUE, 
+	  verbose=TRUE, 
 	  include=FALSE, 
-	  cache=TRUE
+	  cache=TRUE,
+	  echo=FALSE,
+	  message=FALSE
 	 )
 
 	# Set system computational parameters
@@ -78,9 +78,35 @@ output:
 
 ```
 
+```{r functions}
+
+  get_node_support = function(  tree, treeset, threshold=100 ){
+    # Returns a vector corresponding to nodes in tree, with percent of trees 
+    # in treeset that contain the corresponding bipartition
+    clades = prop.clades(tree, treeset) / length(treeset)
+    nodes = c(rep(NA,length(tree$tip.label)), round(clades*100)) # Offset with NA values for tips
+    nodes[ length(tree$tip.label) + 1 ] = NA # Set the root value to NA, not a robust way to find root but works in this case
+    
+    nodes[ nodes >= threshold  ] = NA
+    
+    return(nodes)
+  }
+
+  fix_names = function( tree ){
+    # Apply changes to any tip names
+    tree$tip.label = sub( '_', ' ', tree$tip.label )
+    return( tree )
+  }
+
+```
+
+
+
 ```{r load_data}
 
 	species_tree = ape::read.tree( input_file_ml )
+  species_tree = fix_names( species_tree )
+
   bootstrap_trees = ape::read.tree( input_file_bootstraps )
   
   phylobayes_trees = sapply(
@@ -93,17 +119,21 @@ output:
   )
   
   phylobayes_trees = unlist( phylobayes_trees,recursive=FALSE )
+  class( phylobayes_trees  ) = "multiPhylo"
+  
+  bootstrap_trees = lapply( bootstrap_trees, fix_names )
+  phylobayes_trees = lapply( phylobayes_trees, fix_names )
 
 ```
 
-```{r pre_process_species_trees, include=FALSE, cache=TRUE}
+```{r pre_process_species_trees}
 
 	species_tree = ape::ladderize( species_tree )
 
 	species_tree = 
 	  ape::root( 
 	    species_tree, 
-	    c( "Nematostella_vectensis", "Aiptasia_pallida" ), 
+	    c( "Nematostella vectensis", "Aiptasia pallida" ), 
 	    resolve.root=TRUE 
 	   )
 
@@ -115,13 +145,14 @@ output:
 
 	stopifnot( species_tree$Nnode == length( species_tree$node.label ) )
 
-	# Update species names
-	species_tree$tip.label = sub( '_', ' ', species_tree$tip.label )
-
+	
 	# Make ultrametric tree
 	# By default, root has a depth of 1
 	species_ultrametric = chronos( species_tree, lambda=1, model="correlated", quiet=TRUE )
 	class( species_ultrametric ) = "phylo"
+	
+	# Update species names
+	species_ultrametric$tip.label = sub( '_', ' ', species_ultrametric$tip.label )
 
 ```
 
@@ -177,7 +208,7 @@ Sequence assembly, annotation, phylogenetic analysis, and derivation of expressi
 
 ### Sample collecting and sequencing
 
-```{r summary_table, results='asis', cache=TRUE, echo=FALSE, comment=NA, warning=FALSE}
+```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
 
 
 
@@ -187,7 +218,7 @@ Table 1 (at the end of file): Summary statistics for libraries.
 
 ### Species phylogeny
 
-```{r species_phylogram, cache=TRUE, echo=FALSE, comment=NA, warning=FALSE, fig.cap="Phylogram of siphonophore relationships. Node labels indicate bootstrap support percent, unnumbered nodes have 100% support. The image was rendered with ggtree [@Yu:2016fo]" }
+```{r species_phylogram, echo=FALSE, comment=NA, warning=FALSE, fig.width=6.5, fig.height=7, fig.cap="Phylogram of siphonophore relationships. Node labels indicate bootstrap support percent, unnumbered nodes have 100% support. The image was rendered with ggtree [@Yu:2016fo]" }
 
 	siphonophora_node = ape::mrca( species_tree )[ "Physalia physalis", "Agalma elegans" ]
 	cystonectae_node = ape::mrca( species_tree )[ "Physalia physalis", "Rhizophysa filiformis" ]
@@ -199,9 +230,14 @@ Table 1 (at the end of file): Summary statistics for libraries.
 
 	# pad tip values
 	support = c( rep( NA, length( species_tree$tip.label ) ), support )
-
-	p = ggtree( species_tree ) +
-			geom_text( aes( label=support ), vjust=-.5, hjust=1, size=2.5, col="darkslategray4" ) +
+  
+	
+	
+	
+	p_phylogram = ggtree( species_tree ) +
+			# geom_text( aes( label=support ), vjust=-.5, hjust=1, size=2.5, col="darkslategray4" ) +
+	    geom_text(aes(label=get_node_support(species_tree, bootstrap_trees)), vjust=-.5, hjust=1, size=2.5, col="red") +
+      geom_text(aes(label=get_node_support(species_tree, phylobayes_trees)), vjust=1.5, hjust=1, size=2.5, col="blue") +
 			geom_tiplab( size=3 ) +
 			xlim( NA, 4 ) +
 			geom_cladelabel( node=cystonectae_node, label="Cystonectae", align=FALSE, offset=1, color='red' ) +
@@ -223,7 +259,7 @@ Table 1 (at the end of file): Summary statistics for libraries.
 				label='"Outgroups"'
 			)
 
-	flip( p, euphysonectae_node, calycophora_node )
+	flip( p_phylogram, euphysonectae_node, calycophora_node )
 
 ```
 
