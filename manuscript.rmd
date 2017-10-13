@@ -49,8 +49,10 @@ output:
 	# Configure knitr, see http://yihui.name/knitr/options
 	opts_knit$set( 
 	  progress=TRUE, 
-	  verbose=TRUE, 
-	  include=FALSE, 
+	  verbose=TRUE)
+	
+	opts_chunk$set(
+	#  include=FALSE, 
 	  cache=TRUE,
 	  echo=FALSE,
 	  message=FALSE
@@ -94,7 +96,8 @@ output:
 
   fix_names = function( tree ){
     # Apply changes to any tip names
-    tree$tip.label = sub( '_', ' ', tree$tip.label )
+    tree$tip.label = sub( '_', ' ', tree$tip.label ) # Change first underscore to space
+    tree$tip.label = sub( 'sp_', 'sp', tree$tip.label ) # Fix trailing _ in Physonect sp_
     return( tree )
   }
 
@@ -150,9 +153,6 @@ output:
 	# By default, root has a depth of 1
 	species_ultrametric = chronos( species_tree, lambda=1, model="correlated", quiet=TRUE )
 	class( species_ultrametric ) = "phylo"
-	
-	# Update species names
-	species_ultrametric$tip.label = sub( '_', ' ', species_ultrametric$tip.label )
 
 ```
 
@@ -264,7 +264,11 @@ Table 1 (at the end of file): Summary statistics for libraries.
 ```
 
 
-The phylogenetic relationships between siphonophores species presented here is based on XXX genes from XXX siphonophore species, including new data presented here for XXX species. These findings are entirely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, and Calycophorae is nested within the paraphyletic "Physonectae". In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this XXX-gene transcriptome analysis. These findings include XXX.
+(XX This paragraph on sampling through Agalma analyses) The analyses presented here consider XXX siphonophore species and XXX outgroup species. This includes new data for XXX species. Summary stats on assemblies XX (Table XX). Matrix has XX genes, XX sites, and occupancy is XX. 
+
+(XX This paragraph on summarizes phylogeny runs, apart from tree topology) Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran `r length( input_files_phylobayes )` phylobayes chains, and visual inspection of the traces indicated that a burn in of `r burn_in` trees was sufficient for all runs. This left `r length( phylobayes_trees )` trees in the posterior. XXConvergence...
+
+These findings are entirely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, and Calycophorae is nested within the paraphyletic "Physonectae". In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this XXX-gene transcriptome analysis. These findings include XXX.
 
 ## Character Evolution
 
@@ -775,7 +779,7 @@ gls(dp_sex ~ depth_median)
 
 This manuscript was computed on `r format( Sys.time(), "%a %b %d %X %Y" )` with the following R package versions.
 
-```{r session_summary, echo=FALSE, comment=NA}
+```{r session_summary, echo=FALSE, include=TRUE, comment=NA}
 	sessionInfo()
 ```
 
