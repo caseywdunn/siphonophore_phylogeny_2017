@@ -204,7 +204,7 @@ When possible specimens were starved overnight in filtered seawater at temperatu
 
 New data were analysed in conjunction with 13 publically available datasets, with a total number of 43 species. Sequence assembly, annotation, Maximum Likelihood (ML) phylogenetic analysis were conducted with the tool Agalma [@Dunn:2013kw], v. 1.00, and Bayesian Inference (BI) analyses were conducted using Phylobayes[@lartillot2009phylobayes] v. 1.7a-mpi. Source code for all analysis steps, sequence alignments, sampled and consensus trees, and voucher information are available in a git repository https://github.com/caseywdunn/siphonophore_phylogeny_2017.  
 
-In the final analyses, we sampled 1,071 genes to generate a supermatrix with 60% occupancy and a length of 378,468 amino acids. Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed from the final supermatrix and phylogeny due to low gene occupancy (gene sampling of 20.8% and 14.5% respectively in a 50% occupancy matrix with 2,203 genes). ML analyses were conducted on the unpartitioned supermatrix using the WAG+Γ model of amino acid substitution, and bootstrap values were estimated using 1000 replicates. BI was conducted using two different CAT models, CAT-Poisson and CAT-GTR [@doi:10.1093/molbev/msh112]. Two independent MCMC chains were run under the CAT-GTR model, and four independent MCMC chains were run under the CAT-Poisson model. The CAT-GTR and CAT-poisson models did not converge after a long CPU time, and only the results from the CAT-poisson model are included here.
+In the final analyses, we sampled 1,071 genes to generate a supermatrix with 60% occupancy and a length of 378,468 amino acids. Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed from the final supermatrix and phylogeny due to low gene occupancy (gene sampling of 20.8% and 14.5% respectively in a 50% occupancy matrix with 2,203 genes). ML analyses were conducted on the unpartitioned supermatrix using the WAG+$\gamma$ model of amino acid substitution, and bootstrap values were estimated using 1000 replicates. BI was conducted using two different CAT models, CAT-Poisson and CAT-GTR [@doi:10.1093/molbev/msh112]. Two independent MCMC chains were run under the CAT-GTR model, and four independent MCMC chains were run under the CAT-Poisson model. The CAT-GTR and CAT-poisson models did not converge after a long CPU time, and only the results from the CAT-poisson model are included here.
 
 Subsequent analyses were conducted in R and integrated into this manuscript with the `knitr` package. See Supplementary Information for R package version numbers.
 
@@ -419,25 +419,25 @@ Stochastic trait mapping:
 ```{r simmap_making, echo=F, message=F, warning=F}
 #Make simmap objects
 print("SIMMAP Sex Distribution")
-make.simmap(ultratree, sex, nsim = 100) -> sex_sim
+make.simmap(ultratree, sex, nsim = 100, message=FALSE) -> sex_sim
 print("SIMMAP Palpons")
-make.simmap(ultratree, palpons, nsim = 100) -> palpons_sim
+make.simmap(ultratree, palpons, nsim = 100, message=FALSE) -> palpons_sim
 print("SIMMAP Tentilla")
-make.simmap(ultratree, tentilla, nsim = 100) -> tentilla_sim
+make.simmap(ultratree, tentilla, nsim = 100, message=FALSE) -> tentilla_sim
 print("SIMMAP Tentilla2")
-make.simmap(ultratree, tentilla2, nsim = 100) -> tentilla_sim2
+make.simmap(ultratree, tentilla2, nsim = 100, message=FALSE) -> tentilla_sim2
 print("SIMMAP Nectosome")
-make.simmap(ultratree, nectosome, nsim = 100) -> nectosome_sim
+make.simmap(ultratree, nectosome, nsim = 100, message=FALSE) -> nectosome_sim
 print("SIMMAP Nectosome Position")
-make.simmap(ultratree, necto_pos, nsim = 100) -> necto_pos_sim
+make.simmap(ultratree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
 print("SIMMAP Nectophore Types")
-make.simmap(ultratree, necto_types, nsim = 100) -> necto_types_sim
+make.simmap(ultratree, necto_types, nsim = 100, message=FALSE) -> necto_types_sim
 print("SIMMAP Pneumatophore")
-make.simmap(ultratree, pneuma, nsim = 100, pts=T) -> pneuma_sim
+make.simmap(ultratree, pneuma, nsim = 100, message=FALSE, pts=T) -> pneuma_sim
 print("SIMMAP Bract Types")
-make.simmap(ultratree, bracts, nsim = 100) -> bracts_sim
+make.simmap(ultratree, bracts, nsim = 100, message=FALSE) -> bracts_sim
 print("SIMMAP Habitat")
-make.simmap(ultratree, vrange, nsim = 100) -> vrange_sim
+make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 
 ```
 
@@ -447,9 +447,9 @@ SIMMAP Sex distribution:
 ```{r sex, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
 #Simmap SEX
 plotTree(ultratree, lwd = 4)
-sex_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red")
 names(colors) = c("Dioecious", "Monoecious")
+sex_sim %>% plotSimmap(lwd = 4, add = T, colors=colors)
 nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(sex_sim)
@@ -461,9 +461,9 @@ SIMMAP Presence of palpons:
 ```{r palpons, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
 #Simmap PALPONS
 plotTree(ultratree, lwd = 4)
-palpons_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red")
 names(colors) = c("Absent", "Present")
+palpons_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(palpons_sim)
@@ -475,9 +475,9 @@ SIMMAP Presence of tentilla:
 ```{r tentilla, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
 #Simmap TENTILLA
 plotTree(ultratree, lwd = 4)
-tentilla_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red")
 names(colors) = c("Absent", "Present")
+tentilla_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(tentilla_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(tentilla_sim)
@@ -491,9 +491,9 @@ SIMMAP Presence of tentilla - *Physalia* corrected:
 ```{r tentilla2, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
 #Simmap TENTILLA
 plotTree(ultratree, lwd = 4)
-tentilla_sim2 %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red")
 names(colors) = c("Absent", "Present")
+tentilla_sim2 %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(tentilla_sim2, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(tentilla_sim2)
@@ -505,9 +505,9 @@ SIMMAP Presence of Nectophores:
 ```{r nectosome, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
 #Simmap NECTOSOME
 plotTree(ultratree, lwd = 4)
-nectosome_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red")
 names(colors) = c("Absent", "Present")
+nectosome_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(nectosome_sim)
@@ -519,9 +519,9 @@ SIMMAP Position of Nectosome:
 ```{r nectosome_position, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
 #SIMMAP NECTOSOME POSITION
 plotTree(ultratree, lwd = 4)
-necto_pos_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red", "green")
 names(colors) = c("Dorsal", "No nectosome", "Ventral")
+necto_pos_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(necto_pos_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
@@ -530,9 +530,9 @@ SIMMAP Nectophore number and types:
 ```{r nectophore_number_types, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
 #Simmap NECTOPHORE TYPES
 plotTree(ultratree, lwd = 4)
-necto_types_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red", "green", "blue")
 names(colors) = c("Multiple of one type", "None", "Two of one type", "Two of two types")
+necto_types_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(necto_types_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
@@ -541,9 +541,9 @@ SIMMAP Presence of Pneumatophore:
 ```{r pneumatophore, echo=F, message=F, warning=F, fig.height=7, fig.width=12}
 #Simmap PNEUMATOPHORE
 plotTree(ultratree, lwd = 4)
-pneuma_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "red")
 names(colors) = c("Absent", "Present")
+pneuma_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(pneuma_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(pneuma_sim)
@@ -557,10 +557,10 @@ SIMMAP Number of Bract types:
 ```{r bract_types, echo=F, fig.height=7, fig.width=12, message=F, warning=F}
 #Simmap bract-types
 plotTree(ultratree, lwd = 4)
-bracts_sim %>% plotSimmap(lwd = 4, add = T) -> bract_sim_plot
-#plot(bract_sim_plot[2])
 colors = c("black", "red", "green3", "blue")
 names(colors) = c("No bracts", "1", "2", "4")
+bracts_sim %>% plotSimmap(lwd = 4, add = T,colors=colors) -> bract_sim_plot
+#plot(bract_sim_plot[2])
 nodelabels(pie=(describe.simmap(bracts_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
@@ -569,9 +569,9 @@ SIMMAP Habitat:
 ```{r depth_zones, echo=F, fig.height=7, fig.width=12, message=F, warning=F}
 #Simmap Vertical.Range
 plotTree(ultratree, lwd = 4)
-vrange_sim %>% plotSimmap(lwd = 4, add = T)
 colors = c("black", "cyan", "blue", "green", "red")
 names(colors) = c("Bathypelagic", "Surface", "Mesopelagic", "Epipelagic", "Deep benthic")
+vrange_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(vrange_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
