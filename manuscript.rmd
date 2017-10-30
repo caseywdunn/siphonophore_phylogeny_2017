@@ -202,11 +202,14 @@ When possible specimens were starved overnight in filtered seawater at temperatu
 
 #### Analysis
 
-New data were analysed in conjunction with 31 publically available datasets. Sequence assembly, annotation, Maximum Likelihood (ML) phylogenetic analysis were conducted with the tool Agalma [@Dunn:2013kw], v. 1.00, and Bayesian Inference (BI) analyses were conducted using Phylobayes[@lartillot2009phylobayes] v. 1.7a-mpi. Source code for all analysis steps, sequence alignments, sampled and consensus trees, and voucher information are available in a git repository https://github.com/caseywdunn/siphonophore_phylogeny_2017.  
+New data were analysed in conjunction with 13 publically available datasets, with a total number of 43 species. Sequence assembly, annotation, Maximum Likelihood (ML) phylogenetic analysis were conducted with the tool Agalma [@Dunn:2013kw], v. 1.00, and Bayesian Inference (BI) analyses were conducted using Phylobayes[@lartillot2009phylobayes] v. 1.7a-mpi. Source code for all analysis steps, sequence alignments, sampled and consensus trees, and voucher information are available in a git repository https://github.com/caseywdunn/siphonophore_phylogeny_2017.  
 
-In the final analyses, we sampled 1,071 genes to generate a supermatrix with 60% occupancy. Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed from the final supermatrix and phylogeny due to low gene occupancy (gene sampling of 20.8% and 14.5% respectively in a 50% occupancy matrix with 2,203 genes). ML analyses were conducted using the WAG+Γ model of amino acid substitution, bootstrap values were estimated using 1000 replicates. 
+In the final analyses, we sampled 1,071 genes to generate a supermatrix with 60% occupancy and a length of 378,468 amino acids. Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed from the final supermatrix and phylogeny due to low gene occupancy (gene sampling of 20.8% and 14.5% respectively in a 50% occupancy matrix with 2,203 genes). ML analyses were conducted on the unpartitioned supermatrix using the WAG+Γ model of amino acid substitution, and bootstrap values were estimated using 1000 replicates. BI was conducted using two different CAT models, CAT-Poisson and CAT-GTR [@doi:10.1093/molbev/msh112]. Two independent MCMC chains were run under the CAT-GTR model, and four independent MCMC chains were run under the CAT-Poisson model. The CAT-GTR and CAT-poisson models did not converge after a long CPU time, and only the results from the CAT-poisson model are included here.
 
 Subsequent analyses were conducted in R and integrated into this manuscript with the `knitr` package. See Supplementary Information for R package version numbers.
+
+#### Hypothesis testing
+
 
 ## Results and Discussion
 
@@ -268,11 +271,11 @@ Table 1 (at the end of file): Summary statistics for libraries.
 ```
 
 
-(XX This paragraph on sampling through Agalma analyses) The analyses presented here consider XXX siphonophore species and XXX outgroup species. This includes new data for XXX species. Summary stats on assemblies XX (Table XX). Matrix has XX genes, XX sites, and occupancy is XX. 
+(XX This paragraph on sampling through Agalma analyses) The analyses presented here consider XXX siphonophore species and 8 outgroup species. This includes new data for XXX species. Summary stats on assemblies XX (Table XX). Matrix has XX genes, XX sites, and occupancy is XX. 
 
 (XX This paragraph on summarizes phylogeny runs, apart from tree topology) Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran `r length( input_files_phylobayes )` phylobayes chains, and visual inspection of the traces indicated that a burn in of `r burn_in` trees was sufficient for all runs. This left `r length( phylobayes_trees )` trees in the posterior. XXConvergence...
 
-These findings are entirely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, and Calycophorae is nested within the paraphyletic "Physonectae". In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this XXX-gene transcriptome analysis. These findings include XXX.
+These findings are entirely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, and Calycophorae is nested within the paraphyletic "Physonectae". In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this 1,071-gene transcriptome analysis. These findings include XXX.
 
 ## Character Evolution
 
