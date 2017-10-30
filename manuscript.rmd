@@ -434,7 +434,7 @@ make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 When we reconstruct the evolutionary history of different traits in siphonophore species, we obtain the following results:
 
 SIMMAP Sex distribution:
-```{r sex, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
+```{r sex, echo=F, message=F, warning=F}
 #Simmap SEX
 plotTree(ultratree, lwd = 4)
 colors = c("black", "red")
@@ -448,7 +448,7 @@ densityMap(sex_sim)
 Posterior probabilities of states (0 Dioecious, 1 Monoecious).
 
 SIMMAP Presence of palpons:
-```{r palpons, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
+```{r palpons, echo=F, message=F, warning=F}
 #Simmap PALPONS
 plotTree(ultratree, lwd = 4)
 colors = c("black", "red")
@@ -462,7 +462,7 @@ densityMap(palpons_sim)
 Posterior probabilities of states (1 Present, 0 Absent).
 
 SIMMAP Presence of tentilla:
-```{r tentilla, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
+```{r tentilla, echo=F, message=F,warning=F}
 #Simmap TENTILLA
 plotTree(ultratree, lwd = 4)
 colors = c("black", "red")
@@ -478,7 +478,7 @@ Posterior probabilities of states (1 Present, 0 Absent).
 *Physalia physalis* may have reduced tentilla, which would indicate there was only one loss of tentilla at the branch leading to *Apolemia*.
 
 SIMMAP Presence of tentilla - *Physalia* corrected:
-```{r tentilla2, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
+```{r tentilla2, echo=F, message=F, warning=F}
 #Simmap TENTILLA
 plotTree(ultratree, lwd = 4)
 colors = c("black", "red")
@@ -492,7 +492,7 @@ densityMap(tentilla_sim2)
 Posterior probabilities of states (1 Present, 0 Absent).
 
 SIMMAP Presence of Nectophores:
-```{r nectosome, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
+```{r nectosome, echo=F, message=F, warning=F}
 #Simmap NECTOSOME
 plotTree(ultratree, lwd = 4)
 colors = c("black", "red")
@@ -506,7 +506,7 @@ densityMap(nectosome_sim)
 Posterior probabilities of states (1 Present, 0 Absent).
 
 SIMMAP Position of Nectosome:
-```{r nectosome_position, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
+```{r nectosome_position, echo=F, message=F, warning=F}
 #SIMMAP NECTOSOME POSITION
 plotTree(ultratree, lwd = 4)
 colors = c("black", "red", "green")
@@ -517,7 +517,7 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 ```
 
 SIMMAP Nectophore number and types:
-```{r nectophore_number_types, echo=F, message=F,fig.height=7, fig.width=12, warning=F}
+```{r nectophore_number_types, echo=F, message=F, warning=F}
 #Simmap NECTOPHORE TYPES
 plotTree(ultratree, lwd = 4)
 colors = c("black", "red", "green", "blue")
@@ -532,7 +532,7 @@ Posterior probabilities of states (1 Present, 0 Absent).
 It is not clear whether or not the stem group of siphonophores had a pneumatophore.
 
 SIMMAP Habitat:
-```{r depth_zones, echo=F, fig.height=7, fig.width=12, message=F, warning=F}
+```{r depth_zones, echo=F, message=F, warning=F}
 #Simmap Vertical.Range
 plotTree(ultratree, lwd = 4)
 colors = c("black", "cyan", "blue", "green", "red")
@@ -552,13 +552,13 @@ plot(depthmap)
 ```
 
 Bathymetrics phylomorphospace
-```{r depth_phylomorpho, echo=F, fig.height=12, fig.width=20, message=F, warning=F}
+```{r depth_phylomorpho, echo=F, message=F, warning=F}
 par(oma=rep(3,4))
 phylomorphospace(depthmap$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=depthmap$cols, fsize=1, label = "horizontal")
 ```
 
 Bathymetrics phylomorphospace with time from root as color
-```{r depth_phylochronomorpho, echo=F, fig.height=12, fig.width=20, message=F, warning=F}
+```{r depth_phylochronomorpho, echo=F, message=F, warning=F}
 evotime = fastBM(dpruned_tree,nsim=2)
 evotime_map <- contMap(dpruned_tree,evotime[,1], plot=F)
 evotime_map$cols[]<-rainbow(1001,start=0.7,end=0)
@@ -575,7 +575,7 @@ plotBranchbyTrait(dpruned_tree, log_abundance, mode = "tips")
 ```
 
 Uncertainty inclusive traitgram for depth range
-```{r uncertainty_depth, echo=F, fig.height=14, fig.width=14, message=F, warning=F}
+```{r uncertainty_depth, echo=F, message=F, warning=F}
 contTrait <- depth_range
 A<-fastAnc(dpruned_tree,contTrait,CI=TRUE)
 paintree<-paintSubTree(dpruned_tree,node=length(dpruned_tree$tip)+1,"1")
@@ -591,7 +591,7 @@ phenogram(dpruned_tree,c(contTrait,A$ace),add=TRUE, colors=setNames("black",1))
 ```
 
 Bathymetrics scattergram array
-```{r depth_scattergram, echo=F, fig.height=11, fig.width=15, message=F, warning=F}
+```{r depth_scattergram, echo=F, message=F, warning=F}
 fancyTree(dpruned_tree,type="scattergram",X=cbind(depth_max, depth_min, depth_range, depth_median),control=list(spin=FALSE))
 ```
 
@@ -626,7 +626,7 @@ p+theme(legend.position="right") + guides(color=guide_legend(title="Palpons", re
 ```
 
 Overview grid of main binary traits
-```{r ggtree_bin_heatmap, echo=F, message=F, warning=F, fig.height=10, fig.width=18}
+```{r ggtree_bin_heatmap, echo=F, message=F, warning=F}
 p <- ggtree(ultratree)
 p <- p + geom_tiplab(size=3)
 f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(2,5:7)]
@@ -666,7 +666,7 @@ depth_multisig
 ```
 
 Phylogenetic PCA for bathymetrics
-```{r pPCA_depth, echo=F, fig.height=18, fig.width=18, message=F, warning=F}
+```{r pPCA_depth, echo=F, message=F, warning=F}
 phyl.pca(dpruned_tree, dpruned_data[,c(14,15,16,18,19)], mode="corr") %>% biplot
 
 dpruned_data[,c(14,15,16,18,19)] %>% PCA(graph=F) -> Zpca
