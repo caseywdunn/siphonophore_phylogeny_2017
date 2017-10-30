@@ -644,16 +644,6 @@ p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + 
 p+theme(legend.position="right") + guides(color=guide_legend(title="Sex distribution", reverse=T)) 
 ```
 
-Pneumatophore presence across siphonophore taxa
-```{r ggtree_pneuma, echo=F, message=F, warning=F}
-exp_tree = ultratree
-exp_tree$edge.length = 10*ultratree$edge.length
-dd = data.frame(taxa  = tree$tip.label, trait = as.factor(pneuma[match(tree$tip.label, names(pneuma))]))
-p = ggtree(exp_tree, layout="rectangular") + xlim(NA, 23)
-p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + geom_tippoint(aes(color=trait), alpha=0.25)
-p+theme(legend.position="right") + guides(color=guide_legend(title="Pneumatophore", reverse=T)) 
-```
-
 Tentilla presence across siphonophore taxa
 ```{r ggtree_tentillq, echo=F, message=F, warning=F}
 exp_tree = ultratree
