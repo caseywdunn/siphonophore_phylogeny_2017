@@ -371,14 +371,8 @@ names(tentilla) = rownames(cdata)
 tentilla2 = tentilla
 tentilla2['Physalia physalis'] = 1 #In the scenario where we consider Physalias knobs reduced not lost tentilla
 
-pneuma = cdata$Pneumatophore
-names(pneuma) = rownames(cdata)
-
 vrange = cdata$Vertical.range
 names(vrange) = rownames(cdata)
-
-bracts = cdata$Bract.types
-names(bracts) = rownames(cdata)
 
 #Depth pruned data
 dpruned_data = cdata[which(!is.na(cdata$Depth.Median)), ]
@@ -432,10 +426,6 @@ print("SIMMAP Nectosome Position")
 make.simmap(ultratree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
 print("SIMMAP Nectophore Types")
 make.simmap(ultratree, necto_types, nsim = 100, message=FALSE) -> necto_types_sim
-print("SIMMAP Pneumatophore")
-make.simmap(ultratree, pneuma, nsim = 100, message=FALSE, pts=T) -> pneuma_sim
-print("SIMMAP Bract Types")
-make.simmap(ultratree, bracts, nsim = 100, message=FALSE) -> bracts_sim
 print("SIMMAP Habitat")
 make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 
@@ -537,33 +527,9 @@ nodelabels(pie=(describe.simmap(necto_types_sim, plot=F)$ace) ,piecol=colors,cex
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
 
-SIMMAP Presence of Pneumatophore:
-```{r pneumatophore, echo=F, message=F, warning=F, fig.height=7, fig.width=12}
-#Simmap PNEUMATOPHORE
-plotTree(ultratree, lwd = 4)
-colors = c("black", "red")
-names(colors) = c("Absent", "Present")
-pneuma_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
-nodelabels(pie=(describe.simmap(pneuma_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-densityMap(pneuma_sim)
-```
-
 Posterior probabilities of states (1 Present, 0 Absent).
 
 It is not clear whether or not the stem group of siphonophores had a pneumatophore.
-
-SIMMAP Number of Bract types:
-```{r bract_types, echo=F, fig.height=7, fig.width=12, message=F, warning=F}
-#Simmap bract-types
-plotTree(ultratree, lwd = 4)
-colors = c("black", "red", "green3", "blue")
-names(colors) = c("No bracts", "1", "2", "4")
-bracts_sim %>% plotSimmap(lwd = 4, add = T,colors=colors) -> bract_sim_plot
-#plot(bract_sim_plot[2])
-nodelabels(pie=(describe.simmap(bracts_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-```
 
 SIMMAP Habitat:
 ```{r depth_zones, echo=F, fig.height=7, fig.width=12, message=F, warning=F}
@@ -577,11 +543,6 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 ```
 
 Continuous traits: Brownian motion reconstructions
-Number of bract types reconstruction:
-```{r cont_bract_types, echo=F, message=F, warning=F}
-contMap(ultratree, bracts)
-```
-Trait = Number of Bract Types
 
 Median depth reconstruction:
 ```{r median_cont, echo=F, message=F, warning=F}
@@ -684,11 +645,6 @@ flat_tree$edge.length = rep(mean(flat_tree$edge.length), length(flat_tree$edge.l
 ```{r phylosig_bracts_declare, include=F, echo=F, message=F, warning=F}
 physig_bracts_simp = phylosignal(bracts, ultratree)
 physig_bracts_mult = physignal(bracts, ultratree)
-```
-Phylogenetic signal in bract number
-```{r phylosig_bracts, echo=F}
-physig_bracts_simp
-physig_bracts_mult
 ```
 
 ```{r phylosig_binaries_declare, echo=F, message=F, warning=F, include=F}
