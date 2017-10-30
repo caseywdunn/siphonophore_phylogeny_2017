@@ -2,3 +2,4 @@ manuscript_cache/
 manuscript_files/
 .Rhistory/
 .Rproj.user
+.DS_Store
