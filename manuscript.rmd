@@ -77,7 +77,13 @@ output:
 	
 	# Analysis parameters
 	burn_in = 400
-
+	
+	#summary statistics for libraries
+	
+	summary_stats = read.table("Library_summary.csv", header=TRUE, sep=",")
+	names(summary_stats)<-c("Species","Mean insert size (bp)","Insert size standard deviation","Number of read pairs","Percent kept after rRNA removal","Percent kept after assembly","Adapter fails","Quality fails","Base Composition fails","Total assembled transcripts","Coding transcripts")
+	specimen_data = read.csv("Specimen_data.csv")
+names(specimen_data)<-c("New data","Species","ID","SRA Number", "Library ID", "Library type","Tissue","Sequencer", "Sequencing center", "Sample prep","Collected by","Collection date","Specimen id","Depth","Geo loc name","Lat Lon","Voucher Type","Voucher location","Voucher Cat No.","Collection mode")
 ```
 
 ```{r functions}
@@ -217,7 +223,9 @@ Subsequent analyses were conducted in R and integrated into this manuscript with
 
 ```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
 
-
+xtable_summary<-xtable(summary_stats,auto=TRUE)
+align( xtable_summary ) <- c('l|',rep('p{0.5in}',ncol(summary_stats)) )
+print(xtable_summary, scalebox=0.7, include.rownames=FALSE)
 
 ```
 Table 1 (at the end of file): Summary statistics for libraries.
