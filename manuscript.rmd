@@ -204,7 +204,7 @@ When possible specimens were starved overnight in filtered seawater at temperatu
 
 New data were analysed in conjunction with 13 publically available datasets, with a total number of 43 species. Sequence assembly, annotation, Maximum Likelihood (ML) phylogenetic analysis were conducted with the tool Agalma [@Dunn:2013kw], v. 1.00, and Bayesian Inference (BI) analyses were conducted using Phylobayes[@lartillot2009phylobayes] v. 1.7a-mpi. Source code for all analysis steps, sequence alignments, sampled and consensus trees, and voucher information are available in a git repository https://github.com/caseywdunn/siphonophore_phylogeny_2017.  
 
-In the final analyses, we sampled 1,071 genes to generate a supermatrix with 60% occupancy and a length of 378,468 amino acids. Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed from the final supermatrix and phylogeny due to low gene occupancy (gene sampling of 20.8% and 14.5% respectively in a 50% occupancy matrix with 2,203 genes). ML analyses were conducted on the unpartitioned supermatrix using the WAG+$\gamma$ model of amino acid substitution, and bootstrap values were estimated using 1000 replicates. BI was conducted using two different CAT models, CAT-Poisson and CAT-GTR [@doi:10.1093/molbev/msh112]. Two independent MCMC chains were run under the CAT-GTR model, and four independent MCMC chains were run under the CAT-Poisson model. The CAT-GTR and CAT-poisson models did not converge after a long CPU time, and only the results from the CAT-poisson model are included here.
+In the final analyses, we sampled 1,071 genes to generate a supermatrix with 60% occupancy and a length of 378,468 amino acids. Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed from the final supermatrix and phylogeny due to low gene occupancy (gene sampling of 20.8% and 14.5% respectively in a 50% occupancy matrix with 2,203 genes). ML analyses were conducted on the unpartitioned supermatrix using the WAG+$\Gamma$ model of amino acid substitution, and bootstrap values were estimated using 1000 replicates. BI was conducted using two different CAT models, CAT-Poisson and CAT-GTR [@doi:10.1093/molbev/msh112]. Two independent MCMC chains were run under the CAT-GTR model, and four independent MCMC chains were run under the CAT-Poisson model. The CAT-GTR and CAT-poisson models did not converge after a long CPU time, and only the results from the CAT-poisson model are included here.
 
 Subsequent analyses were conducted in R and integrated into this manuscript with the `knitr` package. See Supplementary Information for R package version numbers.
 
@@ -293,9 +293,9 @@ One of the most striking aspects of siphonophore biology is their diversity of u
 
 Nectophores are retained modified medusae Codonophora use for swimming. The nectosome is the region of the colony that develops from the nectosomal growth zone. Unlike the siphosomal growth zone, the nectosome does not bud gastrozooids, but nectophores (and in the case of *Apolemia*, also palpons). If fact, with the exception of  *Physalia physalis* (which grows small nectophores near the gonodendra), siphonophore nectophores are exclusively found on the nectosome. It is likely that the MRCA of siphonophores had a nectosome, which has lost on the branch leading to Cystonects. We cannot exclude with certainty the alternative hypothesis of a nectosome-less ancestor followed by a gain of the nectosome in the branch leading to the Codonophora. The nectosome probably arose as a duplication of the siphosome, followed by functional specialization in propelling the colony. Figure X shows the origin of the dorsal nectosome in the Agalmatidae (sensu stricto) from an ancestral ventral nectosome. 
 
-All Codonophora have a nectosome, but the number and subtypes of nectophores present varies greatly between species. As shown in Figure X, most Codonophora presents the ancestral nectosome with multiple nectophores of the same subtype. However, Calycophorans evolved a different system with just 2 nectophores of one type. This shift may be associated with the loss of the pneumatophore. Not all Calycophorans remained with this arrangement. The Hippopodiidae returned to bearing multiple identical nectophores, many of which are inactive and serve functions of defense (like a shell to retract in) and buoyancy. As in the rest of Calycophorans, the Hippopiids only use 2 nectophores to propel the colony. Another interesting shift occurs in the branch leading to Diphyomorpha, where the 2 nectophores specialize into 2 subtypes, associated with a shift into a vertically aligned position and pointed bell shapes. The 2 types function together in a coupled hydrodynamic system that allows very fast escape responses (Mackie 1964).
+All Codonophora have a nectosome, but the number and subtypes of nectophores present varies greatly between species. As shown in Figure X, most Codonophora presents the ancestral nectosome with multiple nectophores of the same subtype. However, Calycophorans evolved a different system with just 2 nectophores of one type. This shift may be associated with the loss of the pneumatophore. Not all Calycophorans remained with this arrangement. The Hippopodidae returned to bearing multiple identical nectophores, many of which are inactive and serve functions of defense (like a shell to retract in) and buoyancy. As in the rest of Calycophorans, the Hippopodids only use 2 nectophores to propel the colony. Another interesting shift occurs in the branch leading to Diphyomorpha, where the 2 nectophores specialize into 2 subtypes, associated with a shift into a vertically aligned position and pointed bell shapes. The 2 types function together in a coupled hydrodynamic system that allows very fast escape responses (Mackie 1964).
 
-Bracts also present a complex evolutionary history of subtypes (Figure X). Bracts are highly reduced zooids unique to siphonophores, but they are only present in the Codonophora. As with the nectosome, we have ambiguity determining whether the MRCA of siphonophores had bracts or not. The MRCA of Codonophora ahd only one bract subtype, which was lost in Hippopodiidae and independently evolved into 2 subtypes in *Erenna* and *Nanomia*. During the branch leading to Forskalidae, bract subtypes evolved from 1 to 4 morphologically distinct forms. Bracts are important for protection of the delicate zooids and to help maintain neutral buoyancy. Some calycophorans are able to actively regulate the Na/NH4 balance to adjust their buoyancy (ref).
+Bracts also present a complex evolutionary history of subtypes (Figure X). Bracts are highly reduced zooids unique to siphonophores, but they are only present in the Codonophora. As with the nectosome, we have ambiguity determining whether the MRCA of siphonophores had bracts or not. The MRCA of Codonophora ahd only one bract subtype, which was lost in Hippopodidae and independently evolved into 2 subtypes in *Erenna* and *Nanomia*. During the branch leading to Forskalidae, bract subtypes evolved from 1 to 4 morphologically distinct forms. Bracts are important for protection of the delicate zooids and to help maintain neutral buoyancy. Some calycophorans are able to actively regulate the Na/NH4 balance to adjust their buoyancy (ref).
 
 The ancestral siphonophore certainly had a pneumatophore (Figure X). This zooid type helps the colony float, maintain its pose, and regulate geotaxis (Church, 2013). Despite its diverse biological functions, it is lost in Calycophorae and never gained again in that clade. Calycophorans rely on the ionic balance of their gelatinous nectophores and bracts to retain posture and neutral buoyancy.
 
@@ -401,39 +401,39 @@ names(abundance) = rownames(dpruned_data)
 
 ```
 
-The Tree:
+#####The Tree
+
 ```{r ultratree, echo=F, message=F, warning=F}
 par(ask=F)
 par(mfrow=c(1,1))
 plotTree(ultratree, lwd = 4)
 
 ```
-
-Stochastic trait mapping:
 ```{r simmap_making, echo=F, message=F, warning=F}
+#Stochastic trait mapping:
 #Make simmap objects
-print("SIMMAP Sex Distribution")
+#print("SIMMAP Sex Distribution")
 make.simmap(ultratree, sex, nsim = 100, message=FALSE) -> sex_sim
-print("SIMMAP Palpons")
+#print("SIMMAP Palpons")
 make.simmap(ultratree, palpons, nsim = 100, message=FALSE) -> palpons_sim
-print("SIMMAP Tentilla")
+#print("SIMMAP Tentilla")
 make.simmap(ultratree, tentilla, nsim = 100, message=FALSE) -> tentilla_sim
-print("SIMMAP Tentilla2")
+#print("SIMMAP Tentilla2")
 make.simmap(ultratree, tentilla2, nsim = 100, message=FALSE) -> tentilla_sim2
-print("SIMMAP Nectosome")
+#print("SIMMAP Nectosome")
 make.simmap(ultratree, nectosome, nsim = 100, message=FALSE) -> nectosome_sim
-print("SIMMAP Nectosome Position")
+#print("SIMMAP Nectosome Position")
 make.simmap(ultratree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
-print("SIMMAP Nectophore Types")
+#print("SIMMAP Nectophore Types")
 make.simmap(ultratree, necto_types, nsim = 100, message=FALSE) -> necto_types_sim
-print("SIMMAP Habitat")
+#print("SIMMAP Habitat")
 make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 
 ```
 
 When we reconstruct the evolutionary history of different traits in siphonophore species, we obtain the following results:
 
-SIMMAP Sex distribution:
+#####SIMMAP Sex distribution
 ```{r sex, echo=F, message=F, warning=F}
 #Simmap SEX
 plotTree(ultratree, lwd = 4)
@@ -444,10 +444,9 @@ nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(sex_sim)
 ```
-
 Posterior probabilities of states (0 Dioecious, 1 Monoecious).
 
-SIMMAP Presence of palpons:
+#####SIMMAP Presence of palpons
 ```{r palpons, echo=F, message=F, warning=F}
 #Simmap PALPONS
 plotTree(ultratree, lwd = 4)
@@ -458,10 +457,9 @@ nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.3
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(palpons_sim)
 ```
-
 Posterior probabilities of states (1 Present, 0 Absent).
 
-SIMMAP Presence of tentilla:
+#####SIMMAP Presence of tentilla
 ```{r tentilla, echo=F, message=F,warning=F}
 #Simmap TENTILLA
 plotTree(ultratree, lwd = 4)
@@ -472,12 +470,11 @@ nodelabels(pie=(describe.simmap(tentilla_sim, plot=F)$ace) ,piecol=colors,cex=0.
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(tentilla_sim)
 ```
-
 Posterior probabilities of states (1 Present, 0 Absent).
 
 *Physalia physalis* may have reduced tentilla, which would indicate there was only one loss of tentilla at the branch leading to *Apolemia*.
 
-SIMMAP Presence of tentilla - *Physalia* corrected:
+#####SIMMAP Presence of tentilla - *Physalia* corrected
 ```{r tentilla2, echo=F, message=F, warning=F}
 #Simmap TENTILLA
 plotTree(ultratree, lwd = 4)
@@ -488,10 +485,9 @@ nodelabels(pie=(describe.simmap(tentilla_sim2, plot=F)$ace) ,piecol=colors,cex=0
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(tentilla_sim2)
 ```
-
 Posterior probabilities of states (1 Present, 0 Absent).
 
-SIMMAP Presence of Nectophores:
+#####SIMMAP Presence of Nectophores
 ```{r nectosome, echo=F, message=F, warning=F}
 #Simmap NECTOSOME
 plotTree(ultratree, lwd = 4)
@@ -502,10 +498,9 @@ nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(nectosome_sim)
 ```
-
 Posterior probabilities of states (1 Present, 0 Absent).
 
-SIMMAP Position of Nectosome:
+#####SIMMAP Position of Nectosome
 ```{r nectosome_position, echo=F, message=F, warning=F}
 #SIMMAP NECTOSOME POSITION
 plotTree(ultratree, lwd = 4)
@@ -516,7 +511,7 @@ nodelabels(pie=(describe.simmap(necto_pos_sim, plot=F)$ace) ,piecol=colors,cex=0
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
 
-SIMMAP Nectophore number and types:
+#####SIMMAP Nectophore number and types
 ```{r nectophore_number_types, echo=F, message=F, warning=F}
 #Simmap NECTOPHORE TYPES
 plotTree(ultratree, lwd = 4)
@@ -526,12 +521,9 @@ necto_types_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(necto_types_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
+Posterior probabilities of states (1 Present, 0 Absent).It is not clear whether or not the stem group of siphonophores had a pneumatophore.
 
-Posterior probabilities of states (1 Present, 0 Absent).
-
-It is not clear whether or not the stem group of siphonophores had a pneumatophore.
-
-SIMMAP Habitat:
+#####SIMMAP Habitat
 ```{r depth_zones, echo=F, message=F, warning=F}
 #Simmap Vertical.Range
 plotTree(ultratree, lwd = 4)
@@ -542,22 +534,22 @@ nodelabels(pie=(describe.simmap(vrange_sim, plot=F)$ace) ,piecol=colors,cex=0.35
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
 
-Continuous traits: Brownian motion reconstructions
+####Continuous traits: Brownian motion reconstructions
 
-Median depth reconstruction:
+#####Median depth reconstruction:
 ```{r median_cont, echo=F, message=F, warning=F}
 depth_value = depth_median
 depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap)
 ```
 
-Bathymetrics phylomorphospace
+#####Bathymetrics phylomorphospace
 ```{r depth_phylomorpho, echo=F, message=F, warning=F}
 par(oma=rep(3,4))
 phylomorphospace(depthmap$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=depthmap$cols, fsize=1, label = "horizontal")
 ```
 
-Bathymetrics phylomorphospace with time from root as color
+#####Bathymetrics phylomorphospace with time from root as color
 ```{r depth_phylochronomorpho, echo=F, message=F, warning=F}
 evotime = fastBM(dpruned_tree,nsim=2)
 evotime_map <- contMap(dpruned_tree,evotime[,1], plot=F)
@@ -566,7 +558,7 @@ phylomorphospace(evotime_map$tree, cbind(depth_max, depth_min), xlab="Minimum de
 #add.color.bar(2,evotime_map$cols,title="Time from the root", lims=c(0,2000),digits=5)
 ```
 
-Abundance of each taxon in the Monterey Bay sampling site
+####Abundance of each taxon in the Monterey Bay sampling site
 ```{r counts_bars, echo=F, message=F, warning=F}
 par(oma=rep(1,4))
 log_abundance = log(abundance)
@@ -574,7 +566,7 @@ log_abundance["Physalia physalis"] = 0
 plotBranchbyTrait(dpruned_tree, log_abundance, mode = "tips")
 ```
 
-Uncertainty inclusive traitgram for depth range
+###Uncertainty inclusive traitgram for depth range
 ```{r uncertainty_depth, echo=F, message=F, warning=F}
 contTrait <- depth_range
 A<-fastAnc(dpruned_tree,contTrait,CI=TRUE)
@@ -590,12 +582,12 @@ for(i in 0:50){
 phenogram(dpruned_tree,c(contTrait,A$ace),add=TRUE, colors=setNames("black",1))
 ```
 
-Bathymetrics scattergram array
+####Bathymetrics scattergram array
 ```{r depth_scattergram, echo=F, message=F, warning=F}
 fancyTree(dpruned_tree,type="scattergram",X=cbind(depth_max, depth_min, depth_range, depth_median),control=list(spin=FALSE))
 ```
 
-Distribution of sex across siphonophore taxa
+####Distribution of sex across siphonophore taxa
 ```{r ggtree_sex, echo=F, message=F, warning=F}
 exp_tree = ultratree
 exp_tree$edge.length = 10*ultratree$edge.length
@@ -605,7 +597,7 @@ p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + 
 p+theme(legend.position="right") + guides(color=guide_legend(title="Sex distribution", reverse=T)) 
 ```
 
-Tentilla presence across siphonophore taxa
+####Tentilla presence across siphonophore taxa
 ```{r ggtree_tentillq, echo=F, message=F, warning=F}
 exp_tree = ultratree
 exp_tree$edge.length = 10*ultratree$edge.length
@@ -615,7 +607,7 @@ p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + 
 p+theme(legend.position="right") + guides(color=guide_legend(title="Tentilla", reverse=T)) 
 ```
 
-Palpon presence across siphonophore taxa
+####Palpon presence across siphonophore taxa
 ```{r ggtree_palpon, echo=F, message=F, warning=F}
 exp_tree = ultratree
 exp_tree$edge.length = 10*ultratree$edge.length
@@ -625,7 +617,7 @@ p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + 
 p+theme(legend.position="right") + guides(color=guide_legend(title="Palpons", reverse=T)) 
 ```
 
-Overview grid of main binary traits
+#####Overview grid of main binary traits
 ```{r ggtree_bin_heatmap, echo=F, message=F, warning=F}
 p <- ggtree(ultratree)
 p <- p + geom_tiplab(size=3)
@@ -635,8 +627,9 @@ names(f_cdata)[4] = "Float"
 gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 3)
 ```
 
-Phylogenetic signal in the character data
-Agnostic branch length tree generation:
+####Phylogenetic signal in the character data
+
+#####Agnostic branch length tree generation:
 ```{r flat_tree}
 flat_tree = tree
 flat_tree$edge.length = rep(mean(flat_tree$edge.length), length(flat_tree$edge.length))
@@ -645,7 +638,7 @@ flat_tree$edge.length = rep(mean(flat_tree$edge.length), length(flat_tree$edge.l
 ```{r phylosig_binaries_declare, echo=F, message=F, warning=F, include=F}
 binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5,6,7)]), ultratree)
 ```
-Phylogenetic signal in Binary Traits
+#####Phylogenetic signal in Binary Traits
 ```{r phylosig_binaries, echo=F, message=F, warning=F}
 binaries_phylosig
 ```
@@ -654,13 +647,13 @@ binaries_phylosig
 depth_physig = physignal(dpruned_data[,c(14,15,16,18,19)], dpruned_tree)
 depth_multisig = multiPhylosignal(dpruned_data[,c(14,15,16,18,19)], dpruned_tree)
 ```
-Phylogenetic signal in VARS bathymetrics
+#####Phylogenetic signal in VARS bathymetrics
 ```{r phylosig_depth, echo=F, message=F, warning=F}
 depth_physig
 depth_multisig
 ```
 
-Phylogenetic PCA for bathymetrics
+#####Phylogenetic PCA for bathymetrics
 ```{r pPCA_depth, echo=F, message=F, warning=F}
 phyl.pca(dpruned_tree, dpruned_data[,c(14,15,16,18,19)], mode="corr") %>% biplot
 
@@ -682,7 +675,7 @@ rpcaZ %>% fviz_pca_biplot( col.var="contrib", gradient.cols = c("#00AFBB", "#E7B
 rpcaZ %>% fviz_pca_ind(repulse = T)
 ```
 
-Phylogenetic ANOVA for depth
+#####Phylogenetic ANOVA for depth
 ```{r phylANOVA_depth_declare, echo=F, message=F, warning=F, include=F}
 z_nectopos = phylANOVA(dpruned_tree, dpruned_data$Nectosome.position, as.numeric(depth_median))
 z_sex = phylANOVA(dpruned_tree, dpruned_data$Sex, as.numeric(depth_median))
@@ -693,6 +686,7 @@ z_tentilla = phylANOVA(dpruned_tree, dpruned_data$Tentilla, as.numeric(depth_med
 z_float = phylANOVA(dpruned_tree, dpruned_data$Pneumatophore, as.numeric(depth_median))
 ```
 Each phylogenetic ANOVA compares variance of depth (continuous variable) within and between groups clustered by their categorical biological traits.
+
 ```{r phylANOVA_depth, echo=F, message=F, warning=F}
 print("Depth vs Sex Distribution")
 z_sex
@@ -710,7 +704,7 @@ print("Depth vs Pneumatophore")
 z_float
 ```
 
-PGLS - Sex distribution
+#####PGLS - Sex distribution
 ```{r pgls_depth_sex, echo=F, message=F, warning=F}
 dp_sex <- dpruned_data$Sex
 dp_sex = as.numeric(dp_sex)
