@@ -649,11 +649,11 @@ p+theme(legend.position="right") + guides(color=guide_legend(title="Palpons", re
 ####Overview grid of main binary traits
 ```{r ggtree_bin_heatmap, echo=F, message=F, warning=F}
 p <- ggtree(ultratree)
-p <- p + geom_tiplab(size=3)
-f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(2,5:8,12)]
+p <- p + geom_tiplab(size=2.2)
+f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(1,2,5:8,12)]
 rownames(f_cdata) = rownames(cdata)
-names(f_cdata)[4] = "Float"
-gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1.6)
+names(f_cdata)[5] = "Float"
+gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
 ```
 
 ####Phylogenetic signal in the character data
