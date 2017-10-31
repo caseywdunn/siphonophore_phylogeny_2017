@@ -19,7 +19,7 @@ library("adephylo")
 library("geomorph")
 
 #Working directory
-setwd("~/Dropbox/siphonophore_phylogeny_2017/character_coding")
+setwd("~/siphonophore_phylogeny_2017/character_coding")
 
 #Load data
 read.csv('main_characters.csv', header = T, sep = ',') -> cdata
@@ -92,6 +92,7 @@ names(abundance) = rownames(dpruned_data)
 ### Plots ###
 par(ask=F)
 par(mfrow=c(1,1))
+ultratree <- ape::rotate(ultratree, 31)
 
 plotTree(ultratree, lwd = 4)
 <Return>
