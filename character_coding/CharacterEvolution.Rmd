@@ -422,6 +422,23 @@ binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5,6,7)]), ultratree)
 binaries_phylosig
 ```
 
+###Depth barplot annotations figure
+```{r bathy_barplot, echo=F, message=F, warning=F}
+#Depth_data_VARS
+d <- lapply(runif(30, 0, 30), rnorm, n=100) #random data to be replaced
+ylim <- range(unlist(d))
+bx <- lapply(d, function(y) {
+  dd <- data.frame(y=y)
+  ggplot(dd, aes(x=1, y=y))+geom_boxplot() + ylim(ylim) + theme_inset()
+})
+names(bx) <- 1:30
+bx2 <- lapply(bx, function(g) g)
+p <- ggtree(dpruned_tree) + geom_tiplab()
+HJ <- (-1*p$data$x[1:length(p$data$x)])-1
+inset(p, bx2, width=3, height=.03, hjust= HJ) + xlim(0, 4) + coord_flip()
+
+```
+
 ```{r phylosig_depth_declare, message=F, warning=F, include=FALSE}
 depth_physig = physignal(dpruned_data[,c(14,15,16,18,19)], dpruned_tree)
 depth_multisig = multiPhylosignal(dpruned_data[,c(14,15,16,18,19)], dpruned_tree)
