@@ -435,6 +435,8 @@ make.simmap(ultratree, nectosome, nsim = 100, message=FALSE) -> nectosome_sim
 make.simmap(ultratree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
 #print("SIMMAP Nectophore Types")
 make.simmap(ultratree, necto_types, nsim = 100, message=FALSE) -> necto_types_sim
+#print("SIMMAP Bracts")
+make.simmap(ultratree, bracts, nsim = 100) -> bracts_sim
 #print("SIMMAP Habitat")
 make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 
@@ -517,6 +519,18 @@ colors = c("black", "red", "green")
 names(colors) = c("Dorsal", "No nectosome", "Ventral")
 necto_pos_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(necto_pos_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+```
+
+###SIMMAP BRACTS:
+```{r bracts, echo=F, fig.height=7, fig.width=12, message=F, warning=F}
+#Simmap bracts
+plotTree(ultratree, lwd = 4)
+#plot(bract_sim_plot[2])
+colors = c("black", "red")
+names(colors) = c("Absent","Present")
+bracts_sim %>% plotSimmap(lwd = 4, add = T, colors=colors) -> bract_sim_plot
+nodelabels(pie=(describe.simmap(bracts_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
 
