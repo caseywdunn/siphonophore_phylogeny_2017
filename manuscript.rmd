@@ -379,6 +379,12 @@ names(tentilla) = rownames(cdata)
 tentilla2 = tentilla
 tentilla2['Physalia physalis'] = 1 #In the scenario where we consider Physalias knobs reduced not lost tentilla
 
+bracts = cdata$Bract.types
+bracts[which(bracts>0)] <- 1  #bracts changed to presence absence for tip annotation
+names(bracts) = rownames(cdata)
+cdata$Bract.types = bracts
+names(cdata)[8] = "Bracts"
+
 vrange = cdata$Vertical.range
 names(vrange) = rownames(cdata)
 
@@ -640,14 +646,14 @@ p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + 
 p+theme(legend.position="right") + guides(color=guide_legend(title="Palpons", reverse=T)) 
 ```
 
-#####Overview grid of main binary traits
+####Overview grid of main binary traits
 ```{r ggtree_bin_heatmap, echo=F, message=F, warning=F}
 p <- ggtree(ultratree)
 p <- p + geom_tiplab(size=3)
-f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(2,5:7)]
+f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(2,5:8)]
 rownames(f_cdata) = rownames(cdata)
 names(f_cdata)[4] = "Float"
-gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 3)
+gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1.6)
 ```
 
 ####Phylogenetic signal in the character data
