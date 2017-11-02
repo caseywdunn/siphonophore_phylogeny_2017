@@ -654,6 +654,7 @@ p <- ggtree(ultratree)
 p <- p + geom_tiplab(size=2.2)
 f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(1,2,5:8,12)]
 rownames(f_cdata) = rownames(cdata)
+f_cdata[match(tree$tip.label,rownames(f_cdata)),]
 names(f_cdata)[5] = "Float"
 gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
 ```
