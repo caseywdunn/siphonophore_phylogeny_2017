@@ -212,6 +212,8 @@ New data were analysed in conjunction with 13 publically available datasets, wit
 
 In the final analyses, we sampled 1,071 genes to generate a supermatrix with 60% occupancy and a length of 378,468 amino acids. Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed from the final supermatrix and phylogeny due to low gene occupancy (gene sampling of 20.8% and 14.5% respectively in a 50% occupancy matrix with 2,203 genes). ML analyses were conducted on the unpartitioned supermatrix using the WAG+$\Gamma$ model of amino acid substitution, and bootstrap values were estimated using 1000 replicates. BI was conducted using two different CAT models, CAT-Poisson and CAT-GTR [@doi:10.1093/molbev/msh112]. Two independent MCMC chains were run under the CAT-GTR model, and four independent MCMC chains were run under the CAT-Poisson model. The CAT-GTR and CAT-poisson models did not converge after a long CPU time, and only the results from the CAT-poisson model are included here.
 
+Morphological character data were obtained from the literature, or from direct observation of available voucher material. 
+
 Subsequent analyses were conducted in R and integrated into this manuscript with the `knitr` package. See Supplementary Information for R package version numbers.
 
 #### Hypothesis testing
@@ -221,14 +223,7 @@ Subsequent analyses were conducted in R and integrated into this manuscript with
 
 ### Sample collecting and sequencing
 
-```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
 
-xtable_summary<-xtable(summary_stats,auto=TRUE)
-align( xtable_summary ) <- c('l|',rep('p{0.5in}',ncol(summary_stats)) )
-print(xtable_summary, scalebox=0.7, include.rownames=FALSE)
-
-```
-Table 1 (at the end of file): Summary statistics for libraries.
 
 
 ### Species phylogeny
@@ -335,7 +330,14 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 
 ## Supplementary Information
 
+```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
 
+xtable_summary<-xtable(summary_stats,auto=TRUE)
+align( xtable_summary ) <- c('l|',rep('p{0.5in}',ncol(summary_stats)) )
+print(xtable_summary, scalebox=0.7, include.rownames=FALSE)
+
+```
+Table 1 (at the end of file): Summary statistics for libraries.
 
 ### Supplementary Analyses
 
@@ -745,6 +747,8 @@ pGLS = pgls.Ives(dpruned_tree, rep(dp_sex,3), rep(depth_median,3))
 phylolm(depth_median~dp_sex,data=as.data.frame(cbind(depth_median,dp_sex)),phy=dpruned_tree,model="BM",measurement_error=TRUE,boot=100)
 gls(dp_sex ~ depth_median)
 ```
+
+
 
 ### Software versions
 
