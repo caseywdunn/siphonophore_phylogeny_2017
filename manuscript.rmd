@@ -115,7 +115,8 @@ names(specimen_data)<-c("New data","Species","ID","SRA Number", "Library ID", "L
 
 	species_tree = ape::read.tree( input_file_ml )
   species_tree = fix_names( species_tree )
-
+  species_tree_unladder =species_tree
+  
   bootstrap_trees = ape::read.tree( input_file_bootstraps )
   
   phylobayes_trees = sapply(
@@ -355,9 +356,9 @@ read.csv('character_coding/main_characters.csv', header = T, sep = ',') -> cdata
 rownames(cdata) = cdata$Species
 
 #Load tree
-tree = species_ultrametric
-tree$tip.label = str_replace_all(tree$tip.label,'_',' ')
+tree = species_tree_unladder
 tree <- drop.tip(tree, which(!(tree$tip.label %in% rownames(cdata))))
+tree<-rotateNodes(tree,nodes=c(28,31))
 ultratree <- chronos(tree)
 class( ultratree ) = "phylo"
 
@@ -429,7 +430,6 @@ names(abundance) = rownames(dpruned_data)
 ```{r ultratree, echo=F, message=F, warning=F}
 par(ask=F)
 par(mfrow=c(1,1))
-ultratree <- ape::rotate(ultratree, 31)
 plotTree(ultratree, lwd = 4)
 
 ```
