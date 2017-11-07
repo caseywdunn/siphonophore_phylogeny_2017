@@ -359,6 +359,7 @@ rownames(cdata) = cdata$Species
 tree = species_tree_unladder
 tree <- drop.tip(tree, which(!(tree$tip.label %in% rownames(cdata))))
 tree<-rotateNodes(tree,nodes=c(28,31))
+#tree<-rotateNodes(tree,nodes=c(ape::mrca(tree)["Apolemia lanosa", "Agalma elegans"], ape::mrca(tree)["Abylopsis tetragona", "Hippopodius hippopus"]))
 ultratree <- chronos(tree)
 class( ultratree ) = "phylo"
 
