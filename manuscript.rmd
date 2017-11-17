@@ -772,7 +772,40 @@ phylolm(depth_median~dp_sex,data=as.data.frame(cbind(depth_median,dp_sex)),phy=d
 gls(dp_sex ~ depth_median)
 ```
 
+######VARS data barplot code
+```{r vars_plot, echo=F, message=F, warning=F}
+#Get Raw Data
+raw_data = read.csv(file="characer_coding/trim_siphdepths.tsv", sep = "\t")[,c(4,3,5:11)]
+raw_data = raw_data[order(raw_data$ConceptName),]
 
+#Clean Raw Data
+names(raw_data)[1] = "Species"
+raw_data$Species[which(raw_data$Species == "Kephyes")] = "Kephyes ovata"
+raw_data$Species[which(raw_data$Species == "Lilyopsis")] = "Lilyopsis fluoracantha"
+raw_data$Species[which(raw_data$Species == "Agalma")] = "Agalma elegans"
+raw_data$Species[which(raw_data$Species == "Frillagalma")] = "Frillagalma vityazi"
+raw_data$Species[which(raw_data$Species == "Stephalia")] = "Stephalia dilata"
+raw_data$Species[which(raw_data$Species == "Lychnagalma")] = "Lychnagalma utricularia"
+raw_data$Species[which(raw_data$Species == "Craseoa")] = "Craseoa lathetica"
+raw_data$Species[which(raw_data$Species == "Cordagalma")] = "Cordagalma ordinatum"
+raw_data$Species[which(raw_data$Species == "Desmophyes haematogaster")] = "Prayidae D27SS7"
+raw_data$Species[which(raw_data$Species == "Craseoa lathetica")] = "Prayidae D27D2"
+
+#Adjust Data to tree structure
+raw_data[which(raw_data$Species %in% ultratree$tip.label),] -> intree_data
+tree$tip.label[which(!(ultratree$tip.label %in% raw_data$Species))] %>% length() -> missSPP
+missing_data_proxy <- raw_data[1:missSPP,]
+missing_data_proxy$Species = ultratree$tip.label[which(!(ultratree$tip.label %in% raw_data$Species))]
+missing_data_proxy$Depth = rep(20, missSPP)
+parched_data <- rbind(missing_data_proxy, raw_data[which(raw_data$Species %in% ultratree$tip.label),])
+parched_data = parched_data[which(!is.na(parched_data$Depth)),]
+parched_data$Species <- factor(parched_data$Species, levels = ultratree$tip.label)
+
+#Plots for FIGURE
+ggplot(parched_data, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
+ggplot(parched_data, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
+
+```
 
 ### Software versions
 
