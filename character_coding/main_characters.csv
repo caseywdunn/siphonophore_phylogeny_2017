@@ -3,7 +3,7 @@ Abylopsis tetragona,Monoecious,1,Ventral,Two of two types,0,1,0,1,,Clustered,,1,
 Agalma elegans,Monoecious,1,Dorsal,Multiple of one type,1,1,1,1,,Dispersed,,0,Epipelagic,171.89,171.89,22.8,2,194.69,149.09
 Apolemia lanosa,Dioecious,1,Ventral,Multiple of one type,1,0,1,1,,Dispersed,2.4,0,Mesopelagic,1224.9,1248.35,333.44,64,2280.3,379.75
 Apolemia sp ,Dioecious,1,Ventral,Multiple of one type,1,0,1,1,,,,0,Mesopelagic,572.15,721.28,551.04,3864,3818.81,30.8
-Apolemia white,Dioecious,1,Ventral,Multiple of one type,1,0,1,1,,,,0,Mesopelagic,572.15,721.28,552.04,3864,3818.81,30.8
+Apolemia rubriversa,Dioecious,1,Ventral,Multiple of one type,1,0,1,1,,,,0,Mesopelagic,572.15,721.28,552.04,3864,3818.81,30.8
 Athorybia rosacea,Monoecious,0,None,None,1,1,1,1,,,,0,Epipelagic,,,,,,
 Bargmannia amoena,Dioecious,1,Dorsal,Multiple of one type,0,1,1,1,,,,0,Bathypelagic,1333.79,1454.41,594.29,41,3478.4,399.73
 Bargmannia elongata,Dioecious,1,Dorsal,Multiple of one type,0,1,1,1,,Dispersed,,0,Mesopelagic,543.89,582.58,230.41,633,2504.15,69.61
@@ -28,9 +28,9 @@ Prayidae D27D2,Monoecious,1,Ventral,Two of one type,0,1,0,1,,Clustered,,0,Mesope
 Prayidae D27SS7,Monoecious,1,Ventral,Two of one type,0,1,0,1,,Clustered,,0,Mesopelagic,463.93,708.08,566.25,98,2528.81,45.7
 Resomia ornicephala,Monoecious,1,Ventral,Multiple of one type,1,1,1,1,,,,0,Mesopelagic,203.18,208.61,88.77,214,950.89,23.43
 Rhizophysa filiformis,Dioecious,0,None,None,1,1,1,0,,Clustered,,0,Mesopelagic,997.47,997.39,0.2,7,997.57,996.93
-Rudjakovia plicata,Monoecious,1,Dorsal,Multiple of one type,1,1,1,1,,,,0,Mesopelagic,415.62,397.18,97.84,15,590,239.82
+Rudjakovia sp,Monoecious,1,Dorsal,Multiple of one type,1,1,1,1,,,,0,Mesopelagic,415.62,397.18,97.84,15,590,239.82
 Stephalia dilata,Dioecious,1,Ventral,Multiple of one type,1,1,1,2,,,,0,Deep benthic,3158.41,3259.3,227.92,6,3768.92,3155.09
-Thermopalia taraxaca,Dioecious,1,Ventral,Multiple of one type,1,1,1,1,,,,0,Deep benthic,2937.54,2986.86,232.45,5,3279.12,2740.75
+Thermopalia sp,Dioecious,1,Ventral,Multiple of one type,1,1,1,1,,,,0,Deep benthic,2937.54,2986.86,232.45,5,3279.12,2740.75
 Stephanomia amphitrydis,Dioecious,1,Ventral,Multiple of one type,1,1,1,2,,,2,0,Bathypelagic,,,,,,
 Sulculeolaria quadrivalvis,Monoecious,1,Ventral,Two of two types,0,1,0,1,,Clustered,,0,Epipelagic,,,,,,
 Sphaeronectes haddocki,Monoecious,1,Ventral,One of one type,0,1,0,1,,Clustered,,1,Epipelagic,,,,,,
