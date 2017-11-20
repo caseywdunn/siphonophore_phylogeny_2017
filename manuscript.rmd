@@ -358,8 +358,9 @@ rownames(cdata) = cdata$Species
 #Load tree
 tree = species_tree_unladder
 tree <- drop.tip(tree, which(!(tree$tip.label %in% rownames(cdata))))
-tree<-rotateNodes(tree,nodes=c(28,31))
-#tree<-rotateNodes(tree,nodes=c(ape::mrca(tree)["Apolemia lanosa", "Agalma elegans"], ape::mrca(tree)["Abylopsis tetragona", "Hippopodius hippopus"]))
+#tree<-rotateNodes(tree,nodes=c(28,31))
+tree<-rotateNodes(tree,nodes=ape::mrca(tree)["Agalma elegans","Hippopodius hippopus"])
+
 ultratree <- chronos(tree)
 class( ultratree ) = "phylo"
 
@@ -775,7 +776,7 @@ gls(dp_sex ~ depth_median)
 ######VARS data barplot code
 ```{r vars_plot, echo=F, message=F, warning=F}
 #Get Raw Data
-raw_data = read.csv(file="characer_coding/trim_siphdepths.tsv", sep = "\t")[,c(4,3,5:11)]
+raw_data = read.csv(file="character_coding/trim_siphdepths.tsv", sep = "\t")[,c(4,3,5:11)]
 raw_data = raw_data[order(raw_data$ConceptName),]
 
 #Clean Raw Data
