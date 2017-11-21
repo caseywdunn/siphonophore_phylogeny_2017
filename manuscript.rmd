@@ -502,7 +502,7 @@ densityMap(tentilla_sim2)
 
 Posterior probabilities of states (1 Present, 0 Absent).
 
-#####SIMMAP Presence of Nectophores
+#####SIMMAP Presence of Nectosome
 ```{r nectosome, echo=F, message=F, warning=F}
 #Simmap NECTOSOME
 plotTree(ultratree, lwd = 4)
