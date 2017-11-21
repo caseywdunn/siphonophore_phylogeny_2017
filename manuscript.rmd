@@ -360,10 +360,11 @@ rownames(cdata) = cdata$Species
 tree = species_tree_unladder
 tree <- drop.tip(tree, which(!(tree$tip.label %in% rownames(cdata))))
 #tree<-rotateNodes(tree,nodes=c(28,31))
-tree<-rotateNodes(tree,nodes=ape::mrca(tree)["Agalma elegans","Hippopodius hippopus"])
 
 ultratree <- chronos(tree)
 class( ultratree ) = "phylo"
+nodes_to_rotate = c(ape::mrca(ultratree)["Physalia physalis","Kephyes ovata"], ape::mrca(ultratree)["Bargmannia lata","Hippopodius hippopus"])
+ultratree<-rotateNodes(ultratree,nodes=nodes_to_rotate)
 
 #Temporarily prune data
 cdata %<>% filter(rownames(.) %in% tree$tip.label)
