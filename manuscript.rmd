@@ -289,70 +289,7 @@ These findings are entirely consistent with a previous analysis based on two gen
 
 ## Character Evolution
 
-Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features. 
-
-In our previous siphonophore phylogenetic analysis [@Dunn:2005dy] there were several characters left with equivocal evolutionary histories, due to unresolved relationships between physonects. With our current cladistic resolution, we were able to answer some of the questions left open:
-
-###Evolution of Monoecy
-
-[Citation needed] noticed for the first time that some siphonophores were monoeicous and others were dioiecious. Our analyses in 2005 reconstructed this character and found a great amount of phylogenetic conservatism, with an unambiguous resolution of the MRCA (most recent common ancestor) as dioecious, and the appearance of monoecy in several taxa and clades (including Calycophorae) within the polytomy. Figure X shows the evolution of sex distribution in siphonophores under the current better-resolved tree model, and it strongly indicates that monoecy in siphonophores from a dioecious ancestor occured twice, in the branch leading to Calycophorae and in the branch leading to Agalmatids (sensu lato). There is a small probability for an alternative scenario featuring a single gain of monoecy before the split of Calycophorae, with a subsequent derived shift back to dioecy in the *Marrus-Erenna* clade.
-
-###The Evolution of Zooid Types
-
-One of the most striking aspects of siphonophore biology is their diversity of unique zooid types. Other colonial cnidarians (such as Hydractinia) and some bryozoans (example) have been found to have up to X different zooid types [Citation1 , Citation 2]. The siphonophore genus Forskalia has 6 basic zooid types (pneumatophore, nectophore, gastrozooid, palpon, bract, and gonophore), and a total of 10 counting subtypes (4 types of bract, male & female gonophores). Diphyomorphs have more than 1 type of nectophore, while Cystonects have none. Here we reconstruct the evolutionary origins ofthe different zooid types on the present transcriptome tree.
-
-Nectophores are retained modified medusae that Codonophora use for coordinated colony-level swimming. The nectosome is the region of the colony that develops from the nectosomal growth zone. Unlike the siphosomal growth zone, the nectosome does not bud gastrozooids, but nectophores (and in the case of *Apolemia*, also palpons). If fact, with the exception of  *Physalia physalis* (which grows small nectophores near the gonodendra), siphonophore nectophores are exclusively found on the nectosome. It is possible that the MRCA of siphonophores had a nectosome, which has lost on the branch leading to Cystonects. We cannot exclude with certainty the alternative hypothesis of a nectosome-less ancestor followed by a gain of the nectosome in the branch leading to the Codonophora. The nectosome probably arose as a duplication of the siphosome, followed by functional specialization in propelling the colony. The nectosome has been lost within Codonophora in the genus *Athorybia*.
-
-Following the colony development orientation framework presented in (citation), the nectosome can be located in a dorsal or a ventral position. Our ancestral reconstructions for this character (Supp figure) show that a ventrally-oriented nectosome was the ancestral form in siphonophores, and that a dorsal nectosome has evolved twice independently, in the braches leading to the Agalmatidae (sensu stricto) and the branch leading to the *Bargmannia* species. 
-All Codonophora (with the exception of *Athorybia* species) have a nectosome, but the number and subtypes of nectophores present varies greatly between species. As shown in Figure X, most Codonophora presents the ancestral nectosome with multiple nectophores of the same subtype. However, Calycophorans evolved a different system with just 2 nectophores of one type. This shift may be associated with the loss of the pneumatophore. Not all Calycophorans remained with this arrangement. The Hippopodidae returned to bearing multiple identical nectophores, many of which are inactive and serve functions of defense (like a shell to retract in) and buoyancy. As in the rest of Calycophorans, the Hippopodids only use 2 nectophores to propel the colony. Another interesting shift occurs in the branch leading to Diphyomorpha, where the 2 nectophores specialize into 2 subtypes, associated with a shift into a vertically aligned position and pointed bell shapes. The 2 types function together in a coupled hydrodynamic system that allows very fast escape responses (Mackie 1964).
-
-Bracts are highly reduced zooids unique to siphonophores, but they are only present in the Codonophora. As with the nectosome, we have ambiguity determining whether the MRCA of siphonophores had bracts or not. The MRCA of Codonophora ahd only one bract subtype, which was lost in Hippopodidae and in *Gymnopraia lapislazula*. Bracts are functional for protection of the delicate zooids and to help maintain neutral buoyancy. Some calycophorans are able to actively exclude suphate ions in their bracts to adjust their buoyancy along the colony Bidigare, R. R., & Biggs, D. C. (1980).
-
-The ancestral siphonophore certainly had a pneumatophore (Supp Figure X). This unique zooid fills itself with gas, which helps the colony float and maintain its orientation in the water column. Recent evidence of neural arrangement in the pneumatophore of *Nanomia bijuga*  (Church, 2013) suggests it could also gather information on relative pressure changes (and thus depth changes), helping regulate geotaxis. Despite its multiple biological functions, it was lost in the Calycophorae and never gained again in that clade. Calycophorans rely on the ionic balance of their gelatinous nectophores and bracts to retain posture and neutral buoyancy.
-
-Palpons are modified mouthless gastrozooids used for digestion and circulation of the gastrovascular fluid. They were present in the MRCA of siphonophores (Supp Figure X), retained in most species, but lost twice independently in the branches leading to *Bargmannia* and Calycophorae. These taxa might have found other avenues to effectively circulate nutrients across the colony.
-
-###The Gain and Loss of Tentilla
-
-The most complex nematocyst batteries of Cnidaria can arguably be found among the siphonophores, hanging in regularly spaced tentacle side branches called tentilla. Most hydrozoans, including the clade that contains siphonophores, bear simple tentacles (tentacles with no side branches). It is still an open question whether the MRCA of Siphonophora had simple or branched tentacles. The only siphonophores genera regarded as lacking tentilla are *Physalia physalis* and *Apolemia* spp., and *Bathyphysa conifera*. Since *B. sibogae* is the only member of the *Rhizophysidae* (and of the *Bathyphysa* genus) lacking tentilla, we can safely assume this is a case of secondary loss. When we reconstrauct the evolution of this character on the current phylogeny, we find that 70% of simulations support an MRCA bearing tentilla, with two independent losses leading to *Physalia* and *Apolemia*. However, this leaves a 30% support for a simple-tentacled MRCA followed by 2 independent gains of tentilla in the branches leading to *Rhizophysidae* and *{Bargmannia, Diphyes}*.
-
-A key issue here is how we code for absence of tentilla, especially for the case of *Physalia physalis*. The tentacles of this species, when uncoiled, show very prominent, evenly spaced, bulging buttons which contain on their ectoderm all active and functionally arranged nematocysts used by the organism for prey capture. Siphonophore tentilla are complete diverticular brachings of the tentacle ectoderm, mesoglea, and gastrovascular canal (lined by endoderm). Hessinger & Ford 1988 (in the Biology of Nematocysts) described *Physalia*'s buttons as enclosing individual fluid-filled chambers connected by narrow channels to the tentacular canal, lined by endoderm. This suggests they are not just ectodermal swellings, but probably are reduced tentilla. When we code *Physalia physalis* as tentilla bearing, the results for the character reconstraction lead to a more robust support for a tentilla-bearing MRCA followed by a single loss of tentilla in the branch leading to *Apolemiidae* (Figure 5b).
-
-Siphonophore tentilla present an astounding diversity of sizes, shapes, colors, and nematocyst complements, and some have been observed to rapidly uncoil in contact with prey. Future research should explore the evolutionary history of these unique structures.
-
-###The Evolution of Vertical Habitat Use
-
-Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (ref , *Bargmannia sp* 3888m VARS unpublished). While there are some pleustonic (*Physalia*) and benthic (*Rhodaliidae*) siphonophores, the phylogeny suggests the siphonophore MRCA was planktonic, as most extant taxa are. Some interesting questions arise from these facts, including 1) what was the bathymetric niche of the siphonophore MRCA, and 2) how did siphonophore's vertical habitat use of the water columns evolve along the phylogeny. Our results indicate a mesopelagic MRCA, with several convergent transition events to epipelagic and bathypelagic waters. There was only a single transition to benthic lifestyle on the stem of *Rhodaliidae*.
-
-##Discussion
-
-
-The strong phylogenetic signal in the characters traditinally used for taxonomic diagnostics is a positive indicator of the applicability and unambiguity of these characters.
-
-## Conclusions
-
-
-## Acknowledgements
-
-This work was supported by the National Science Foundation (DEB-1256695 and the Waterman Award). Sequencing at the Brown Genomics Core facility was supported in part by NIH P30RR031153 and NSF EPSCoR EPS-1004057. Data transfer was supported by NSF RII-C2 EPS-1005789. Analyses were conducted with computational resources and services at the Center for Computation and Visualization at Brown University, supported in part by the NSF EPSCoR EPS-1004057 and the State of Rhode Island. We also thank the MBARI crews and ROV pilots for collection of the specimens.
-
-
-
-## Supplementary Information
-
-```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
-
-xtable_summary<-xtable(summary_stats,auto=TRUE)
-align( xtable_summary ) <- c('l|',rep('p{0.5in}',ncol(summary_stats)) )
-print(xtable_summary, scalebox=0.7, include.rownames=FALSE)
-
-```
-Table 1 (at the end of file): Summary statistics for libraries.
-
-### Supplementary Analyses
-
 ```{r char_evo_setup, include=F, echo=F}
-
 #Load data
 read.csv('character_coding/main_characters.csv', header = T, sep = ',') -> cdata
 cdata$Species = str_replace_all(cdata$Species, "sp ", "sp")
@@ -431,14 +368,6 @@ names(abundance) = rownames(dpruned_data)
 
 ```
 
-#####The Tree
-
-```{r ultratree, echo=F, message=F, warning=F}
-par(ask=F)
-par(mfrow=c(1,1))
-plotTree(ultratree, lwd = 4)
-
-```
 ```{r simmap_making, echo=F, message=F, warning=F}
 #Stochastic trait mapping:
 #Make simmap objects
@@ -493,6 +422,66 @@ densityMap(palpons_sim)
 
 Posterior probabilities of states (1 Present, 0 Absent).
 
+Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features. 
+
+In our previous siphonophore phylogenetic analysis [@Dunn:2005dy] there were several characters left with equivocal evolutionary histories, due to unresolved relationships between physonects. With our current cladistic resolution, we were able to answer some of the questions left open:
+
+###Evolution of Monoecy
+
+[Citation needed] noticed for the first time that some siphonophores were monoeicous and others were dioiecious. Our analyses in 2005 reconstructed this character and found a great amount of phylogenetic conservatism, with an unambiguous resolution of the MRCA (most recent common ancestor) as dioecious, and the appearance of monoecy in several taxa and clades (including Calycophorae) within the polytomy. Figure X shows the evolution of sex distribution in siphonophores under the current better-resolved tree model, and it strongly indicates that monoecy in siphonophores from a dioecious ancestor occured twice, in the branch leading to Calycophorae and in the branch leading to Agalmatids (sensu lato). There is a small probability for an alternative scenario featuring a single gain of monoecy before the split of Calycophorae, with a subsequent derived shift back to dioecy in the *Marrus-Erenna* clade.
+
+###The Evolution of Zooid Types
+
+One of the most striking aspects of siphonophore biology is their diversity of unique zooid types. Other colonial cnidarians (such as Hydractinia) and some bryozoans (example) have been found to have up to X different zooid types [Citation1 , Citation 2]. The siphonophore genus Forskalia has 6 basic zooid types (pneumatophore, nectophore, gastrozooid, palpon, bract, and gonophore), and a total of 10 counting subtypes (4 types of bract, male & female gonophores). Diphyomorphs have more than 1 type of nectophore, while Cystonects have none. Here we reconstruct the evolutionary origins ofthe different zooid types on the present transcriptome tree.
+
+Nectophores are retained modified medusae that Codonophora use for coordinated colony-level swimming. The nectosome is the region of the colony that develops from the nectosomal growth zone. Unlike the siphosomal growth zone, the nectosome does not bud gastrozooids, but nectophores (and in the case of *Apolemia*, also palpons). If fact, with the exception of  *Physalia physalis* (which grows small nectophores near the gonodendra), siphonophore nectophores are exclusively found on the nectosome. It is possible that the MRCA of siphonophores had a nectosome, which has lost on the branch leading to Cystonects. We cannot exclude with certainty the alternative hypothesis of a nectosome-less ancestor followed by a gain of the nectosome in the branch leading to the Codonophora. The nectosome probably arose as a duplication of the siphosome, followed by functional specialization in propelling the colony. The nectosome has been lost within Codonophora in the genus *Athorybia*.
+
+Following the colony development orientation framework presented in (citation), the nectosome can be located in a dorsal or a ventral position. Our ancestral reconstructions for this character (Supp figure) show that a ventrally-oriented nectosome was the ancestral form in siphonophores, and that a dorsal nectosome has evolved twice independently, in the braches leading to the Agalmatidae (sensu stricto) and the branch leading to the *Bargmannia* species. 
+All Codonophora (with the exception of *Athorybia* species) have a nectosome, but the number and subtypes of nectophores present varies greatly between species. As shown in Figure X, most Codonophora presents the ancestral nectosome with multiple nectophores of the same subtype. However, Calycophorans evolved a different system with just 2 nectophores of one type. This shift may be associated with the loss of the pneumatophore. Not all Calycophorans remained with this arrangement. The Hippopodidae returned to bearing multiple identical nectophores, many of which are inactive and serve functions of defense (like a shell to retract in) and buoyancy. As in the rest of Calycophorans, the Hippopodids only use 2 nectophores to propel the colony. Another interesting shift occurs in the branch leading to Diphyomorpha, where the 2 nectophores specialize into 2 subtypes, associated with a shift into a vertically aligned position and pointed bell shapes. The 2 types function together in a coupled hydrodynamic system that allows very fast escape responses (Mackie 1964).
+
+Bracts are highly reduced zooids unique to siphonophores, but they are only present in the Codonophora. As with the nectosome, we have ambiguity determining whether the MRCA of siphonophores had bracts or not. The MRCA of Codonophora ahd only one bract subtype, which was lost in Hippopodidae and in *Gymnopraia lapislazula*. Bracts are functional for protection of the delicate zooids and to help maintain neutral buoyancy. Some calycophorans are able to actively exclude suphate ions in their bracts to adjust their buoyancy along the colony Bidigare, R. R., & Biggs, D. C. (1980).
+
+The ancestral siphonophore certainly had a pneumatophore (Supp Figure X). This unique zooid fills itself with gas, which helps the colony float and maintain its orientation in the water column. Recent evidence of neural arrangement in the pneumatophore of *Nanomia bijuga*  (Church, 2013) suggests it could also gather information on relative pressure changes (and thus depth changes), helping regulate geotaxis. Despite its multiple biological functions, it was lost in the Calycophorae and never gained again in that clade. Calycophorans rely on the ionic balance of their gelatinous nectophores and bracts to retain posture and neutral buoyancy.
+
+Palpons are modified mouthless gastrozooids used for digestion and circulation of the gastrovascular fluid. They were present in the MRCA of siphonophores (Supp Figure X), retained in most species, but lost twice independently in the branches leading to *Bargmannia* and Calycophorae. These taxa might have found other avenues to effectively circulate nutrients across the colony.
+
+###The Gain and Loss of Tentilla
+
+The most complex nematocyst batteries of Cnidaria can arguably be found among the siphonophores, hanging in regularly spaced tentacle side branches called tentilla. Most hydrozoans, including the clade that contains siphonophores, bear simple tentacles (tentacles with no side branches). It is still an open question whether the MRCA of Siphonophora had simple or branched tentacles. The only siphonophores genera regarded as lacking tentilla are *Physalia physalis* and *Apolemia* spp., and *Bathyphysa conifera*. Since *B. sibogae* is the only member of the *Rhizophysidae* (and of the *Bathyphysa* genus) lacking tentilla, we can safely assume this is a case of secondary loss. When we reconstrauct the evolution of this character on the current phylogeny, we find that 70% of simulations support an MRCA bearing tentilla, with two independent losses leading to *Physalia* and *Apolemia*. However, this leaves a 30% support for a simple-tentacled MRCA followed by 2 independent gains of tentilla in the branches leading to *Rhizophysidae* and *{Bargmannia, Diphyes}*.
+
+A key issue here is how we code for absence of tentilla, especially for the case of *Physalia physalis*. The tentacles of this species, when uncoiled, show very prominent, evenly spaced, bulging buttons which contain on their ectoderm all active and functionally arranged nematocysts used by the organism for prey capture. Siphonophore tentilla are complete diverticular brachings of the tentacle ectoderm, mesoglea, and gastrovascular canal (lined by endoderm). Hessinger & Ford 1988 (in the Biology of Nematocysts) described *Physalia*'s buttons as enclosing individual fluid-filled chambers connected by narrow channels to the tentacular canal, lined by endoderm. This suggests they are not just ectodermal swellings, but probably are reduced tentilla. When we code *Physalia physalis* as tentilla bearing, the results for the character reconstraction lead to a more robust support for a tentilla-bearing MRCA followed by a single loss of tentilla in the branch leading to *Apolemiidae* (Figure 5b).
+
+Siphonophore tentilla present an astounding diversity of sizes, shapes, colors, and nematocyst complements, and some have been observed to rapidly uncoil in contact with prey. Future research should explore the evolutionary history of these unique structures.
+
+###The Evolution of Vertical Habitat Use
+
+Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (ref , *Bargmannia sp* 3888m VARS unpublished). While there are some pleustonic (*Physalia*) and benthic (*Rhodaliidae*) siphonophores, the phylogeny suggests the siphonophore MRCA was planktonic, as most extant taxa are. Some interesting questions arise from these facts, including 1) what was the bathymetric niche of the siphonophore MRCA, and 2) how did siphonophore's vertical habitat use of the water columns evolve along the phylogeny. Our results indicate a mesopelagic MRCA, with several convergent transition events to epipelagic and bathypelagic waters. There was only a single transition to benthic lifestyle on the stem of *Rhodaliidae*.
+
+##Discussion
+
+
+The strong phylogenetic signal in the characters traditinally used for taxonomic diagnostics is a positive indicator of the applicability and unambiguity of these characters.
+
+## Conclusions
+
+
+## Acknowledgements
+
+This work was supported by the National Science Foundation (DEB-1256695 and the Waterman Award). Sequencing at the Brown Genomics Core facility was supported in part by NIH P30RR031153 and NSF EPSCoR EPS-1004057. Data transfer was supported by NSF RII-C2 EPS-1005789. Analyses were conducted with computational resources and services at the Center for Computation and Visualization at Brown University, supported in part by the NSF EPSCoR EPS-1004057 and the State of Rhode Island. We also thank the MBARI crews and ROV pilots for collection of the specimens.
+
+
+
+## Supplementary Information
+
+```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
+
+xtable_summary<-xtable(summary_stats,auto=TRUE)
+align( xtable_summary ) <- c('l|',rep('p{0.5in}',ncol(summary_stats)) )
+print(xtable_summary, scalebox=0.7, include.rownames=FALSE)
+
+```
+Table 1 (at the end of file): Summary statistics for libraries.
+
 #####SIMMAP Presence of tentilla
 ```{r tentilla, echo=F, message=F,warning=F}
 #Simmap TENTILLA
@@ -536,17 +525,6 @@ densityMap(nectosome_sim)
 ```
 Posterior probabilities of states (1 Present, 0 Absent).
 
-#####SIMMAP Position of Nectosome
-```{r nectosome_position, echo=F, message=F, warning=F}
-#SIMMAP NECTOSOME POSITION
-plotTree(ultratree, lwd = 4)
-colors = c("black", "red", "green")
-names(colors) = c("Dorsal", "No nectosome", "Ventral")
-necto_pos_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
-nodelabels(pie=(describe.simmap(necto_pos_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-```
-
 ###SIMMAP BRACTS:
 ```{r bracts, echo=F, message=F, warning=F}
 #Simmap bracts
@@ -560,31 +538,7 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 densityMap(bracts_sim)
 ```
 
-#####SIMMAP Nectophore number and types
-```{r nectophore_number_types, echo=F, message=F, warning=F}
-#Simmap NECTOPHORE TYPES
-plotTree(ultratree, lwd = 4)
-colors = c("black", "red", "green", "blue")
-names(colors) = c("Multiple of one type", "None", "Two of one type", "Two of two types")
-necto_types_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
-nodelabels(pie=(describe.simmap(necto_types_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-```
-
 Posterior probabilities of states (1 Present, 0 Absent).It is not clear whether or not the stem group of siphonophores had a pneumatophore.
-
-#####SIMMAP Habitat
-```{r depth_zones, echo=F, message=F, warning=F}
-#Simmap Vertical.Range
-plotTree(ultratree, lwd = 4)
-colors = c("black", "cyan", "blue", "green", "red")
-names(colors) = c("Bathypelagic", "Surface", "Mesopelagic", "Epipelagic", "Deep benthic")
-vrange_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
-nodelabels(pie=(describe.simmap(vrange_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-```
-
-####Continuous traits: Brownian motion reconstructions
 
 #####Median depth reconstruction:
 ```{r median_cont, echo=F, message=F, warning=F}
@@ -593,179 +547,31 @@ depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan
 plot(depthmap)
 ```
 
-#####Bathymetrics phylomorphospace
-```{r depth_phylomorpho, echo=F, message=F, warning=F}
-par(oma=rep(3,4))
-phylomorphospace(depthmap$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=depthmap$cols, fsize=1, label = "horizontal")
-```
-
-#####Bathymetrics phylomorphospace with time from root as color
-```{r depth_phylochronomorpho, echo=F, message=F, warning=F}
-evotime = fastBM(dpruned_tree,nsim=2)
-evotime_map <- contMap(dpruned_tree,evotime[,1], plot=F)
-evotime_map$cols[]<-rainbow(1001,start=0.7,end=0)
-phylomorphospace(evotime_map$tree, cbind(depth_max, depth_min), xlab="Minimum depth (m)", ylab="Maximum depth (m)", colors=evotime_map$cols, fsize=1, label = "horizontal")
-#add.color.bar(2,evotime_map$cols,title="Time from the root", lims=c(0,2000),digits=5)
-```
-
-####Abundance of each taxon in the Monterey Bay sampling site
-```{r counts_bars, echo=F, message=F, warning=F}
-par(oma=rep(1,4))
-log_abundance = log(abundance)
-log_abundance["Physalia physalis"] = 0
-plotBranchbyTrait(dpruned_tree, log_abundance, mode = "tips")
-```
-
-###Uncertainty inclusive traitgram for depth range
-```{r uncertainty_depth, echo=F, message=F, warning=F}
-contTrait <- -depth_range
-A<-fastAnc(dpruned_tree,contTrait,CI=TRUE)
-paintree<-paintSubTree(dpruned_tree,node=length(dpruned_tree$tip)+1,"1")
-trans<-as.character(floor(0:50/2))
-trans[as.numeric(trans)<10]<- paste("0", trans[as.numeric(trans)<10],sep="")
-# plot
-for(i in 0:50){
-  p<-i/length(trans)
-  phenogram(dpruned_tree,c(contTrait,(1-p)*A$CI95[,1]+p*A$ace), colors=setNames(paste("#0000ff",trans[i+1],sep=""),1), add=i>0)
-  phenogram(dpruned_tree,c(contTrait,(1-p)*A$CI95[,2]+p*A$ace), colors=setNames(paste("#0000ff",trans[i+1],sep=""),1), add=TRUE)
-}
-phenogram(dpruned_tree,c(contTrait,A$ace),add=TRUE, colors=setNames("black",1))
-```
-
-####Bathymetrics scattergram array
-```{r depth_scattergram, echo=F, message=F, warning=F}
-fancyTree(dpruned_tree,type="scattergram",X=cbind(depth_max, depth_min, depth_range, depth_median),control=list(spin=FALSE))
-```
-
-####Distribution of sex across siphonophore taxa
-```{r ggtree_sex, echo=F, message=F, warning=F, include=F}
-exp_tree = ultratree
-exp_tree$edge.length = 10*ultratree$edge.length
-dd = data.frame(taxa  = tree$tip.label, trait = sex[match(tree$tip.label, names(sex))])
-p = ggtree(exp_tree, layout="rectangular") + xlim(NA, 23)
-p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + geom_tippoint(aes(color=trait), alpha=0.25)
-p+theme(legend.position="right") + guides(color=guide_legend(title="Sex distribution", reverse=T)) 
-```
-
-####Tentilla presence across siphonophore taxa
-```{r ggtree_tentillq, echo=F, message=F, warning=F, include=F}
-exp_tree = ultratree
-exp_tree$edge.length = 10*ultratree$edge.length
-dd = data.frame(taxa  = tree$tip.label, trait = as.factor(tentilla[match(tree$tip.label, names(tentilla))]))
-p = ggtree(exp_tree, layout="rectangular") + xlim(NA, 23)
-p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + geom_tippoint(aes(color=trait), alpha=0.25)
-p+theme(legend.position="right") + guides(color=guide_legend(title="Tentilla", reverse=T)) 
-```
-
-####Palpon presence across siphonophore taxa
-```{r ggtree_palpon, echo=F, message=F, warning=F, include=F}
-exp_tree = ultratree
-exp_tree$edge.length = 10*ultratree$edge.length
-dd = data.frame(taxa  = tree$tip.label, trait = as.factor(palpons[match(tree$tip.label, names(palpons))]))
-p = ggtree(exp_tree, layout="rectangular") + xlim(NA, 23)
-p = p %<+% dd + geom_tiplab(aes(color=trait), show_guide = FALSE, size = 3.5) + geom_tippoint(aes(color=trait), alpha=0.25)
-p+theme(legend.position="right") + guides(color=guide_legend(title="Palpons", reverse=T)) 
-```
-
 ####Overview grid of main binary traits
 ```{r ggtree_bin_heatmap, echo=F, message=F, warning=F}
 p <- ggtree(ultratree)
 p <- p + geom_tiplab(size=2.2)
 f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(1,2,5:8,12)]
 rownames(f_cdata) = rownames(cdata)
+f_cdata = f_cdata[,c(4,7,1,3,6,2,5)]
 f_cdata[match(tree$tip.label,rownames(f_cdata)),]
-names(f_cdata)[5] = "Float"
 gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
 ```
 
 ####Phylogenetic signal in the character data
-
-#####Agnostic branch length tree generation:
-```{r flat_tree}
-flat_tree = tree
-flat_tree$edge.length = rep(mean(flat_tree$edge.length), length(flat_tree$edge.length))
-```
-
 ```{r phylosig_binaries_declare, echo=F, message=F, warning=F, include=F}
 binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
 ```
+
 #####Phylogenetic signal in Binary Traits
 ```{r phylosig_binaries, echo=F, message=F, warning=F}
-binaries_phylosig
+binaries_phylosig # make it xtable
 ```
 
-```{r phylosig_depth_declare, message=F, warning=F, include=FALSE}
-depth_physig = physignal(dpruned_data[,c(14,15,16,18,19)], dpruned_tree)
-depth_multisig = multiPhylosignal(dpruned_data[,c(14,15,16,18,19)], dpruned_tree)
-```
 #####Phylogenetic signal in VARS bathymetrics
 ```{r phylosig_depth, echo=F, message=F, warning=F}
 depth_physig
 depth_multisig
-```
-
-#####Phylogenetic PCA for bathymetrics
-```{r pPCA_depth, echo=F, message=F, warning=F}
-phyl.pca(dpruned_tree, dpruned_data[,c(14,15,16,18,19)], mode="corr") %>% biplot
-
-dpruned_data[,c(14,15,16,18,19)] %>% PCA(graph=F) -> Zpca
-Zpca %>% fviz_screeplot(addlabels=T)
-Zpca %>% fviz_contrib(choice="var", axes=1, sort.val="desc")
-Zpca %>% fviz_pca_biplot( col.var="contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE)
-
-phyl.pca(dpruned_tree, dpruned_data[,c(14,15,16,18,19)], mode="corr") -> ppcaZ
-prcomp( dpruned_data[,c(14,15,16,18,19)]) -> rpcaZ
-rpcaZ$rotation = ppcaZ$L
-rpcaZ$x = ppcaZ$S
-rpcaZ$scale = TRUE
-
-rpcaZ %>% fviz_screeplot(addlabels=T)
-rpcaZ %>% fviz_contrib(choice="var", axes=1, sort.val="desc")
-rpcaZ %>% fviz_pca_biplot( col.var="contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE)
-
-rpcaZ %>% fviz_pca_ind(repulse = T)
-```
-
-#####Phylogenetic ANOVA for depth
-```{r phylANOVA_depth_declare, echo=F, message=F, warning=F, include=F}
-z_nectopos = phylANOVA(dpruned_tree, dpruned_data$Nectosome.position, as.numeric(depth_median))
-z_sex = phylANOVA(dpruned_tree, dpruned_data$Sex, as.numeric(depth_median))
-z_necto = phylANOVA(dpruned_tree, dpruned_data$Nectosome, as.numeric(depth_median))
-z_nectotype = phylANOVA(dpruned_tree, dpruned_data$Nectophores, as.numeric(depth_median))
-z_palp = phylANOVA(dpruned_tree, dpruned_data$Palpons, as.numeric(depth_median))
-z_tentilla = phylANOVA(dpruned_tree, dpruned_data$Tentilla, as.numeric(depth_median))
-z_float = phylANOVA(dpruned_tree, dpruned_data$Pneumatophore, as.numeric(depth_median))
-```
-Each phylogenetic ANOVA compares variance of depth (continuous variable) within and between groups clustered by their categorical biological traits.
-
-```{r phylANOVA_depth, echo=F, message=F, warning=F}
-print("Depth vs Sex Distribution")
-z_sex
-print("Depth vs Nectosome")
-z_necto
-print("Depth vs Nectophore Types and Number")
-z_nectotype
-print("Depth vs Nectosome Position")
-z_nectopos
-print("Depth vs Palpons")
-z_palp
-print("Depth vs Tentilla")
-z_tentilla
-print("Depth vs Pneumatophore")
-z_float
-```
-
-#####PGLS - Sex distribution
-```{r pgls_depth_sex, echo=F, message=F, warning=F}
-dp_sex <- dpruned_data$Sex
-dp_sex = as.numeric(dp_sex)
-names(dp_sex) = names(depth_median)
-dp_sex[dp_sex==2] = 0        # 0 = Monoecious, 1 = Dioecious
-#Vx <- Vy <- Cxy <- rep(0,length(dpruned_tree$tip.label))
-#pgls.Ives(dpruned_tree, dp_sex, depth_median, Vx, Vy, Cxy)
-pGLS = pgls.Ives(dpruned_tree, rep(dp_sex,3), rep(depth_median,3))
-phylolm(depth_median~dp_sex,data=as.data.frame(cbind(depth_median,dp_sex)),phy=dpruned_tree,model="BM",measurement_error=TRUE,boot=100)
-gls(dp_sex ~ depth_median)
 ```
 
 ######VARS data barplot code
@@ -776,6 +582,7 @@ raw_data = raw_data[order(raw_data$ConceptName),]
 
 #Clean Raw Data
 names(raw_data)[1] = "Species"
+raw_data$Species = as.character(raw_data$Species)
 raw_data$Species[which(raw_data$Species == "Kephyes")] = "Kephyes ovata"
 raw_data$Species[which(raw_data$Species == "Lilyopsis")] = "Lilyopsis fluoracantha"
 raw_data$Species[which(raw_data$Species == "Agalma")] = "Agalma elegans"
@@ -783,9 +590,12 @@ raw_data$Species[which(raw_data$Species == "Frillagalma")] = "Frillagalma vityaz
 raw_data$Species[which(raw_data$Species == "Stephalia")] = "Stephalia dilata"
 raw_data$Species[which(raw_data$Species == "Lychnagalma")] = "Lychnagalma utricularia"
 raw_data$Species[which(raw_data$Species == "Craseoa")] = "Craseoa lathetica"
-raw_data$Species[which(raw_data$Species == "Cordagalma")] = "Cordagalma ordinatum"
+raw_data$Species[which(raw_data$Species == "Cordagalma")] = "Cordagalma sp"
 raw_data$Species[which(raw_data$Species == "Desmophyes haematogaster")] = "Prayidae D27SS7"
 raw_data$Species[which(raw_data$Species == "Craseoa lathetica")] = "Prayidae D27D2"
+raw_data$Species[which(raw_data$Species == "Rudjakovia")] = "Rudjakovia sp"
+raw_data$Species[which(raw_data$Species == "Thermopalia")] = "Thermopalia sp"
+raw_data$Species[which(raw_data$Species == "Physonectae sp. 1")] = "Physonect sp"
 
 #Adjust Data to tree structure
 raw_data[which(raw_data$Species %in% ultratree$tip.label),] -> intree_data
@@ -800,6 +610,26 @@ parched_data$Species <- factor(parched_data$Species, levels = ultratree$tip.labe
 #Plots for FIGURE
 ggplot(parched_data, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
 ggplot(parched_data, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
+
+#90% Cut-off of extrame values
+SPDepths = parched_data[,1:2]
+byspp_SPD = split(SPDepths, SPDepths$Species)
+for(i in 1:length(byspp_SPD)){
+  if(nrow(byspp_SPD[[i]])>200){
+#   byspp_SPD[[i]] = sample_n(byspp_SPD[[i]], 0.02*nrow(byspp_SPD[[i]]))
+    byspp_SPD[[i]] = sample_n(byspp_SPD[[i]], 200)
+  }
+}
+trimmed_SDdata = bind_rows(byspp_SPD)
+
+sp_order = c("Agalma elegans", "Athorybia rosacea", "Halistemma rubrum", "Nanomia bijuga", "Lychnagalma utricularia", "Physophora gilmeri", "Forskalia asymmetrica", "Cordagalma sp", "Resomia ornicephala", "Frillagalma vityazi", "Physonect sp", "Marrus claudanielis", "Stephalia dilata", "Thermopalia sp", "Erenna richardi", "Abylopsis tetragona", "Diphyes dispar", "Chelophyes appendiculata", "Kephyes ovata", "Chuniphyes multidentata", "Lilyopsis fluoracantha", "Prayidae D27D2", "Prayidae D27SS7", "Hippopodius hippopus", "Bargmannia amoena", "Bargmannia elongata", "Bargmannia lata", "Rudjakovia sp", "Apolemia rubriversa", "Apolemia lanosa", "Apolemia sp", "Rhizophysa filiformis", "Physalia physalis")
+
+trimmed_SDdata$Species = as.character(trimmed_SDdata$Species)
+trimmed_SDdata = trimmed_SDdata[which(!is.na(trimmed_SDdata$Species)),]
+trimmed_SDdata$Species <- factor(trimmed_SDdata$Species, levels = sp_order)
+
+ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
+ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
 
 ```
 
