@@ -368,7 +368,7 @@ names(abundance) = rownames(dpruned_data)
 
 ```
 
-```{r simmap_making, echo=F, message=F, warning=F}
+```{r simmap_making, echo=F, message=F, warning=F, include=F}
 #Stochastic trait mapping:
 #Make simmap objects
 #print("SIMMAP Sex Distribution")
@@ -392,35 +392,29 @@ make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 
 ```
 
-When we reconstruct the evolutionary history of different traits in siphonophore species, we obtain the following results:
-
 #####SIMMAP Sex distribution
-```{r sex, echo=F, message=F, warning=F}
+```{r sex, echo=F, message=F, warning=F, include=F}
 #Simmap SEX
-plotTree(ultratree, lwd = 4)
-colors = c("black", "red")
-names(colors) = c("Dioecious", "Monoecious")
-sex_sim %>% plotSimmap(lwd = 4, add = T, colors=colors)
-nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+#plotTree(ultratree, lwd = 4)
+#colors = c("black", "red")
+#names(colors) = c("Dioecious", "Monoecious")
+#sex_sim %>% plotSimmap(lwd = 4, add = T, colors=colors)
+#nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+#add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(sex_sim)
 ```
 
-Posterior probabilities of states (0 Dioecious, 1 Monoecious).
-
 #####SIMMAP Presence of palpons
-```{r palpons, echo=F, message=F, warning=F}
+```{r palpons, echo=F, message=F, warning=F, include=F}
 #Simmap PALPONS
-plotTree(ultratree, lwd = 4)
-colors = c("black", "red")
-names(colors) = c("Absent", "Present")
-palpons_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
-nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Absent", "Present")
+# palpons_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(palpons_sim)
 ```
-
-Posterior probabilities of states (1 Present, 0 Absent).
 
 Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features. 
 
@@ -494,10 +488,6 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 densityMap(tentilla_sim)
 ```
 
-Posterior probabilities of states (1 Present, 0 Absent).
-
-*Physalia physalis* may have reduced tentilla, which would indicate there was only one loss of tentilla at the branch leading to *Apolemia*.
-
 #####SIMMAP Presence of tentilla - *Physalia* corrected
 ```{r tentilla2, echo=F, message=F, warning=F}
 #Simmap TENTILLA
@@ -566,12 +556,6 @@ binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
 #####Phylogenetic signal in Binary Traits
 ```{r phylosig_binaries, echo=F, message=F, warning=F}
 binaries_phylosig # make it xtable
-```
-
-#####Phylogenetic signal in VARS bathymetrics
-```{r phylosig_depth, echo=F, message=F, warning=F}
-depth_physig
-depth_multisig
 ```
 
 ######VARS data barplot code
