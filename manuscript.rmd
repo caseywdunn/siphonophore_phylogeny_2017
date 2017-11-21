@@ -616,7 +616,7 @@ plotBranchbyTrait(dpruned_tree, log_abundance, mode = "tips")
 
 ###Uncertainty inclusive traitgram for depth range
 ```{r uncertainty_depth, echo=F, message=F, warning=F}
-contTrait <- depth_range
+contTrait <- -depth_range
 A<-fastAnc(dpruned_tree,contTrait,CI=TRUE)
 paintree<-paintSubTree(dpruned_tree,node=length(dpruned_tree$tip)+1,"1")
 trans<-as.character(floor(0:50/2))
