@@ -401,7 +401,7 @@ make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 #sex_sim %>% plotSimmap(lwd = 4, add = T, colors=colors)
 #nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 #add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-densityMap(sex_sim)
+densityMap(sex_sim) %>% pdf("density_sex_sim")
 ```
 
 #####SIMMAP Presence of palpons
@@ -413,7 +413,7 @@ densityMap(sex_sim)
 # palpons_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 # nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-densityMap(palpons_sim)
+densityMap(palpons_sim)%>% pdf("palpons_sim")
 ```
 
 Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features. 
