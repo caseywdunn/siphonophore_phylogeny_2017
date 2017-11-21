@@ -392,7 +392,6 @@ make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 
 ```
 
-#####SIMMAP Sex distribution
 ```{r sex, echo=F, message=F, warning=F, include=F}
 #Simmap SEX
 #plotTree(ultratree, lwd = 4)
@@ -404,7 +403,6 @@ make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 densityMap(sex_sim) %>% pdf("density_sex_sim")
 ```
 
-#####SIMMAP Presence of palpons
 ```{r palpons, echo=F, message=F, warning=F, include=F}
 #Simmap PALPONS
 # plotTree(ultratree, lwd = 4)
@@ -414,6 +412,70 @@ densityMap(sex_sim) %>% pdf("density_sex_sim")
 # nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(palpons_sim)%>% pdf("palpons_sim")
+```
+
+```{r vars_plot, echo=F, message=F, warning=F, include=F}
+#Get Raw Data
+raw_data = read.csv(file="character_coding/trim_siphdepths.tsv", sep = "\t")[,c(4,3,5:11)]
+raw_data = raw_data[order(raw_data$ConceptName),]
+
+#Clean Raw Data
+names(raw_data)[1] = "Species"
+raw_data$Species = as.character(raw_data$Species)
+raw_data$Species[which(raw_data$Species == "Kephyes")] = "Kephyes ovata"
+raw_data$Species[which(raw_data$Species == "Lilyopsis")] = "Lilyopsis fluoracantha"
+raw_data$Species[which(raw_data$Species == "Agalma")] = "Agalma elegans"
+raw_data$Species[which(raw_data$Species == "Frillagalma")] = "Frillagalma vityazi"
+raw_data$Species[which(raw_data$Species == "Stephalia")] = "Stephalia dilata"
+raw_data$Species[which(raw_data$Species == "Lychnagalma")] = "Lychnagalma utricularia"
+raw_data$Species[which(raw_data$Species == "Craseoa")] = "Craseoa lathetica"
+raw_data$Species[which(raw_data$Species == "Cordagalma")] = "Cordagalma sp"
+raw_data$Species[which(raw_data$Species == "Desmophyes haematogaster")] = "Prayidae D27SS7"
+raw_data$Species[which(raw_data$Species == "Craseoa lathetica")] = "Prayidae D27D2"
+raw_data$Species[which(raw_data$Species == "Rudjakovia")] = "Rudjakovia sp"
+raw_data$Species[which(raw_data$Species == "Thermopalia")] = "Thermopalia sp"
+raw_data$Species[which(raw_data$Species == "Physonectae sp. 1")] = "Physonect sp"
+
+#Adjust Data to tree structure
+raw_data[which(raw_data$Species %in% ultratree$tip.label),] -> intree_data
+tree$tip.label[which(!(ultratree$tip.label %in% raw_data$Species))] %>% length() -> missSPP
+missing_data_proxy <- raw_data[1:missSPP,]
+missing_data_proxy$Species = ultratree$tip.label[which(!(ultratree$tip.label %in% raw_data$Species))]
+missing_data_proxy$Depth = rep(20, missSPP)
+parched_data <- rbind(missing_data_proxy, raw_data[which(raw_data$Species %in% ultratree$tip.label),])
+parched_data = parched_data[which(!is.na(parched_data$Depth)),]
+parched_data$Species <- factor(parched_data$Species, levels = ultratree$tip.label)
+
+#90% Cut-off of extrame values
+SPDepths = parched_data[,1:2]
+byspp_SPD = split(SPDepths, SPDepths$Species)
+for(i in 1:length(byspp_SPD)){
+  if(nrow(byspp_SPD[[i]])>200){
+#   byspp_SPD[[i]] = sample_n(byspp_SPD[[i]], 0.02*nrow(byspp_SPD[[i]]))
+    byspp_SPD[[i]] = sample_n(byspp_SPD[[i]], 200)
+  }
+}
+trimmed_SDdata = bind_rows(byspp_SPD)
+
+sp_order = c("Agalma elegans", "Athorybia rosacea", "Halistemma rubrum", "Nanomia bijuga", "Lychnagalma utricularia", "Physophora gilmeri", "Forskalia asymmetrica", "Cordagalma sp", "Resomia ornicephala", "Frillagalma vityazi", "Physonect sp", "Marrus claudanielis", "Stephalia dilata", "Thermopalia sp", "Erenna richardi", "Abylopsis tetragona", "Diphyes dispar", "Chelophyes appendiculata", "Kephyes ovata", "Chuniphyes multidentata", "Lilyopsis fluoracantha", "Prayidae D27D2", "Prayidae D27SS7", "Hippopodius hippopus", "Bargmannia amoena", "Bargmannia elongata", "Bargmannia lata", "Rudjakovia sp", "Apolemia rubriversa", "Apolemia lanosa", "Apolemia sp", "Rhizophysa filiformis", "Physalia physalis")
+
+trimmed_SDdata$Species = as.character(trimmed_SDdata$Species)
+trimmed_SDdata = trimmed_SDdata[which(!is.na(trimmed_SDdata$Species)),]
+trimmed_SDdata$Species <- factor(trimmed_SDdata$Species, levels = sp_order)
+
+#ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
+ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic() %>% pdf("trimmed_violinVars.pdf")
+
+```
+
+```{r ggtree_bin_heatmap, echo=F, message=F, warning=F, include=F}
+p <- ggtree(ultratree)
+p <- p + geom_tiplab(size=2.2)
+f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(1,2,5:8,12)]
+rownames(f_cdata) = rownames(cdata)
+f_cdata = f_cdata[,c(4,7,1,3,6,2,5)]
+f_cdata[match(tree$tip.label,rownames(f_cdata)),]
+gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1) %>% pdf("overview_ggheatmap_chars.pdf")
 ```
 
 Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features. 
@@ -463,8 +525,6 @@ The strong phylogenetic signal in the characters traditinally used for taxonomic
 
 This work was supported by the National Science Foundation (DEB-1256695 and the Waterman Award). Sequencing at the Brown Genomics Core facility was supported in part by NIH P30RR031153 and NSF EPSCoR EPS-1004057. Data transfer was supported by NSF RII-C2 EPS-1005789. Analyses were conducted with computational resources and services at the Center for Computation and Visualization at Brown University, supported in part by the NSF EPSCoR EPS-1004057 and the State of Rhode Island. We also thank the MBARI crews and ROV pilots for collection of the specimens.
 
-
-
 ## Supplementary Information
 
 ```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
@@ -500,8 +560,6 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 densityMap(tentilla_sim2)
 ```
 
-Posterior probabilities of states (1 Present, 0 Absent).
-
 #####SIMMAP Presence of Nectosome
 ```{r nectosome, echo=F, message=F, warning=F}
 #Simmap NECTOSOME
@@ -515,37 +573,11 @@ densityMap(nectosome_sim)
 ```
 Posterior probabilities of states (1 Present, 0 Absent).
 
-###SIMMAP BRACTS:
-```{r bracts, echo=F, message=F, warning=F}
-#Simmap bracts
-plotTree(ultratree, lwd = 4)
-#plot(bract_sim_plot[2])
-colors = c("black", "red")
-names(colors) = c("Absent","Present")
-bracts_sim %>% plotSimmap(lwd = 4, add = T, colors=colors) -> bract_sim_plot
-nodelabels(pie=(describe.simmap(bracts_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-densityMap(bracts_sim)
-```
-
-Posterior probabilities of states (1 Present, 0 Absent).It is not clear whether or not the stem group of siphonophores had a pneumatophore.
-
 #####Median depth reconstruction:
 ```{r median_cont, echo=F, message=F, warning=F}
 depth_value = depth_median
 depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap)
-```
-
-####Overview grid of main binary traits
-```{r ggtree_bin_heatmap, echo=F, message=F, warning=F}
-p <- ggtree(ultratree)
-p <- p + geom_tiplab(size=2.2)
-f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(1,2,5:8,12)]
-rownames(f_cdata) = rownames(cdata)
-f_cdata = f_cdata[,c(4,7,1,3,6,2,5)]
-f_cdata[match(tree$tip.label,rownames(f_cdata)),]
-gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
 ```
 
 ####Phylogenetic signal in the character data
@@ -556,65 +588,6 @@ binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
 #####Phylogenetic signal in Binary Traits
 ```{r phylosig_binaries, echo=F, message=F, warning=F}
 binaries_phylosig # make it xtable
-```
-
-######VARS data barplot code
-```{r vars_plot, echo=F, message=F, warning=F}
-#Get Raw Data
-raw_data = read.csv(file="character_coding/trim_siphdepths.tsv", sep = "\t")[,c(4,3,5:11)]
-raw_data = raw_data[order(raw_data$ConceptName),]
-
-#Clean Raw Data
-names(raw_data)[1] = "Species"
-raw_data$Species = as.character(raw_data$Species)
-raw_data$Species[which(raw_data$Species == "Kephyes")] = "Kephyes ovata"
-raw_data$Species[which(raw_data$Species == "Lilyopsis")] = "Lilyopsis fluoracantha"
-raw_data$Species[which(raw_data$Species == "Agalma")] = "Agalma elegans"
-raw_data$Species[which(raw_data$Species == "Frillagalma")] = "Frillagalma vityazi"
-raw_data$Species[which(raw_data$Species == "Stephalia")] = "Stephalia dilata"
-raw_data$Species[which(raw_data$Species == "Lychnagalma")] = "Lychnagalma utricularia"
-raw_data$Species[which(raw_data$Species == "Craseoa")] = "Craseoa lathetica"
-raw_data$Species[which(raw_data$Species == "Cordagalma")] = "Cordagalma sp"
-raw_data$Species[which(raw_data$Species == "Desmophyes haematogaster")] = "Prayidae D27SS7"
-raw_data$Species[which(raw_data$Species == "Craseoa lathetica")] = "Prayidae D27D2"
-raw_data$Species[which(raw_data$Species == "Rudjakovia")] = "Rudjakovia sp"
-raw_data$Species[which(raw_data$Species == "Thermopalia")] = "Thermopalia sp"
-raw_data$Species[which(raw_data$Species == "Physonectae sp. 1")] = "Physonect sp"
-
-#Adjust Data to tree structure
-raw_data[which(raw_data$Species %in% ultratree$tip.label),] -> intree_data
-tree$tip.label[which(!(ultratree$tip.label %in% raw_data$Species))] %>% length() -> missSPP
-missing_data_proxy <- raw_data[1:missSPP,]
-missing_data_proxy$Species = ultratree$tip.label[which(!(ultratree$tip.label %in% raw_data$Species))]
-missing_data_proxy$Depth = rep(20, missSPP)
-parched_data <- rbind(missing_data_proxy, raw_data[which(raw_data$Species %in% ultratree$tip.label),])
-parched_data = parched_data[which(!is.na(parched_data$Depth)),]
-parched_data$Species <- factor(parched_data$Species, levels = ultratree$tip.label)
-
-#Plots for FIGURE
-ggplot(parched_data, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
-ggplot(parched_data, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
-
-#90% Cut-off of extrame values
-SPDepths = parched_data[,1:2]
-byspp_SPD = split(SPDepths, SPDepths$Species)
-for(i in 1:length(byspp_SPD)){
-  if(nrow(byspp_SPD[[i]])>200){
-#   byspp_SPD[[i]] = sample_n(byspp_SPD[[i]], 0.02*nrow(byspp_SPD[[i]]))
-    byspp_SPD[[i]] = sample_n(byspp_SPD[[i]], 200)
-  }
-}
-trimmed_SDdata = bind_rows(byspp_SPD)
-
-sp_order = c("Agalma elegans", "Athorybia rosacea", "Halistemma rubrum", "Nanomia bijuga", "Lychnagalma utricularia", "Physophora gilmeri", "Forskalia asymmetrica", "Cordagalma sp", "Resomia ornicephala", "Frillagalma vityazi", "Physonect sp", "Marrus claudanielis", "Stephalia dilata", "Thermopalia sp", "Erenna richardi", "Abylopsis tetragona", "Diphyes dispar", "Chelophyes appendiculata", "Kephyes ovata", "Chuniphyes multidentata", "Lilyopsis fluoracantha", "Prayidae D27D2", "Prayidae D27SS7", "Hippopodius hippopus", "Bargmannia amoena", "Bargmannia elongata", "Bargmannia lata", "Rudjakovia sp", "Apolemia rubriversa", "Apolemia lanosa", "Apolemia sp", "Rhizophysa filiformis", "Physalia physalis")
-
-trimmed_SDdata$Species = as.character(trimmed_SDdata$Species)
-trimmed_SDdata = trimmed_SDdata[which(!is.na(trimmed_SDdata$Species)),]
-trimmed_SDdata$Species <- factor(trimmed_SDdata$Species, levels = sp_order)
-
-ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
-ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
-
 ```
 
 ### Software versions
