@@ -404,7 +404,7 @@ names(vrange) = rownames(cdata)
 
 #Depth pruned data
 dpruned_data = cdata[which(!is.na(cdata$Depth.Median)), ]
-dpruned_tree <- drop.tip(ultratree, which(!(tree$tip.label %in% rownames(dpruned_data))))
+dpruned_tree <- drop.tip(ultratree, which(!(ultratree$tip.label %in% rownames(dpruned_data))))
 dpruned_data <- dpruned_data[match(dpruned_tree$tip.label, rownames(dpruned_data)),]
 
 depth_median = dpruned_data$Depth.Median
