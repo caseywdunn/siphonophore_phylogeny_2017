@@ -668,21 +668,6 @@ names(f_cdata)[5] = "Float"
 gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
 ```
 
-###Depth phylo-barplot
-```{r, bathy_barplot, echo=F, message=F, warning=F}
-d <- lapply(runif(27, 0, 20), rnorm, n=100) #Depth_data_VARS to substitute
-ylim <- range(unlist(d))
-bx <- lapply(d, function(y) {
-  dd <- data.frame(y=y)
-  ggplot(dd, aes(x=1, y=y))+geom_boxplot() + ylim(ylim) + theme_inset()
-})
-names(bx) <- 1:length(ultratree$tip.label)
-bx2 <- lapply(bx, function(g) g)
-p <- ggtree(ultratree) + geom_tiplab()
-HJ <- (-1*p$data$x[1:length(p$data$x)])-1
-inset(p, bx2, width=3, height=.03, hjust= HJ) + xlim(0, 4) + coord_flip()
-```
-
 ####Phylogenetic signal in the character data
 
 #####Agnostic branch length tree generation:
