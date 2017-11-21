@@ -685,7 +685,7 @@ flat_tree$edge.length = rep(mean(flat_tree$edge.length), length(flat_tree$edge.l
 ```
 
 ```{r phylosig_binaries_declare, echo=F, message=F, warning=F, include=F}
-binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5,6,7)]), ultratree)
+binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
 ```
 #####Phylogenetic signal in Binary Traits
 ```{r phylosig_binaries, echo=F, message=F, warning=F}
