@@ -587,7 +587,9 @@ binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
 
 #####Phylogenetic signal in Binary Traits
 ```{r phylosig_binaries, echo=F, message=F, warning=F}
-binaries_phylosig # make it xtable
+ # make it xtable
+xtable_PS<-xtable(binaries_phylosig,auto=TRUE)
+print(xtable_PS, scalebox=0.7)
 ```
 
 ### Software versions
