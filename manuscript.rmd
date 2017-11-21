@@ -546,7 +546,7 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 ```
 
 ###SIMMAP BRACTS:
-```{r bracts, echo=F, fig.height=7, fig.width=12, message=F, warning=F}
+```{r bracts, echo=F, message=F, warning=F}
 #Simmap bracts
 plotTree(ultratree, lwd = 4)
 #plot(bract_sim_plot[2])
@@ -555,6 +555,7 @@ names(colors) = c("Absent","Present")
 bracts_sim %>% plotSimmap(lwd = 4, add = T, colors=colors) -> bract_sim_plot
 nodelabels(pie=(describe.simmap(bracts_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(bracts_sim)
 ```
 
 #####SIMMAP Nectophore number and types
