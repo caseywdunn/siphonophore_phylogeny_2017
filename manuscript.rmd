@@ -474,6 +474,7 @@ nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(sex_sim)
 ```
+
 Posterior probabilities of states (0 Dioecious, 1 Monoecious).
 
 #####SIMMAP Presence of palpons
@@ -487,6 +488,7 @@ nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.3
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(palpons_sim)
 ```
+
 Posterior probabilities of states (1 Present, 0 Absent).
 
 #####SIMMAP Presence of tentilla
@@ -500,6 +502,7 @@ nodelabels(pie=(describe.simmap(tentilla_sim, plot=F)$ace) ,piecol=colors,cex=0.
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(tentilla_sim)
 ```
+
 Posterior probabilities of states (1 Present, 0 Absent).
 
 *Physalia physalis* may have reduced tentilla, which would indicate there was only one loss of tentilla at the branch leading to *Apolemia*.
@@ -515,6 +518,7 @@ nodelabels(pie=(describe.simmap(tentilla_sim2, plot=F)$ace) ,piecol=colors,cex=0
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(tentilla_sim2)
 ```
+
 Posterior probabilities of states (1 Present, 0 Absent).
 
 #####SIMMAP Presence of Nectophores
@@ -563,6 +567,7 @@ necto_types_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 nodelabels(pie=(describe.simmap(necto_types_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 ```
+
 Posterior probabilities of states (1 Present, 0 Absent).It is not clear whether or not the stem group of siphonophores had a pneumatophore.
 
 #####SIMMAP Habitat
