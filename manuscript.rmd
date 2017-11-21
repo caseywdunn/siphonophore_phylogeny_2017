@@ -353,6 +353,7 @@ Table 1 (at the end of file): Summary statistics for libraries.
 
 #Load data
 read.csv('character_coding/main_characters.csv', header = T, sep = ',') -> cdata
+cdata$Species = str_replace_all(cdata$Species, "sp ", "sp")
 rownames(cdata) = cdata$Species
 
 #Load tree
