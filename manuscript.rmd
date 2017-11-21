@@ -636,7 +636,7 @@ fancyTree(dpruned_tree,type="scattergram",X=cbind(depth_max, depth_min, depth_ra
 ```
 
 ####Distribution of sex across siphonophore taxa
-```{r ggtree_sex, echo=F, message=F, warning=F}
+```{r ggtree_sex, echo=F, message=F, warning=F, include=F}
 exp_tree = ultratree
 exp_tree$edge.length = 10*ultratree$edge.length
 dd = data.frame(taxa  = tree$tip.label, trait = sex[match(tree$tip.label, names(sex))])
@@ -646,7 +646,7 @@ p+theme(legend.position="right") + guides(color=guide_legend(title="Sex distribu
 ```
 
 ####Tentilla presence across siphonophore taxa
-```{r ggtree_tentillq, echo=F, message=F, warning=F}
+```{r ggtree_tentillq, echo=F, message=F, warning=F, include=F}
 exp_tree = ultratree
 exp_tree$edge.length = 10*ultratree$edge.length
 dd = data.frame(taxa  = tree$tip.label, trait = as.factor(tentilla[match(tree$tip.label, names(tentilla))]))
@@ -656,7 +656,7 @@ p+theme(legend.position="right") + guides(color=guide_legend(title="Tentilla", r
 ```
 
 ####Palpon presence across siphonophore taxa
-```{r ggtree_palpon, echo=F, message=F, warning=F}
+```{r ggtree_palpon, echo=F, message=F, warning=F, include=F}
 exp_tree = ultratree
 exp_tree$edge.length = 10*ultratree$edge.length
 dd = data.frame(taxa  = tree$tip.label, trait = as.factor(palpons[match(tree$tip.label, names(palpons))]))
