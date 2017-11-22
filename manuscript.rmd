@@ -1,6 +1,6 @@
 ---
 bibliography: manuscript.bib
-csl: systematic-biology.csl
+csl: molecular-phylogenetics-and-evolution.csl
 output:
   pdf_document:
     fig_caption: yes
