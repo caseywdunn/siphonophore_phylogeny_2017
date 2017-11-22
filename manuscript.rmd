@@ -494,7 +494,7 @@ f_cdata[match(tree$tip.label,rownames(f_cdata)),]
 
 Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features. 
 
-Figure 4. Siphonophore phylogeny showing the distribution of the main anatomical characters and the bathymetric distributions of the different species.
+![Figure 4. Siphonophore phylogeny showing the distribution of the main anatomical characters and the bathymetric distributions of the different species.](figures/Figure4.pdf)
 
 In our previous siphonophore phylogenetic analysis [@Dunn:2005dy] there were several characters left with equivocal evolutionary histories, due to unresolved relationships between physonects. With our current cladistic resolution, we were able to answer some of the questions left open:
 
@@ -502,7 +502,7 @@ In our previous siphonophore phylogenetic analysis [@Dunn:2005dy] there were sev
 
 [Citation needed] noticed for the first time that some siphonophores were monoeicous and others were dioiecious. Our analyses in 2005 reconstructed this character and found a great amount of phylogenetic conservatism, with an unambiguous resolution of the MRCA (most recent common ancestor) as dioecious, and the appearance of monoecy in several taxa and clades (including Calycophorae) within the polytomy. Figure 5a shows the evolution of sex distribution in siphonophores under the current better-resolved tree model, and it strongly indicates that monoecy in siphonophores from a dioecious ancestor occured twice, in the branch leading to Calycophorae and in the branch leading to Agalmatids (sensu lato). There is a small probability for an alternative scenario featuring a single gain of monoecy before the split of Calycophorae, with a subsequent derived shift back to dioecy in the *Marrus-Erenna* clade.
 
-Figure 5. Stochastic mapping reconstruction of the evolutionary history of A) palpon zooids, and B) distribution of sexual zooids on the colonies.
+![Figure 5. Stochastic mapping reconstruction of the evolutionary history of A) palpon zooids, and B) distribution of sexual zooids on the colonies.](figures/Figure5.pdf)
 
 ###The Evolution of Zooid Types
 
