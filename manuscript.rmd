@@ -515,7 +515,7 @@ Bracts are highly reduced zooids unique to siphonophores, but they are only pres
 
 The ancestral siphonophore certainly had a pneumatophore, since both Cystonects and most Codonophorans possess one (Figure 4). This unique zooid fills itself with gas, which helps the colony float and maintain its orientation in the water column. Recent evidence of neural arrangement in the pneumatophore of *Nanomia bijuga*  (Church, 2013) suggests it could also gather information on relative pressure changes (and thus depth changes), helping regulate geotaxis. Despite its multiple biological functions, it was lost in the Calycophorae and never gained again in that clade. Calycophorans rely on the ionic balance of their gelatinous nectophores and bracts to retain posture and neutral buoyancy.
 
-Palpons are modified mouthless gastrozooids used for digestion and circulation of the gastrovascular fluid. They were present in the MRCA of siphonophores (Figure 5b), retained in most species, but lost twice independently in the branches leading to *Bargmannia* and Calycophorae. These taxa might have found other avenues to effectively circulate nutrients across the colony.
+Palpons are modified mouthless gastrozooids used for digestion and circulation of the gastrovascular fluid. They were present in the MRCA of siphonophores (Figure 5b), retained in most species, but lost three times independently in the branches leading to *Bargmannia*, in Calycophorans, and in *Marrus claudanielis*. These taxa might have found other avenues to effectively circulate nutrients across the colony.
 
 ###The Gain and Loss of Tentilla
 
