@@ -601,7 +601,9 @@ binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
 ```{r phylosig_binaries, echo=F, message=F, warning=F}
  # make it xtable
 xtable_PS<-xtable(binaries_phylosig,auto=TRUE)
+align( xtable_PS ) <- c('l|',rep('p{0.5in}',ncol(binaries_phylosig)) )
 print(xtable_PS, scalebox=0.7)
+
 ```
 
 ### Software versions
