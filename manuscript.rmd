@@ -393,6 +393,7 @@ make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 ```
 
 ```{r sex, echo=F, message=F, warning=F, include=F}
+par(ask=F)
 #Simmap SEX
 #plotTree(ultratree, lwd = 4)
 #colors = c("black", "red")
@@ -400,7 +401,7 @@ make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 #sex_sim %>% plotSimmap(lwd = 4, add = T, colors=colors)
 #nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 #add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-pdf("density_sex_sim")
+pdf("figures_for_AI/density_sex_sim.pdf")
 densityMap(sex_sim)
 dev.off()
 ```
@@ -413,7 +414,7 @@ dev.off()
 # palpons_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 # nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-pdf("palpons_sim")
+pdf("figures_for_AI/palpons_sim.pdf")
 densityMap(palpons_sim)
 dev.off()
 ```
@@ -469,7 +470,7 @@ trimmed_SDdata$Species <- factor(trimmed_SDdata$Species, levels = sp_order)
 
 #ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
 
-pdf("trimmed_violinVars.pdf")
+pdf("figures_for_AI/trimmed_violinVars.pdf")
 ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
 dev.off()
 ```
@@ -481,7 +482,7 @@ f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(1,2,5:8,12)]
 rownames(f_cdata) = rownames(cdata)
 f_cdata = f_cdata[,c(4,7,1,3,6,2,5)]
 f_cdata[match(tree$tip.label,rownames(f_cdata)),]
-pdf("overview_ggheatmap_chars.pdf")
+pdf("figures_for_AI/overview_ggheatmap_chars.pdf")
 gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
 dev.off()
 ```
