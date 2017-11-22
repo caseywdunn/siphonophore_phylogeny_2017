@@ -551,36 +551,36 @@ Table 1 (at the end of file): Summary statistics for libraries.
 #####SIMMAP Presence of tentilla
 ```{r tentilla, echo=F, message=F,warning=F}
 #Simmap TENTILLA
-plotTree(ultratree, lwd = 4)
-colors = c("black", "red")
-names(colors) = c("Absent", "Present")
-tentilla_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
-nodelabels(pie=(describe.simmap(tentilla_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Absent", "Present")
+# tentilla_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(describe.simmap(tentilla_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(tentilla_sim)
 ```
 
 #####SIMMAP Presence of tentilla - *Physalia* corrected
 ```{r tentilla2, echo=F, message=F, warning=F}
 #Simmap TENTILLA
-plotTree(ultratree, lwd = 4)
-colors = c("black", "red")
-names(colors) = c("Absent", "Present")
-tentilla_sim2 %>% plotSimmap(lwd = 4, add = T,colors=colors)
-nodelabels(pie=(describe.simmap(tentilla_sim2, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Absent", "Present")
+# tentilla_sim2 %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(describe.simmap(tentilla_sim2, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(tentilla_sim2)
 ```
 
 #####SIMMAP Presence of Nectosome
 ```{r nectosome, echo=F, message=F, warning=F}
 #Simmap NECTOSOME
-plotTree(ultratree, lwd = 4)
-colors = c("black", "red")
-names(colors) = c("Absent", "Present")
-nectosome_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
-nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Absent", "Present")
+# nectosome_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(nectosome_sim)
 ```
 Posterior probabilities of states (1 Present, 0 Absent).
