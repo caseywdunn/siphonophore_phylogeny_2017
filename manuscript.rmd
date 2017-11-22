@@ -4,6 +4,8 @@ csl: systematic-biology.csl
 output:
   pdf_document:
     fig_caption: yes
+    includes:
+            in_header: mystyles.sty
 ---
 
 
@@ -543,15 +545,6 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 
 ## Supplementary Information
 
-```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
-
-xtable_summary<-xtable(summary_stats,auto=TRUE)
-align( xtable_summary ) <- c('l|',rep('p{0.5in}',ncol(summary_stats)) )
-print(xtable_summary, scalebox=0.7, include.rownames=FALSE)
-
-```
-Table 1 (at the end of file): Summary statistics for libraries.
-
 #####SIMMAP Presence of tentilla
 ```{r tentilla, echo=F, message=F,warning=F}
 #Simmap TENTILLA
@@ -599,17 +592,23 @@ plot(depthmap)
 ####Phylogenetic signal in the character data
 ```{r phylosig_binaries_declare, echo=F, message=F, warning=F, include=F}
 binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
+names(binaries_phylosig)<-c("K","PICvar obs","PICvar rnd","P-value","Z-score")
 ```
 
 #####Phylogenetic signal in Binary Traits
-```{r phylosig_binaries, echo=F, message=F, warning=F}
+```{r phylosig_binaries, results='asis',echo=F, message=F, warning=F}
  # make it xtable
 xtable_PS<-xtable(binaries_phylosig,auto=TRUE)
-align( xtable_PS ) <- c('l|',rep('p{0.5in}',ncol(binaries_phylosig)) )
-print(xtable_PS, scalebox=0.7)
+print(xtable_PS, scalebox=0.7,comment=F)
 
 ```
+```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
 
+xtable_summary<-xtable(summary_stats,auto=TRUE)
+align( xtable_summary ) <- c('l|',rep('p{0.5in}',ncol(summary_stats)) )
+print(xtable_summary, include.rownames=FALSE,comment=F, floating=FALSE, tabular.environment = "longtable")
+
+```
 ### Software versions
 
 This manuscript was computed on `r format( Sys.time(), "%a %b %d %X %Y" )` with the following R package versions.
