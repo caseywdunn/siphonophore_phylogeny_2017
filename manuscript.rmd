@@ -404,9 +404,9 @@ par(ask=F)
 #sex_sim %>% plotSimmap(lwd = 4, add = T, colors=colors)
 #nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 #add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-pdf("figures_for_AI/density_sex_sim.pdf")
-densityMap(sex_sim)
-dev.off()
+# pdf("figures_for_AI/density_sex_sim.pdf")
+# densityMap(sex_sim)
+# dev.off()
 ```
 
 ```{r palpons, echo=F, message=F, warning=F, include=F}
@@ -417,9 +417,9 @@ dev.off()
 # palpons_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 # nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-pdf("figures_for_AI/palpons_sim.pdf")
-densityMap(palpons_sim)
-dev.off()
+# pdf("figures_for_AI/palpons_sim.pdf")
+# densityMap(palpons_sim)
+# dev.off()
 ```
 
 ```{r vars_plot, echo=F, message=F, warning=F, include=F}
@@ -473,9 +473,9 @@ trimmed_SDdata$Species <- factor(trimmed_SDdata$Species, levels = sp_order)
 
 #ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
 
-pdf("figures_for_AI/trimmed_violinVars.pdf")
-ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
-dev.off()
+# pdf("figures_for_AI/trimmed_violinVars.pdf")
+# ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
+# dev.off()
 ```
 
 ```{r ggtree_bin_heatmap, echo=F, message=F, warning=F, include=F}
@@ -485,9 +485,9 @@ f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(1,2,5:8,12)]
 rownames(f_cdata) = rownames(cdata)
 f_cdata = f_cdata[,c(4,7,1,3,6,2,5)]
 f_cdata[match(tree$tip.label,rownames(f_cdata)),]
-pdf("figures_for_AI/overview_ggheatmap_chars.pdf")
-gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
-dev.off()
+# pdf("figures_for_AI/overview_ggheatmap_chars.pdf")
+# gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
+# dev.off()
 ```
 
 Siphonohores have evolved a fascinating diversity of morphological features, zooid types, life history traits, and habitats. Here we explore the evolutionary history of some of these features. 
