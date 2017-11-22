@@ -546,6 +546,20 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 
 ## Supplementary Information
 
+####£Agalma analysis
+
+![60% gene occupancy matrix for 41 species across 1,071 genes. Genes and species are sorted by sampling, the best sampled shown in the upper left.](supplementary_info/gene_occupancy.png)
+
+```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
+
+xtable_summary<-xtable(summary_stats)
+align( xtable_summary ) <- c('l|','p{0.8in}','p{0.3in}','p{0.3in}','p{0.5in}','p{0.3in}','p{0.3in}','p{0.4in}','p{0.5in}','p{0.5in}','p{0.5in}','p{0.5in}')
+print(xtable_summary,include.rownames=FALSE,comment=F, floating =FALSE, tabular.environment = "longtable")
+
+```
+The assembly summary statistics for all included taxa, showing mean insert size, and the percentage of reads kept after pipeline steps.
+
+
 #####SIMMAP Presence of tentilla
 ```{r tentilla, echo=F, message=F,warning=F}
 #Simmap TENTILLA
@@ -590,28 +604,19 @@ depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan
 plot(depthmap)
 ```
 
-####Phylogenetic signal in the character data
-```{r phylosig_binaries_declare, echo=F, message=F, warning=F, include=F}
-binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
-names(binaries_phylosig)<-c("K","PICvar obs","PICvar rnd","P-value","Z-score")
-```
-
 #####Phylogenetic signal in Binary Traits
 ```{r phylosig_binaries, results='asis',echo=F, message=F, warning=F}
  # make it xtable
+binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
+names(binaries_phylosig)<-c("K","PICvar obs","PICvar rnd","P-value","Z-score")
 xtable_PS<-xtable(binaries_phylosig,auto=TRUE)
 print(xtable_PS,comment=F)
 
 ```
-#####Library assembly summary
+Supplementary table x. Phylogenetic signal in the binary traits, including Blomberg's K statistic, the mean observed PIC variance, the random variance of PICs, p-value of the comparison of observed and random variance, and the z-score. 
 
-```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
 
-xtable_summary<-xtable(summary_stats)
-align( xtable_summary ) <- c('l|','p{0.8in}','p{0.3in}','p{0.3in}','p{0.5in}','p{0.3in}','p{0.3in}','p{0.4in}','p{0.5in}','p{0.5in}','p{0.5in}','p{0.5in}')
-print(xtable_summary,include.rownames=FALSE,comment=F, floating =FALSE, tabular.environment = "longtable")
 
-```
 ### Software versions
 
 This manuscript was computed on `r format( Sys.time(), "%a %b %d %X %Y" )` with the following R package versions.
