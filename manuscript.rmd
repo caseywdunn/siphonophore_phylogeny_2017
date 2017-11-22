@@ -83,7 +83,7 @@ output:
 	#summary statistics for libraries
 	
 	summary_stats = read.table("supplementary_info/Library_summary.csv", header=TRUE, sep=",")
-	names(summary_stats)<-c("Species","Mean insert size (bp)","Insert size standard deviation","Number of read pairs","Percent kept after rRNA removal","Percent kept after assembly","Adapter fails","Quality fails","Base Composition fails","Total assembled transcripts","Coding transcripts")
+	names(summary_stats)<-c("Species","Mean insert size (bp)","Insert size sd","# read pairs","% kept after rRNA removal","% kept after assembly","Adapter fails","Quality fails","Base Comp. fails","Total transcripts","Coding transcripts") 
 	specimen_data = read.csv("supplementary_info/Specimen_data.csv")
 names(specimen_data)<-c("New data","Species","ID","SRA Number", "Library ID", "Library type","Tissue","Sequencer", "Sequencing center", "Sample prep","Collected by","Collection date","Specimen id","Depth","Geo loc name","Lat Lon","Voucher Type","Voucher location","Voucher Cat No.","Collection mode")
 ```
@@ -600,14 +600,16 @@ names(binaries_phylosig)<-c("K","PICvar obs","PICvar rnd","P-value","Z-score")
 ```{r phylosig_binaries, results='asis',echo=F, message=F, warning=F}
  # make it xtable
 xtable_PS<-xtable(binaries_phylosig,auto=TRUE)
-print(xtable_PS, scalebox=0.7,comment=F)
+print(xtable_PS,comment=F)
 
 ```
+#####Library assembly summary
+
 ```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
 
-xtable_summary<-xtable(summary_stats,auto=TRUE)
-align( xtable_summary ) <- c('l|',rep('p{0.5in}',ncol(summary_stats)) )
-print(xtable_summary, include.rownames=FALSE,comment=F, floating=FALSE, tabular.environment = "longtable")
+xtable_summary<-xtable(summary_stats)
+align( xtable_summary ) <- c('l|','p{0.8in}','p{0.3in}','p{0.3in}','p{0.5in}','p{0.3in}','p{0.3in}','p{0.4in}','p{0.5in}','p{0.5in}','p{0.5in}','p{0.5in}')
+print(xtable_summary,include.rownames=FALSE,comment=F, floating =FALSE, tabular.environment = "longtable")
 
 ```
 ### Software versions
