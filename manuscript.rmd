@@ -245,7 +245,7 @@ print(xtable_specimen,comment=F, include.rownames=FALSE, scalebox='0.75')
 ```
 Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran `r length( input_files_phylobayes )` phylobayes chains, and visual inspection of the traces indicated that a burn in of `r burn_in` trees was sufficient for all runs. This left `r length( phylobayes_trees )` trees in the posterior. The phylobayes chains did not converge after a long CPU time, and uncertainty remains around the placement of *Erenna richardi*, and also *Nanomia bijuga*. Within the ML analysis, the placement of *Erenna richardi* is also unstable. Alternative topologies for these nodes are shown in figure 3 x. 
 
-```{r species_phylogram, echo=FALSE, comment=NA, warning=FALSE, fig.width=6.5, fig.height=7, fig.cap="Phylogram of siphonophore relationships. Node labels indicate bootstrap support percent, unnumbered nodes have 100% support. The image was rendered with ggtree [@Yu:2016fo]" }
+```{r species_phylogram, echo=FALSE, comment=NA, warning=FALSE }
 
 	siphonophora_node = ape::mrca( species_tree )[ "Physalia physalis", "Agalma elegans" ]
 	cystonectae_node = ape::mrca( species_tree )[ "Physalia physalis", "Rhizophysa filiformis" ]
@@ -286,9 +286,13 @@ Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran
 				label='"Outgroups"'
 			)
 
+	pdf("figures_for_AI/figure_3_raw.pdf")
 	flip( p_phylogram, euphysonectae_node, calycophora_node )
+	dev.off()
 
 ```
+
+![Phylogram of siphonophore relationships. Node labels indicate bootstrap support percent, unnumbered nodes have 100% support. The image was rendered with ggtree [@Yu:2016fo].](figures/Figure3.pdf)
 
 These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, Calycophorae is nested within the paraphyletic "Physonectae", and *Apolemia* is sister to all other Codonophora. In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this 1,071-gene transcriptome analysis. *Physophora gilmeri*, along with *Lychnagalma utricularia* (not included in previous phylogeny) are sister to the Agalmatidae *sensu stricto*. *Craseoa lathetica* and *Desmophyes haematogaster* are sister to *Hippopodius hippopus*. *Cordagalma cordiforme* was previously unresolved, while in this analysis *Cordagalma sp* falls within the Agalmatidae.  Additionally, there is strong support for *Bargmannia* as sister to all non-Apolemid codonophorans. 
 
