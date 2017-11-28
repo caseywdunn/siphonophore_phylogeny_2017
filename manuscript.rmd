@@ -228,7 +228,7 @@ Morphological character data used in trait mapping were obtained from the litera
 #### Hypothesis testing
 We used the Swofford-Olsen-Waddell-Hillis (SOWH) test [@swofford1996phylogenetic] to evaluate two hypotheses: (i) physonects are monophyletic [@totton1965synopsis]; (ii) monoecious species are monophyletic [@Dunn:2005dy]. As the sexual system of *Rudjakovia sp* is unclear, we carried out two tests of the monophyly of monoecy, one with *Rudjakovia sp* included as a monoecious species, and one without. We used SOWHAT [@doi:10.1093/sysbio/syv055] dev. version 0.39 (commit fd68ef5733c095c7000a4f92dc8c0daaddeec3b9) to carry out the SOWH tests in parallel with the default options and an initial sample size of 100 (source code can be found in the git repository). For each hypothesis we defined a topology with a single constrained node that was inconsistent with the most likely topology (figure 3 x). We used a threshold for significance of 0.05 and following the initial 100 samples, we evaluated the confidence interval around the p-value to determine if more samples were necessary.  
 
-## Results and Discussion
+## Results
 
 ### Species phylogeny and hypothesis testing
 
@@ -238,8 +238,9 @@ specimen_data <- read.csv("supplementary_info/Specimen_data.csv")
 names(specimen_data)<-c("New data","Species","ID","SRA Number", "Library ID", "Library type","Tissue","Sequencer", "Sequencing center", "Sample prep","Collected by","Collection date","Specimen id","Depth (m)","Geo loc name","Lat Lon","Voucher Type","Voucher location","Voucher Cat No.","Collection mode")
 
 specimen_data_reduced <- specimen_data[,c(1,2,4,14,16)]
+specimen_data_reduced$`New data`<-sub("^N"," ",specimen_data_reduced$`New data`)
 
-xtable_specimen<-xtable(specimen_data_reduced,auto=TRUE, caption="Table 1. A complete list of specimens collected for this work.")
+xtable_specimen<-xtable(specimen_data_reduced,auto=TRUE, caption="Table 1. A complete list of specimens collected for this work. New data indicated by Y, blank fields indicate that data are already published.")
 print(xtable_specimen,comment=F, include.rownames=FALSE, scalebox='0.75')
 
 ```
@@ -292,13 +293,19 @@ Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran
 
 ```
 
+<<<<<<< HEAD
+These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) (figure 3) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, Calycophorae is nested within the paraphyletic "Physonectae", and *Apolemia* is sister to all other Codonophora. In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this 1,071-gene transcriptome analysis. *Physophora gilmeri*, along with *Lychnagalma utricularia* (not included in previous phylogeny) are sister to the Agalmatidae *sensu stricto*. *Craseoa lathetica* and *Desmophyes haematogaster* are sister to *Hippopodius hippopus*. *Cordagalma cordiforme* was previously unresolved, while in this analysis *Cordagalma sp* falls within the Agalmatidae.  Additionally, there is strong support for *Bargmannia* as sister to all non-Apolemid codonophorans. 
+=======
 ![Phylogram of siphonophore relationships. Node labels indicate bootstrap support percent, unnumbered nodes have 100% support. The image was rendered with ggtree [@Yu:2016fo].](figures/Figure3.pdf)
 
 These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, Calycophorae is nested within the paraphyletic "Physonectae", and *Apolemia* is sister to all other Codonophora. In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this 1,071-gene transcriptome analysis. *Physophora gilmeri*, along with *Lychnagalma utricularia* (not included in previous phylogeny) are sister to the Agalmatidae *sensu stricto*. *Craseoa lathetica* and *Desmophyes haematogaster* are sister to *Hippopodius hippopus*. *Cordagalma cordiforme* was previously unresolved, while in this analysis *Cordagalma sp* falls within the Agalmatidae.  Additionally, there is strong support for *Bargmannia* as sister to all non-Apolemid codonophorans. 
+>>>>>>> ec50b43451aa4258d6e6745c74956912388d190c
 
 We tested the following three alternative phylogenetic hypotheses against the most likely tree topology: (i) physonect siphonophores are monophyletic, (ii) monoecious siphonophores (not including *Rudjakova sp.*) are monophyletic, and (iii) monoecious siphonophores (including *Rudjakova sp.*) are monophyletic (figure 3 xx). In all three cases the alternative hypothesis was rejected (p-value <0.01, confidence interval: <0.001 - 0.03).
 
 ## Character Evolution
+
+The morphological character matrix, and all the code used to generate the character mapping is available in the git repository and in the supplementary materials. A  number of traits were mapped to branches on the phylogeny, including: the presence/absence of palpons, tentilla, bracts, pneumatophores, nectosome, and eudoxia, monoecy vs dioecy, the orientation of nectosome relative to siphosome, as well as the median vertical distribution (fig 4, 5, supplementary figures 2-5).  
 
 ```{r char_evo_setup, include=F, echo=F}
 #Load data
@@ -498,7 +505,12 @@ f_cdata[match(tree$tip.label,rownames(f_cdata)),]
 # dev.off()
 ```
 
- 
+##Discussion
+
+###Siphonophore Phylogeny
+
+The strong phylogenetic signal in the characters traditinally used for taxonomic diagnostics is a positive indicator of the applicability and unambiguity of these characters.
+
 
 ![Siphonophore phylogeny showing the distribution of the main anatomical characters and the bathymetric distributions of the different species.](figures/Figure4.pdf)
 
@@ -508,7 +520,7 @@ In our previous siphonophore phylogenetic analysis [@Dunn:2005dy] there were sev
 
 [Citation needed] noticed for the first time that some siphonophores were monoeicous and others were dioiecious. Our analyses in 2005 reconstructed this character and found a great amount of phylogenetic conservatism, with an unambiguous resolution of the MRCA (most recent common ancestor) as dioecious, and the appearance of monoecy in several taxa and clades (including Calycophorae) within the polytomy. Figure 5a shows the evolution of sex distribution in siphonophores under the current better-resolved tree model, and it strongly indicates that monoecy in siphonophores from a dioecious ancestor occured twice, in the branch leading to Calycophorae and in the branch leading to Agalmatids (sensu lato). There is a small probability for an alternative scenario featuring a single gain of monoecy before the split of Calycophorae, with a subsequent derived shift back to dioecy in the *Marrus-Erenna* clade.
 
-![Figure 5. Stochastic mapping reconstruction of the evolutionary history of A) palpon zooids, and B) distribution of sexual zooids on the colonies.](figures/Figure5.pdf)
+![Stochastic mapping reconstruction of the evolutionary history of A) palpon zooids, and B) distribution of sexual zooids on the colonies.](figures/Figure5.pdf)
 
 ###The Evolution of Zooid Types
 
@@ -538,11 +550,6 @@ Siphonophore tentilla present an astounding diversity of sizes, shapes, colors, 
 
 Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (ref , Figure 4). While there are some pleustonic (*Physalia*) and benthic (*Rhodaliidae*) siphonophores, the phylogeny suggests the siphonophore MRCA was planktonic, as most extant taxa are. Some interesting questions arise from these facts, including 1) what was the bathymetric niche of the siphonophore MRCA, and 2) how did siphonophore's vertical habitat use of the water columns evolve along the phylogeny. Our results indicate a mesopelagic MRCA, with several convergent transition events to epipelagic and bathypelagic waters. There was only a single transition to benthic lifestyle on the stem of *Rhodaliidae*.
 
-##Discussion
-
-
-The strong phylogenetic signal in the characters traditinally used for taxonomic diagnostics is a positive indicator of the applicability and unambiguity of these characters.
-
 ## Conclusions
 
 
@@ -551,26 +558,30 @@ The strong phylogenetic signal in the characters traditinally used for taxonomic
 This work was supported by the National Science Foundation (DEB-1256695 and the Waterman Award). Sequencing at the Brown Genomics Core facility was supported in part by NIH P30RR031153 and NSF EPSCoR EPS-1004057. Data transfer was supported by NSF RII-C2 EPS-1005789. Analyses were conducted with computational resources and services at the Center for Computation and Visualization at Brown University, supported in part by the NSF EPSCoR EPS-1004057 and the State of Rhode Island. We also thank the MBARI crews and ROV pilots for collection of the specimens.
 
 ## Supplementary Information
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\makeatletter 
+\renewcommand{\thefigure}{S\@arabic\c@figure}
+\renewcommand{\thetable}{S\@arabic\c@table}
+\makeatother
 
 ####Agalma analysis
 
-![Supplementary Figure 1. 60% gene occupancy matrix for 41 species across 1,071 genes. Genes and species are sorted by sampling, the best sampled shown in the upper left.](supplementary_info/gene_occupancy.png)
+![60% gene occupancy matrix for 41 species across 1,071 genes. Genes and species are sorted by sampling, the best sampled shown in the upper left.](supplementary_info/gene_occupancy.png)
 
 ```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
 	summary_stats = read.table("supplementary_info/Library_summary.csv", header=TRUE, sep=",")
 	names(summary_stats)<-c("Species","Mean insert size (bp)","Insert size sd","# read pairs","% kept after rRNA removal","% kept after assembly","Adapter fails","Quality fails","Base Comp. fails","Total transcripts","Coding transcripts") 
 
 
-xtable_summary<-xtable(summary_stats, caption="Supplementary table 1.The assembly summary statistics for all included taxa, showing mean insert size, and the percentage of reads kept after pipeline steps.")
-align( xtable_summary ) <- c('l|','p{0.8in}','p{0.3in}','p{0.3in}','p{0.5in}','p{0.3in}','p{0.3in}','p{0.4in}','p{0.5in}','p{0.5in}','p{0.5in}','p{0.5in}')
-print(xtable_summary,include.rownames=FALSE,comment=F, floating =FALSE, tabular.environment = "longtable")
+#xtable_summary<-xtable(summary_stats, caption="Supplementary table 1.The assembly summary statistics for all included taxa, showing mean insert size, and the percentage of reads kept after pipeline steps.")
+#align( xtable_summary ) <- c('l|','p{0.8in}','p{0.3in}','p{0.3in}','p{0.5in}','p{0.3in}','p{0.3in}','p{0.4in}','p{0.5in}','p{0.5in}','p{0.5in}','p{0.5in}')
+#print(xtable_summary,include.rownames=FALSE,comment=F, floating =FALSE, tabular.environment = "longtable")
 
 ```
 
-
-
-#####SIMMAP Presence of tentilla
-```{r tentilla, echo=F, message=F,warning=F}
+#####Stochastic Character maps
+```{r tentilla, echo=F, message=F,warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla"}
 #Simmap TENTILLA
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -581,8 +592,7 @@ print(xtable_summary,include.rownames=FALSE,comment=F, floating =FALSE, tabular.
 densityMap(tentilla_sim)
 ```
 
-#####SIMMAP Presence of tentilla - *Physalia* corrected
-```{r tentilla2, echo=F, message=F, warning=F}
+```{r tentilla2, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with Physalia included"}
 #Simmap TENTILLA
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -593,8 +603,8 @@ densityMap(tentilla_sim)
 densityMap(tentilla_sim2)
 ```
 
-#####SIMMAP Presence of Nectosome
-```{r nectosome, echo=F, message=F, warning=F}
+
+```{r nectosome, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
 #Simmap NECTOSOME
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -604,21 +614,18 @@ densityMap(tentilla_sim2)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(nectosome_sim)
 ```
-Posterior probabilities of states (1 Present, 0 Absent).
 
-#####Median depth reconstruction:
-```{r median_cont, echo=F, message=F, warning=F}
+```{r median_cont, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of median depth of species"}
 depth_value = depth_median
 depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap)
 ```
 
-#####Phylogenetic signal in Binary Traits
 ```{r phylosig_binaries, results='asis',echo=F, message=F, warning=F}
  # make it xtable
 binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
 names(binaries_phylosig)<-c("K","PICvar obs","PICvar rnd","P-value","Z-score")
-xtable_PS<-xtable(binaries_phylosig,auto=TRUE, caption="Supplementary table 3. Phylogenetic signal in the binary traits, including Blomberg's K statistic, the mean observed PIC variance, the random variance of PICs, p-value of the comparison of observed and random variance, and the z-score. ")
+xtable_PS<-xtable(binaries_phylosig,auto=TRUE, caption="Phylogenetic signal in the binary traits, including Blomberg's K statistic, the mean observed PIC variance, the random variance of PICs, p-value of the comparison of observed and random variance, and the z-score. ")
 print(xtable_PS,comment=F)
 
 ```
