@@ -292,14 +292,11 @@ Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran
 	dev.off()
 
 ```
-
-<<<<<<< HEAD
 These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) (figure 3) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, Calycophorae is nested within the paraphyletic "Physonectae", and *Apolemia* is sister to all other Codonophora. In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this 1,071-gene transcriptome analysis. *Physophora gilmeri*, along with *Lychnagalma utricularia* (not included in previous phylogeny) are sister to the Agalmatidae *sensu stricto*. *Craseoa lathetica* and *Desmophyes haematogaster* are sister to *Hippopodius hippopus*. *Cordagalma cordiforme* was previously unresolved, while in this analysis *Cordagalma sp* falls within the Agalmatidae.  Additionally, there is strong support for *Bargmannia* as sister to all non-Apolemid codonophorans. 
-=======
+
 ![Phylogram of siphonophore relationships. Node labels indicate bootstrap support percent, unnumbered nodes have 100% support. The image was rendered with ggtree [@Yu:2016fo].](figures/Figure3.pdf)
 
 These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, Calycophorae is nested within the paraphyletic "Physonectae", and *Apolemia* is sister to all other Codonophora. In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this 1,071-gene transcriptome analysis. *Physophora gilmeri*, along with *Lychnagalma utricularia* (not included in previous phylogeny) are sister to the Agalmatidae *sensu stricto*. *Craseoa lathetica* and *Desmophyes haematogaster* are sister to *Hippopodius hippopus*. *Cordagalma cordiforme* was previously unresolved, while in this analysis *Cordagalma sp* falls within the Agalmatidae.  Additionally, there is strong support for *Bargmannia* as sister to all non-Apolemid codonophorans. 
->>>>>>> ec50b43451aa4258d6e6745c74956912388d190c
 
 We tested the following three alternative phylogenetic hypotheses against the most likely tree topology: (i) physonect siphonophores are monophyletic, (ii) monoecious siphonophores (not including *Rudjakova sp.*) are monophyletic, and (iii) monoecious siphonophores (including *Rudjakova sp.*) are monophyletic (figure 3 xx). In all three cases the alternative hypothesis was rejected (p-value <0.01, confidence interval: <0.001 - 0.03).
 
