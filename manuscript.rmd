@@ -228,10 +228,9 @@ Morphological character data used in trait mapping were obtained from the litera
 #### Hypothesis testing
 We used the Swofford-Olsen-Waddell-Hillis (SOWH) test [@swofford1996phylogenetic] to evaluate two hypotheses: (i) physonects are monophyletic [@totton1965synopsis]; (ii) monoecious species are monophyletic [@Dunn:2005dy]. As the sexual system of *Rudjakovia sp* is unclear, we carried out two tests of the monophyly of monoecy, one with *Rudjakovia sp* included as a monoecious species, and one without. We used SOWHAT [@doi:10.1093/sysbio/syv055] dev. version 0.39 (commit fd68ef5733c095c7000a4f92dc8c0daaddeec3b9) to carry out the SOWH tests in parallel with the default options and an initial sample size of 100 (source code can be found in the git repository). For each hypothesis we defined a topology with a single constrained node that was inconsistent with the most likely topology (figure 3 x). We used a threshold for significance of 0.05 and following the initial 100 samples, we evaluated the confidence interval around the p-value to determine if more samples were necessary.  
 
-## Results
+## Results and Discussion
 
 ### Species phylogeny and hypothesis testing
-
 Specimens were collected in the eastern Pacific Ocean, Mediterranean, and the Gulf of California (table 1). All sequence data have been deposited in the sequence read archive (SRA). The analyses presented here consider 34 siphonophore species and 9 outgroup species. This includes new data for 30 species. Summary statistics for expression libaries are given in supplementary table x. In the final analyses, we sampled 1,071 genes to generate a supermatrix with 60% occupancy and a length of 378,468 amino acids (gene occupancy matrix - supplementary figure 1). 
 ```{r specimen_summary, results='asis', echo=FALSE, comment=NA, warning=FALSE}
 specimen_data <- read.csv("supplementary_info/Specimen_data.csv")
@@ -292,11 +291,11 @@ Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran
 	dev.off()
 
 ```
-These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) (figure 3) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, Calycophorae is nested within the paraphyletic "Physonectae", and *Apolemia* is sister to all other Codonophora. In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this 1,071-gene transcriptome analysis. *Physophora gilmeri*, along with *Lychnagalma utricularia* (not included in previous phylogeny) are sister to the Agalmatidae *sensu stricto*. *Craseoa lathetica* and *Desmophyes haematogaster* are sister to *Hippopodius hippopus*. *Cordagalma cordiforme* was previously unresolved, while in this analysis *Cordagalma sp* falls within the Agalmatidae.  Additionally, there is strong support for *Bargmannia* as sister to all non-Apolemid codonophorans. 
+These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) (figure 3) [@Dunn:2005dy]. There is strong support for the Cystonectae as sister to all other siphonophores, the Codonophora. We also find strong support for Calycophorae nested within the paraphyletic "Physonectae", and for the Apolemidae as sister to all other Codonophora. Multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this 1,071-gene transcriptome analysis. There is strong support for the Pyrostephidae as sister to all non-Apolemid codonophorans. Within the clade that is sister to the Pyrostephidae, we find two main clades, the Calycophorae and a clade we call the Euphysonectae, which includes the remaining non-Apolemid, non-Pyrostephid historically recognized Physonectae. Given the relatively shallow sampling of this analysis, we define the Euphysonectae as the clade consisting of *Agalma elegans* and all taxa that are more closely related to it than to the Calycophorae.  
+
+In this phylogeny, *Physophora gilmeri* along with *Lychnagalma utricularia* (both not included in previous phylogeny) are sister to the Agalmatidae *sensu stricto*, a clade restricted to *Agalma*, the Athorybiidae,*Halistemma* and *Nanomia* [@Dunn:2005dy]. In the rDNA study, *Physophora hydrostatica* was sister to the Forskaliidae with low support. *Cordagalma cordiforme* (= *Cordagalma ordinatum* [@pugh2016synopsis]) was previously unresolved, while in this analysis *Cordagalma* sp is in a clade with *Forskalia asymmetrica*, falling outside of the Agalmatidae *sensu stricto*. *Cordagalma* has traditionally been placed within the Agalmatidae *sensu lato* [@totton1965synopsis], although the Agalmatidae is considered to be a catch-all family in need of revision [@pugh2006taxonomic,@pugh1998re, @Dunn:2005dy]. Within the calycophorans, taxon sampling is shallower, however there is broad agreement with the previous analysis. *Craseoa lathetica* and *Desmophyes haematogaster* are sister to *Hippopodius hippopus*
 
 ![Phylogram of siphonophore relationships. Node labels indicate bootstrap support percent, unnumbered nodes have 100% support. The image was rendered with ggtree [@Yu:2016fo].](figures/Figure3.pdf)
-
-These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, Calycophorae is nested within the paraphyletic "Physonectae", and *Apolemia* is sister to all other Codonophora. In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this 1,071-gene transcriptome analysis. *Physophora gilmeri*, along with *Lychnagalma utricularia* (not included in previous phylogeny) are sister to the Agalmatidae *sensu stricto*. *Craseoa lathetica* and *Desmophyes haematogaster* are sister to *Hippopodius hippopus*. *Cordagalma cordiforme* was previously unresolved, while in this analysis *Cordagalma sp* falls within the Agalmatidae.  Additionally, there is strong support for *Bargmannia* as sister to all non-Apolemid codonophorans. 
 
 We tested the following three alternative phylogenetic hypotheses against the most likely tree topology: (i) physonect siphonophores are monophyletic, (ii) monoecious siphonophores (not including *Rudjakova sp.*) are monophyletic, and (iii) monoecious siphonophores (including *Rudjakova sp.*) are monophyletic (figure 3 xx). In all three cases the alternative hypothesis was rejected (p-value <0.01, confidence interval: <0.001 - 0.03).
 
@@ -502,18 +501,11 @@ f_cdata[match(tree$tip.label,rownames(f_cdata)),]
 # dev.off()
 ```
 
-##Discussion
-
-###Siphonophore Phylogeny
-
-The strong phylogenetic signal in the characters traditinally used for taxonomic diagnostics is a positive indicator of the applicability and unambiguity of these characters.
-
-
 ![Siphonophore phylogeny showing the distribution of the main anatomical characters and the bathymetric distributions of the different species.](figures/Figure4.pdf)
 
-In our previous siphonophore phylogenetic analysis [@Dunn:2005dy] there were several characters left with equivocal evolutionary histories, due to unresolved relationships between physonects. With our current cladistic resolution, we were able to answer some of the questions left open:
-
 ###Evolution of Monoecy
+
+The strong phylogenetic signal in the characters traditinally used for taxonomic diagnostics is a positive indicator of the applicability and unambiguity of these characters.
 
 [Citation needed] noticed for the first time that some siphonophores were monoeicous and others were dioiecious. Our analyses in 2005 reconstructed this character and found a great amount of phylogenetic conservatism, with an unambiguous resolution of the MRCA (most recent common ancestor) as dioecious, and the appearance of monoecy in several taxa and clades (including Calycophorae) within the polytomy. Figure 5a shows the evolution of sex distribution in siphonophores under the current better-resolved tree model, and it strongly indicates that monoecy in siphonophores from a dioecious ancestor occured twice, in the branch leading to Calycophorae and in the branch leading to Agalmatids (sensu lato). There is a small probability for an alternative scenario featuring a single gain of monoecy before the split of Calycophorae, with a subsequent derived shift back to dioecy in the *Marrus-Erenna* clade.
 
