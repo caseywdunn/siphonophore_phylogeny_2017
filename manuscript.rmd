@@ -509,7 +509,7 @@ The strong phylogenetic signal in the characters traditinally used for taxonomic
 
 [Citation needed] noticed for the first time that some siphonophores were monoeicous and others were dioiecious. Our analyses in 2005 reconstructed this character and found a great amount of phylogenetic conservatism, with an unambiguous resolution of the MRCA (most recent common ancestor) as dioecious, and the appearance of monoecy in several taxa and clades (including Calycophorae) within the polytomy. Figure 5a shows the evolution of sex distribution in siphonophores under the current better-resolved tree model, and it strongly indicates that monoecy in siphonophores from a dioecious ancestor occured twice, in the branch leading to Calycophorae and in the branch leading to Agalmatids (sensu lato). There is a small probability for an alternative scenario featuring a single gain of monoecy before the split of Calycophorae, with a subsequent derived shift back to dioecy in the *Marrus-Erenna* clade.
 
-![Stochastic mapping reconstruction of the evolutionary history of A) palpon zooids, and B) distribution of sexual zooids on the colonies. The color gradients show the reconstructed probability estimate of the discrete character states along the branches.](figures/Figure5.pdf)
+![Stochastic mapping reconstruction of the evolutionary history of A) palpon zooids, and B) distribution of sexual zooids on the colonies. The color gradients show the reconstructed probability estimate of the discrete character states along the branches. Intermediate values reflect uncertainty.](figures/Figure5.pdf)
 
 ###The Evolution of Zooid Types
 
