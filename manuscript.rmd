@@ -284,10 +284,11 @@ Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran
 				offset=1,
 				label='"Outgroups"'
 			)
-
-	pdf("figures_for_AI/figure_3_raw.pdf")
-	flip( p_phylogram, euphysonectae_node, calycophora_node )
-	dev.off()
+#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
+	
+#	pdf("figures_for_AI/figure_3_raw.pdf")
+#	flip( p_phylogram, euphysonectae_node, calycophora_node )
+#	dev.off()
 
 ```
 These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) (figure 3) [@Dunn:2005dy]. There is strong support for the Cystonectae as sister to all other siphonophores, the Codonophora. We also find strong support for Calycophorae nested within the paraphyletic "Physonectae", and for the Apolemidae as sister to all other codonophorans. Multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this 1,071-gene transcriptome analysis. There is strong support for the Pyrostephidae as sister to all other non-Apolemid codonophorans. Within the clade that is sister to the Pyrostephidae, we find two main clades, the Calycophorae and a clade we call the Euphysonectae, which includes the remaining non-Apolemid, non-Pyrostephid "Physonectae". Given the relatively shallow sampling of this analysis, we define the Euphysonectae as the clade consisting of *Agalma elegans* and all taxa that are more closely related to it than to the Calycophorae.  
@@ -388,6 +389,9 @@ make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
 
 ```{r sex, echo=F, message=F, warning=F, include=F}
 par(ask=F)
+
+#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
+
 #Simmap SEX
 #plotTree(ultratree, lwd = 4)
 #colors = c("black", "red")
@@ -402,6 +406,9 @@ par(ask=F)
 
 ```{r palpons, echo=F, message=F, warning=F, include=F}
 #Simmap PALPONS
+
+#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
+
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
 # names(colors) = c("Absent", "Present")
@@ -462,6 +469,9 @@ trimmed_SDdata$Species = as.character(trimmed_SDdata$Species)
 trimmed_SDdata = trimmed_SDdata[which(!is.na(trimmed_SDdata$Species)),]
 trimmed_SDdata$Species <- factor(trimmed_SDdata$Species, levels = sp_order)
 
+#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
+
+
 #ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
 
 # pdf("figures_for_AI/trimmed_violinVars.pdf")
@@ -476,6 +486,9 @@ f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(1,2,5:9)]
 rownames(f_cdata) = rownames(cdata)
 f_cdata = f_cdata[,c(4,7,1,3,6,2,5)]
 f_cdata[match(tree$tip.label,rownames(f_cdata)),]
+
+#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
+
 # pdf("figures_for_AI/overview_ggheatmap_chars.pdf")
 # gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
 # dev.off()
@@ -487,17 +500,17 @@ Siphonophore colonies are either monoecious (male and female gonophores are on t
 
 ###The Evolution of Zooid Types
 
-One of the most striking aspects of siphonophore biology is their diversity of unique zooid types [@Beklemishev1969;@cartwright2010character]. For example, the siphonophore genus Forskalia has 6 basic zooid types (pneumatophore, nectophore, gastrozooid, palpon, bract, and gonophore), and a total of 10 counting subtypes (4 types of bract, male & female gonophores)(CITATION). Diphyomorphs have more than 1 type of propulsive nectophore, while cystonects have none. Here we reconstruct the evolutionary origins of the different zooid types on the present transcriptome tree (Fig. 4).
+One of the most striking aspects of siphonophore biology is their diversity of unique zooid types [@Beklemishev1969;@cartwright2010character]. For example, the siphonophore genus Forskalia has 6 basic zooid types (pneumatophore, nectophore, gastrozooid, palpon, bract, and gonophore), and a total of 10 counting subtypes (4 types of bract, male & female gonophores)[@pugh2003revision]. Diphyomorphs have more than 1 type of propulsive nectophore, while cystonects have none. Here we reconstruct the evolutionary origins of the different zooid types on the present transcriptome tree (Fig. 4).
 
-Nectophores are retained modified medusae that codonophorans use for coordinated colony-level swimming. The nectosome is the region of the colony that develops from the nectosomal growth zone (Fig. 2B). Unlike the siphosomal growth zone, the nectosomal growth zone does not bud gastrozooids, but nectophores (and in the case of *Apolemia*, also palpons). Siphonophore nectophores are exclusively found on the nectosome -with the exception of  *Physalia physalis* (which has no nectosome, and grows small nectophores near the gonodendra (CITATION)). It is possible that the common ancestor of siphonophores had a nectosome, which has lost on the branch leading to cystonects. We cannot exclude with certainty the alternative hypothesis of a nectosome-less ancestor followed by a gain of the nectosome in the branch leading to Codonophora. It is suggested that the nectosome arose as a duplication of the siphosome, followed by functional specialization in propelling the colony [@dunn2006evolution]. The nectosome has been lost within Codonophora in the genus *Athorybia*.
+Nectophores are retained modified medusae that codonophorans use for coordinated colony-level swimming. The nectosome is the region of the colony that develops from the nectosomal growth zone (Fig. 2B). Unlike the siphosomal growth zone, the nectosomal growth zone does not bud gastrozooids, but nectophores (and in the case of *Apolemia*, also palpons). Siphonophore nectophores are exclusively found on the nectosome -with the exception of  *Physalia physalis* (which has no nectosome, and grows small nectophores near the gonodendra [@Totton1960]. It is possible that the common ancestor of siphonophores had a nectosome, which has lost on the branch leading to cystonects. We cannot exclude with certainty the alternative hypothesis of a nectosome-less ancestor followed by a gain of the nectosome in the branch leading to Codonophora. It is suggested that the nectosome arose as a duplication of the siphosome, followed by functional specialization in propelling the colony [@dunn2006evolution]. The nectosome has been lost within Codonophora in the genus *Athorybia*.
 
 ![Siphonophore phylogeny showing the distribution of the main anatomical characters and the bathymetric distributions of the different species.](figures/Figure4.pdf)
 
 Following the colony development orientation framework [@haddock_dunn_pugh_2005], the nectosome can be located in a dorsal or a ventral position. Our ancestral reconstructions for this character (Fig. S4) show that a ventrally-oriented nectosome was the ancestral form in siphonophores, and that a dorsal nectosome has evolved twice independently, in the braches leading to the Agalmatidae *sensu stricto* and the branch leading to the *Bargmannia* species.
 
-Bracts are highly reduced zooids unique to siphonophores, but they are only present in Codonophora. As with the nectosome, we have ambiguity when determining whether the common ancestor of siphonophores had bracts or not. The common ancestor of Codonophora had only one bract subtype, which was lost in Hippopodidae, *Physophora hydrostatica* (however, they are present in its sister species, *P. gilmeri* included in the present phylogeny), and in *Gymnopraia lapislazula* (not included in present phylogeny). Bracts are functional for protection of the delicate zooids and to help maintain neutral buoyancy (CITATION). Some calycophorans are able to actively exclude sulphate ions in their bracts to adjust their buoyancy along the colony (Bidigare & Biggs, 1980).
+Bracts are highly reduced zooids unique to siphonophores, but they are only present in Codonophora. As with the nectosome, we have ambiguity when determining whether the common ancestor of siphonophores had bracts or not. The common ancestor of Codonophora had only one bract subtype, which was lost in Hippopodidae, *Physophora hydrostatica* (however, they are present in its sister species, *P. gilmeri* included in the present phylogeny), and in *Gymnopraia lapislazula* (not included in present phylogeny). Bracts are functional for protection of the delicate zooids and to help maintain neutral buoyancy [@jacobs1937beobachtungen]. Some calycophorans are able to actively exclude sulphate ions in their bracts to adjust their buoyancy along the colony [@bidigare1980role].
 
-The ancestral siphonophore had a pneumatophore (Fig. 2B), since both cystonects and most codonophorans possess one (Fig. 4). It is not considered a zooid, as it is not formed by budding but by invagination at the aboral end of the planula during early development [@garstang1946morphology; @leloup1935siphonophores; @carre1969etude]. The pneumatophore is a gas filled float located at the anterior end of the colony, which helps the colony float and maintain its orientation in the water column (CITATION).  Recent evidence of neural arrangement in the pneumatophore of *Nanomia bijuga*  suggests it could also gather information on relative pressure changes (and thus depth changes), helping regulate geotaxis [@church2015histology]. The pneumatophore was lost in Calycophorae and never gained again in that clade. Calycophorans rely on the ionic balance of their gelatinous nectophores and bracts to retain posture and neutral buoyancy [@mackie1974locomotion].
+The ancestral siphonophore had a pneumatophore (Fig. 2B), since both cystonects and most codonophorans possess one (Fig. 4). It is not considered a zooid, as it is not formed by budding but by invagination at the aboral end of the planula during early development [@garstang1946morphology; @leloup1935siphonophores; @carre1969etude]. The pneumatophore is a gas filled float located at the anterior end of the colony, which helps the colony float and maintain its orientation in the water column [@church2015histology;@mackie1974locomotion].  Recent evidence of neural arrangement in the pneumatophore of *Nanomia bijuga*  suggests it could also gather information on relative pressure changes (and thus depth changes), helping regulate geotaxis [@church2015histology]. The pneumatophore was lost in Calycophorae and never gained again in that clade. Calycophorans rely on the ionic balance of their gelatinous nectophores and bracts to retain posture and neutral buoyancy [@mackie1974locomotion].
 
 Palpons are modified mouthless gastrozooids used for digestion and circulation of the gastrovascular fluid [@mackie1987siphonophore]. They were present in the common ancestor of siphonophores (Fig. 5b), retained in most species, but lost three times independently in the branches leading to *Pyrostephidae* (represented here by the genera *Bargmannia* and *Rudjakovia*), in calycophorans, and in *Marrus claudanielis*. These taxa might have found other avenues to effectively circulate nutrients across the colony.
 
@@ -507,14 +520,14 @@ Palpons are modified mouthless gastrozooids used for digestion and circulation o
 
 The most complex nematocyst batteries of Cnidaria can arguably be found among the siphonophores, hanging in regularly spaced tentacle side branches called tentilla [fig 1A]. Most hydrozoans, including the clade that contains siphonophores, bear simple tentacles (tentacles with no side branches). It is still an open question whether the common ancestor of Siphonophora had simple or branched tentacles. The only siphonophores genera regarded as lacking tentilla are *Physalia physalis* and *Apolemia* spp., and *Bathyphysa conifera*. Since *B. conifera* is the only member of the *Rhizophysidae* (and of the *Bathyphysa* genus) lacking tentilla, we can safely assume this is a case of secondary loss. When we reconstruct the evolution of this character on the current phylogeny, 70% of simulations support an common ancestor bearing tentilla, with two independent losses leading to *Physalia* and *Apolemia* (Fig. S2). However, this leaves a 30% support for a simple-tentacled common ancestor followed by 2 independent gains of tentilla in the branches leading to *Rhizophysidae* and *(Bargmannia, Diphyes)*.
 
-A key issue here is how we code for absence of tentilla, especially for the case of *Physalia physalis*. The tentacles of this species, when uncoiled, show very prominent, evenly spaced, bulging buttons which contain on their ectoderm all active and functionally arranged nematocysts used by the organism for prey capture (CITATION). Siphonophore tentilla are complete diverticular brachings of the tentacle ectoderm, mesoglea, and gastrovascular canal (lined by endoderm). Hessinger & Ford 1988 (in the Biology of Nematocysts) described *Physalia*'s buttons as enclosing individual fluid-filled chambers connected by narrow channels to the tentacular canal, lined by endoderm. This suggests they are not just ectodermal swellings, but probably  reduced tentilla. When we code *Physalia physalis* as tentilla bearing, the results for the character reconstruction lead to a more robust support for a tentilla-bearing common ancestor followed by a single loss of tentilla in the branch leading to *Apolemiidae* (Fig. S3).
+How we define absence of tentilla, especially for *Physalia physalis*, is also important. The tentacles of this species, when uncoiled, show very prominent, evenly spaced, bulging buttons which contain on their ectoderm all active and functionally arranged nematocysts used by the organism for prey capture [@Totton1960;@BARDI2007]. Siphonophore tentilla are complete diverticular brachings of the tentacle ectoderm, mesoglea, and gastrovascular canal (lined by endoderm).  *Physalia*'s buttons enclose individual fluid-filled chambers connected by narrow channels to the tentacular canal, lined by endoderm [@Hessinger1988]. This suggests they are not just ectodermal swellings, but probably  reduced tentilla. When we define *Physalia physalis* as tentilla bearing, the results for the character reconstruction lead to a more robust support for a tentilla-bearing common ancestor followed by a single loss of tentilla in the branch leading to *Apolemiidae* (Fig. S3).
 
 ###The Evolution of Vertical Habitat Use
 
-Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (Fig. 4, S5) [@mapstone2014global]. However, the depth distribution of siphonophore populations is not always static. Many species are strong vertical migrators, and some species such as *Chuniphyes multidentata* have exhbited synchronous diel migration patterns [@pugh1984diel]. While there are some pleustonic (*Physalia*) and benthic (*Rhodaliidae*) siphonophores, the phylogeny indicates that the siphonophore common ancestor was probably planktonic, as most extant siphonophore taxa are. Some siphonophore species (such as *Bargmannia lata*) have been observed at abyssopelagic depths near 4000m. An interesting question that arises from these facts is what was the evolutionary history of siphonophore vertical habitat use of the water columns. Using the present phylogeny, we reconstructed the median depth changes along the phylogeny under a Brownian Motion model (Fig. S5). This model indicates a mesopelagic common ancestor, with several independent transition events to epipelagic (light blue) and bathypelagic (dark blue) waters. This reconstruction only included species recorded using an ROV, thus it excludes many other independent colonizations of the epipelagic habitat. Species such as *Hippopodius hippopus*, *Athorybia rosacea*, *Diphyes dispar*, and *Chelophyes appendiculata* are often encountered blue water diving less than 20m from the surface (Fig. 4). There was only a single transition to benthic lifestyle on the branch of *Rhodaliidae*, and a single transition to a pleustonic lifestyle on the branch of *Physalia physalis*. Further research should address whether these transitions are following evolutionary changes in feeding habits and prey availability.
+Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (Fig. 4, S5) [@mapstone2014global]. However, the depth distribution of siphonophore populations is not always static. Many species are strong vertical migrators, and some species such as *Chuniphyes multidentata* have exhibited synchronous diel migration patterns [@pugh1984diel]. The phylogeny indicates that the siphonophore common ancestor was probably planktonic, as most extant siphonophore taxa are. Some siphonophore species (such as *Bargmannia lata*) have been observed at abyssopelagic depths near 4000m. Using the present phylogeny, we reconstructed the median depth changes along the phylogeny under a Brownian Motion model (Fig. S5). This model indicates a mesopelagic common ancestor, with several independent transition events to epipelagic (light blue) and bathypelagic (dark blue) waters. This reconstruction only included species recorded using an ROV, thus it excludes many other independent colonizations of the epipelagic habitat. The ROV observations are reliable below 200m, and no quantative measurements were made on SCUBA dives. Species such as *Hippopodius hippopus*, *Athorybia rosacea*, *Diphyes dispar*, and *Chelophyes appendiculata* are often encountered blue water diving less than 20m from the surface (Fig. 4). There was only a single transition to benthic lifestyle on the branch of *Rhodaliidae*, and a single transition to a pleustonic lifestyle on the branch of *Physalia physalis*. 
 
 ## Conclusions
-
+Using phylogenomic tools we were able to resolve deep relationships within the Siphonophora with strong support. A previous rDNA study was unable to resolve deep relationships within the Codonophora, while our study suggests that the Pyrostephidae are sister to all other non-Apolemid codonophorans. Our study supports the rejection of the monophyly of the Physonectae, a traditional morphological grouping, and rejects the monophyly of monoecious siphonophores. Future studies with the addition of key taxa within the Codonophora will enable resolution of internal relationships within Siphonophora, and shed light on patterns of character evolution that cannot be fully assessed here.  
 
 ## Acknowledgements
 
@@ -533,10 +546,12 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 ![60% gene occupancy matrix for 41 species across 1,071 genes. Genes and species are sorted by sampling, the best sampled shown in the upper left.](supplementary_info/gene_occupancy.png)
 
 ```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
-	summary_stats = read.table("supplementary_info/Library_summary.csv", header=TRUE, sep=",")
-	names(summary_stats)<-c("Species","Mean insert size (bp)","Insert size sd","# read pairs","% kept after rRNA removal","% kept after assembly","Adapter fails","Quality fails","Base Comp. fails","Total transcripts","Coding transcripts") 
 
+####The supplementary table is too long. We decided to include as a supplementary datafile instead
 
+#	summary_stats = read.table("supplementary_info/Library_summary.csv", header=TRUE, sep=",")
+#	names(summary_stats)<-c("Species","Mean insert size (bp)","Insert size sd","# read pairs","% kept after rRNA removal","% kept after assembly","Adapter fails","Quality fails","Base Comp. fails","Total transcripts","Coding transcripts") 
+	
 #xtable_summary<-xtable(summary_stats, caption="Supplementary table 1.The assembly summary statistics for all included taxa, showing mean insert size, and the percentage of reads kept after pipeline steps.")
 #align( xtable_summary ) <- c('l|','p{0.8in}','p{0.3in}','p{0.3in}','p{0.5in}','p{0.3in}','p{0.3in}','p{0.4in}','p{0.5in}','p{0.5in}','p{0.5in}','p{0.5in}')
 #print(xtable_summary,include.rownames=FALSE,comment=F, floating =FALSE, tabular.environment = "longtable")
