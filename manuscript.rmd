@@ -592,12 +592,21 @@ densityMap(nectosome_sim)
 
 
 #####Vertical Habitat Evolution
-```{r median_cont, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of median depth of species"}
+```{r median_cont, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV."}
 depth_value = depth_median
 depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap)
 ```
-
+```{r median_cont_BWincluded, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations."}
+median_aggregate = aggregate(trimmed_SDdata$Depth,by=list(trimmed_SDdata$Species), FUN=median)
+names(median_aggregate) = c("Spp","Depth")
+median_aggregate[33,2] = 0
+median_aggregate = median_aggregate[match(median_aggregate$Spp, ultratree$tip.label),]
+median_depth = median_aggregate$Depth
+names(median_depth) = median_aggregate$Spp
+depthmap <- contMap(ultratree, median_depth, plot=F) %>% setMap(colors=c("cyan","blue","black"))
+plot(depthmap)
+```
 
 #####Phylogenetic Signal
 
