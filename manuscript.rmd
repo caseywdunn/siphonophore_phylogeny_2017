@@ -383,8 +383,6 @@ make.simmap(ultratree, necto_types, nsim = 100, message=FALSE) -> necto_types_si
 #print("SIMMAP Bracts")
 make.simmap(ultratree, bracts, nsim = 100) -> bracts_sim
 #print("SIMMAP Habitat")
-make.simmap(ultratree, vrange, nsim = 100, message=FALSE) -> vrange_sim
-
 ```
 
 ```{r sex, echo=F, message=F, warning=F, include=F}
