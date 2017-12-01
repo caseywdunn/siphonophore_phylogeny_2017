@@ -308,7 +308,6 @@ The morphological character matrix, and all the code used to generate the charac
 ```{r char_evo_setup, include=F, echo=F}
 #Load data
 read.csv('character_coding/main_characters.csv', header = T, sep = ',') -> cdata
-cdata$Species = str_replace_all(cdata$Species, "sp ", "sp")
 rownames(cdata) = cdata$Species
 
 #Load tree
@@ -433,12 +432,11 @@ raw_data$Species[which(raw_data$Species == "Frillagalma")] = "Frillagalma vityaz
 raw_data$Species[which(raw_data$Species == "Stephalia")] = "Stephalia dilata"
 raw_data$Species[which(raw_data$Species == "Lychnagalma")] = "Lychnagalma utricularia"
 raw_data$Species[which(raw_data$Species == "Craseoa")] = "Craseoa lathetica"
-raw_data$Species[which(raw_data$Species == "Cordagalma")] = "Cordagalma sp"
-raw_data$Species[which(raw_data$Species == "Desmophyes haematogaster")] = "Prayidae D27SS7"
-raw_data$Species[which(raw_data$Species == "Craseoa lathetica")] = "Prayidae D27D2"
-raw_data$Species[which(raw_data$Species == "Rudjakovia")] = "Rudjakovia sp"
-raw_data$Species[which(raw_data$Species == "Thermopalia")] = "Thermopalia sp"
-raw_data$Species[which(raw_data$Species == "Physonectae sp. 1")] = "Physonect sp"
+raw_data$Species[which(raw_data$Species == "Cordagalma")] = "Cordagalma sp."
+raw_data$Species[which(raw_data$Species == "Desmophyes haematogaster")] = "Desmophyes sp."
+raw_data$Species[which(raw_data$Species == "Rudjakovia")] = "Rudjakovia sp."
+raw_data$Species[which(raw_data$Species == "Thermopalia")] = "Stephalia sp." ##We should do something about this not corresponding...
+raw_data$Species[which(raw_data$Species == "Physonectae sp. 1")] = "Undescribed Sp. L" #Is this correct?
 
 #Adjust Data to tree structure
 raw_data[which(raw_data$Species %in% ultratree$tip.label),] -> intree_data
@@ -461,7 +459,7 @@ for(i in 1:length(byspp_SPD)){
 }
 trimmed_SDdata = bind_rows(byspp_SPD)
 
-sp_order = c("Agalma elegans", "Athorybia rosacea", "Halistemma rubrum", "Nanomia bijuga", "Lychnagalma utricularia", "Physophora gilmeri", "Forskalia asymmetrica", "Cordagalma sp", "Resomia ornicephala", "Frillagalma vityazi", "Physonect sp", "Marrus claudanielis", "Stephalia dilata", "Thermopalia sp", "Erenna richardi", "Abylopsis tetragona", "Diphyes dispar", "Chelophyes appendiculata", "Kephyes ovata", "Chuniphyes multidentata", "Lilyopsis fluoracantha", "Prayidae D27D2", "Prayidae D27SS7", "Hippopodius hippopus", "Bargmannia amoena", "Bargmannia elongata", "Bargmannia lata", "Rudjakovia sp", "Apolemia rubriversa", "Apolemia lanosa", "Apolemia sp", "Rhizophysa filiformis", "Physalia physalis")
+sp_order = c("Agalma elegans", "Athorybia rosacea", "Halistemma rubrum", "Nanomia bijuga", "Lychnagalma utricularia", "Physophora gilmeri", "Forskalia asymmetrica", "Cordagalma sp.", "Resomia ornicephala", "Frillagalma vityazi", "Undescribed Sp. L", "Marrus claudanielis", "Stephalia dilata", "Stephalia sp.", "Erenna richardi", "Abylopsis tetragona", "Diphyes dispar", "Chelophyes appendiculata", "Kephyes ovata", "Chuniphyes multidentata", "Lilyopsis fluoracantha", "Craseoa lathetica", "Desmophyes sp.", "Hippopodius hippopus", "Bargmannia amoena", "Bargmannia elongata", "Bargmannia lata", "Rudjakovia sp", "Apolemia rubriversa", "Apolemia lanosa", "Apolemia sp.", "Rhizophysa filiformis", "Physalia physalis")
 
 trimmed_SDdata$Species = as.character(trimmed_SDdata$Species)
 trimmed_SDdata = trimmed_SDdata[which(!is.na(trimmed_SDdata$Species)),]
