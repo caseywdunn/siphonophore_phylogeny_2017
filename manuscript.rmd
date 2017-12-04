@@ -386,8 +386,8 @@ make.simmap(ultratree, bracts, nsim = 100) -> bracts_sim
 necto_pos_data = cdata[which(cdata$Nectosome.position != "None"),]
 necto_pos = necto_pos_data$Nectosome.position
 names(necto_pos) = rownames(necto_pos_data)
-NectoPosTree = drop.tree(ultratree, which(!(ultratree$tip.label %in% names(necto_pos))))
-make.simmap(NectPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
+NectoPosTree = drop.tip(ultratree, which(!(ultratree$tip.label %in% names(necto_pos))))
+make.simmap(NectoPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
 #print("SIMMAP Nectophore Types")
 ```
 
