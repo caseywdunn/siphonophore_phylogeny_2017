@@ -341,12 +341,6 @@ names(sex) = rownames(cdata)
 nectosome = cdata$Nectosome
 names(nectosome) = rownames(cdata)
 
-necto_pos = cdata$Nectosome.position
-names(necto_pos) = rownames(cdata)
-
-necto_types = cdata$Nectophores
-names(necto_types) = rownames(cdata)
-
 palpons = cdata$Palpons
 names(palpons) = rownames(cdata)
 
@@ -385,12 +379,16 @@ make.simmap(ultratree, tentilla2, nsim = 100, message=FALSE) -> tentilla_sim2
 #print("SIMMAP Nectosome")
 make.simmap(ultratree, nectosome, nsim = 100, message=FALSE) -> nectosome_sim
 #print("SIMMAP Nectosome Position")
-make.simmap(ultratree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
-#print("SIMMAP Nectophore Types")
-make.simmap(ultratree, necto_types, nsim = 100, message=FALSE) -> necto_types_sim
-#print("SIMMAP Bracts")
 make.simmap(ultratree, bracts, nsim = 100) -> bracts_sim
 #print("SIMMAP Habitat")
+
+#Nectophore position SIMMAP setup
+necto_pos_data = cdata[which(cdata$Nectosome.position != "None"),]
+necto_pos = necto_pos_data$Nectosome.position
+names(necto_pos) = rownames(necto_pos_data)
+NectoPosTree = drop.tree(ultratree, which(!(ultratree$tip.label %in% names(necto_pos))))
+make.simmap(NectPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
+#print("SIMMAP Nectophore Types")
 ```
 
 ```{r sex, echo=F, message=F, warning=F, include=F}
@@ -598,6 +596,16 @@ densityMap(tentilla_sim2)
 densityMap(nectosome_sim)
 ```
 
+```{r nectosome_pos, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map for the evolution of the position of the nectosome"}
+#SIMMAP NectoPos
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Dorsal", "Ventral")
+# necto_pos_sim %>% plotSimmap(lwd = 4, add = T)
+# nodelabels(pie=(describe.simmap(necto_pos_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(necto_pos_sim)
+```
 
 #####Vertical Habitat Evolution
 ```{r median_cont, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV."}
