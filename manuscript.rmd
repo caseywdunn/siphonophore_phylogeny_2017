@@ -308,7 +308,7 @@ Within the calycophorans, taxon sampling is shallower, however there is broad ag
 
 ![Phylogram of siphonophore relationships. Node labels indicate bootstrap support percent, unnumbered nodes have 100% support. The image was rendered with ggtree [@Yu:2016fo].](figures/Figure3.pdf)
 
-We tested the following three alternative phylogenetic hypotheses against the most likely tree topology: (i) physonect siphonophores are monophyletic, (ii) monoecious siphonophores (not including *Rudjakova* sp.) are monophyletic, and (iii) monoecious siphonophores (including *Rudjakova* sp.) are monophyletic (figure 3 xx). In all three cases the alternative hypothesis was rejected (p-value <0.01, confidence interval: <0.001 - 0.03).
+We tested the following three alternative phylogenetic hypotheses against the most likely tree topology: (i) physonect siphonophores are monophyletic, (ii) monoecious siphonophores (not including *Rudjakovia* sp.) are monophyletic, and (iii) monoecious siphonophores (including *Rudjakovia* sp.) are monophyletic (figure 3 xx). In all three cases the alternative hypothesis was rejected (p-value <0.01, confidence interval: <0.001 - 0.03).
 
 ## Character Evolution
 
@@ -340,12 +340,6 @@ names(sex) = rownames(cdata)
 
 nectosome = cdata$Nectosome
 names(nectosome) = rownames(cdata)
-
-necto_pos = cdata$Nectosome.position
-names(necto_pos) = rownames(cdata)
-
-necto_types = cdata$Nectophores
-names(necto_types) = rownames(cdata)
 
 palpons = cdata$Palpons
 names(palpons) = rownames(cdata)
@@ -385,12 +379,16 @@ make.simmap(ultratree, tentilla2, nsim = 100, message=FALSE) -> tentilla_sim2
 #print("SIMMAP Nectosome")
 make.simmap(ultratree, nectosome, nsim = 100, message=FALSE) -> nectosome_sim
 #print("SIMMAP Nectosome Position")
-make.simmap(ultratree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
-#print("SIMMAP Nectophore Types")
-make.simmap(ultratree, necto_types, nsim = 100, message=FALSE) -> necto_types_sim
-#print("SIMMAP Bracts")
 make.simmap(ultratree, bracts, nsim = 100) -> bracts_sim
 #print("SIMMAP Habitat")
+
+#Nectophore position SIMMAP setup
+necto_pos_data = cdata[which(cdata$Nectosome.position != "None"),]
+necto_pos = necto_pos_data$Nectosome.position
+names(necto_pos) = rownames(necto_pos_data)
+NectoPosTree = drop.tree(ultratree, which(!(ultratree$tip.label %in% names(necto_pos))))
+make.simmap(NectPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
+#print("SIMMAP Nectophore Types")
 ```
 
 ```{r sex, echo=F, message=F, warning=F, include=F}
@@ -520,13 +518,13 @@ Palpons are modified mouthless gastrozooids used for digestion and circulation o
 
 ###The Gain and Loss of the Pneumatophore
 
-The ancestral siphonophore had a pneumatophore (Fig. 2B), since both cystonects and most codonophorans possess one (Fig. 4). It is not considered a zooid, as it is not formed by budding but by invagination at the aboral end of the planula during early development [@garstang1946morphology; @leloup1935siphonophores; @carre1969etude]. The pneumatophore is a gas filled float located at the anterior end of the colony, which helps the colony float and maintain its orientation in the water column [@church2015histology;@mackie1974locomotion].  Recent evidence of neural arrangement in the pneumatophore of *Nanomia bijuga*  suggests it could also gather information on relative pressure changes (and thus depth changes), helping regulate geotaxis [@church2015histology]. The pneumatophore was lost in Calycophorae and never gained again in that clade. Calycophorans rely on the ionic balance of their gelatinous nectophores and bracts to retain posture and neutral buoyancy [@mackie1974locomotion].
+The pneumatophore is a gas filled float located at the anterior end of the colony, which helps the colony float and maintain its orientation in the water column [@church2015histology;@mackie1974locomotion]. Recent evidence of neural arrangement in the pneumatophore of *Nanomia bijuga*  suggests it could also gather information on relative pressure changes (and thus depth changes), helping regulate geotaxis [@church2015histology]. The ancestral siphonophore had a pneumatophore (Fig. 2B), since both cystonects and most codonophorans possess one (Fig. 4). It is not considered a zooid, as it is not formed by budding but by invagination at the aboral end of the planula during early development [@garstang1946morphology; @leloup1935siphonophores; @carre1969etude].  The pneumatophore was lost in Calycophorae and never gained again in that clade. Calycophorans rely on the ionic balance of their gelatinous nectophores and bracts to retain posture and neutral buoyancy [@mackie1974locomotion].
 
 ###The Gain and Loss of Tentilla
 
 The most complex nematocyst batteries of Cnidaria can arguably be found among the siphonophores, hanging in regularly spaced tentacle side branches called tentilla [fig 1A]. Most hydrozoans, including the clade that contains siphonophores, bear simple tentacles (tentacles with no side branches). It is still an open question whether the common ancestor of Siphonophora had simple or branched tentacles. The only siphonophores genera regarded as lacking tentilla are *Physalia physalis* and *Apolemia* spp., and *Bathyphysa conifera*. Since *B. conifera* is the only member of the *Rhizophysidae* (and of the *Bathyphysa* genus) lacking tentilla, we can safely assume this is a case of secondary loss. When we reconstruct the evolution of this character on the current phylogeny, 70% of simulations support an common ancestor bearing tentilla, with two independent losses leading to *Physalia* and *Apolemia* (Fig. S2). However, this leaves a 30% support for a simple-tentacled common ancestor followed by 2 independent gains of tentilla in the branches leading to *Rhizophysidae* and *(Bargmannia, Diphyes)*.
 
-How we define absence of tentilla, especially for *Physalia physalis*, is also important. The tentacles of this species, when uncoiled, show very prominent, evenly spaced, bulging buttons which contain on their ectoderm all active and functionally arranged nematocysts used by the organism for prey capture [@Totton1960;@BARDI2007]. Siphonophore tentilla are complete diverticular brachings of the tentacle ectoderm, mesoglea, and gastrovascular canal (lined by endoderm).  *Physalia*'s buttons enclose individual fluid-filled chambers connected by narrow channels to the tentacular canal, lined by endoderm [@Hessinger1988]. This suggests they are not just ectodermal swellings, but probably  reduced tentilla. When we define *Physalia physalis* as tentilla bearing, the results for the character reconstruction lead to a more robust support for a tentilla-bearing common ancestor followed by a single loss of tentilla in the branch leading to *Apolemiidae* (Fig. S3).
+How we define absence of tentilla, especially for *Physalia physalis*, is also important. The tentacles of this species, when uncoiled, show very prominent, evenly spaced, bulging buttons which contain on their ectoderm all active and functionally arranged nematocysts used by the organism for prey capture [@Totton1960;@BARDI2007]. Siphonophore tentilla are complete diverticular brachings of the tentacle ectoderm, mesoglea, and gastrovascular canal (lined by endoderm).  *Physalia*'s buttons enclose individual fluid-filled chambers connected by narrow channels to the tentacular canal, lined by endoderm [@Hessinger1988]. This suggests they are not just ectodermal swellings, but probably  reduced tentilla. When we define *Physalia physalis* as tentilla bearing, the results for the character reconstruction lead to a more robust support for a tentilla-bearing common ancestor followed by independent losses of tentilla in the branch leading to *Apolemiidae* (Fig. S3), and in *Bathyphysa conifera*.
 
 ###The Evolution of Vertical Habitat Use
 
@@ -598,6 +596,16 @@ densityMap(tentilla_sim2)
 densityMap(nectosome_sim)
 ```
 
+```{r nectosome_pos, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map for the evolution of the position of the nectosome"}
+#SIMMAP NectoPos
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Dorsal", "Ventral")
+# necto_pos_sim %>% plotSimmap(lwd = 4, add = T)
+# nodelabels(pie=(describe.simmap(necto_pos_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(necto_pos_sim)
+```
 
 #####Vertical Habitat Evolution
 ```{r median_cont, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV."}
