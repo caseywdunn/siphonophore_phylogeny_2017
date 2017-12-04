@@ -96,10 +96,19 @@ output:
     return(nodes)
   }
 
+  gsub2 <- function(pattern, replacement, x, ...) {
+  for(i in 1:length(pattern))
+  x <- gsub(pattern[i], replacement[i], x, ...)
+  x
+  }
+  
+  correctnames =read.csv("tipcorrection.csv") #updating species IDs relative to agalma species IDs
+
   fix_names = function( tree ){
     # Apply changes to any tip names
     tree$tip.label = sub( '_', ' ', tree$tip.label ) # Change first underscore to space
     tree$tip.label = sub( 'sp_', 'sp', tree$tip.label ) # Fix trailing _ in Physonect sp_
+    tree$tip.label = gsub2(correctnames$Agalma.ID, correctnames$Tree.ID,tree$tip.label)
     return( tree )
   }
 
@@ -130,6 +139,7 @@ output:
   bootstrap_trees = lapply( bootstrap_trees, fix_names )
   phylobayes_trees = lapply( phylobayes_trees, fix_names )
 
+  
 ```
 
 ```{r pre_process_species_trees}
@@ -142,8 +152,7 @@ output:
 	    c( "Nematostella vectensis", "Aiptasia pallida" ), 
 	    resolve.root=TRUE 
 	   )
-
-  
+	
   # Repartition length of edges descended from root so they are non-zero
 	species_tree = hutan::slide_root_edges( species_tree )
 
@@ -432,11 +441,10 @@ raw_data$Species[which(raw_data$Species == "Frillagalma")] = "Frillagalma vityaz
 raw_data$Species[which(raw_data$Species == "Stephalia")] = "Stephalia dilata"
 raw_data$Species[which(raw_data$Species == "Lychnagalma")] = "Lychnagalma utricularia"
 raw_data$Species[which(raw_data$Species == "Craseoa")] = "Craseoa lathetica"
-raw_data$Species[which(raw_data$Species == "Cordagalma")] = "Cordagalma sp."
-raw_data$Species[which(raw_data$Species == "Desmophyes haematogaster")] = "Desmophyes sp."
-raw_data$Species[which(raw_data$Species == "Rudjakovia")] = "Rudjakovia sp."
-raw_data$Species[which(raw_data$Species == "Thermopalia")] = "Stephalia sp." ##We should do something about this not corresponding...
-raw_data$Species[which(raw_data$Species == "Physonectae sp. 1")] = "Undescribed Sp. L" #Is this correct?
+raw_data$Species[which(raw_data$Species == "Cordagalma")] = "Cordagalma sp"
+raw_data$Species[which(raw_data$Species == "Desmophyes haematogaster")] = "Desmophyes sp"
+raw_data$Species[which(raw_data$Species == "Rudjakovia")] = "Rudjakovia sp"
+raw_data$Species[which(raw_data$Species == "Physonectae sp. 1")] = "Undescribed sp L" 
 
 #Adjust Data to tree structure
 raw_data[which(raw_data$Species %in% ultratree$tip.label),] -> intree_data
@@ -595,6 +603,7 @@ depth_value = depth_median
 depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap)
 ```
+
 ```{r median_cont_BWincluded, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations."}
 median_aggregate = aggregate(trimmed_SDdata$Depth,by=list(trimmed_SDdata$Species), FUN=median)
 names(median_aggregate) = c("Spp","Depth")
