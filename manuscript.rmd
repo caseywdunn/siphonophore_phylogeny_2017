@@ -352,6 +352,10 @@ names(bracts) = rownames(cdata)
 cdata$Bract.types = bracts
 names(cdata)[8] = "Bracts"
 
+mantle = cdata$Mantle.Canal
+names(mantle)=rownames(cdata)
+mantle[is.na(mantle)]=0
+
 #Depth pruned data
 dpruned_data = cdata[which(!is.na(cdata$Depth.Median)), ]
 dpruned_tree <- drop.tip(ultratree, which(!(ultratree$tip.label %in% rownames(dpruned_data))))
@@ -375,8 +379,9 @@ make.simmap(ultratree, tentilla2, nsim = 100, message=FALSE) -> tentilla_sim2
 #print("SIMMAP Nectosome")
 make.simmap(ultratree, nectosome, nsim = 100, message=FALSE) -> nectosome_sim
 #print("SIMMAP Nectosome Position")
-make.simmap(ultratree, bracts, nsim = 100) -> bracts_sim
+make.simmap(ultratree, bracts, nsim = 100, message=FALSE) -> bracts_sim
 #print("SIMMAP Habitat")
+make.simmap(ultratree, mantle, nsim = 100, message=FALSE) -> mantle_sim
 
 #Nectophore position SIMMAP setup
 necto_pos_data = cdata[which(cdata$Nectosome.position != "None"),]
@@ -586,6 +591,18 @@ densityMap(tentilla_sim2)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
 densityMap(nectosome_sim)
 ```
+
+```{r mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
+#Simmap NECTOSOME
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Absent", "Present")
+# nectosome_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(mantle_sim)
+```
+
 
 ```{r nectosome_pos, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map for the evolution of the position of the nectosome"}
 #SIMMAP NectoPos
