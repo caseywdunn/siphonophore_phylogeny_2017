@@ -1,5 +1,6 @@
 manuscript_cache/
 manuscript_files/
 **/.DS_Store
-character_coding/.DS_Store
+.Rhistory/
+.Rproj.user
 .DS_Store

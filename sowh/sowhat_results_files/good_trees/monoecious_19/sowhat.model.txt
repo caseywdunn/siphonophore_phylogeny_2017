@@ -1,0 +1,8 @@
+partition 0:
+    model = WAG
+    freq. [a r n d c q e g h i l k m f p s t w y v]
+         = 0.087 0.044 0.039 0.057 0.019 0.037 0.058 0.083 0.024 0.048 0.086 0.062 0.020 0.038 0.046 0.070 0.061 0.014 0.035 0.071 
+    alpha = 0.608054
+    tree used for simulation: 
+        /n/home03/shchurch/sowhat/good_trees/monoecious_19/sowhat_scratch/zero_const.0.0.tre
+    gaps (if any) propagated into sim alignments

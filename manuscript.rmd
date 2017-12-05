@@ -1,10 +1,11 @@
 ---
 bibliography: manuscript.bib
-csl: systematic-biology.csl
+csl: molecular-phylogenetics-and-evolution.csl
 output:
   pdf_document:
     fig_caption: yes
-    latex_engine: xelatex
+    includes:
+            in_header: mystyles.sty
 ---
 
 
@@ -22,29 +23,42 @@ output:
 	library( parallel )
 
 	# Formatting
-	library( xtable )
+  library( xtable )
 
 	# Graphics
 	library( cowplot )
 	library( ggtree )
-	library( GGally )
 	library( fields ) # tim.colors
 	library( seriation )
 	library( gridExtra )
-	library( RGraphics )
+  library( factoextra )
+  library( FactoMineR )
 
 	# Biological
-	library( edgeR )
-	library( treeio )
 	library( hutan )	# https://github.com/caseywdunn/hutan
 	library( ape )
-	library( agalmar )	# https://github.com/caseywdunn/agalmar
 	library( picante )  # cor.table
 	library( phytools ) # phylosig
-
+  library( vegan )
+  library( ggtree )
+  library( phangorn )
+  library( geiger )
+  library( phylobase )
+  library( adephylo )
+  library( geomorph ) #physig
+  library( phylolm )
 
 	# Configure knitr, see http://yihui.name/knitr/options
-	opts_knit$set( progress = TRUE, verbose = TRUE )
+	opts_knit$set( 
+	  progress=TRUE, 
+	  verbose=TRUE)
+	
+	opts_chunk$set(
+	#  include=FALSE, 
+	  cache=TRUE,
+	  echo=FALSE,
+	  message=FALSE
+	 )
 
 	# Set system computational parameters
 	cores = detectCores() - 1
@@ -54,41 +68,99 @@ output:
 	set.seed( 23456 )
 
 	# Set paths to input data
-	json_name = "agalma/agalma.json"
+	tree_path = "agalma/Outfiles/"
+	input_file_ml = paste( tree_path, "RAxML_bipartitions.alignment.fa", sep="" )
+	input_file_bootstraps = paste( tree_path, "RAxML_bootstrap.alignment.fa", sep="" )
+	
+	input_files_phylobayes = list.files( 
+	  path=tree_path, 
+	  pattern="chain\\d+_trimmed60_poisson.treelist" 
+	 )
+	
+	# Analysis parameters
+	burn_in = 400
+	
+```
+
+```{r functions}
+
+  get_node_support = function(  tree, treeset, threshold=100 ){
+    # Returns a vector corresponding to nodes in tree, with percent of trees 
+    # in treeset that contain the corresponding bipartition
+    clades = prop.clades(tree, treeset) / length(treeset)
+    nodes = c(rep(NA,length(tree$tip.label)), round(clades*100)) # Offset with NA values for tips
+    nodes[ length(tree$tip.label) + 1 ] = NA # Set the root value to NA, not a robust way to find root but works in this case
+    
+    nodes[ nodes >= threshold  ] = NA
+    
+    return(nodes)
+  }
+
+  gsub2 <- function(pattern, replacement, x, ...) {
+  for(i in 1:length(pattern))
+  x <- gsub(pattern[i], replacement[i], x, ...)
+  x
+  }
+  
+  correctnames =read.csv("tipcorrection.csv") #updating species IDs relative to agalma species IDs
+
+  fix_names = function( tree ){
+    # Apply changes to any tip names
+    tree$tip.label = sub( '_', ' ', tree$tip.label ) # Change first underscore to space
+    tree$tip.label = sub( 'sp_', 'sp', tree$tip.label ) # Fix trailing _ in Physonect sp_
+    tree$tip.label = gsub2(correctnames$Agalma.ID, correctnames$Tree.ID,tree$tip.label)
+    return( tree )
+  }
 
 ```
 
-```{r load_data, include=FALSE, cache=TRUE}
 
-  # Load and parse phylogenies and expression data from the
-  # json file produced by agalma
 
-	# Eventually species tree will be parsed from json, for now specify temporary tree
-	# agalma.data = jsonlite::fromJSON( json_name )
-	# species_tree = read.tree( text=agalma.data$speciestree )
+```{r load_data}
 
-	# For now, specify the tree as plain text
-	species_tree_text = "(((((((((((((((Nanomia_bijuga:0.120563,Agalma_elegans:0.0575132)100:0.0339417,Lychnagalma_utricularia:0.0749548)100:0.0140092,(Cordagalma_sp_:0.117222,Forskalia_asymmetrica:0.0739343)100:0.0113754)100:0.0159061,(Resomia_ornicephala:0.036642,Frillagalma_vityazi:0.0604811)100:0.0190101)100:0.024866,(((Physonect_sp_:0.0317839,Marrus_claudanielis:0.0284231)100:0.0125343,Stephalia_dilata:0.0841317)82:0.00517707,Erenna_richardi:0.0414121)100:0.0124079)100:0.0161254,((((Chelophyes_appendiculata:0.0574339,Abylopsis_tetragona:0.0562432)100:0.11489,(Chuniphyes_multidentata:0.0345263,Kephyes_ovata:0.0306657)100:0.0273795)100:0.0225022,Lilyopsis_fluoracantha:0.197884)100:0.018739,((Prayidae_D27SS7:0.0600685,Prayidae_D27D2:0.0464896)100:0.00909199,Hippopodius_hippopus:0.100508)100:0.011385)100:0.0822577)100:0.0232853,((Bargmannia_elongata:0.0175209,Bargmannia_amoena:0.0201366)100:0.0187736,Bargmannia_lata:0.031329)100:0.0887499)100:0.0300558,((Apolemia_sp_:0.0291459,Apolemia_lanosa:0.0332208)95:0.00837843,Apolemia_white:0.0422333)100:0.0841266)100:0.0313749,(Physalia_physalis:0.082276,Rhizophysa_filiformis:0.105414)100:0.0750894)100:0.133951,(Hydractinia_symbiolongicarpus:0.100907,Podocoryna_carnea:0.246708)100:0.104625)99:0.0219002,Clytia_hemisphaerica:0.331138)97:0.0219604,(Hydra_magnipapillata:0.268083,Ectopleura_larynx:0.273479)100:0.11387)100:0.0827444,Aegina_citrea:0.408585)100:0.148851,(Atolla_vanhoeffeni:0.282409,Alatina_alata:0.328817):0.058436)100:0.419544,(Aiptasia_pallida:0.199088,Nematostella_vectensis:0.188379)100:0);"
+	species_tree = ape::read.tree( input_file_ml )
+  species_tree = fix_names( species_tree )
+  species_tree_unladder =species_tree
+  
+  bootstrap_trees = ape::read.tree( input_file_bootstraps )
+  
+  phylobayes_trees = sapply(
+    input_files_phylobayes,
+    function( pb ) {
+      ape::read.tree( 
+        paste( tree_path, pb, sep = "" ) 
+      )[ -(1:burn_in)  ]
+    }
+  )
+  
+  phylobayes_trees = unlist( phylobayes_trees,recursive=FALSE )
+  class( phylobayes_trees  ) = "multiPhylo"
+  
+  bootstrap_trees = lapply( bootstrap_trees, fix_names )
+  phylobayes_trees = lapply( phylobayes_trees, fix_names )
 
-	species_tree = read.tree( text=species_tree_text )
-
+  
 ```
 
-```{r pre_process_species_trees, include=FALSE, cache=TRUE}
+```{r pre_process_species_trees}
 
-	# Repartition length of edges descended from root so they are non-zero
+	species_tree = ape::ladderize( species_tree )
+
+	species_tree = 
+	  ape::root( 
+	    species_tree, 
+	    c( "Nematostella vectensis", "Aiptasia pallida" ), 
+	    resolve.root=TRUE 
+	   )
+	
+  # Repartition length of edges descended from root so they are non-zero
 	species_tree = hutan::slide_root_edges( species_tree )
 
-	# species_tree = ape::root( species_tree, c( "Nematostella_vectensis", "Aiptasia_pallida" ), resolve.root=TRUE )
 	# species_tree = ape::unroot(species_tree)
 
 	stopifnot( species_tree$Nnode == length( species_tree$node.label ) )
 
-	species_tree = ape::ladderize( species_tree )
-
-	# Update species names
-	species_tree$tip.label = sub( '_', ' ', species_tree$tip.label )
-
+	
 	# Make ultrametric tree
 	# By default, root has a depth of 1
 	species_ultrametric = chronos( species_tree, lambda=1, model="correlated", quiet=TRUE )
@@ -99,28 +171,45 @@ output:
 
 # Siphonophore Phylogeny
 
-Stefan Siebert^1,2^, Felipe Zapata^1,3^, Mark Howison^4^, Cat Munro^1^, Alejandro Damian Serrano^1^, Freya Goetz^1,5^, Phil Pugh, Steven H.D. Haddock^4^, Casey W. Dunn^1^*
+Catriona Munro^1^\*, Stefan Siebert^1,2^\*, Felipe Zapata^1,3^, Mark Howison^4^, Alejandro Damian Serrano^1,9^, Samuel H Church^1,5^, Freya Goetz^1,6^, Phil Pugh^7^, Steven H.D. Haddock^8^, Casey W. Dunn^1,9^**
 
-^1^ Department of Ecology and Evolutionary Biology, Brown University, Providence, RI, USA
+^1^ Department of Ecology and Evolutionary Biology, Brown University, Providence, RI 02912, USA
 
-^2^ Current address: Department of Molecular & Cellular Biology, University of California at Davis, Davis, CA, USA
+^2^ Current address: Department of Molecular & Cellular Biology, University of California at Davis, Davis, CA 95616, USA
 
-^3^ Current address: Department of Ecology and Evolutionary Biology, University of California Los Angeles, Los Angeles, CA, USA
+^3^ Current address: Department of Ecology and Evolutionary Biology, University of California Los Angeles, Los Angeles, CA 90095, USA
 
-^4^ Brown Data Science Practice, Brown University, Brown University, Providence, RI, USA
+^4^ Brown Data Science Practice, Brown University, Brown University, Providence, RI 02912, USA
 
-^5^ Current address: Smithsonian, Washington DC, USA
+^5^ Department of Organismic and Evolutionary Biology, Harvard University, Cambridge, MA 02138, USA
 
-^4^ Monterey Bay Aquarium Research Institute, Moss Landing, CA, USA
+^6^ Current address: Smithsonian Institution, National Museum of Natural History, Washington, DC 20560, USA
 
+^7^ National Oceanography Centre, Southampton, SO14 3ZH, UK 
 
-\* Corresponding author, casey_dunn@brown.edu
+^8^ Monterey Bay Aquarium Research Institute, Moss Landing, CA 95039, USA
+
+^9^ Current address: Department of Ecology and Evolutionary Biology, Yale University, New Haven, CT 06520, USA
+
+\* Authors contributed equally
+
+\*\* Corresponding author, casey.dunn@yale.edu
 
 ## Abstract
 
 ## Introduction
 
-Siphonophores are...
+Siphonophores (Fig. 1) are among the most abundant gelatinous predators in the open ocean, and play an important ecological role in oceanic waters [@pugh1984diel;@pugh1997vertical; @williams1981vertical;@purcell1981dietary;@pages2001gelatinous]. Siphonophores, which belong to Hydrozoa (Cnidaria), are found at all depths in the ocean. The Portuguese man of war *Physalia physalis* floats at the surface and, as a result, is the most familiar siphonophore species [@Totton1960]. Most siphonophores species are planktonic, living in the midwater where some grow to be longer than 30 meters in length [@mackie1987siphonophore]. There is also a small clade of benthic siphonophores, the Rhodaliidae [@pugh1983benthic], that are tethered to the bottom for part of their lives. In all, there are currently 188 valid described species.
+
+Siphonophores remain poorly known, in large part because they are fragile and difficult to collect. They have, however, been of great interest for more than 150 years due to their very unique structure and development [@mapstone2014global;@mackie1987siphonophore]. Like many other cnidarians, they are colonial -- they grow by incomplete asexual reproduction. Each siphonophore colony arises from a single embryo that forms the protozooid, the first body. A growth zone then arises that asexually produces other genetically identical zooids [@carre1969etude; @carre1991complete; @carre1967; @carre1995ordre]. These zooids are each homologous to a solitary animal, but are physiologically integrated [@totton1965synopsis; @mackie1987siphonophore; @dunn2006evolution]. Siphonophores differ significantly from all other colonial animals in terms of colony structure, development, and the degree to which they are functionally specialized [@Beklemishev1969;@cartwright2010character]. Each zooid is functionally specialized for a particular task (e.g feeding, reproducing, swimming) (fig. 2) [@dunn2006evolution], and they are arranged in a repeating,  species-specific pattern.
+
+![Photographs of representatives of the major groups of siphonophores. (A) *Rhisophysa eysenhardtii*, scale bar = 1 cm. (B) *Bathyphysa conifera*, scale bar = XXX. (C) *Hippopodius hippopus*, scale bar = 5 mm. (D) *Physophora hydrostatica*, scale bar = 5 mm. (E) *Nanomia bijuga*, scale bar = 1 cm. (F) *Desmophyes haematogaster*, scale bar = 5 mm. (G) *Sphaeronectes christiansonae*, scale bar = 2 mm. (H) *Lychnagalma utricularia*, scale bar = 1 cm. (I) *Kephyes hiulcus*, scale bar = 2 mm. (J) *Praya dubia*, scale bar = 4 cm . (K) *Apolemia* sp., scale bar = 1 cm.](figures/Figure1.jpg)
+
+Understanding the unique ecology, morphology, and development of siphonophores requires an understanding of their phylogenetic relationships. The relationship of siphonophores to other hydrozoans has been difficult to resolve [@cartwright2010character; @Cartwright2008kl; @zapata2015phylogenomic], but there has been progress on their internal relationships. A siphonophore phylogeny [@Dunn:2005dy] based on two genes (16S, 18S) from 52 siphonophore taxa advanced serveral long standing questions about siphonophore biology. These include the relationships of the three historically recognised groups, Cystonectae, Physonectae, and Calycophorae. The cystonects were found to be sister to all other siphonophores, while the calycophorans were nested within physonects. The name Codonophora was given to this clade of physonects and calycophorans [@Dunn:2005dy]. 
+
+Major questions remained after this early work, though. There was, in particular, little support for important deep relationships within Codonophora. Resolving deep relationships within Codonophora is key to resolving the evolution of several traits, including sexual systems (monoecy versus dioecy) or the gain and loss of particular zooids, such as palpons (fig 2). Here we present a broadly sampled phylogenomic analysis of Siphonophora, assessing transcriptomic data from 33 siphonophore species and 10 outgroup species (2 outgroups were subsequently excluded). Using 1,071 genes shared across species, we find strong support for several relationships within the siphonophore phylogeny. Using this phylogeny, we reconstruct the evolutionary history of characters central to their unique biology, including zooid type, life history traits, and habitat. 
+
+![Schematic of the siphonophore *Nanomia bijuga*, oriented with the anterior of the colony at the top, and the ventral side to the left. Adapted from http://commons.wikimedia.org/wiki/File:Nanomia_bijuga_whole_animal_and_growth_zones.svg, drawn by Freya Goetz. (*A*) Overview of the whole mature colony. (*B*) Inset of the nectosomal growth zone with pneumatophore. A series of buds gives rise to nectophores. (*C*) Inset of the siphosomal growth zone. Probuds subdivide to give rise to zooids in repeating-units (cormidia). Cormidial boundaries are marked by a gastrozooid.](figures/Figure2.pdf)
 
 
 ## Methods
@@ -130,39 +219,41 @@ This manuscript is an executable document computed directly from the data, provi
 
 #### Collecting
 
-Collection data on all examined specimens, a description of the tissue that was sampled from the colony, collection mode, sample processing details, mRNA extraction methods, sequencing library preparation methods and sequencing details are summarized in supplementary table 1. Monterey Bay and Gulf of California specimens were collected by remotely operated underwater vehicle (ROV) or during blue-water scuba dives. *Chelophyes appendiculata* and *Hippopodius hippopus* specimen were collected in the bay of Villefranche-sur-Mer, France, during a plankton trawl on 04/13/11. Available physical vouchers have been deposited at the Museum of Comparative Zoology (Harvard University), Cambridge, MA, and at the United States National Museum (Smithsonian Institution), Washington, DC. Accession numbers are given in supplementary table X. In cases where physical vouchers were unavailable we provide photographs to document species identity (table x).
+Collection data on all examined specimens, a description of the tissue that was sampled from the colony, collection mode, sample processing details, mRNA extraction methods, sequencing library preparation methods and sequencing details are summarized in supplementary table 1. Monterey Bay and Gulf of California specimens were collected by remotely operated underwater vehicle (ROV) or during blue-water scuba dives. *Chelophyes appendiculata* and *Hippopodius hippopus* specimens were collected in the bay of Villefranche-sur-Mer, France, during a plankton trawl on 04/13/11. Available physical vouchers have been deposited at the Museum of Comparative Zoology (Harvard University), Cambridge, MA, or had been previously deposited at the United States National Museum (Smithsonian Institution), Washington, DC. Accession numbers are given in supplementary table 1. In cases where physical vouchers were unavailable we provide photographs to document species identity (see git repository).
 
+#### Sequencing
 
-#### mRNA isolation and RNAseq library preparation
-
-When possible specimens were starved overnight in filtered seawater at temperatures close to ambient water temperatures at the time point of specimen collection (supplementary table 1). mRNA was extracted directly from tissue using Magnetic mRNA Isolation Kit (NEB, #S1550S), Invitrogen Dynabeads mRNA Direct Kit (Ambion, #61011) or from total RNA after Trizol (Ambion, #15596026) extraction and through purification using Dynabeads mRNA Purification Kit (Ambion, #61006). Extractions were performed according to the manufacturer's instruction. In case of very small total RNA quantities, only a single round of bead purification was performed (supplementary table 1). Resulting higher rRNA read counts were dealt with further downstream in the bioinformatics workflow. Libraries were prepped for sequencing using the Illumina TruSeq RNA Sample Prep Kit (Illumina, #FC-122-1001, #FC-122-1002), the Illumina TruSeq Stranded Library Prep Kit (Illumina, #RS-122-2101) or the NEBNext RNA Sample Prep. Master Mix Set (NEB, #E6110S). We collected long read paired end Illumina data for *de novo* transcriptome assembly. Summary statistics for expression libaries are given in Table 1.
-
+When possible specimens were starved overnight in filtered seawater at temperatures close to ambient water temperatures at the time point of specimen collection (see supplementary document). mRNA was extracted directly from tissue using a variety of methods (see supplementary document): Magnetic mRNA Isolation Kit (NEB, #S1550S), Invitrogen Dynabeads mRNA Direct Kit (Ambion, #61011), Zymo Quick RNA MicroPrep (Zymo #R1050), or from total RNA after Trizol (Ambion, #15596026) extraction and through purification using Dynabeads mRNA Purification Kit (Ambion, #61006)-  in case of anticipated very small total RNA quantities, only a single round of bead purification was performed; or Trizol directly into the Illumina TruSeq Stranded Library Kit. Extractions were performed according to the manufacturer's instruction.  Any resulting higher rRNA read counts were dealt with further downstream in the bioinformatics workflow. Libraries were prepared for sequencing using the Illumina TruSeq RNA Sample Prep Kit (Illumina, #FC-122-1001, #FC-122-1002), the Illumina TruSeq Stranded Library Prep Kit (Illumina, #RS-122-2101) or the NEBNext RNA Sample Prep Master Mix Set (NEB, #E6110S). We collected long read paired end Illumina data for *de novo* transcriptome assembly. In the case of large tissue inputs, libraries were sequenced separately for each tissue, subsequently subsampled and pooled *in silico*. Libraries were sequenced on the HiSeq 2000, 2500, and 3000 sequencing platforms (see supplementary document). 
 
 #### Analysis
 
-Sequence assembly, annotation, phylogenetic analysis, and derivation of expression counts were conducted with the tool Agalma [@Dunn:2013kw], v0.XXX. Subsequent analyses were conducted in R and integrated into this manuscript with the `knitr` package. See Supplementary Information for R package version numbers.
+New data were analysed in conjunction with 13 publically available datasets, with a total number of 43 species. Sequence assembly, annotation, Maximum Likelihood (ML) phylogenetic analysis were conducted with the tool Agalma v. 1.00 [@Dunn:2013kw; @Guang202416], and Bayesian Inference (BI) analyses were conducted using Phylobayes v. 1.7a-mpi [@lartillot2009phylobayes]. Source code for all analysis steps, sequence alignments, sampled and consensus trees, and voucher information are available in a git repository https://github.com/caseywdunn/siphonophore_phylogeny_2017.  
 
+Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed from the final supermatrix and phylogeny due to low gene occupancy (gene sampling of 20.8% and 14.5% respectively in a 50% occupancy matrix with 2,203 genes). ML analyses were conducted on the unpartitioned supermatrix using the WAG+$\Gamma$ model of amino acid substitution, and bootstrap values were estimated using 1000 replicates. BI was conducted using two different CAT models, CAT-Poisson and CAT-GTR [@doi:10.1093/molbev/msh112]. Two independent MCMC chains were run under the CAT-GTR model, and four independent MCMC chains were run under the CAT-Poisson model. The CAT-GTR and CAT-Poisson models did not converge after a long CPU time, and only the results from the CAT-Poisson model are included here.
 
+Morphological character data used in trait mapping were obtained from the literature, or from direct observation of available voucher material. Depth distribution data was queried from the MBARI VARS ( http://www.mbari.org/products/research-software/video-annotation-and-reference-system-vars/, [@schlining2006mbari]) database (with assistance and permission from SHD Haddock), including records from several MBARI cruises. We used stochastic character mapping to infer the probable evolution of traits on the tree in R using the `phytools` package [@MEE3:MEE3169; @huelsenbeck2003stochastic]. Subsequent analyses were conducted in R and integrated into this manuscript with the `knitr` package. See Supplementary Information for R package version numbers.
 
-
-
-
+#### Hypothesis testing
+We used the Swofford-Olsen-Waddell-Hillis (SOWH) test [@swofford1996phylogenetic] to evaluate two hypotheses: (i) physonects are monophyletic [@totton1965synopsis]; (ii) monoecious species are monophyletic [@Dunn:2005dy]. As the sexual system of *Rudjakovia* sp. is unclear, we carried out two tests of the monophyly of monoecy, one with *Rudjakovia* sp. included as a monoecious species, and one without. We used SOWHAT [@doi:10.1093/sysbio/syv055] dev. version 0.39 (commit fd68ef5733c095c7000a4f92dc8c0daaddeec3b9) to carry out the SOWH tests in parallel with the default options and an initial sample size of 100 (source code can be found in the git repository). For each hypothesis we defined a topology with a single constrained node that was inconsistent with the most likely topology (figure 3 x). We used a threshold for significance of 0.05 and following the initial 100 samples, we evaluated the confidence interval around the p-value to determine if more samples were necessary.  
 
 ## Results and Discussion
 
-### Sample collecting and sequencing
+### Species phylogeny and hypothesis testing
+Specimens were collected in the eastern Pacific Ocean, Mediterranean, and the Gulf of California (table 1). All sequence data have been deposited in the sequence read archive (SRA). The analyses presented here consider 33 siphonophore species and 8 outgroup species. This includes new data for 30 species. Summary statistics for expression libraries are given in supplementary table x. In the final analyses, we sampled 1,071 genes to generate a supermatrix with 60% occupancy and a length of 378,468 amino acids (gene occupancy matrix - supplementary figure 1). 
+```{r specimen_summary, results='asis', echo=FALSE, comment=NA, warning=FALSE}
+specimen_data <- read.csv("supplementary_info/Specimen_data.csv")
+names(specimen_data)<-c("New data","Species","ID","SRA Number", "Library ID", "Library type","Tissue","Sequencer", "Sequencing center", "Sample prep","Collected by","Collection date","Specimen id","Depth (m)","Geo loc name","Lat Lon","Voucher Type","Voucher location","Voucher Cat No.","Collection mode")
 
-```{r summary_table, results='asis', cache=TRUE, echo=FALSE, comment=NA, warning=FALSE}
+specimen_data_reduced <- specimen_data[,c(1,2,4,14,16)]
+specimen_data_reduced$`New data`<-sub("^N"," ",specimen_data_reduced$`New data`)
 
-
+xtable_specimen<-xtable(specimen_data_reduced,auto=TRUE, caption="Table 1. A complete list of specimens collected for this work. New data indicated by Y, blank fields indicate that data are already published.")
+print(xtable_specimen,comment=F, include.rownames=FALSE, scalebox='0.75')
 
 ```
-Table 1 (at the end of file): Summary statistics for libraries.
+Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran `r length( input_files_phylobayes )` phylobayes chains, and visual inspection of the traces indicated that a burn in of `r burn_in` trees was sufficient for all runs. This left `r length( phylobayes_trees )` trees in the posterior. The phylobayes chains did not converge after a long CPU time, and uncertainty remains around the placement of *Erenna richardi*, and also *Nanomia bijuga*. Within the ML analysis, the placement of *Erenna richardi* is also unstable. Alternative topologies for these nodes are shown in figure 3 x. 
 
-
-### Species phylogeny
-
-```{r species_phylogram, cache=TRUE, echo=FALSE, comment=NA, warning=FALSE, fig.cap="Phylogram of siphonophore relationships. Node labels indicate bootstrap support percent, unnumbered nodes have 100% support. The image was rendered with ggtree [@Yu:2016fo]" }
+```{r species_phylogram, echo=FALSE, comment=NA, warning=FALSE }
 
 	siphonophora_node = ape::mrca( species_tree )[ "Physalia physalis", "Agalma elegans" ]
 	cystonectae_node = ape::mrca( species_tree )[ "Physalia physalis", "Rhizophysa filiformis" ]
@@ -174,9 +265,11 @@ Table 1 (at the end of file): Summary statistics for libraries.
 
 	# pad tip values
 	support = c( rep( NA, length( species_tree$tip.label ) ), support )
-
-	p = ggtree( species_tree ) +
-			geom_text( aes( label=support ), vjust=-.5, hjust=1, size=2.5, col="darkslategray4" ) +
+  
+	p_phylogram = ggtree( species_tree ) +
+			# geom_text( aes( label=support ), vjust=-.5, hjust=1, size=2.5, col="darkslategray4" ) +
+	    geom_text(aes(label=get_node_support(species_tree, bootstrap_trees)), vjust=-.5, hjust=1, size=2.5, col="red") +
+      geom_text(aes(label=get_node_support(species_tree, phylobayes_trees)), vjust=1.5, hjust=1, size=2.5, col="blue") +
 			geom_tiplab( size=3 ) +
 			xlim( NA, 4 ) +
 			geom_cladelabel( node=cystonectae_node, label="Cystonectae", align=FALSE, offset=1, color='red' ) +
@@ -197,39 +290,367 @@ Table 1 (at the end of file): Summary statistics for libraries.
 				offset=1,
 				label='"Outgroups"'
 			)
-
-	flip( p, euphysonectae_node, calycophora_node )
+	
+pdf("figures_raw/figure_3_raw.pdf")
+flip( p_phylogram, euphysonectae_node, calycophora_node )
+dev.off()
 
 ```
+These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) (figure 3) [@Dunn:2005dy]. There is strong support for the Cystonectae as sister to all other siphonophores, the Codonophora. We also find strong support for Calycophorae nested within the paraphyletic "Physonectae", and for the Apolemidae as sister to all other codonophorans. Multiple nodes that were not resolved in the previous two-gene analysis recieve strong support in this 1,071-gene transcriptome analysis. There is strong support for the Pyrostephidae as sister to all other non-Apolemid codonophorans. Within the clade that is sister to the Pyrostephidae, we find two main clades, the Calycophorae and a clade we call the Euphysonectae, which includes the remaining non-Apolemid, non-Pyrostephid "Physonectae". Given the relatively shallow sampling of this analysis, we define the Euphysonectae as the clade consisting of *Agalma elegans* and all taxa that are more closely related to it than to the Calycophorae.  
+
+In this phylogeny, *Physophora gilmeri* along with *Lychnagalma utricularia* (both not included in previous phylogeny) are sister to the Agalmatidae *sensu stricto*, a clade restricted to *Agalma*, the Athorybiidae, *Halistemma* and *Nanomia* [@Dunn:2005dy; @pugh2006taxonomic]. In the rDNA study, *Physophora hydrostatica* (sister species to *P. gilmeri*) was sister to the Forskaliidae with low support. *Cordagalma cordiforme* (= *Cordagalma ordinatum*) [@pugh2016synopsis] was previously unresolved, while in this analysis *Cordagalma* sp. is in a clade with *Forskalia asymmetrica*, falling outside of the Agalmatidae *sensu stricto*. Placement of *Cordagalma* outside Agalmatidae *sensu stricto* is consistent with previous analyses using morphological and molecular data [@pugh2006taxonomic;@Dunn:2005dy].
+
+Within the calycophorans, taxon sampling is shallower, however there is broad agreement with the previous analysis. Calycophorans have in the past been split into convenient groupings of prayomorph and diphyomorph based on morphology (after @mackie1987siphonophore). As in the previous study, this phylogeny indicates that the prayomorphs are paraphyletic. *Craseoa lathetica* and *Desmophyes* sp. are sister to *Hippopodius hippopus* in this study, while in the previous study, the relationship between *Craseoa lathetica* and the clade including *Hippopodius hippopus* was unresolved.  
+
+![Phylogram of siphonophore relationships. Node labels indicate bootstrap support percent, unnumbered nodes have 100% support. The image was rendered with ggtree [@Yu:2016fo].](figures/Figure3.pdf)
+
+We tested the following three alternative phylogenetic hypotheses against the most likely tree topology: (i) physonect siphonophores are monophyletic, (ii) monoecious siphonophores (not including *Rudjakovia* sp.) are monophyletic, and (iii) monoecious siphonophores (including *Rudjakovia* sp.) are monophyletic (figure 3 xx). In all three cases the alternative hypothesis was rejected (p-value <0.01, confidence interval: <0.001 - 0.03).
+
+## Character Evolution
+
+The morphological character matrix, and all the code used to generate the character mapping is available in the git repository and in the supplementary materials. A  number of traits were mapped to tips on the phylogeny, including: the presence/absence of palpons, tentilla, bracts, pneumatophores, nectosome, and eudoxia, monoecy vs dioecy, the orientation of nectosome relative to siphosome, as well as the median vertical distribution (Fig. 4, 5, S2-5).  
+
+```{r char_evo_setup, include=F, echo=F}
+#Load data
+read.csv('character_coding/main_characters.csv', header = T, sep = ',') -> cdata
+rownames(cdata) = cdata$Species
+
+#Load tree
+tree = species_tree_unladder
+tree <- drop.tip(tree, which(!(tree$tip.label %in% rownames(cdata))))
+#tree<-rotateNodes(tree,nodes=c(28,31))
+
+ultratree <- chronos(tree)
+class( ultratree ) = "phylo"
+nodes_to_rotate = c(ape::mrca(ultratree)["Physalia physalis","Kephyes ovata"], ape::mrca(ultratree)["Bargmannia lata","Hippopodius hippopus"])
+ultratree<-rotateNodes(ultratree,nodes=nodes_to_rotate)
+
+#Temporarily prune data
+cdata %<>% filter(rownames(.) %in% tree$tip.label)
+rownames(cdata) = cdata$Species
+cdata %<>% .[-1]
+
+#Named vectors for variables
+sex = cdata$Sex
+names(sex) = rownames(cdata)
+
+nectosome = cdata$Nectosome
+names(nectosome) = rownames(cdata)
+
+palpons = cdata$Palpons
+names(palpons) = rownames(cdata)
+
+tentilla = cdata$Tentilla
+names(tentilla) = rownames(cdata)
+
+tentilla2 = tentilla
+tentilla2['Physalia physalis'] = 1 #In the scenario where we consider Physalias knobs reduced not lost tentilla
+
+bracts = cdata$Bract.types
+bracts[which(bracts>0)] <- 1  #bracts changed to presence absence for tip annotation
+names(bracts) = rownames(cdata)
+cdata$Bract.types = bracts
+names(cdata)[8] = "Bracts"
+
+#Depth pruned data
+dpruned_data = cdata[which(!is.na(cdata$Depth.Median)), ]
+dpruned_tree <- drop.tip(ultratree, which(!(ultratree$tip.label %in% rownames(dpruned_data))))
+dpruned_data <- dpruned_data[match(dpruned_tree$tip.label, rownames(dpruned_data)),]
+
+depth_median = dpruned_data$Depth.Median
+names(depth_median) = rownames(dpruned_data)
+```
+
+```{r simmap_making, echo=F, message=F, warning=F, include=F}
+#Stochastic trait mapping:
+#Make simmap objects
+#print("SIMMAP Sex Distribution")
+make.simmap(ultratree, sex, nsim = 100, message=FALSE) -> sex_sim
+#print("SIMMAP Palpons")
+make.simmap(ultratree, palpons, nsim = 100, message=FALSE) -> palpons_sim
+#print("SIMMAP Tentilla")
+make.simmap(ultratree, tentilla, nsim = 100, message=FALSE) -> tentilla_sim
+#print("SIMMAP Tentilla2")
+make.simmap(ultratree, tentilla2, nsim = 100, message=FALSE) -> tentilla_sim2
+#print("SIMMAP Nectosome")
+make.simmap(ultratree, nectosome, nsim = 100, message=FALSE) -> nectosome_sim
+#print("SIMMAP Nectosome Position")
+make.simmap(ultratree, bracts, nsim = 100, message=FALSE) -> bracts_sim
+#print("SIMMAP Habitat")
+
+#Nectophore position SIMMAP setup
+necto_pos_data = cdata[which(cdata$Nectosome.position != "None"),]
+necto_pos = necto_pos_data$Nectosome.position
+names(necto_pos) = rownames(necto_pos_data)
+NectoPosTree = drop.tip(ultratree, which(!(ultratree$tip.label %in% names(necto_pos))))
+make.simmap(NectoPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
+
+#Mantle canal SIMMAP Setup
+mantle_data = cdata[which(!is.na(cdata$Mantle.Canal)),]
+mantle = mantle_data$Mantle.Canal
+names(mantle)=rownames(mantle_data)
+MantleTree =  drop.tip(ultratree, which(!(ultratree$tip.label %in% names(mantle))))
+make.simmap(MantleTree, mantle, nsim = 100, message=FALSE) -> mantle_sim
+```
+
+```{r sex, echo=F, message=F, warning=F, include=F}
+par(ask=F)
+
+#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
+
+#Simmap SEX
+plotTree(ultratree, lwd = 4)
+colors = c("black", "red")
+names(colors) = c("Dioecious", "Monoecious")
+sex_sim %>% plotSimmap(lwd = 4, add = T, colors=colors)
+nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+ pdf("figures_raw/figure_5_raw_sex.pdf")
+ densityMap(sex_sim)
+ dev.off()
+```
+
+```{r palpons, echo=F, message=F, warning=F, include=F}
+#Simmap PALPONS
 
 
-The phylogenetic relationships between siphonophores species presented here is based on XXX genes from XXX siphonophore species, including new data presented here for XXX species. These findings are entirely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Cystonectae is the sister group to the remaining siphonophores, and Calycophorae is nested within the paraphyletic "Physonectae". In addition, multiple nodes that were not resolved in the previous two-gene analysis do recieve strong support in this XXX-gene transcriptome analysis. These findings include XXX.
 
+ plotTree(ultratree, lwd = 4)
+ colors = c("black", "red")
+ names(colors) = c("Absent", "Present")
+ palpons_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+ nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+ pdf("figures_raw/figure_5_raw_palpons.pdf")
+ densityMap(palpons_sim)
+ dev.off()
+```
 
+```{r vars_plot, echo=F, message=F, warning=F, include=F}
+#Get Raw Data
+raw_data = read.csv(file="character_coding/trim_siphdepths.tsv", sep = "\t")[,c(4,3,5:11)]
+raw_data = raw_data[order(raw_data$ConceptName),]
 
-## Conclusion
+#Clean Raw Data
+names(raw_data)[1] = "Species"
+raw_data$Species = as.character(raw_data$Species)
+raw_data$Species[which(raw_data$Species == "Kephyes")] = "Kephyes ovata"
+raw_data$Species[which(raw_data$Species == "Lilyopsis")] = "Lilyopsis fluoracantha"
+raw_data$Species[which(raw_data$Species == "Agalma")] = "Agalma elegans"
+raw_data$Species[which(raw_data$Species == "Frillagalma")] = "Frillagalma vityazi"
+raw_data$Species[which(raw_data$Species == "Stephalia")] = "Stephalia dilata"
+raw_data$Species[which(raw_data$Species == "Lychnagalma")] = "Lychnagalma utricularia"
+raw_data$Species[which(raw_data$Species == "Craseoa")] = "Craseoa lathetica"
+raw_data$Species[which(raw_data$Species == "Cordagalma")] = "Cordagalma sp"
+raw_data$Species[which(raw_data$Species == "Desmophyes haematogaster")] = "Desmophyes sp"
+raw_data$Species[which(raw_data$Species == "Rudjakovia")] = "Rudjakovia sp"
+raw_data$Species[which(raw_data$Species == "Physonectae sp. 1")] = "Undescribed sp L" 
 
+#Adjust Data to tree structure
+raw_data[which(raw_data$Species %in% ultratree$tip.label),] -> intree_data
+tree$tip.label[which(!(ultratree$tip.label %in% raw_data$Species))] %>% length() -> missSPP
+missing_data_proxy <- raw_data[1:missSPP,]
+missing_data_proxy$Species = ultratree$tip.label[which(!(ultratree$tip.label %in% raw_data$Species))]
+missing_data_proxy$Depth = rep(20, missSPP)
+parched_data <- rbind(missing_data_proxy, raw_data[which(raw_data$Species %in% ultratree$tip.label),])
+parched_data = parched_data[which(!is.na(parched_data$Depth)),]
+parched_data$Species <- factor(parched_data$Species, levels = ultratree$tip.label)
 
+#90% Cut-off of extrame values
+SPDepths = parched_data[,1:2]
+byspp_SPD = split(SPDepths, SPDepths$Species)
+for(i in 1:length(byspp_SPD)){
+  if(nrow(byspp_SPD[[i]])>200){
+#   byspp_SPD[[i]] = sample_n(byspp_SPD[[i]], 0.02*nrow(byspp_SPD[[i]]))
+    byspp_SPD[[i]] = sample_n(byspp_SPD[[i]], 200)
+  }
+}
+trimmed_SDdata = bind_rows(byspp_SPD)
+
+sp_order = c("Agalma elegans", "Athorybia rosacea", "Halistemma rubrum", "Nanomia bijuga", "Lychnagalma utricularia", "Physophora gilmeri", "Forskalia asymmetrica", "Cordagalma sp.", "Resomia ornicephala", "Frillagalma vityazi", "Undescribed Sp. L", "Marrus claudanielis", "Stephalia dilata", "Stephalia sp.", "Erenna richardi", "Abylopsis tetragona", "Diphyes dispar", "Chelophyes appendiculata", "Kephyes ovata", "Chuniphyes multidentata", "Lilyopsis fluoracantha", "Craseoa lathetica", "Desmophyes sp.", "Hippopodius hippopus", "Bargmannia amoena", "Bargmannia elongata", "Bargmannia lata", "Rudjakovia sp", "Apolemia rubriversa", "Apolemia lanosa", "Apolemia sp.", "Rhizophysa filiformis", "Physalia physalis")
+
+trimmed_SDdata$Species = as.character(trimmed_SDdata$Species)
+trimmed_SDdata = trimmed_SDdata[which(!is.na(trimmed_SDdata$Species)),]
+trimmed_SDdata$Species <- factor(trimmed_SDdata$Species, levels = sp_order)
+
+#ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
+
+ pdf("figures_raw/figure_4_raw_violin.pdf")
+ ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
+ dev.off()
+```
+
+```{r ggtree_bin_heatmap, echo=F, message=F, warning=F, include=F}
+p <- ggtree(ultratree)
+p <- p + geom_tiplab(size=2.2)
+f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(1,2,5:9)]
+rownames(f_cdata) = rownames(cdata)
+f_cdata = f_cdata[,c(4,7,1,3,6,2,5)]
+f_cdata[match(tree$tip.label,rownames(f_cdata)),]
+
+ pdf("figures_raw/figure_4_raw_heat.pdf")
+ gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
+ dev.off()
+```
+
+###Evolution of Monoecy
+
+Siphonophore colonies are either monoecious (male and female gonophores are on the same colony) or dioecious (male and female gonophores are on different colonies). Previous analyses suggested that the common ancestor of siphonophores was dioecious, and there is a single gain of monoecy within the Codonophora; however the lack of resolution of deep relationships within Codonophora made it impossible to rule out alternative evolutionary scenarios [@Dunn:2005dy]. The current better-resolved tree (Fig. 5a), indicates that monoecy in siphonophores evolved twice from a dioecious ancestor, in the branch leading to Calycophorae and in the branch leading to Agalmatids *sensu lato*. There is a small probability for an alternative scenario featuring a single gain of monoecy before the split of the Codonophora, with a subsequent shift to dioecy in the *Marrus-Erenna* clade.
+
+###The Evolution of Zooid Types
+
+One of the most striking aspects of siphonophore biology is their diversity of unique zooid types [@Beklemishev1969;@cartwright2010character]. For example, the siphonophore genus *Forskalia* has 6 basic zooid types (pneumatophore, nectophore, gastrozooid, palpon, bract, and gonophore), and a total of 10 counting subtypes (4 types of bract, male & female gonophores)[@pugh2003revision]. Diphyomorphs have more than 1 type of propulsive nectophore, while cystonects have none. Here we reconstruct the evolutionary origins of the different zooid types on the present transcriptome tree (Fig. 4).
+
+Nectophores are retained modified medusae that codonophorans use for coordinated colony-level swimming. The nectosome is the region of the colony that develops from the nectosomal growth zone (Fig. 2B). Unlike the siphosomal growth zone, the nectosomal growth zone does not bud gastrozooids, but nectophores (and in the case of *Apolemia*, also palpons). Siphonophore nectophores are exclusively found on the nectosome -with the exception of  *Physalia physalis* (which has no nectosome, and grows small nectophores near the gonodendra [@Totton1960]. It is possible that the common ancestor of siphonophores had a nectosome, which was lost on the branch leading to cystonects. We cannot exclude with certainty the alternative hypothesis of a nectosome-less ancestor followed by a gain of the nectosome in the branch leading to Codonophora. It is suggested that the nectosome arose as a duplication of the siphosome, followed by functional specialization in propelling the colony [@dunn2006evolution]. The nectosome has been lost within Codonophora in the genus *Athorybia*.
+
+![Siphonophore phylogeny showing the distribution of the main anatomical characters and the bathymetric distributions of the different species.](figures/Figure4.pdf)
+
+Following the colony development orientation framework [@haddock_dunn_pugh_2005], the nectosome can be located in a dorsal or a ventral position. Our ancestral reconstructions for this character (Fig. S4) show that a ventrally-oriented nectosome was the ancestral form in siphonophores, and that a dorsal nectosome has evolved twice independently, in the braches leading to the Agalmatidae *sensu stricto* and the branch leading to the *Bargmannia* species.
+
+Bracts are highly reduced zooids unique to siphonophores, but they are only present in Codonophora. As with the nectosome, we have ambiguity when determining whether the common ancestor of siphonophores had bracts or not. The common ancestor of Codonophora had only one bract subtype, which was lost in Hippopodidae, *Physophora hydrostatica* (however, they are present in its sister species, *P. gilmeri* included in the present phylogeny), and in *Gymnopraia lapislazula* (not included in present phylogeny). Bracts are functional for protection of the delicate zooids and to help maintain neutral buoyancy [@jacobs1937beobachtungen]. Some calycophorans are able to actively exclude sulphate ions in their bracts to adjust their buoyancy along the colony [@bidigare1980role].
+
+Palpons are modified mouthless gastrozooids used for digestion and circulation of the gastrovascular fluid [@mackie1987siphonophore]. They were present in the common ancestor of siphonophores (Fig. 5b), retained in most species, but lost three times independently in the branches leading to *Pyrostephidae* (represented here by the genera *Bargmannia* and *Rudjakovia*), in calycophorans, and in *Marrus claudanielis*. These taxa might have found other avenues to effectively circulate nutrients across the colony.
+
+![Stochastic mapping reconstruction of the evolutionary history of A) palpon zooids, and B) distribution of sexual zooids on the colonies. The color gradients show the reconstructed probability estimate of the discrete character states along the branches. Intermediate values reflect uncertainty.](figures/Figure5.pdf)
+
+###The Gain and Loss of the Pneumatophore
+
+The pneumatophore is a gas filled float located at the anterior end of the colony, which helps the colony float and maintain its orientation in the water column [@church2015histology;@mackie1974locomotion]. Recent evidence of neural arrangement in the pneumatophore of *Nanomia bijuga*  suggests it could also gather information on relative pressure changes (and thus depth changes), helping regulate geotaxis [@church2015histology]. The ancestral siphonophore had a pneumatophore (Fig. 2B), since both cystonects and most codonophorans possess one (Fig. 4). It is not considered a zooid, as it is not formed by budding but by invagination at the aboral end of the planula during early development [@garstang1946morphology; @leloup1935siphonophores; @carre1969etude].  The pneumatophore was lost in Calycophorae and never gained again in that clade. Calycophorans rely on the ionic balance of their gelatinous nectophores and bracts to retain posture and neutral buoyancy [@mackie1974locomotion].
+
+###The Gain and Loss of Tentilla
+
+The most complex nematocyst batteries of Cnidaria can arguably be found among the siphonophores, hanging in regularly spaced tentacle side branches called tentilla [fig 1A]. Most hydrozoans, including the clade that contains siphonophores, bear simple tentacles (tentacles with no side branches). It is still an open question whether the common ancestor of Siphonophora had simple or branched tentacles. The only siphonophores genera regarded as lacking tentilla are *Physalia physalis* and *Apolemia* spp., and *Bathyphysa conifera*. Since *B. conifera* is the only member of the *Rhizophysidae* (and of the *Bathyphysa* genus) lacking tentilla, we can safely assume this is a case of secondary loss. When we reconstruct the evolution of this character on the current phylogeny, 70% of simulations support an common ancestor bearing tentilla, with two independent losses leading to *Physalia* and *Apolemia* (Fig. S2). However, this leaves a 30% support for a simple-tentacled common ancestor followed by 2 independent gains of tentilla in the branches leading to *Rhizophysidae* and *(Bargmannia, Diphyes)*.
+
+How we define absence of tentilla, especially for *Physalia physalis*, is also important. The tentacles of this species, when uncoiled, show very prominent, evenly spaced, bulging buttons which contain on their ectoderm all active and functionally arranged nematocysts used by the organism for prey capture [@Totton1960;@BARDI2007]. Siphonophore tentilla are complete diverticular brachings of the tentacle ectoderm, mesoglea, and gastrovascular canal (lined by endoderm).  *Physalia*'s buttons enclose individual fluid-filled chambers connected by narrow channels to the tentacular canal, lined by endoderm [@Hessinger1988]. This suggests they are not just ectodermal swellings, but probably  reduced tentilla. When we define *Physalia physalis* as tentilla bearing, the results for the character reconstruction lead to a more robust support for a tentilla-bearing common ancestor followed by independent losses of tentilla in the branch leading to *Apolemiidae* (Fig. S3), and in *Bathyphysa conifera*.
+
+###The Evolution of Vertical Habitat Use
+
+Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (Fig. 4, S5) [@mapstone2014global]. However, the depth distribution of siphonophore populations is not always static. Many species are strong vertical migrators, and some species such as *Chuniphyes multidentata* have exhibited synchronous diel migration patterns [@pugh1984diel]. The phylogeny indicates that the siphonophore common ancestor was probably planktonic, as most extant siphonophore taxa are. Some siphonophore species (such as *Bargmannia lata*) have been observed at abyssopelagic depths near 4000m. Using the present phylogeny, we reconstructed the median depth changes along the phylogeny under a Brownian Motion model (Fig. S5). This model indicates a mesopelagic common ancestor, with several independent transition events to epipelagic (light blue) and bathypelagic (dark blue) waters. This reconstruction only included species recorded using an ROV, thus it excludes many other independent colonizations of the epipelagic habitat. The ROV observations are reliable below 200m, and no quantative measurements were made on SCUBA dives. Species such as *Hippopodius hippopus*, *Athorybia rosacea*, *Diphyes dispar*, and *Chelophyes appendiculata* are often encountered blue water diving less than 20m from the surface (Fig. 4). There was only a single transition to benthic lifestyle on the branch of *Rhodaliidae*, and a single transition to a pleustonic lifestyle on the branch of *Physalia physalis*. 
+
+## Conclusions
+Using phylogenomic tools we were able to resolve deep relationships within the Siphonophora with strong support. A previous rDNA study was unable to resolve deep relationships within the Codonophora, while our study suggests that the Pyrostephidae are sister to all other non-apolemid codonophorans. Our study supports the rejection of the monophyly of the Physonectae, a traditional morphological grouping, and rejects the monophyly of monoecious siphonophores. Future studies with the addition of key taxa within the Codonophora will enable resolution of internal relationships within Siphonophora, and shed light on patterns of character evolution that cannot be fully assessed here.  
 
 ## Acknowledgements
 
-This work was supported by the National Science Foundation (DEB-1256695 and the Waterman Award). Sequencing at the Brown Genomics Core facility was supported in part by NIH P30RR031153 and NSF EPSCoR EPS-1004057. Data transfer was supported by NSF RII-C2 EPS-1005789. Analyses were conducted with computational resources and services at the Center for Computation and Visualization at Brown University, supported in part by the NSF EPSCoR EPS-1004057 and the State of Rhode Island. We also thank the MBARI crews and ROV pilots for collection of the specimens.
-
-
+This work was supported by the National Science Foundation (DEB-1256695 and the Waterman Award). Sequencing at the Brown Genomics Core facility was supported in part by NIH P30RR031153 and NSF EPSCoR EPS-1004057. Data transfer was supported by NSF RII-C2 EPS-1005789. Analyses were conducted with computational resources and services at the Center for Computation and Visualization at Brown University, supported in part by the NSF EPSCoR EPS-1004057 and the State of Rhode Island. SOWHAT analyses were carried out on the Odyssey cluster supported by the FAS Division of Science, Research Computing Group at Harvard University -- we thank Cassandra Extavour for use of Harvard cluster. We also thank the MBARI crews and ROV pilots for collection of the specimens.
 
 ## Supplementary Information
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\makeatletter 
+\renewcommand{\thefigure}{S\@arabic\c@figure}
+\renewcommand{\thetable}{S\@arabic\c@table}
+\makeatother
+
+####Agalma analysis
+
+![60% gene occupancy matrix for 41 species across 1,071 genes. Genes and species are sorted by sampling, the best sampled shown in the upper left.](supplementary_info/gene_occupancy.png)
+
+```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
+
+####The supplementary table is too long. We decided to include as a supplementary datafile instead
+
+#	summary_stats = read.table("supplementary_info/Library_summary.csv", header=TRUE, sep=",")
+#	names(summary_stats)<-c("Species","Mean insert size (bp)","Insert size sd","# read pairs","% kept after rRNA removal","% kept after assembly","Adapter fails","Quality fails","Base Comp. fails","Total transcripts","Coding transcripts") 
+	
+#xtable_summary<-xtable(summary_stats, caption="Supplementary table 1.The assembly summary statistics for all included taxa, showing mean insert size, and the percentage of reads kept after pipeline steps.")
+#align( xtable_summary ) <- c('l|','p{0.8in}','p{0.3in}','p{0.3in}','p{0.5in}','p{0.3in}','p{0.3in}','p{0.4in}','p{0.5in}','p{0.5in}','p{0.5in}','p{0.5in}')
+#print(xtable_summary,include.rownames=FALSE,comment=F, floating =FALSE, tabular.environment = "longtable")
+
+```
+
+#####Stochastic Character maps
+```{r tentilla, echo=F, message=F,warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla"}
+#Simmap TENTILLA
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Absent", "Present")
+# tentilla_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(describe.simmap(tentilla_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(tentilla_sim)
+```
+
+```{r tentilla2, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with Physalia included"}
+#Simmap TENTILLA
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Absent", "Present")
+# tentilla_sim2 %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(describe.simmap(tentilla_sim2, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(tentilla_sim2)
+```
+
+```{r nectosome, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
+#Simmap NECTOSOME
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Absent", "Present")
+# nectosome_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(nectosome_sim)
+```
+
+```{r mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
+#Simmap NECTOSOME
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Absent", "Present")
+# nectosome_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(mantle_sim)
+```
 
 
+```{r nectosome_pos, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map for the evolution of the position of the nectosome"}
+#SIMMAP NectoPos
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Dorsal", "Ventral")
+# necto_pos_sim %>% plotSimmap(lwd = 4, add = T)
+# nodelabels(pie=(describe.simmap(necto_pos_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(necto_pos_sim)
+```
 
-### Supplementary Analyses
+#####Vertical Habitat Evolution
+```{r median_cont, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV."}
+depth_value = depth_median
+depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
+plot(depthmap)
+```
 
+ ```{r median_cont_BWincluded, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations."}
+# median_aggregate = aggregate(trimmed_SDdata$Depth,by=list(trimmed_SDdata$Species), FUN=median)
+# names(median_aggregate) = c("Spp","Depth")
+# median_aggregate[33,2] = 0
+# median_aggregate = median_aggregate[match(median_aggregate$Spp, ultratree$tip.label),]
+# median_depth = median_aggregate$Depth
+# names(median_depth) = median_aggregate$Spp
+# depthmap <- contMap(ultratree, median_depth, plot=F) %>% setMap(colors=c("cyan","blue","black"))
+# plot(depthmap)
+```
+
+#####Phylogenetic Signal
+
+```{r phylosig_binaries, results='asis',echo=F, message=F, warning=F}
+ # make it xtable
+binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
+names(binaries_phylosig)<-c("K","PICvar obs","PICvar rnd","P-value","Z-score")
+xtable_PS<-xtable(binaries_phylosig,auto=TRUE, caption="Phylogenetic signal in the binary traits, including Blomberg's K statistic, the mean observed PIC variance, the random variance of PICs, p-value of the comparison of observed and random variance, and the z-score. ")
+print(xtable_PS,comment=F)
+
+```
 
 
 ### Software versions
 
 This manuscript was computed on `r format( Sys.time(), "%a %b %d %X %Y" )` with the following R package versions.
 
-```{r session_summary, echo=FALSE, comment=NA}
+```{r session_summary, echo=FALSE, include=TRUE, comment=NA}
 	sessionInfo()
 ```
 
