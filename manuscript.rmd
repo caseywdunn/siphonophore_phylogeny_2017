@@ -266,9 +266,6 @@ Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran
 	# pad tip values
 	support = c( rep( NA, length( species_tree$tip.label ) ), support )
   
-	
-	
-	
 	p_phylogram = ggtree( species_tree ) +
 			# geom_text( aes( label=support ), vjust=-.5, hjust=1, size=2.5, col="darkslategray4" ) +
 	    geom_text(aes(label=get_node_support(species_tree, bootstrap_trees)), vjust=-.5, hjust=1, size=2.5, col="red") +
@@ -293,11 +290,10 @@ Maximimum likelihood analyses had `r length(bootstrap_trees)` replicates. We ran
 				offset=1,
 				label='"Outgroups"'
 			)
-#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
 	
-#	pdf("figures_for_AI/figure_3_raw.pdf")
-#	flip( p_phylogram, euphysonectae_node, calycophora_node )
-#	dev.off()
+pdf("figures_raw/figure_3_raw.pdf")
+flip( p_phylogram, euphysonectae_node, calycophora_node )
+dev.off()
 
 ```
 These findings are largely consistent with a previous analysis based on two genes (16S and 18S ribosomal RNA) (figure 3) [@Dunn:2005dy]. There is strong support for the Cystonectae as sister to all other siphonophores, the Codonophora. We also find strong support for Calycophorae nested within the paraphyletic "Physonectae", and for the Apolemidae as sister to all other codonophorans. Multiple nodes that were not resolved in the previous two-gene analysis recieve strong support in this 1,071-gene transcriptome analysis. There is strong support for the Pyrostephidae as sister to all other non-Apolemid codonophorans. Within the clade that is sister to the Pyrostephidae, we find two main clades, the Calycophorae and a clade we call the Euphysonectae, which includes the remaining non-Apolemid, non-Pyrostephid "Physonectae". Given the relatively shallow sampling of this analysis, we define the Euphysonectae as the clade consisting of *Agalma elegans* and all taxa that are more closely related to it than to the Calycophorae.  
@@ -397,31 +393,31 @@ par(ask=F)
 #These are commented out to avoid outputting the figure on every knit (remove comment to generate)
 
 #Simmap SEX
-#plotTree(ultratree, lwd = 4)
-#colors = c("black", "red")
-#names(colors) = c("Dioecious", "Monoecious")
-#sex_sim %>% plotSimmap(lwd = 4, add = T, colors=colors)
-#nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-#add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-# pdf("figures_for_AI/density_sex_sim.pdf")
-# densityMap(sex_sim)
-# dev.off()
+plotTree(ultratree, lwd = 4)
+colors = c("black", "red")
+names(colors) = c("Dioecious", "Monoecious")
+sex_sim %>% plotSimmap(lwd = 4, add = T, colors=colors)
+nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+ pdf("figures_raw/figure_5_raw_sex.pdf")
+ densityMap(sex_sim)
+ dev.off()
 ```
 
 ```{r palpons, echo=F, message=F, warning=F, include=F}
 #Simmap PALPONS
 
-#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
 
-# plotTree(ultratree, lwd = 4)
-# colors = c("black", "red")
-# names(colors) = c("Absent", "Present")
-# palpons_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
-# nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-# pdf("figures_for_AI/palpons_sim.pdf")
-# densityMap(palpons_sim)
-# dev.off()
+
+ plotTree(ultratree, lwd = 4)
+ colors = c("black", "red")
+ names(colors) = c("Absent", "Present")
+ palpons_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+ nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+ pdf("figures_raw/figure_5_raw_palpons.pdf")
+ densityMap(palpons_sim)
+ dev.off()
 ```
 
 ```{r vars_plot, echo=F, message=F, warning=F, include=F}
@@ -471,14 +467,11 @@ trimmed_SDdata$Species = as.character(trimmed_SDdata$Species)
 trimmed_SDdata = trimmed_SDdata[which(!is.na(trimmed_SDdata$Species)),]
 trimmed_SDdata$Species <- factor(trimmed_SDdata$Species, levels = sp_order)
 
-#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
-
-
 #ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_boxplot() + theme_classic()
 
-# pdf("figures_for_AI/trimmed_violinVars.pdf")
-# ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
-# dev.off()
+ pdf("figures_raw/figure_4_raw_violin.pdf")
+ ggplot(trimmed_SDdata, aes(x = Species, y=-Depth)) + geom_violin() + theme_classic()
+ dev.off()
 ```
 
 ```{r ggtree_bin_heatmap, echo=F, message=F, warning=F, include=F}
@@ -489,11 +482,9 @@ rownames(f_cdata) = rownames(cdata)
 f_cdata = f_cdata[,c(4,7,1,3,6,2,5)]
 f_cdata[match(tree$tip.label,rownames(f_cdata)),]
 
-#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
-
-# pdf("figures_for_AI/overview_ggheatmap_chars.pdf")
-# gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
-# dev.off()
+ pdf("figures_raw/figure_4_raw_heat.pdf")
+ gheatmap(p, f_cdata, offset = 0.4, width=0.5, colnames_position = 'top', font.size = 1)
+ dev.off()
 ```
 
 ###Evolution of Monoecy
@@ -614,7 +605,7 @@ depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan
 plot(depthmap)
 ```
 
-# ```{r median_cont_BWincluded, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations."}
+ ```{r median_cont_BWincluded, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations."}
 # median_aggregate = aggregate(trimmed_SDdata$Depth,by=list(trimmed_SDdata$Species), FUN=median)
 # names(median_aggregate) = c("Spp","Depth")
 # median_aggregate[33,2] = 0
@@ -623,7 +614,7 @@ plot(depthmap)
 # names(median_depth) = median_aggregate$Spp
 # depthmap <- contMap(ultratree, median_depth, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 # plot(depthmap)
-# ```
+```
 
 #####Phylogenetic Signal
 
