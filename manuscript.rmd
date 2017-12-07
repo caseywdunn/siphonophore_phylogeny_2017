@@ -402,9 +402,6 @@ make.simmap(AscMantleTree, asc_mantle, nsim = 100, message=FALSE) -> asc_mantle_
 
 ```{r sex, echo=F, message=F, warning=F, include=F}
 par(ask=F)
-
-#These are commented out to avoid outputting the figure on every knit (remove comment to generate)
-
 #Simmap SEX
 plotTree(ultratree, lwd = 4)
 colors = c("black", "red")
@@ -685,3 +682,4 @@ This manuscript was computed on `r format( Sys.time(), "%a %b %d %X %Y" )` with 
 
 
 ## References
+
