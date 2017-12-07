@@ -385,12 +385,19 @@ names(necto_pos) = rownames(necto_pos_data)
 NectoPosTree = drop.tip(ultratree, which(!(ultratree$tip.label %in% names(necto_pos))))
 make.simmap(NectoPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
 
-#Mantle canal SIMMAP Setup
-#mantle_data = cdata[which(!is.na(cdata$Mantle.Canal)),]
-#mantle = mantle_data$Mantle.Canal
-#names(mantle)=rownames(mantle_data)
-#MantleTree =  drop.tip(ultratree, which(!(ultratree$tip.label %in% names(mantle))))
-#make.simmap(MantleTree, mantle, nsim = 100, message=FALSE) -> mantle_sim
+#Descending mantle Canal SIMMAP Setup
+desc_mantle_data = cdata[which(!is.na(cdata$Desc.Mantle.Canal)),]
+desc_mantle = mantle_data$Desc.Mantle.Canal
+names(desc_mantle)=rownames(desc_mantle_data)
+DescMantleTree =  drop.tip(ultratree, which(!(ultratree$tip.label %in% names(desc_mantle))))
+make.simmap(DescMantleTree, desc_mantle, nsim = 100, message=FALSE) -> desc_mantle_sim
+
+#Ascending Mantle canal SIMMAP Setup
+asc_mantle_data = cdata[which(!is.na(cdata$Asc.Mantle.Canal)),]
+asc_mantle = mantle_data$Asc.Mantle.Canal
+names(asc_mantle)=rownames(asc_mantle_data)
+AscMantleTree =  drop.tip(ultratree, which(!(ultratree$tip.label %in% names(asc_mantle))))
+make.simmap(AscMantleTree, asc_mantle, nsim = 100, message=FALSE) -> asc_mantle_sim
 ```
 
 ```{r sex, echo=F, message=F, warning=F, include=F}
@@ -590,17 +597,27 @@ densityMap(tentilla_sim2)
 densityMap(nectosome_sim)
 ```
 
-```{r mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
-#Simmap NECTOSOME
+```{r desc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
+#Simmap Descending Mantle Canal
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
 # names(colors) = c("Absent", "Present")
-# nectosome_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
-# nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# desc_mantle_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(describe.simmap(desc_mantle_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-#densityMap(mantle_sim)
+densityMap(desc_mantle_sim)
 ```
 
+```{r asc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
+#Simmap Ascending mantle canal
+# plotTree(ultratree, lwd = 4)
+# colors = c("black", "red")
+# names(colors) = c("Absent", "Present")
+# asc_mantle_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
+# nodelabels(pie=(ascribe.simmap(asc_mantle_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
+# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
+densityMap(asc_mantle_sim)
+```
 
 ```{r nectosome_pos, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map for the evolution of the position of the nectosome"}
 #SIMMAP NectoPos
