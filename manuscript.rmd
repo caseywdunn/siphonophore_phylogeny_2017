@@ -412,9 +412,6 @@ add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=
 
 ```{r palpons, echo=F, message=F, warning=F, include=F}
 #Simmap PALPONS
-
-
-
  plotTree(ultratree, lwd = 4)
  colors = c("black", "red")
  names(colors) = c("Absent", "Present")
@@ -625,9 +622,9 @@ plot(depthmap)
 
 ```{r median_depth_extended, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations." }
  
-median_extended = cdata$Median.Depth.Extended
+median_extended = cdata$Depth.Median.Extended
 names(median_extended) = rownames(cdata)
-median_extended = median_extended[match(names(median_extended), ultratree$tip.label),]
+median_extended = median_extended[match(names(median_extended), ultratree$tip.label)]
 depthmap_ext <- contMap(ultratree, median_extended, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap_ext)
 
