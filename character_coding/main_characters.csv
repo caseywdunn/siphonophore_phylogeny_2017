@@ -1,33 +1,33 @@
-Species,Sex,Nectosome,Nectosome position,Nectophores,Palpons,Tentilla,Pneumatophore,Bract types,Eudoxia,Vertical range,Depth.Median,Depth.Mean,Depth.StdDev,Depth.Count,Depth.Max,Depth.Min,Mantle.Canal,Depth.Median.Extended
-Abylopsis tetragona,Monoecious,1,Ventral,Two of two types,0,1,0,1,1,Mesopelagic,,,,,,,,20
-Agalma elegans,Monoecious,1,Dorsal,Multiple of one type,1,1,1,1,0,Epipelagic,171.89,171.89,22.8,2,194.69,149.09,descending,171.89
-Apolemia lanosa,Dioecious,1,Ventral,Multiple of one type,1,0,1,1,0,Mesopelagic,1224.9,1248.35,333.44,64,2280.3,379.75,ascending,1224.9
-Apolemia sp,Dioecious,1,Ventral,Multiple of one type,1,0,1,1,0,Mesopelagic,,721.28,551.04,3864,3818.81,30.8,ascending,461
-Apolemia rubriversa,Dioecious,1,Ventral,Multiple of one type,1,0,1,1,0,Mesopelagic,572.15,721.28,552.04,3864,3818.81,30.8,ascending,572.15
-Athorybia rosacea,Monoecious,0,None,None,1,1,1,1,0,Epipelagic,,,,,,,,20
-Bargmannia amoena,Dioecious,1,Dorsal,Multiple of one type,0,1,1,1,0,Bathypelagic,1333.79,1454.41,594.29,41,3478.4,399.73,ascending,1333.79
-Bargmannia elongata,Dioecious,1,Dorsal,Multiple of one type,0,1,1,1,0,Mesopelagic,543.89,582.58,230.41,633,2504.15,69.61,ascending,543.89
-Bargmannia lata,Dioecious,1,Dorsal,Multiple of one type,0,1,1,1,0,Bathypelagic,1274.93,1584.83,750.89,232,3562.9,420.79,ascending,1274.93
-Chelophyes appendiculata,Monoecious,1,Ventral,Two of two types,0,1,0,1,1,Epipelagic,,,,,,,,20
-Chuniphyes multidentata,Monoecious,1,Ventral,Two of two types,0,1,0,1,1,Mesopelagic,513.38,569.59,288.37,3023,3546.1,44.6,,513.38
-Cordagalma sp,Monoecious,1,Ventral,Multiple of one type,1,1,1,1,0,Mesopelagic,,532.72,604.19,501,3613.88,33.63,descending,252
-Erenna richardi,Dioecious,1,Ventral,Multiple of one type,1,1,1,2,0,Bathypelagic,1119.67,1150.37,168.41,5,1389.49,908.36,ascending,1119.67
-Forskalia asymmetrica,Monoecious,1,Ventral,Multiple of one type,1,1,1,4,0,Epipelagic,182.33,229.8,198.4,215,1573.56,2.74,descending,182.33
-Frillagalma vityazi,Monoecious,1,Ventral,Multiple of one type,1,1,1,1,0,Mesopelagic,432.77,495.61,251.07,153,1995.3,198.6,descending,432.77
-Halistemma rubrum,Monoecious,1,Dorsal,Multiple of one type,1,1,1,2,0,Epipelagic,170.04,161.22,90.33,138,309.08,2.72,descending,170.04
-Hippopodius hippopus,Monoecious,1,Ventral,Multiple of one type,0,1,0,0,0,Epipelagic,,,,,,,,20
-Kephyes ovata,Monoecious,1,Ventral,Two of two types,0,1,0,1,1,Mesopelagic,797.46,1226.93,805.01,104,3661.7,443.08,,797.46
-Lilyopsis fluoracantha,Monoecious,1,Ventral,Two of one type,0,1,0,1,1,Mesopelagic,271.18,262.58,111.7,74,454.21,82.77,,271.18
-Lychnagalma utricularia,Monoecious,1,Ventral,Multiple of one type,1,1,1,1,0,Mesopelagic,473.71,490.96,163.94,133,1995.3,109.27,descending,473.71
-Marrus claudanielis,Dioecious,1,Ventral,Multiple of one type,0,1,1,1,0,Bathypelagic,1196.55,1317.02,554.24,20,3091.39,688.41,ascending,1196.55
-Nanomia bijuga,Monoecious,1,Dorsal,Multiple of one type,1,1,1,2,0,Mesopelagic,286,305.35,236.59,27868,3538.6,0.87,descending,286
-Physalia physalis,Dioecious,0,None,None,1,0,1,0,0,Surface,0,0,0,1,0,0,,0
-Undescribed sp L,Dioecious,1,Ventral,Multiple of one type,0,1,1,1,0,Bathypelagic,,,,,,,ascending,1463
-Physophora gilmeri,Monoecious,1,Ventral,Multiple of one type,1,1,1,2,0,Epipelagic,217.74,217.74,23.76,2,241.49,193.98,descending,217.74
-Craseoa lathetica,Monoecious,1,Ventral,Two of one type,0,1,0,1,0,Mesopelagic,1013.19,1077.2,616.35,259,3425.06,187.6,,1013.19
-Desmophyes sp,Monoecious,1,Ventral,Two of one type,0,1,0,1,0,Mesopelagic,,708.08,566.25,98,2528.81,45.7,,1363
-Resomia ornicephala,Monoecious,1,Ventral,Multiple of one type,1,1,1,1,0,Mesopelagic,203.18,208.61,88.77,214,950.89,23.43,descending,203.18
-Rhizophysa filiformis,Dioecious,0,None,None,1,1,1,0,0,Mesopelagic,997.47,997.39,0.2,7,997.57,996.93,,997.47
-Rudjakovia sp,Dioecious,1,Dorsal,Multiple of one type,0,1,1,1,0,Mesopelagic,415.62,397.18,97.84,15,590,239.82,ascending,415.62
-Stephalia dilata,Dioecious,1,Ventral,Multiple of one type,1,1,1,2,0,Deep benthic,3158.41,3259.3,227.92,6,3768.92,3155.09,ascending,3158.41
-Stephalia sp,Dioecious,1,Ventral,Multiple of one type,1,1,1,1,0,Deep benthic,,2986.86,232.45,5,3279.12,2740.75,ascending,3255
+Species,Sex,Nectosome,Nectosome position,Nectophores,Palpons,Tentilla,Pneumatophore,Bract types,Eudoxia,Vertical range,Depth.Median,Depth.Mean,Depth.StdDev,Depth.Count,Depth.Max,Depth.Min,Desc.Mantle.Canal,Asc.Mantle.Canal,Depth.Median.Extended
+Abylopsis tetragona,Monoecious,1,Ventral,Two of two types,0,1,0,1,1,Mesopelagic,,,,,,,,,20
+Agalma elegans,Monoecious,1,Dorsal,Multiple of one type,1,1,1,1,0,Epipelagic,171.89,171.89,22.8,2,194.69,149.09,1,,171.89
+Apolemia lanosa,Dioecious,1,Ventral,Multiple of one type,1,0,1,1,0,Mesopelagic,1224.9,1248.35,333.44,64,2280.3,379.75,,1,1224.9
+Apolemia sp,Dioecious,1,Ventral,Multiple of one type,1,0,1,1,0,Mesopelagic,,721.28,551.04,3864,3818.81,30.8,,1,461
+Apolemia rubriversa,Dioecious,1,Ventral,Multiple of one type,1,0,1,1,0,Mesopelagic,572.15,721.28,552.04,3864,3818.81,30.8,,1,572.15
+Athorybia rosacea,Monoecious,0,None,None,1,1,1,1,0,Epipelagic,,,,,,,,,20
+Bargmannia amoena,Dioecious,1,Dorsal,Multiple of one type,0,1,1,1,0,Bathypelagic,1333.79,1454.41,594.29,41,3478.4,399.73,,1,1333.79
+Bargmannia elongata,Dioecious,1,Dorsal,Multiple of one type,0,1,1,1,0,Mesopelagic,543.89,582.58,230.41,633,2504.15,69.61,,1,543.89
+Bargmannia lata,Dioecious,1,Dorsal,Multiple of one type,0,1,1,1,0,Bathypelagic,1274.93,1584.83,750.89,232,3562.9,420.79,,1,1274.93
+Chelophyes appendiculata,Monoecious,1,Ventral,Two of two types,0,1,0,1,1,Epipelagic,,,,,,,,,20
+Chuniphyes multidentata,Monoecious,1,Ventral,Two of two types,0,1,0,1,1,Mesopelagic,513.38,569.59,288.37,3023,3546.1,44.6,,,513.38
+Cordagalma sp,Monoecious,1,Ventral,Multiple of one type,1,1,1,1,0,Mesopelagic,,532.72,604.19,501,3613.88,33.63,1,,252
+Erenna richardi,Dioecious,1,Ventral,Multiple of one type,1,1,1,2,0,Bathypelagic,1119.67,1150.37,168.41,5,1389.49,908.36,,1,1119.67
+Forskalia asymmetrica,Monoecious,1,Ventral,Multiple of one type,1,1,1,4,0,Epipelagic,182.33,229.8,198.4,215,1573.56,2.74,1,,182.33
+Frillagalma vityazi,Monoecious,1,Ventral,Multiple of one type,1,1,1,1,0,Mesopelagic,432.77,495.61,251.07,153,1995.3,198.6,1,,432.77
+Halistemma rubrum,Monoecious,1,Dorsal,Multiple of one type,1,1,1,2,0,Epipelagic,170.04,161.22,90.33,138,309.08,2.72,1,,170.04
+Hippopodius hippopus,Monoecious,1,Ventral,Multiple of one type,0,1,0,0,0,Epipelagic,,,,,,,,,20
+Kephyes ovata,Monoecious,1,Ventral,Two of two types,0,1,0,1,1,Mesopelagic,797.46,1226.93,805.01,104,3661.7,443.08,,,797.46
+Lilyopsis fluoracantha,Monoecious,1,Ventral,Two of one type,0,1,0,1,1,Mesopelagic,271.18,262.58,111.7,74,454.21,82.77,,,271.18
+Lychnagalma utricularia,Monoecious,1,Ventral,Multiple of one type,1,1,1,1,0,Mesopelagic,473.71,490.96,163.94,133,1995.3,109.27,1,,473.71
+Marrus claudanielis,Dioecious,1,Ventral,Multiple of one type,0,1,1,1,0,Bathypelagic,1196.55,1317.02,554.24,20,3091.39,688.41,,1,1196.55
+Nanomia bijuga,Monoecious,1,Dorsal,Multiple of one type,1,1,1,2,0,Mesopelagic,286,305.35,236.59,27868,3538.6,0.87,1,,286
+Physalia physalis,Dioecious,0,None,None,1,0,1,0,0,Surface,0,0,0,1,0,0,,,0
+Undescribed sp L,Dioecious,1,Ventral,Multiple of one type,0,1,1,1,0,Bathypelagic,,,,,,,,1,1463
+Physophora gilmeri,Monoecious,1,Ventral,Multiple of one type,1,1,1,2,0,Epipelagic,217.74,217.74,23.76,2,241.49,193.98,1,,217.74
+Craseoa lathetica,Monoecious,1,Ventral,Two of one type,0,1,0,1,0,Mesopelagic,1013.19,1077.2,616.35,259,3425.06,187.6,,,1013.19
+Desmophyes sp,Monoecious,1,Ventral,Two of one type,0,1,0,1,0,Mesopelagic,,708.08,566.25,98,2528.81,45.7,,,1363
+Resomia ornicephala,Monoecious,1,Ventral,Multiple of one type,1,1,1,1,0,Mesopelagic,203.18,208.61,88.77,214,950.89,23.43,1,,203.18
+Rhizophysa filiformis,Dioecious,0,None,None,1,1,1,0,0,Mesopelagic,997.47,997.39,0.2,7,997.57,996.93,,,997.47
+Rudjakovia sp,Dioecious,1,Dorsal,Multiple of one type,0,1,1,1,0,Mesopelagic,415.62,397.18,97.84,15,590,239.82,,1,415.62
+Stephalia dilata,Dioecious,1,Ventral,Multiple of one type,1,1,1,2,0,Deep benthic,3158.41,3259.3,227.92,6,3768.92,3155.09,,1,3158.41
+Stephalia sp,Dioecious,1,Ventral,Multiple of one type,1,1,1,1,0,Deep benthic,,2986.86,232.45,5,3279.12,2740.75,,1,3255
