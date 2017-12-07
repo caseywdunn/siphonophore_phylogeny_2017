@@ -597,7 +597,7 @@ densityMap(tentilla_sim2)
 densityMap(nectosome_sim)
 ```
 
-```{r desc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
+```{r desc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of a descending mantle canal in the nectophores"}
 #Simmap Descending Mantle Canal
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -608,7 +608,7 @@ densityMap(nectosome_sim)
 densityMap(desc_mantle_sim)
 ```
 
-```{r asc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
+```{r asc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of an ascending mantle canal in the nectophores"}
 #Simmap Ascending mantle canal
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
