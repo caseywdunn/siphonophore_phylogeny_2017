@@ -243,7 +243,7 @@ We used the Swofford-Olsen-Waddell-Hillis (SOWH) test [@swofford1996phylogenetic
 ### Species phylogeny and hypothesis testing
 
 ```{r specimen_summary, results='asis', echo=FALSE, comment=NA, warning=FALSE}
-specimen_data <- read.csv("supplementary_info/Specimen_data.csv")
+specimen_data <- read.csv("supplementary_info/Supplementary_data_1_Specimen_data.csv")
 names(specimen_data)<-c("New data","Species","ID","SRA Number", "Library ID", "Library type","Tissue","Sequencer", "Sequencing center", "Sample prep","Collected by","Collection date","Specimen id","Depth (m)","Geo loc name","Lat Lon","Voucher Type","Voucher location","Voucher Cat No.","Collection mode")
 
 specimen_data_reduced <- specimen_data[,c(1,2,4,14,16)]
@@ -407,7 +407,7 @@ names(colors) = c("Dioecious", "Monoecious")
 sex_sim %>% plotSimmap(lwd = 4, add = T, colors=colors)
 nodelabels(pie=(describe.simmap(sex_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-sex_obj <- densityMap(sex_sim)
+sex_obj <- densityMap(sex_sim, plot=FALSE)
 sex_obj$cols[1:length(sex_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(sex_obj$cols))
  pdf("figures_raw/figure_5_raw_sex.pdf")
  plot(sex_obj)
@@ -422,7 +422,7 @@ sex_obj$cols[1:length(sex_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "oran
  palpons_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
  nodelabels(pie=(describe.simmap(palpons_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
  add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-palpons_obj <- densityMap(palpons_sim)
+palpons_obj <- densityMap(palpons_sim, plot=FALSE)
 palpons_obj$cols[1:length(palpons_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(palpons_obj$cols))
  pdf("figures_raw/figure_5_raw_palpons.pdf")
  plot(palpons_obj)
@@ -504,7 +504,7 @@ Siphonophore colonies are either monoecious (male and female gonophores are on t
 
 One of the most striking aspects of siphonophore biology is their diversity of unique zooid types [@Beklemishev1969;@cartwright2010character]. For example, the genus *Forskalia* has 6 basic zooid types (pneumatophore, nectophore, gastrozooid, palpon, bract, and gonophore), and a total of 10 when considering zooid subtypes (4 types of bract, male & female gonophores)[@pugh2003revision]. Diphyomorphs have more than one type of propulsive nectophore, while cystonects have none. Here we reconstruct the evolutionary origins of several zooid types on the present transcriptome tree (Fig. 4).
 
-Nectophores are non-reproductive propulsive medusae that codonophorans use for coordinated colony-level swimming (Fig. 2). Nectophores are also present within the gonodendra (reproductive structures) of the cystonects, and are thought to propel the gonodendra when they detach from the colony [@totton1965synopsis;@totton1960]. It is not clear whether the nectophores found within the siphosome of the cystonects is homologous to the nectophores borne on the nectosome of the codonophora. The nectosome is the region of the colony that develops from the nectosomal growth zone (Fig. 2B). Unlike the siphosomal growth zone, the nectosomal growth zone does not bud gastrozooids, but nectophores (and in the case of *Apolemia*, also palpons). The present tree, as well as the analyses of @Dunn:2005dy, are consistent with a single origin of the nectosome. 
+Nectophores are non-reproductive propulsive medusae that codonophorans use for coordinated colony-level swimming (Fig. 2). Nectophores are also present within the gonodendra (reproductive structures) of the cystonects, and are thought to propel the gonodendra when they detach from the colony [@totton1965synopsis;@Totton1960]. It is not clear whether the nectophores found within the siphosome of the cystonects is homologous to the nectophores borne on the nectosome of the codonophora. The nectosome is the region of the colony that develops from the nectosomal growth zone (Fig. 2B). Unlike the siphosomal growth zone, the nectosomal growth zone does not bud gastrozooids, but nectophores (and in the case of *Apolemia*, also palpons). The present tree, as well as the analyses of @Dunn:2005dy, are consistent with a single origin of the nectosome. 
 
 ![Siphonophore phylogeny showing the distribution of the main anatomical characters and the bathymetric distributions of the different species.](figures/Figure4.pdf)
 
@@ -549,6 +549,8 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 
 ![60% gene occupancy matrix for 41 species across 1,071 genes. Genes and species are sorted by sampling, the best sampled shown in the upper left.](supplementary_info/gene_occupancy.png)
 
+![Constrained topologies specified in SOWH testing. Test statistic and p-value for each tree estimated under constraint are given.](sowh/sowh_tests_supplemental_figure/sowh_tests_supplemental_figure.png)
+
 ```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
 
 ####The supplementary table is too long. We decided to include as a supplementary datafile instead
@@ -571,7 +573,7 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 # tentilla_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 # nodelabels(pie=(describe.simmap(tentilla_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-tentilla_obj <- densityMap(tentilla_sim)
+tentilla_obj <- densityMap(tentilla_sim,plot=FALSE)
 tentilla_obj$cols[1:length(tentilla_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla_obj$cols))
 plot(tentilla_obj)
 ```
@@ -584,7 +586,7 @@ plot(tentilla_obj)
 # tentilla_sim2 %>% plotSimmap(lwd = 4, add = T,colors=colors)
 # nodelabels(pie=(describe.simmap(tentilla_sim2, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-tentilla2_obj <- densityMap(tentilla_sim2)
+tentilla2_obj <- densityMap(tentilla_sim2, plot=FALSE)
 tentilla2_obj$cols[1:length(tentilla2_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla2_obj$cols))
 plot(tentilla2_obj)
 ```
@@ -597,12 +599,12 @@ plot(tentilla2_obj)
 # nectosome_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 # nodelabels(pie=(describe.simmap(nectosome_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-nectosome_obj <- densityMap(nectosome_sim)
+nectosome_obj <- densityMap(nectosome_sim, plot=FALSE)
 nectosome_obj$cols[1:length(nectosome_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(nectosome_obj$cols))
 plot(nectosome_obj)
 ```
 
-```{r desc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of a descending mantle canal in the nectophores"}
+```{r desc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of a descending mantle canal in the nectophores. Cystonects and Athorybia were excluded as they do not have a nectosome. "}
 #Simmap Descending Mantle Canal
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -610,12 +612,12 @@ plot(nectosome_obj)
 # desc_mantle_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 # nodelabels(pie=(describe.simmap(desc_mantle_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-desc_mantle_obj <- densityMap(desc_mantle_sim)
+desc_mantle_obj <- densityMap(desc_mantle_sim, plot=FALSE)
 desc_mantle_obj$cols[1:length(desc_mantle_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(desc_mantle_obj$cols))
 plot(desc_mantle_obj)
 ```
 
-```{r asc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of an ascending mantle canal in the nectophores"}
+```{r asc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of an ascending mantle canal in the nectophores. Cystonects and Athorybia were excluded as they do not have a nectosome."}
 #Simmap Ascending mantle canal
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -623,7 +625,7 @@ plot(desc_mantle_obj)
 # asc_mantle_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
 # nodelabels(pie=(ascribe.simmap(asc_mantle_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-asc_mantle_obj <- densityMap(asc_mantle_sim)
+asc_mantle_obj <- densityMap(asc_mantle_sim, plot=FALSE)
 asc_mantle_obj$cols[1:length(asc_mantle_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(asc_mantle_obj$cols))
 plot(asc_mantle_obj)
 ```
@@ -636,12 +638,12 @@ plot(asc_mantle_obj)
 # necto_pos_sim %>% plotSimmap(lwd = 4, add = T)
 # nodelabels(pie=(describe.simmap(necto_pos_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
 # add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-necto_pos_obj <- densityMap(necto_pos_sim)
+necto_pos_obj <- densityMap(necto_pos_sim, plot=FALSE)
 necto_pos_obj$cols[1:length(necto_pos_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(necto_pos_obj$cols))
 plot(necto_pos_obj)
 ```
 
-#####Vertical Habitat Evolution
+
 ```{r median_cont, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV."}
 depth_value = depth_median
 depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
@@ -658,7 +660,6 @@ plot(depthmap_ext)
 
 ```
 
-#####Phylogenetic Signal
 
 ```{r phylosig_binaries, results='asis',echo=F, message=F, warning=F}
  # make it xtable
@@ -668,6 +669,9 @@ xtable_PS<-xtable(binaries_phylosig,auto=TRUE, caption="Phylogenetic signal in t
 print(xtable_PS,comment=F)
 
 ```
+
+
+
 
 
 ### Software versions
