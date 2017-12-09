@@ -389,13 +389,6 @@ desc_mantle = desc_mantle_data$Desc.Mantle.Canal
 names(desc_mantle)=rownames(desc_mantle_data)
 DescMantleTree =  drop.tip(ultratree, which(!(ultratree$tip.label %in% names(desc_mantle))))
 make.simmap(DescMantleTree, desc_mantle, nsim = 100, message=FALSE) -> desc_mantle_sim
-
-#Ascending Mantle canal SIMMAP Setup
-#asc_mantle_data = cdata[which(!is.na(cdata$Asc.Mantle.Canal)),]
-#asc_mantle = asc_mantle_data$Asc.Mantle.Canal
-#names(asc_mantle)=rownames(asc_mantle_data)
-#AscMantleTree =  drop.tip(ultratree, which(!(ultratree$tip.label %in% names(asc_mantle))))
-#make.simmap(AscMantleTree, asc_mantle, nsim = 100, message=FALSE) -> asc_mantle_sim
 ```
 
 ```{r sex, echo=F, message=F, warning=F, include=F}
@@ -502,9 +495,9 @@ Siphonophore colonies are either monoecious (male and female gonophores are on t
 
 ###The Evolution of Zooid Types
 
-One of the most striking aspects of siphonophore biology is their diversity of unique zooid types [@Beklemishev1969;@cartwright2010character]. For example, the genus *Forskalia* has 6 basic zooid types (pneumatophore, nectophore, gastrozooid, palpon, bract, and gonophore), and a total of 10 when considering zooid subtypes (4 types of bract, male & female gonophores)[@pugh2003revision]. Diphyomorphs have more than one type of propulsive nectophore, while cystonects have none. Here we reconstruct the evolutionary origins of several zooid types on the present transcriptome tree (Fig. 4).
+One of the most striking aspects of siphonophore biology is their diversity of unique zooid types [@Beklemishev1969;@cartwright2010character]. For example, the genus *Forskalia* has 5 basic zooid types (nectophore, gastrozooid, palpon, bract, and gonophore), and in some species, a total of 10 when considering zooid subtypes (4 types of bract, male & female gonophores)[@pugh2003revision]. Diphyomorphs have more than one type of propulsive nectophore, while cystonects have none. Here we reconstruct the evolutionary origins of several zooid types on the present transcriptome tree (Fig. 4).
 
-Nectophores are non-reproductive propulsive medusae that codonophorans use for coordinated colony-level swimming (Fig. 2). Nectophores are also present within the gonodendra (reproductive structures) of the cystonects, and are thought to propel the gonodendra when they detach from the colony [@totton1965synopsis;@Totton1960]. It is not clear whether the nectophores found within the siphosome of the cystonects is homologous to the nectophores borne on the nectosome of the codonophora. The nectosome is the region of the colony that develops from the nectosomal growth zone (Fig. 2B). Unlike the siphosomal growth zone, the nectosomal growth zone does not bud gastrozooids, but nectophores (and in the case of *Apolemia*, also palpons). The present tree, as well as the analyses of @Dunn:2005dy, are consistent with a single origin of the nectosome (Fig. S5). 
+Nectophores are non-reproductive propulsive medusae that codonophorans use for coordinated colony-level swimming (Fig. 2). Nectophores are also present within the gonodendra (reproductive structures) of the cystonects, and are thought to propel the gonodendra when they detach from the colony [@totton1965synopsis;@Totton1960]. It is not clear whether the nectophores found within the siphosome of the cystonects is homologous to the nectophores borne on the nectosome of the codonophora. The nectosome is the region of the colony that develops from the nectosomal growth zone (Fig. 2B). Unlike the siphosomal growth zone, the nectosomal growth zone does not b ud gastrozooids, but nectophores (and in the case of *Apolemia*, also palpons). The present tree, as well as the analyses of @Dunn:2005dy, are consistent with a single origin of the nectosome (Fig. S5). 
 
 ![Siphonophore phylogeny showing the distribution of the main anatomical characters and the bathymetric distributions of the different species.](figures/Figure4.pdf)
 
@@ -617,18 +610,6 @@ desc_mantle_obj$cols[1:length(desc_mantle_obj$cols)]<-colorRampPalette(colors=c(
 plot(desc_mantle_obj)
 ```
 
-```{r asc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of an ascending mantle canal in the nectophores. Cystonects and Athorybia were excluded as they do not have a nectosome."}
-#Simmap Ascending mantle canal
-# plotTree(ultratree, lwd = 4)
-# colors = c("black", "red")
-# names(colors) = c("Absent", "Present")
-# asc_mantle_sim %>% plotSimmap(lwd = 4, add = T,colors=colors)
-# nodelabels(pie=(ascribe.simmap(asc_mantle_sim, plot=F)$ace) ,piecol=colors,cex=0.35)
-# add.simmap.legend(colors = colors, x=0.6*par()$usr[1],y=0.3*par()$usr[4],prompt=FALSE)
-#asc_mantle_obj <- densityMap(asc_mantle_sim, plot=FALSE)
-#asc_mantle_obj$cols[1:length(asc_mantle_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(asc_mantle_obj$cols))
-#plot(asc_mantle_obj)
-```
 
 ```{r nectosome_pos, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map for the evolution of the position of the nectosome. Cystonects were excluded as they do not have a nectosome."}
 #SIMMAP NectoPos
