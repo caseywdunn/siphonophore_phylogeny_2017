@@ -531,7 +531,7 @@ Using phylogenomic tools we were able to resolve deep relationships within Sipho
 
 ## Acknowledgements
 
-This work was supported by the National Science Foundation (DEB-1256695 and the Waterman Award). Sequencing at the Brown Genomics Core facility was supported in part by NIH P30RR031153 and NSF EPSCoR EPS-1004057. Data transfer was supported by NSF RII-C2 EPS-1005789. Analyses were conducted with computational resources and services at the Center for Computation and Visualization at Brown University, supported in part by the NSF EPSCoR EPS-1004057 and the State of Rhode Island. SOWHAT analyses were carried out on the Odyssey cluster supported by the FAS Division of Science, Research Computing Group at Harvard University -- we thank Cassandra Extavour for use of the Harvard cluster. We also thank the MBARI crews and ROV pilots for collection of the specimens.
+This work was supported by the National Science Foundation (DEB-1256695 and the Waterman Award). Sequencing at the Brown Genomics Core facility was supported in part by NIH P30RR031153 and NSF EPSCoR EPS-1004057. Data transfer was supported by NSF RII-C2 EPS-1005789. Analyses were conducted with computational resources and services at the Center for Computation and Visualization at Brown University, supported in part by the NSF EPSCoR EPS-1004057 and the State of Rhode Island. SOWHAT analyses were carried out on the Odyssey cluster supported by the FAS Division of Science, Research Computing Group at Harvard University -- we thank Cassandra Extavour for use of the Harvard cluster. We thank Rob Sherlock for providing the *Bathyphysa conifera* photograph. We also thank the MBARI crews and ROV pilots for collection of the specimens.
 
 ## Supplementary Information
 \setcounter{figure}{0}
