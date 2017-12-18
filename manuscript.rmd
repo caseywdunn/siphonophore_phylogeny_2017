@@ -561,7 +561,7 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 ```
 
 #####Stochastic Character maps
-```{r tentilla, echo=F, message=F,warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla"}
+```{r tentilla, echo=F, message=F,warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as not bearing tentilla."}
 #Simmap TENTILLA
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -574,7 +574,7 @@ tentilla_obj$cols[1:length(tentilla_obj$cols)]<-colorRampPalette(colors=c("#4A4A
 plot(tentilla_obj)
 ```
 
-```{r tentilla2, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included"}
+```{r tentilla2, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as bearing tentilla."}
 #Simmap TENTILLA
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -587,7 +587,7 @@ tentilla2_obj$cols[1:length(tentilla2_obj$cols)]<-colorRampPalette(colors=c("#4A
 plot(tentilla2_obj)
 ```
 
-```{r nectosome, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
+```{r nectosome, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome."}
 #Simmap NECTOSOME
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
