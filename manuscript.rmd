@@ -642,6 +642,10 @@ median_extended = median_extended[match(names(median_extended), ultratree$tip.la
 depthmap_ext <- contMap(ultratree, median_extended, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap_ext)
 
+fitContinuous(ultratree, median_extended, model="white")$opt$aicc
+fitContinuous(ultratree, median_extended, model="BM")$opt$aicc
+fitContinuous(ultratree, median_extended, model="OU")$opt$aicc
+
 ```
 
 
