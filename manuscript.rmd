@@ -410,6 +410,11 @@ sex_obj$cols[1:length(sex_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "oran
 
 ```{r palpons, echo=F, message=F, warning=F, include=F}
 #Simmap PALPONS
+
+##MODEL test
+fitDiscrete(ultratree, palpons, model="ER")$opt$aicc #24.85
+fitDiscrete(ultratree, palpons, model="ARD")$opt$aicc #24.60
+
  plotTree(ultratree, lwd = 4)
  colors = c("black", "red")
  names(colors) = c("Absent", "Present")
