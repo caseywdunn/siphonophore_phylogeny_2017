@@ -411,6 +411,11 @@ sex_obj$cols[1:length(sex_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "oran
 
 ```{r palpons, echo=F, message=F, warning=F, include=F}
 #Simmap PALPONS
+
+##MODEL test
+fitDiscrete(ultratree, palpons, model="ER")$opt$aicc #24.85
+fitDiscrete(ultratree, palpons, model="ARD")$opt$aicc #24.60
+
  plotTree(ultratree, lwd = 4)
  colors = c("black", "red")
  names(colors) = c("Absent", "Present")
@@ -525,7 +530,7 @@ How we define absence of tentilla, especially for *Physalia physalis*, is also i
 
 ###The Evolution of Vertical Habitat Use
 
-Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (Fig. 4, S9) [@mapstone2014global; @mackie1987siphonophore]. However, the depth distribution of siphonophore populations is not always static. Many species are strong vertical migrators, and some species such as *Chuniphyes multidentata* have exhibited synchronous diel migration patterns [@pugh1984diel]. Some siphonophore species (such as *Bargmannia lata*) have been observed at abyssopelagic depths near 4000m. Using the present phylogeny, we reconstructed the median depth changes along the phylogeny under a Brownian Motion model (Fig. S9). This model indicates a mesopelagic common ancestor, with several independent transition events to epipelagic (light blue) and bathypelagic (dark blue) waters. This reconstruction only included species recorded using an ROV, thus it excludes many other independent colonizations of the epipelagic habitat. The ROV observations are reliable below 200m, and no quantative measurements were made on SCUBA dives. Species such as *Hippopodius hippopus*, *Athorybia rosacea*, *Diphyes dispar*, and *Chelophyes appendiculata* are often encountered blue water diving less than 20m from the surface (Fig. 4). We also reconstructed the median depth changes along the phylogeny using median depths of 20m for all species collected by SCUBA diving (Fig. S10), and still find support for a mesopelagic ancestor. There was only a single transition to benthic lifestyle on the branch of *Rhodaliidae*, and a single transition to a pleustonic lifestyle on the branch of *Physalia physalis*. 
+Siphonophores are abundant predators in the pelagic realm, ranging from the surface (*Physalia physalis*) to bathypelagic depths (Fig. 4, S9) [@mapstone2014global; @mackie1987siphonophore]. However, the depth distribution of siphonophore populations is not always static. Many species are strong vertical migrators, and some species such as *Chuniphyes multidentata* have exhibited synchronous diel migration patterns [@pugh1984diel]. Some siphonophore species (such as *Bargmannia lata*) have been observed at abyssopelagic depths near 4000m. Using the present phylogeny, we reconstructed the median depth changes along the phylogeny under a Brownian Motion model (Fig. S9), which had the strongest AICc support (compared to non-phylogenetic distributions, and to Ohrnstein-Uhlenbeck). This model indicates a mesopelagic common ancestor, with several independent transition events to epipelagic (light blue) and bathypelagic (dark blue) waters. This reconstruction only included species recorded using an ROV, thus it excludes many other independent colonizations of the epipelagic habitat. The ROV observations are reliable below 200m, and no quantative measurements were made on SCUBA dives. Species such as *Hippopodius hippopus*, *Athorybia rosacea*, *Diphyes dispar*, and *Chelophyes appendiculata* are often encountered blue water diving less than 20m from the surface (Fig. 4). We also reconstructed the median depth changes along the phylogeny using median depths of 20m for all species collected by SCUBA diving (Fig. S10), and still find support for a mesopelagic ancestor. There was only a single transition to benthic lifestyle on the branch of *Rhodaliidae*, and a single transition to a pleustonic lifestyle on the branch of *Physalia physalis*. 
 
 ## Conclusions
 Using phylogenomic tools we were able to resolve deep relationships within Siphonophora with strong support. A previous rRNA study was unable to resolve deep relationships within the Codonophora, while our study suggests that the Pyrostephidae are sister to all other non-apolemiid codonophorans. Our study supports the rejection of the monophyly of the Physonectae, a traditional morphological grouping, and rejects the monophyly of monoecious siphonophores. Future studies with the addition of key taxa within Codonophora will enable resolution of internal relationships within Siphonophora, and shed light on patterns of character evolution that cannot be fully assessed here.  
@@ -562,7 +567,7 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 ```
 
 #####Stochastic Character maps
-```{r tentilla, echo=F, message=F,warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla"}
+```{r tentilla, echo=F, message=F,warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as not bearing tentilla."}
 #Simmap TENTILLA
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -575,7 +580,7 @@ tentilla_obj$cols[1:length(tentilla_obj$cols)]<-colorRampPalette(colors=c("#4A4A
 plot(tentilla_obj)
 ```
 
-```{r tentilla2, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included"}
+```{r tentilla2, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as bearing tentilla."}
 #Simmap TENTILLA
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -588,7 +593,7 @@ tentilla2_obj$cols[1:length(tentilla2_obj$cols)]<-colorRampPalette(colors=c("#4A
 plot(tentilla2_obj)
 ```
 
-```{r nectosome, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome"}
+```{r nectosome, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome."}
 #Simmap NECTOSOME
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -642,6 +647,10 @@ names(median_extended) = rownames(cdata)
 median_extended = median_extended[match(names(median_extended), ultratree$tip.label)]
 depthmap_ext <- contMap(ultratree, median_extended, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap_ext)
+
+fitContinuous(ultratree, median_extended, model="white")$opt$aicc
+fitContinuous(ultratree, median_extended, model="BM")$opt$aicc
+fitContinuous(ultratree, median_extended, model="OU")$opt$aicc
 
 ```
 
