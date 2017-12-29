@@ -255,7 +255,7 @@ print(xtable_specimen,comment=F, include.rownames=FALSE, scalebox='0.75')
 
 ```
 
-```{r species_phylogram, echo=FALSE, comment=NA, warning=FALSE }
+```{r species_phylogram, verbose= FALSE, include=F, message = FALSE, echo=FALSE, comment=NA, warning=FALSE }
 
 	siphonophora_node = ape::mrca( species_tree )[ "Physalia physalis", "Agalma elegans" ]
 	cystonectae_node = ape::mrca( species_tree )[ "Physalia physalis", "Rhizophysa filiformis" ]
