@@ -1,3 +1,5 @@
 Notes on analyses - 
 
-For the supermatrix, `agalma diagnostics hide` was used to remove two outgroup species that had low gene occupancy (based on reports) from the final supermatrix and phylogeny. These two species were Atolla_vanhoeffeni and Aegina_citrea. These species can be retrieved using `agalma diagnostics unhide`, however it should be noted that all subsequent analyses were carried out without these two species.
+For the supermatrix, the command `agalma diagnostics hide` was used to remove two outgroup species that had low gene occupancy (based on reports) from the final supermatrix and phylogeny. These two species were Atolla_vanhoeffeni and Aegina_citrea. These species can be retrieved using `agalma diagnostics unhide`, however it should be noted that all subsequent analyses were carried out without these two species.
+
+All paths provided here are relative paths. Anyone attempting to reproduce this work should provide their own paths and specify a new sqlite database to manage their data. Additionally, all sequence file names and catalog IDs (derived from the illumina header) were taken from the original files. Anyone attempting to reproduce this work will be working with the SRA files that will have the SRA number in the file name and also in the header - file names and IDs should be changed accordingly.
