@@ -1,0 +1,1 @@
+This folder contains all of the scripts needed to modify (filter, subsample, concatenate) raw sequences uploaded to SRA for Bargmannia elongata, Frillagalma vityazi, Diphyes dispar, Nanomia bijuga, Agalma elegans. These processed files can then be called in the agalma pipeline. 
