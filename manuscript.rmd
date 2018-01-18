@@ -170,7 +170,7 @@ output:
 
 # Improved phylogenetic resolution within Siphonophora (Cnidaria) with implications for trait evolution
 
-Catriona Munro^1^\*, Stefan Siebert^1,2^\*, Felipe Zapata^1,3^, Mark Howison^4^, Alejandro Damian Serrano^1,9^, Samuel H Church^1,5^, Freya Goetz^1,6^, Phil Pugh^7^, Steven H.D. Haddock^8^, Casey W. Dunn^1,9^**
+Catriona Munro^1^\*, Stefan Siebert^1,2^\*, Felipe Zapata^1,3^, Mark Howison^4,6^, Alejandro Damian Serrano^1,10^, Samuel H Church^1,6^, Freya Goetz^1,7^, Phil Pugh^8^, Steven H.D. Haddock^9^, Casey W. Dunn^1,10^**
 
 ^1^ Department of Ecology and Evolutionary Biology, Brown University, Providence, RI 02912, USA
 
@@ -180,15 +180,17 @@ Catriona Munro^1^\*, Stefan Siebert^1,2^\*, Felipe Zapata^1,3^, Mark Howison^4^,
 
 ^4^ Brown Data Science Practice, Brown University, Brown University, Providence, RI 02912, USA
 
-^5^ Department of Organismic and Evolutionary Biology, Harvard University, Cambridge, MA 02138, USA
+^5^ Current address: Watson Institute for International and Public Affairs, Brown University, Providence, RI 02912, USA
 
-^6^ Current address: Smithsonian Institution, National Museum of Natural History, Washington, DC 20560, USA
+^6^ Current address: Department of Organismic and Evolutionary Biology, Harvard University, Cambridge, MA 02138, USA
 
-^7^ National Oceanography Centre, Southampton, SO14 3ZH, UK
+^7^ Current address: Smithsonian Institution, National Museum of Natural History, Washington, DC 20560, USA
 
-^8^ Monterey Bay Aquarium Research Institute, Moss Landing, CA 95039, USA
+^8^ National Oceanography Centre, Southampton, SO14 3ZH, UK
 
-^9^ Current address: Department of Ecology and Evolutionary Biology, Yale University, New Haven, CT 06520, USA
+^9^ Monterey Bay Aquarium Research Institute, Moss Landing, CA 95039, USA
+
+^10^ Current address: Department of Ecology and Evolutionary Biology, Yale University, New Haven, CT 06520, USA
 
 \* Authors contributed equally
 
@@ -228,7 +230,7 @@ When possible, specimens were starved overnight in filtered seawater at temperat
 
 #### 2.3 Analysis
 
-New data were analysed in conjunction with 13 publicly available datasets, with a total number of 43 species. Sequence assembly, annotation, homology evaluation, gene tree construction, parsing of genes trees to isolate orthologous sequences, and supermatrix construction were conducted with Agalma v. 1.00 [@Dunn:2013kw; @Guang202416].  This workflow integrates a variety of existing tools [@grabherr2011full; @altschul1990basic; @doi:10.1093/nar/30.7.1575; @sukumaran2010dendropy; @langmead2012fast; @li2011rsem; @talavera2007improvement; @li2009sequence; @katoh2013mafft] and new methods. Maximum likelihood analyses of the supermatrix were conducted with RAxML v 8.2.0 [@stamatakis2006raxml] and implemented via Agalma. Bayesian Inference (BI) analyses of the supermatrix were conducted using Phylobayes v. 1.7a-mpi [@lartillot2009phylobayes]. Sequence alignments, sampled and consensus trees, and voucher information are available in the git repository. Tree figures were rendered with ggtree [@Yu:2016fo].
+New data were analysed in conjunction with 13 publicly available datasets, with a total number of 43 species. Sequence assembly, annotation, homology evaluation, gene tree construction, parsing of genes trees to isolate orthologous sequences, and supermatrix construction were conducted with Agalma v. 1.0.0 [@Dunn:2013kw; @Guang202416].  This workflow integrates a variety of existing tools [@grabherr2011full; @altschul1990basic; @doi:10.1093/nar/30.7.1575; @sukumaran2010dendropy; @langmead2012fast; @li2011rsem; @talavera2007improvement; @li2009sequence; @katoh2013mafft] and new methods. Maximum likelihood analyses of the supermatrix were conducted with RAxML v 8.2.0 [@stamatakis2006raxml] and implemented via Agalma. Bayesian Inference (BI) analyses of the supermatrix were conducted using Phylobayes v. 1.7a-mpi [@lartillot2009phylobayes]. Sequence alignments, sampled and consensus trees, and voucher information are available in the git repository. Tree figures were rendered with ggtree [@Yu:2016fo].
 
 Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed from the final supermatrix due to low gene occupancy (gene sampling of 20.8% and 14.5% respectively in a 50% occupancy matrix with 2,203 genes). The final analyses presented here consider 33 siphonophore species and 8 outgroup species. This includes new data for 30 species. In the final analyses, we sampled 1,071 genes to generate a supermatrix with 60% occupancy and a length of 378,468 amino acids (Fig. S1).
 
