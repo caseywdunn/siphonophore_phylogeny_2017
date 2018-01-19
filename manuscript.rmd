@@ -174,7 +174,7 @@ Catriona Munro^1^\*, Stefan Siebert^1,2^\*, Felipe Zapata^1,3^, Mark Howison^4,5
 
 ^1^ Department of Ecology and Evolutionary Biology, Brown University, Providence, RI 02912, USA
 
-^2^ Current address: Department of Molecular & Cellular Biology, University of California at Davis, Davis, CA 95616, USA
+^2^ Current address: Department of Molecular & Cellular Biology, University of California Davis, Davis, CA 95616, USA
 
 ^3^ Current address: Department of Ecology and Evolutionary Biology, University of California Los Angeles, Los Angeles, CA 90095, USA
 
@@ -198,7 +198,7 @@ Catriona Munro^1^\*, Stefan Siebert^1,2^\*, Felipe Zapata^1,3^, Mark Howison^4,5
 
 ## Abstract
 
-Siphonophores are a diverse group of hydrozoans (Cnidaria) that are found at all depths of the ocean - from the surface of the ocean, like the familiar Portuguese man of war, to the deep sea. Siphonophores play an important role in ocean ecosystems, and are among the most abundant gelatinous predators in the open ocean. A previous phylogenetic study based on two ribosomal RNA genes provided insight into the internal relationships between major siphonophore groups, however there was little support for many deep relationships within the clade Codonophora. Here, we present a new siphonophore phylogeny based on new transcriptome data from 30 siphonophore species analyzed in combination with 13 publicly available genomic and transcriptomic datasets. We use this new phylogeny to reconstruct several traits that are central to siphonophore biology, including sexual system (monoecy vs. dioecy), gain and loss of zooid types, life history traits, and habitat. The phylogenetic relationships in this study are largely consistent with the previous phylogeny, but finds strong support for new clades within Codonophora that were previously unresolved. These results have important implications for trait evolution within Siphonophora, including favoring the hypothesis that monoecy arose twice.
+Siphonophores are a diverse group of hydrozoans (Cnidaria) that are found at all depths of the ocean - from the surface, like the familiar Portuguese man of war, to the deep sea. Siphonophores play an important role in ocean ecosystems, and are among the most abundant gelatinous predators. A previous phylogenetic study based on two ribosomal RNA genes provided insight into the internal relationships between major siphonophore groups, however there was little support for many deep relationships within the clade Codonophora. Here, we present a new siphonophore phylogeny based on new transcriptome data from 30 siphonophore species analyzed in combination with 13 publicly available genomic and transcriptomic datasets. We use this new phylogeny to reconstruct several traits that are central to siphonophore biology, including sexual system (monoecy vs. dioecy), gain and loss of zooid types, life history traits, and habitat. The phylogenetic relationships in this study are largely consistent with the previous phylogeny, but we find strong support for new clades within Codonophora that were previously unresolved. These results have important implications for trait evolution within Siphonophora, including favoring the hypothesis that monoecy arose twice.
 
 ## 1. Introduction
 
