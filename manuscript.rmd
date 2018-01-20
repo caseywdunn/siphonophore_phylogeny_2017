@@ -206,7 +206,7 @@ Siphonophores are a diverse group of hydrozoans (Cnidaria) that are found at all
 
 Siphonophores (Fig. 1 and 2) are among the most abundant gelatinous predators in the open ocean, and have a large impact on ocean ecosystems [@pugh1984diel;@pugh1997vertical; @williams1981vertical; @purcell1981dietary; @pages2001gelatinous;  @Choy20172116]. Siphonophores, which belong to Hydrozoa (Cnidaria), are found at all depths in the ocean. The most familiar species is the Portuguese man of war *Physalia physalis*, which floats at the surface and can wash up conspicuously onto beaches [@Totton1960]. Most species are planktonic, living in the water column, where some grow to be more than 30 meters in length [@mackie1987siphonophore]. There is also a small clade of benthic siphonophores, Rhodaliidae [@pugh1983benthic], that are tethered to the bottom for part of their lives. There are currently 187 valid described siphonophore species.
 
-Siphonophores remain poorly known, in large part because they are fragile and difficult to collect. They have, however, been of great interest for more than 150 years in part due to their unique structure and development [@mapstone2014global;@mackie1987siphonophore]. Like many other cnidarians, they are colonial: they grow by incomplete asexual reproduction. Each colony arises from a single embryo that forms the protozooid, the first body. One or two growth zones (Fig. 2) then arise that asexually produce other genetically identical zooids that remain attached [@carre1969etude; @carre1991complete; @carre1967; @carre1995ordre]. These zooids are each homologous to a solitary animal, but are physiologically integrated [@totton1965synopsis; @mackie1987siphonophore; @dunn2006evolution]. Siphonophores differ significantly from other colonial animals in colony structure, development, and the high degree to which their zooids are functionally specialized and arranged in precise, repeating, species-specific patterns [@Beklemishev1969;@cartwright2010character]. The functions that zooids are specialized for include feeding, reproducing, or swimming (Fig. 2) [@dunn2006evolution].
+Siphonophores remain poorly known, in large part because they are fragile and difficult to collect. They have, however, been of great interest for more than 150 years due to their unique structure and development [@mapstone2014global;@mackie1987siphonophore]. Like many other cnidarians, they are colonial: they grow by incomplete asexual reproduction. Each colony arises from a single embryo that forms the protozooid, the first body. One or two growth zones (Fig. 2) then arise that asexually produce other genetically identical zooids that remain attached [@carre1969etude; @carre1991complete; @carre1967; @carre1995ordre]. These zooids are each homologous to a solitary animal, but are physiologically integrated [@totton1965synopsis; @mackie1987siphonophore; @dunn2006evolution]. Siphonophores differ significantly from other colonial animals in terms of colony structure and development -- their zooids are highly functionally specialized and arranged in precise, repeating, species-specific patterns [@Beklemishev1969;@cartwright2010character]. The functions that zooids are specialized for include feeding, reproducing, or swimming (Fig. 2) [@dunn2006evolution].
 
 ![Photographs of living siphonophores. They correspond to the clades shown in Figure 3 as follows: Cystonectae (A-B), Calycophorae (C-G), Apolemiidae (H), and Clade A within Euphysonectae (I-K). (A) *Rhizophysa eysenhardtii*, scale bar = 1 cm. (B) *Bathyphysa conifera*, scale bar = 2cm. (C) *Hippopodius hippopus*, scale bar = 5 mm. (D) *Kephyes hiulcus*, scale bar = 2 mm. (E) *Desmophyes haematogaster*, scale bar = 5 mm. (F) *Sphaeronectes christiansonae*, scale bar = 2 mm. (G) *Praya dubia*, scale bar = 4 cm . (H) *Apolemia* sp., scale bar = 1 cm. (I) *Lychnagalma utricularia*, scale bar = 1 cm.  (J) *Nanomia* sp., scale bar = 1 cm. (K) *Physophora hydrostatica*, scale bar = 5 mm. Photo credits: S. Siebert (C,H,I,K), S. Haddock (A,D,E,F), R. Sherlock (B), MBARI (G), C. Munro (J)](figures/Figure1.jpg)
 
@@ -214,7 +214,7 @@ Understanding the unique ecology, morphology, and development of siphonophores r
 
 Major questions remained after this early work, though. There was, in particular, little support for important deep relationships within Codonophora. Understanding these relationships is key to resolving the evolution of several traits of importance, including sexual systems (monoecy versus dioecy) and the gain and loss of particular zooids, such as palpons (Fig. 2). Here we present a broadly sampled phylogenetic analysis of Siphonophora that considers transcriptomic data from 33 siphonophore species and 10 outgroup species (2 outgroups were subsequently excluded due to poor sampling). Using 1,071 genes, we find strong support for many relationships found in the earlier phylogeny [@Dunn:2005dy], and also provide new resolution for key relationships that were unresolved in that previous study. Using this phylogeny, we reconstruct the evolutionary history of characters central to the unique biology of siphonophores, including zooid type, life history traits, and habitat.
 
-![Schematic of the siphonophore *Nanomia bijuga*, orientated with the anterior of the colony at the top of the page, and the ventral side to the left. Adapted from http://commons.wikimedia.org/wiki/File:Nanomia_bijuga_whole_animal_and_growth_zones.svg, drawn by Freya Goetz. (A) Overview of the whole mature colony. (B) Inset of the pneumatophore and nectosomal growth zone. A series of buds gives rise to nectophores. (C) Inset of the siphosomal growth zone. Probuds subdivide to give rise to zooids in repeating-units (cormidia). The gastrozooid (specialized feeding polyp) is the posterior-most zooid within each cormidium.](figures/Figure2.pdf)
+![Schematic of the siphonophore *Nanomia bijuga*, orientated with the anterior of the colony at the top of the page, and the ventral side to the left. Adapted from http://commons.wikimedia.org/wiki/File:Nanomia_bijuga_whole_animal_and_growth_zones.svg, drawn by Freya Goetz. (A) Overview of the whole mature colony. (B) Inset of the pneumatophore and nectosomal growth zone. A series of buds give rise to nectophores. (C) Inset of the siphosomal growth zone. Probuds subdivide to give rise to zooids in repeating-units (cormidia). The gastrozooid (specialized feeding polyp) is the posterior-most zooid within each cormidium.](figures/Figure2.pdf)
 
 
 ## 2. Material and methods
@@ -317,7 +317,7 @@ Using the Swofford-Olsen-Waddell-Hillis (SOWH) test [@swofford1996phylogenetic],
 The broad sampling approach of this phylogeny provides new evidence for the relationships between major siphonophore clades within Codonophora, specifically between Pyrostephidae, Calycophorae, and the newly named Euphysonectae. This opens up new questions about key relationships within both Calycophorae and Euphysonectae -- where future transcriptome sampling efforts should be focused. Within Euphysonectae, two clades (Clade A and Clade B) are hypothesized, however there is weaker support for Clade B (Fig. 3A, 3B). Expanding sampling of species that probably fall in Clade B, including other *Erenna* species, rhodaliids, and relatives of Undescribed sp L, will greatly expand our understanding of these two groups and perhaps provide evidence of Clade B synapomorphies. Similarly, within Calycophorae, increased taxon sampling is needed. This study, and the previous phylogenetic study [@Dunn:2005dy], suggest that the prayomorphs are paraphyletic, but for slightly different reasons given the different sampling of the analyses. In @Dunn:2005dy, a clade of prayomorphs including *Praya dubia* (Fig. 1G), *Nectadamas diomedeae*, and *Nectopyramis natans* (not included in this study) were found to be sister to all other calycophorans, while in this study, the prayomorph *Lilyopsis fluoracantha* (not included in the previous study) is found in a clade including diphyomorph calycophorans that is sister to all other prayomorphs. Expanded taxon sampling, particularly *P. dubia* or a nectopyramid, but also extensive sampling across the major prayomorph and diphyomorph groups, will expand our understanding of relationships within Calycophorae. This will be especially important for understanding trait evolution within Calycophorae,  for example, the release of eudoxids (Fig. 4), or the arrangement of male and female zooids along the stem (see section 3.2 below).
 
 ## 3.2 Character Evolution
-```{r char_evo_setup, include=F, echo=F}
+```{r char_evo_setup, include=F, echo=FALSE}
 #Load data
 read.csv('character_coding/main_characters.csv', header = T, sep = ',') -> cdata
 rownames(cdata) = cdata$Species
@@ -368,7 +368,7 @@ depth_median = dpruned_data$Depth.Median
 names(depth_median) = rownames(dpruned_data)
 ```
 
-```{r simmap_making, echo=F, message=F, warning=F, include=F}
+```{r simmap_making, echo=FALSE, message=FALSE, warning=FALSE, include=F}
 #Stochastic trait mapping:
 #Make simmap objects
 #print("SIMMAP Sex Distribution")
@@ -400,7 +400,7 @@ DescMantleTree =  drop.tip(ultratree, which(!(ultratree$tip.label %in% names(des
 make.simmap(DescMantleTree, desc_mantle, nsim = 100, message=FALSE) -> desc_mantle_sim
 ```
 
-```{r sex, echo=F, message=F, warning=F, include=F}
+```{r sex, echo=FALSE, message=F, warning=FALSE, include=F}
 par(ask=F)
 #Simmap SEX
 plotTree(ultratree, lwd = 4)
@@ -416,7 +416,7 @@ sex_obj$cols[1:length(sex_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "oran
  dev.off()
 ```
 
-```{r palpons, echo=F, message=F, warning=F, include=F}
+```{r palpons, echo=FALSE, message=F, warning=FALSE, include=F}
 #Simmap PALPONS
 
 ##MODEL test
@@ -436,7 +436,7 @@ palpons_obj$cols[1:length(palpons_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC
  dev.off()
 ```
 
-```{r vars_plot, echo=F, message=F, warning=F, include=F}
+```{r vars_plot, echo=FALSE, message=F, warning=FALSE, include=F}
 #Get Raw Data
 raw_data = read.csv(file="character_coding/trim_siphdepths.tsv", sep = "\t")[,c(4,3,5:11)]
 raw_data = raw_data[order(raw_data$ConceptName),]
@@ -490,7 +490,7 @@ trimmed_SDdata$Species <- factor(trimmed_SDdata$Species, levels = sp_order)
  dev.off()
 ```
 
-```{r ggtree_bin_heatmap, echo=F, message=F, warning=F, include=F}
+```{r ggtree_bin_heatmap, echo=FALSE, message=F, warning=FALSE, include=F}
 p <- ggtree(ultratree)
 p <- p + geom_tiplab(size=2.2)
 f_cdata = sapply(cdata, as.factor) %>% as.data.frame %>% .[c(1,2,5:9,17,18,3)]
@@ -509,7 +509,7 @@ In all siphonophores, each gonophore (sexual medusa that produces gametes) is ei
 
 The distribution of monoecy is consistent with two scenarios (Fig. 4). In the first, there is a single shift from dioecy to monoecy along the branch that give rise to the most recent common ancestor of Calycophorae and Euphysonectae, followed by a shift back to dioecy along the branch that gave rise to Clade B. In the second, monoecy arose twice -- once along the branch that gave rise to Clade A and again along the branch that gave rise to Calycophorae.
 
-Ancestral character state reconstructions favor the hypothesis that monoecy arose twice (Fig. 5A), once in Calycophorae and once in Clade A. This is consistent with differences in the arrangements of male and female gonophores in the two clades. In Clade A, male and female zooids are found within the same cormidium (a single reiterated sequence of zooids along the stem, see Fig. 2). In these species, the male and female zooids are placed at very different but well defined locations within the cormidium. Meanwhile in calycophorans, each cormidium bears either male or female gonophores. In this form of monoecy, the male and female cormidia can either be in an alternating pattern, or there can be several male or female cormidia in a row. In either case, male and female zooids are found at the same corresponding locations within the cormidia. In sum, homoplasy in sexual system evolution along with variation in the spatial arrangement of gonophores within a colony suggest that siphonophores have evolved different ways to be monoecious. Both Calycophorae and Clade A both have a large proportion of shallow water species (see section 3.7), suggesting that there may be an association between habitat depth and sexual mode. Similar independent transitions from gonochorism (separate sex) to hermaphrodism (both sexes in the same individual) have been identified in shallow-water scleractinian corals (Anthozoa, Cnidaria) [@kerr2011correlated]. To test this hypothesis, a more extensive taxon sampling of the Calycophorae is needed.
+Ancestral character state reconstructions favor the hypothesis that monoecy arose twice (Fig. 5A), once in Calycophorae and once in Clade A. This is consistent with differences in the arrangements of male and female gonophores in the two clades. In Clade A, male and female zooids are found within the same cormidium (a single reiterated sequence of zooids along the stem, see Fig. 2). In these species, the male and female zooids are placed at very different but well defined locations within the cormidium. Meanwhile in calycophorans, each cormidium bears either male or female gonophores. In this form of monoecy, the male and female cormidia can either be in an alternating pattern, or there can be several male or female cormidia in a row. In either case, male and female zooids are found at the same corresponding locations within the cormidia. In sum, homoplasy in sexual system evolution along with variation in the spatial arrangement of gonophores within a colony suggest that siphonophores have evolved different ways to be monoecious. Both Calycophorae and Clade A have a large proportion of shallow water species (see section 3.7), suggesting that there may be an association between habitat depth and sexual mode. Similar independent transitions from gonochorism (separate sex) to hermaphrodism (both sexes in the same individual) have been identified in shallow-water scleractinian corals (Anthozoa, Cnidaria) [@kerr2011correlated]. To test this hypothesis, a more extensive taxon sampling of the Calycophorae is needed.
 
 Within Calycophorae there are some variations in sexual mode -- in *Sulculeolaria* (not included in this phylogeny) colonies appear to consist of only one sex, however they are monoecious and protoandrous, with female gonophores developing after the release of male gonophores [@carre1979]. Environmental influences may also play a role in determining the expressed sex. Colonies of the calycophoran *Chelophyes appendiculata* collected in the field always bear both male and female gonophores whereas when kept in culture only gonophores of one sex are maintained [@Carre:2000hb]. This suggests a high plasticity of the sexual state in some calycophoran taxa and underlines the need for caution when evaluating the state of this character in rarely collected species. 
 
@@ -527,7 +527,7 @@ Bracts are highly reduced zooids unique to siphonophores, where they are only pr
 
 Palpons are modified reduced gastrozooids used for digestion and circulation of the gastrovascular fluid [@mackie1987siphonophore]. We do not distinguish here between gonopalpons (palpons associated with gonodendra, without a tentacle, as in the cystonects) and palpons borne on the stem (typically with a reduced tentacle or palpacle) [@totton1965synopsis]. We reconstruct them as present in the common ancestor of siphonophores (Fig. 5B), retained in most species, but lost three times independently in the branches leading to Pyrostephidae (represented here by the genera *Bargmannia* and *Rudjakovia*), in calycophorans, and in *Marrus claudanielis*. Within the calycophorans, one species *Stephanophyes superba* (not included in this phylogeny) has polyp-like zooids that have been described as palpons [@totton1965synopsis], but the exact identity of this zooid is not clear and needs further morphological examination.
 
-![Stochastic mapping reconstruction of the evolutionary history of A) distribution of sexual zooids on the colonies, and B) palpon zooids. The color gradients show the reconstructed probability estimate of the discrete character states along the branches. Intermediate values reflect uncertainty.](figures/Figure5.pdf)
+![Stochastic mapping reconstruction of the evolutionary history of A) sexual mode, whether a colony is monoecious or dioecious and B) presence/absence of palpons (modified reduced gastrozooids). The color gradients show the reconstructed probability estimate of the discrete character states along the branches. Intermediate values reflect uncertainty.](figures/Figure5.pdf)
 
 ### 3.5 The Gain and Loss of the Pneumatophore
 
@@ -565,23 +565,17 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 
 ![60% gene occupancy matrix for 41 species across 1,071 genes. Genes and species are sorted by sampling, the best sampled shown in the upper left.](supplementary_info/gene_occupancy.png)
 
+\pagebreak
+
+####SOWH analysis
+
 ![Constrained topologies specified in SOWH testing. Test statistic and p-value for each tree estimated under constraint are given.](sowh/sowh_tests_supplemental_figure/sowh_tests_supplemental_figure.png)
 
-```{r summary_table, results='asis', echo=FALSE, comment=NA, warning=FALSE}
-
-####The supplementary table is too long. We decided to include as a supplementary datafile instead
-
-#	summary_stats = read.table("supplementary_info/Library_summary.csv", header=TRUE, sep=",")
-#	names(summary_stats)<-c("Species","Mean insert size (bp)","Insert size sd","# read pairs","% kept after rRNA removal","% kept after assembly","Adapter fails","Quality fails","Base Comp. fails","Total transcripts","Coding transcripts")
-
-#xtable_summary<-xtable(summary_stats, caption="Supplementary table 1.The assembly summary statistics for all included taxa, showing mean insert size, and the percentage of reads kept after pipeline steps.")
-#align( xtable_summary ) <- c('l|','p{0.8in}','p{0.3in}','p{0.3in}','p{0.5in}','p{0.3in}','p{0.3in}','p{0.4in}','p{0.5in}','p{0.5in}','p{0.5in}','p{0.5in}')
-#print(xtable_summary,include.rownames=FALSE,comment=F, floating =FALSE, tabular.environment = "longtable")
-
-```
+\pagebreak
 
 #####Stochastic Character maps
-```{r tentilla, echo=F, message=F,warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as not bearing tentilla."}
+
+```{r tentilla, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as not bearing tentilla."}
 #Simmap TENTILLA
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -594,7 +588,7 @@ tentilla_obj$cols[1:length(tentilla_obj$cols)]<-colorRampPalette(colors=c("#4A4A
 plot(tentilla_obj)
 ```
 
-```{r tentilla2, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as bearing tentilla."}
+```{r tentilla2, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as bearing tentilla."}
 #Simmap TENTILLA
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -607,7 +601,7 @@ tentilla2_obj$cols[1:length(tentilla2_obj$cols)]<-colorRampPalette(colors=c("#4A
 plot(tentilla2_obj)
 ```
 
-```{r nectosome, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome."}
+```{r nectosome, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome."}
 #Simmap NECTOSOME
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -620,7 +614,7 @@ nectosome_obj$cols[1:length(nectosome_obj$cols)]<-colorRampPalette(colors=c("#4A
 plot(nectosome_obj)
 ```
 
-```{r desc_mantle, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of a descending mantle canal in the nectophores. Cystonects and Athorybia were excluded as they do not have a nectosome. "}
+```{r desc_mantle, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of a descending mantle canal in the nectophores. Cystonects and Athorybia were excluded as they do not have a nectosome. "}
 #Simmap Descending Mantle Canal
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -634,7 +628,7 @@ plot(desc_mantle_obj)
 ```
 
 
-```{r nectosome_pos, echo=F, message=F, warning=F,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map for the evolution of the position of the nectosome. Cystonects were excluded as they do not have a nectosome."}
+```{r nectosome_pos, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map for the evolution of the position of the nectosome. Cystonects were excluded as they do not have a nectosome."}
 #SIMMAP NectoPos
 # plotTree(ultratree, lwd = 4)
 # colors = c("black", "red")
@@ -647,14 +641,13 @@ necto_pos_obj$cols[1:length(necto_pos_obj$cols)]<-colorRampPalette(colors=c("#4A
 plot(necto_pos_obj)
 ```
 
-
-```{r median_cont, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV."}
+```{r median_cont, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV."}
 depth_value = depth_median
 depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap)
 ```
 
-```{r median_depth_extended, echo=F, message=F, warning=F, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations." }
+```{r median_depth_extended, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations." }
 
 median_extended = cdata$Depth.Median.Extended
 names(median_extended) = rownames(cdata)
@@ -662,25 +655,16 @@ median_extended = median_extended[match(names(median_extended), ultratree$tip.la
 depthmap_ext <- contMap(ultratree, median_extended, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap_ext)
 
-fitContinuous(ultratree, median_extended, model="white")$opt$aicc
-fitContinuous(ultratree, median_extended, model="BM")$opt$aicc
-fitContinuous(ultratree, median_extended, model="OU")$opt$aicc
+#below are the model fit details
+
+modelfit_white <- fitContinuous(ultratree, median_extended, model="white")$opt$aicc
+modelfit_BM <- fitContinuous(ultratree, median_extended, model="BM")$opt$aicc
+modelfit_OU <- fitContinuous(ultratree, median_extended, model="OU")$opt$aicc
 
 ```
 
 
-```{r phylosig_binaries, results='asis',echo=F, message=F, warning=F}
- # make it xtable
-binaries_phylosig = multiPhylosignal(as.matrix(cdata[,c(2,5:8)]), ultratree)
-names(binaries_phylosig)<-c("K","PICvar obs","PICvar rnd","P-value","Z-score")
-xtable_PS<-xtable(binaries_phylosig,auto=TRUE, caption="Phylogenetic signal in the binary traits, including Blomberg's K statistic, the mean observed PIC variance, the random variance of PICs, p-value of the comparison of observed and random variance, and the z-score. ")
-print(xtable_PS,comment=F)
-
-```
-
-
-
-
+\pagebreak
 
 ### Software versions
 
