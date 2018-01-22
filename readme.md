@@ -6,7 +6,7 @@ This repository contains all of the code and analyses associated with a phylogen
 
 >Munro C, Siebert S, Zapata F, Howison M, Damian Serrano A, Church SH, Goetz FE, Pugh PR, Haddock SHD, Dunn CW. (2018) Improved phylogenetic resolution within Siphonophora (Cnidaria) with implications for trait evolution. [https://doi.org/10.1101/251116](https://www.biorxiv.org/content/early/2018/01/20/251116)
 
-![Figure 3](siphonophore_phylogeny_2017/figures/Figure3.pdf)
+![Figure 3](https://github.com/caseywdunn/siphonophore_phylogeny_2017/blob/master/figures/Figure3.pdf)
 
 See [figures](https://github.com/caseywdunn/siphonophore_phylogeny_2017/tree/master/figures) for original figures used in this manuscript.
 
