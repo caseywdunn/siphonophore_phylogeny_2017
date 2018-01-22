@@ -18,7 +18,7 @@ The repository includes a number of files needed to recreate these analyses. Seq
 
 - `character_coding/` Character coding files for the species considered in this manuscript
 
--`sowh/` Code used to carry out the SOWH tests
+- `sowh/` Code used to carry out the SOWH tests
 
 - `manuscript.rmd` Source code for the manuscript itself
 
