@@ -340,6 +340,7 @@ cdata %<>% .[-1]
 #Named vectors for variables
 sex = cdata$Sex
 names(sex) = rownames(cdata)
+sex[which(names(sex)=="Rudjakovia sp")] <- "Dioecious" #Modified for graphing purposes
 
 nectosome = cdata$Nectosome
 names(nectosome) = rownames(cdata)
@@ -396,6 +397,7 @@ make.simmap(NectoPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
 desc_mantle_data = cdata[which(!is.na(cdata$Desc.Mantle.Canal)),]
 desc_mantle = desc_mantle_data$Desc.Mantle.Canal
 names(desc_mantle)=rownames(desc_mantle_data)
+desc_mantle[which(names(desc_mantle)=="Rudjakovia sp")] <- 0 #Modified for graphing purposes
 DescMantleTree =  drop.tip(ultratree, which(!(ultratree$tip.label %in% names(desc_mantle))))
 make.simmap(DescMantleTree, desc_mantle, nsim = 100, message=FALSE) -> desc_mantle_sim
 ```
