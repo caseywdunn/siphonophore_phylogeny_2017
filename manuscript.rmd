@@ -2,10 +2,11 @@
 bibliography: manuscript.bib
 csl: molecular-phylogenetics-and-evolution.csl
 output:
+  word_document: default
   pdf_document:
     fig_caption: yes
     includes:
-            in_header: mystyles.sty
+      in_header: mystyles.sty
 ---
 
 ```{r preliminaries, include=FALSE}
@@ -214,7 +215,7 @@ Understanding the unique ecology, morphology, and development of siphonophores r
 
 Major questions remained after this early work, though. There was, in particular, little support for important deep relationships within Codonophora. Understanding these relationships is key to resolving the evolution of several traits of importance, including sexual systems (monoecy versus dioecy) and the gain and loss of particular zooids, such as palpons (Fig. 2). Here we present a broadly sampled phylogenetic analysis of Siphonophora that considers transcriptomic data from 33 siphonophore species and 10 outgroup species (2 outgroups were subsequently excluded due to poor sampling). Using 1,071 genes, we find strong support for many relationships found in the earlier phylogeny [@Dunn:2005dy], and also provide new resolution for key relationships that were unresolved in that previous study. Using this phylogeny, we reconstruct the evolutionary history of characters central to the unique biology of siphonophores, including zooid type, life history traits, and habitat.
 
-![Schematic of the siphonophore *Nanomia bijuga*, orientated with the anterior of the colony at the top of the page, and the ventral side to the left. Adapted from http://commons.wikimedia.org/wiki/File:Nanomia_bijuga_whole_animal_and_growth_zones.svg, drawn by Freya Goetz. (A) Overview of the whole mature colony. (B) Inset of the pneumatophore and nectosomal growth zone. A series of buds give rise to nectophores. (C) Inset of the siphosomal growth zone. Probuds subdivide to give rise to zooids in repeating-units (cormidia). The gastrozooid (specialized feeding polyp) is the posterior-most zooid within each cormidium.](figures/Figure2.pdf)
+![Schematic of the siphonophore *Nanomia bijuga*, oriented with the anterior of the colony at the top of the page, and the ventral side to the left. Adapted from http://commons.wikimedia.org/wiki/File:Nanomia_bijuga_whole_animal_and_growth_zones.svg, drawn by Freya Goetz. (A) Overview of the whole mature colony. (B) Inset of the pneumatophore and nectosomal growth zone. A series of buds give rise to nectophores. (C) Inset of the siphosomal growth zone. Probuds subdivide to give rise to zooids in repeating-units (cormidia). The gastrozooid (specialized feeding polyp) is the posterior-most zooid within each cormidium.](figures/Figure2.pdf)
 
 
 ## 2. Material and methods
