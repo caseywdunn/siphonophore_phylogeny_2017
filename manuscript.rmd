@@ -2,11 +2,11 @@
 bibliography: manuscript.bib
 csl: molecular-phylogenetics-and-evolution.csl
 output:
-  word_document: default
   pdf_document:
     fig_caption: yes
     includes:
       in_header: mystyles.sty
+  word_document: default
 ---
 
 ```{r preliminaries, include=FALSE}
@@ -220,7 +220,7 @@ Major questions remained after this early work, though. In particular, there was
 
 ## 2. Material and methods
 
-All scripts for the analyses are available in a git repository at [https://github.com/caseywdunn/siphonophore_phylogeny_2017](https://github.com/caseywdunn/siphonophore_phylogeny_2017). The most recent commit at the time of the analysis presented here was `r system("git log | head -n 1", intern=TRUE) %>% str_replace("commit ", "")` with tag XXXXXXXXXX.
+All scripts for the analyses are available in a git repository at [https://github.com/caseywdunn/siphonophore_phylogeny_2017](https://github.com/caseywdunn/siphonophore_phylogeny_2017). The most recent commit at the time of the analysis presented here was `r system("git log | head -n 1", intern=TRUE) %>% str_replace("commit ", "")` with tag "paper_v1".
 
 
 #### 2.1 Collecting
@@ -314,7 +314,7 @@ Within Calycophorae, taxon sampling is less comprehensive here than in the previ
 
 ![(A) Maximum likelihood (ML) phylogram with bipartition frequencies from the ML bootstraps and the Bayesian posterior distribution of trees. Unlabeled nodes have support >0.99 for both bootstraps and posteriors. The numbers of valid described species estimated to be based in each clade based on taxonomy are shown below each clade name on the right. (B) The topologies found in the posterior distribution of trees that conflict with the ML tree. (C) The topologies evaluated by the SOWH tests. For more details on the SOWH topologies refer to Fig. S2.](figures/Figure3.pdf)
 
-Using the Swofford-Olsen-Waddell-Hillis (SOWH) test [@swofford1996phylogenetic], we evaluated the following three alternative phylogenetic hypotheses against the most likely tree topology (Fig. 3C): (i) monophyletic Physonectae, (ii) monophyletic monoecious siphonophores including *Rudjakovia* sp. and (iii) monophyletic monoecious with dioecious *Rudjakovia* sp. <!--  XXX This needs to be fixed to coincide with the two hypotheses listed in section 2.3 XXX -->. In all three tests the alternative hypothesis was rejected (p-value <0.01, confidence interval: <0.001 - 0.03, Fig. S2).
+Using the Swofford-Olsen-Waddell-Hillis (SOWH) test [@swofford1996phylogenetic], we evaluated the following two alternative phylogenetic hypotheses against the most likely tree topology (Fig. 3C): (i) monophyletic Physonectae, (ii) monophyletic monoecious siphonophores. As the sexual mode of  *Rudjakovia* is undescribed, we carried out two tests: with one test including *Rudjakovia* sp. as a monoecious species, and the other with dioecious *Rudjakovia* sp. In all three tests the alternative hypothesis was rejected (p-value <0.01, confidence interval: <0.001 - 0.03, Fig. S2).
 
 The broad taxon sampling and more extensive gene sampling of this phylogeny provide new evidence for the relationships between major siphonophore clades within Codonophora, specifically between Pyrostephidae, Calycophorae, and the newly named Euphysonectae. This opens up new questions about key relationships within both Calycophorae and Euphysonectae -- where future transcriptome sampling efforts should be focused. Within Euphysonectae, two clades (Clade A and Clade B) are hypothesized, although there is weaker support for Clade B (Fig. 3A, 3B). Expanding sampling of species that probably fall in Clade B, including other *Erenna* species, rhodaliids, and relatives of Undescribed sp L, will greatly expand our understanding of these two groups and perhaps provide evidence of Clade B synapomorphies. Similarly, within Calycophorae, increased taxon sampling is needed. This study, and the previous phylogenetic study [@Dunn:2005dy], suggest that the prayomorphs are paraphyletic, but for slightly different reasons given the different sampling of the analyses. In @Dunn:2005dy, a clade of prayomorphs including *Praya dubia* (Fig. 1G), *Nectadamas diomedeae*, and *Nectopyramis natans* (not included in this study) were found to be sister to all other calycophorans, while in this study, the prayomorph *Lilyopsis fluoracantha* (not included in the previous study) is found in a clade including diphyomorph calycophorans that is sister to all other prayomorphs. Expanded transcriptome sequencing, particularly *P. dubia* or a nectopyramid, but also extensive sampling across the major prayomorph and diphyomorph groups, will expand our understanding of relationships within Calycophorae. This will be especially important for understanding trait evolution within Calycophorae,  for example, the release of eudoxids (Fig. 4), or the arrangement of male and female zooids along the stem (see section 3.2 below).
 
@@ -529,7 +529,7 @@ Nectophores (Fig. 2) are non-reproductive propulsive medusae. In Codonophora, th
 
 Within the nectosome, the nectophores can be attached along the dorsal or ventral side of the stem, following the orientation framework of @haddock_dunn_pugh_2005. The apparent placement of the nectophores on opposite sides of the nectosome occurs through twisting of the stem during development. Our ancestral reconstructions for this character (Fig. S7) suggest that ventral attachment of nectophores was the ancestral state in Codonophora, and that dorsal attachment has independently evolved twice -- once along the stem of Agalmatidae and once along the stem of Pyrostephidae. The functional implication of dorsal vs. ventral attachment is not clear. 
 
-Bracts are greatly reduced zooids unique to siphonophores, where they are only present in Codonophora (Fig. 4). Bracts are functional for protection of the delicate zooids and to help maintain neutral buoyancy [@jacobs1937beobachtungen]. Some calycophorans are able to actively exclude sulphate ions in their bracts to adjust their buoyancy along the colony [@bidigare1980role]. Bracts were lost in Hippopodiidae, some clausophyids, *Physophora hydrostatica* (Fig. 1K), and in *Gymnopraia lapislazula*. These patterns of loss are not captured in this study, as most of these species are not included in the present phylogeny. In species without bracts, other zooids appear to fulfill the roles of neutral buoyancy and protection. In *Physophora hydrostatica*, enlarged palpons surround all other siphosomal zooids and move in a coordinated manner to inflict a powerful sting [@totton1965synopsis]. *Hippopodius hippopus* has up to twelve nectophores and can retract the stem within the nectophores. The nectophores play a role in maintaining neutral buoyancy and possibly also in defense, by bioluminescing and blanching in response to stimuli (Fig. 1C shows the blanching of nectophores)[@bassot1978bioluminescence].  <!-- XXX This hippo section seems like a total non-sequitur in the bract paragraph, even considering the potantial role in buoyancy XXX -->
+Bracts are greatly reduced zooids unique to siphonophores, where they are only present in Codonophora (Fig. 4). Bracts are functional for protection of the delicate zooids and to help maintain neutral buoyancy [@jacobs1937beobachtungen]. Some calycophorans are able to actively exclude sulphate ions in their bracts to adjust their buoyancy along the colony [@bidigare1980role]. Bracts were lost in Hippopodiidae, some clausophyids, *Physophora hydrostatica* (Fig. 1K), and in *Gymnopraia lapislazula*. These patterns of loss are not captured in this study, as most of these species are not included in the present phylogeny. In species without bracts, other zooids appear to fulfill the roles of neutral buoyancy and protection. In *Physophora hydrostatica*, enlarged palpons surround all other siphosomal zooids and move in a coordinated manner to inflict a powerful sting [@totton1965synopsis]. While in *Hippopodius hippopus* the nectophores play a role in maintaining neutral buoyancy and possibly also in defense, by bioluminescing and blanching in response to stimuli (Fig. 1C shows the blanching of nectophores)[@bassot1978bioluminescence].
 
 Palpons are modified reduced gastrozooids used for digestion and circulation of the gastrovascular fluid [@mackie1987siphonophore]. We do not distinguish here between gonopalpons (palpons associated with gonodendra, without a tentacle, as in the cystonects) and palpons borne on the stem (typically with a reduced tentacle or palpacle) [@totton1965synopsis]. We reconstruct them as present in the common ancestor of siphonophores (Fig. 5B), retained in most species, but lost three times independently in the branches leading to Pyrostephidae (represented here by the genera *Bargmannia* and *Rudjakovia*), in calycophorans, and in *Marrus claudanielis*. Within the calycophorans, one species *Stephanophyes superba* (not included in this phylogeny) has polyp-like zooids that have been described as palpons [@totton1965synopsis], but the exact identity of this zooid is not clear and needs further morphological examination.
 
@@ -569,13 +569,13 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 
 ####Agalma analysis
 
-![60% gene occupancy matrix for 41 species across 1,071 genes. Genes and species are sorted by sampling, the best sampled shown in the upper left.](supplementary_info/gene_occupancy.png)
+![60% gene occupancy matrix for 41 species across 1,071 genes. Genes and species are sorted by sampling, the best sampled shown in the upper left.](supplementary_info/Supplementary_Figure1.png)
 
 \pagebreak
 
 ####SOWH analysis
 
-![Constrained topologies specified in SOWH testing. Test statistic and p-value for each tree estimated under constraint are given.](sowh/sowh_tests_supplemental_figure/sowh_tests_supplemental_figure.png)
+![Constrained topologies specified in SOWH testing. Test statistic and p-value for each tree estimated under constraint are given.](supplementary_info/Supplementary_Figure2.png)
 
 \pagebreak
 
@@ -592,6 +592,11 @@ This work was supported by the National Science Foundation (DEB-1256695 and the 
 tentilla_obj <- densityMap(tentilla_sim,plot=FALSE)
 tentilla_obj$cols[1:length(tentilla_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla_obj$cols))
 plot(tentilla_obj)
+
+pdf("supplementary_info/Supplementary_Figure3.pdf")
+plot(tentilla_obj)
+dev.off()
+
 ```
 
 ```{r tentilla2, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as bearing tentilla."}
@@ -605,6 +610,10 @@ plot(tentilla_obj)
 tentilla2_obj <- densityMap(tentilla_sim2, plot=FALSE)
 tentilla2_obj$cols[1:length(tentilla2_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla2_obj$cols))
 plot(tentilla2_obj)
+
+pdf("supplementary_info/Supplementary_Figure4.pdf")
+plot(tentilla2_obj)
+dev.off()
 ```
 
 ```{r nectosome, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome."}
@@ -618,6 +627,10 @@ plot(tentilla2_obj)
 nectosome_obj <- densityMap(nectosome_sim, plot=FALSE)
 nectosome_obj$cols[1:length(nectosome_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(nectosome_obj$cols))
 plot(nectosome_obj)
+
+pdf("supplementary_info/Supplementary_Figure5.pdf")
+plot(nectosome_obj)
+dev.off()
 ```
 
 ```{r desc_mantle, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of a descending mantle canal in the nectophores. Cystonects and Athorybia were excluded as they do not have a nectosome. "}
@@ -631,6 +644,10 @@ plot(nectosome_obj)
 desc_mantle_obj <- densityMap(desc_mantle_sim, plot=FALSE)
 desc_mantle_obj$cols[1:length(desc_mantle_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(desc_mantle_obj$cols))
 plot(desc_mantle_obj)
+
+pdf("supplementary_info/Supplementary_Figure6.pdf")
+plot(desc_mantle_obj)
+dev.off()
 ```
 
 
@@ -645,12 +662,20 @@ plot(desc_mantle_obj)
 necto_pos_obj <- densityMap(necto_pos_sim, plot=FALSE)
 necto_pos_obj$cols[1:length(necto_pos_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(necto_pos_obj$cols))
 plot(necto_pos_obj)
+
+pdf("supplementary_info/Supplementary_Figure7.pdf")
+plot(necto_pos_obj)
+dev.off()
 ```
 
 ```{r median_cont, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV."}
 depth_value = depth_median
 depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap)
+
+pdf("supplementary_info/Supplementary_Figure8.pdf")
+plot(depthmap)
+dev.off()
 ```
 
 ```{r median_depth_extended, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations." }
@@ -660,6 +685,10 @@ names(median_extended) = rownames(cdata)
 median_extended = median_extended[match(names(median_extended), ultratree$tip.label)]
 depthmap_ext <- contMap(ultratree, median_extended, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap_ext)
+
+pdf("supplementary_info/Supplementary_Figure9.pdf")
+plot(depthmap_ext)
+dev.off()
 
 #below are the model fit details
 

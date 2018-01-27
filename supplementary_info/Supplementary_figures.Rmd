@@ -1,0 +1,42 @@
+---
+output:
+  pdf_document:
+    fig_caption: yes
+---
+
+## Supplementary Figures
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\makeatletter
+\renewcommand{\thefigure}{S\@arabic\c@figure}
+\renewcommand{\thetable}{S\@arabic\c@table}
+\makeatother
+
+####Agalma analysis
+
+![60% gene occupancy matrix for 41 species across 1,071 genes. Genes and species are sorted by sampling, the best sampled shown in the upper left.](Supplementary_Figure1.png)
+
+\pagebreak
+
+####SOWH analysis
+
+![Constrained topologies specified in SOWH testing. Test statistic and p-value for each tree estimated under constraint are given.](Supplementary_Figure2.png)
+
+\pagebreak
+
+#####Stochastic Character maps
+
+![Stochastic character map of presence of tentilla with *Physalia* included as not bearing tentilla.](Supplementary_Figure3.pdf)
+
+
+![Stochastic character map of presence of tentilla with *Physalia* included as bearing tentilla.](Supplementary_Figure4.pdf)
+
+![Stochastic character map of presence of nectosome.](Supplementary_Figure5.pdf)
+
+![Stochastic character map of presence of a descending mantle canal in the nectophores. Cystonects and Athorybia were excluded as they do not have a nectosome.](Supplementary_Figure6.pdf)
+
+![Stochastic character map for the evolution of the position of the nectosome. Cystonects were excluded as they do not have a nectosome.](Supplementary_Figure7.pdf)
+
+![Brownian Motion character map of median depth of species observed with an MBARI ROV](Supplementary_Figure8.pdf)
+
+![Brownian Motion character map of median depth of species including blue water diving observations.](Supplementary_Figure9.pdf)
