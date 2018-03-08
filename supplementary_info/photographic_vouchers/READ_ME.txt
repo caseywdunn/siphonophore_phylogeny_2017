@@ -19,3 +19,5 @@ Voucher 8. Rudjakovia sp., specimen id: D498-D3. Whole animal.
 Voucher 9. Halistemma rubrum, specimen id: D720-D1. Tentilla and nectophores.
 
 Voucher 10. Craseoa sp., specimen id:D27-D2. Nectophores and siphosome.
+
+Voucher 11. Physalia physalis, S237-029-NT. Whole animal without float.
