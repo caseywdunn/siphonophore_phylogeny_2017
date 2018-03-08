@@ -20,4 +20,6 @@ Voucher 9. Halistemma rubrum, specimen id: D720-D1. Tentilla and nectophores.
 
 Voucher 10. Craseoa sp., specimen id:D27-D2. Nectophores and siphosome.
 
-Voucher 11. Physalia physalis, S237-029-NT. Whole animal without float.
+Voucher 11. Physalia physalis, S237-029-NT. Whole animal.
+
+Voucher 12. Abylopsis tetragona, VF8. Anterior & posterior nectophore. Retracted siphosome.
