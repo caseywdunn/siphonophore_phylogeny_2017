@@ -697,7 +697,7 @@ modelfit_OU <- fitContinuous(ultratree, median_extended, model="OU")$opt$aicc
 
 ```
 
-```{r supplementary trees, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Phylogenies obtained using different models of evolution. Topologies are the same. A. GTR + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -5964623.1967; AIC score: 11929462.3933.  B. JTT + Empirically counted frequencies from alignment + FreeRate model with 6 categories. Likelihood:-5964771.2358; AIC: 11929758.4715. C. WAG + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood:-5985124.7530; AIC score: 11970465.5060 "}
+```{r supplementary trees, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Phylogenies obtained using different models of evolution. Unlabeled nodes have support >0.99. A. GTR + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -5964623.1967; AIC score: 11929462.3933.  B. JTT + Empirically counted frequencies from alignment + FreeRate model with 6 categories. Likelihood:-5964771.2358; AIC: 11929758.4715. C. WAG + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood:-5985124.7530; AIC score: 11970465.5060 "}
 
 fix_trees<-function(tree){
 tree<-fix_names(tree)
@@ -717,8 +717,26 @@ WAGtree<-ape::read.tree("supplementary_info/Siphonophore_WAG_IGtree.tre")
 trees<-c(GTRtree,JTTtree,WAGtree)
 trees<-lapply(trees,fix_trees)
 class(trees)<-"multiPhylo"
-names(trees)<-c("A. GTR20+FO+R6 ","B. JTT+F+R6","C. WAG+FO+R6")
-ggtree(trees) + facet_wrap(~.id, scale="free", ncol=3) +geom_tiplab(size=2) + xlim(0, 2)
+
+support = as.numeric( trees[[1]]$node.label )
+support[ support > 99 ] = NA
+support1 = c( rep( NA, length( trees[[1]]$tip.label ) ), support )
+
+support = as.numeric( trees[[2]]$node.label )
+support[ support > 99 ] = NA
+support2 = c( rep( NA, length( trees[[2]]$tip.label ) ), support )
+
+support = as.numeric( trees[[3]]$node.label )
+support[ support > 99 ] = NA
+support3 = c( rep( NA, length( trees[[3]]$tip.label ) ), support )
+
+p1<-ggtree(trees[[1]])+geom_tiplab(size=2)+geom_text(aes(label=support1),size=3, hjust=-0.1, col="red") + xlim(0, 2)+ ggtitle("A. GTR20+FO+R6")
+
+p2<-ggtree(trees[[2]])+geom_tiplab(size=2)+geom_text(aes(label=support2),size=3, hjust=-0.1, col="red") + xlim(0, 2)+ ggtitle("B. JTT+F+R6")
+
+p3<-ggtree(trees[[3]])+geom_tiplab(size=2)+geom_text(aes(label=support3),size=3, hjust=-0.1, col="red") + xlim(0, 2)+ ggtitle("C. WAG+FO+R6")
+
+multiplot(p1, p2, p3, ncol=3)
 
 ```
 
