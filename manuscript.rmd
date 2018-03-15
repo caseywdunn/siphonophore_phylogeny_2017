@@ -697,7 +697,7 @@ modelfit_OU <- fitContinuous(ultratree, median_extended, model="OU")$opt$aicc
 
 ```
 
-```{r supplementary trees, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Phylogenies obtained using different models of evolution. Topologies are the same. A. GTR + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -5964623.1967; AIC score: 11929462.3933.  B. JTT + Empirically counted frequencies from alignment + FreeRate model with 6 categories. Likelihood:-4718433.4592; AIC: 11929462.3933. C. WAG + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood:-5985124.7530; AIC score: 11970465.5060 "}
+```{r supplementary trees, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Phylogenies obtained using different models of evolution. Topologies are the same. A. GTR + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -5964623.1967; AIC score: 11929462.3933.  B. JTT + Empirically counted frequencies from alignment + FreeRate model with 6 categories. Likelihood:-5964771.2358; AIC: 11929758.4715. C. WAG + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood:-5985124.7530; AIC score: 11970465.5060 "}
 
 fix_trees<-function(tree){
 tree<-fix_names(tree)
