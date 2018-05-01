@@ -76,6 +76,9 @@ output:
 	  path=tree_path,
 	  pattern="chain\\d+_trimmed60_poisson.treelist"
 	 )
+	
+	#remove two chains that are stuck in local maxima
+	input_files_phylobayes= input_files_phylobayes[-which(input_files_phylobayes %in% c("chain1_trimmed60_poisson.treelist","chain3_trimmed60_poisson.treelist"))]
 
 	# Analysis parameters
 	burn_in = 400
@@ -237,7 +240,7 @@ New data were analysed in conjunction with 14 publicly available datasets [@zapa
 
 Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed from the final supermatrix due to low gene occupancy (gene sampling of 17.0% and 17.3% respectively in a 60% occupancy matrix with 3,379 genes). The final analyses presented here consider 33 siphonophore species and 8 outgroup species. This includes new data for 30 species. In the final analyses, we sampled 1,423 genes to generate a supermatrix with 80% occupancy and a length of 395,699 amino acids (Fig. S1).
 
-ML analyses were conducted on the unpartitioned supermatrix using the WAG+$\Gamma$ model of amino acid substitution, and bootstrap values were estimated using `r length(bootstrap_trees)` replicates. BI was conducted using two different CAT models, CAT-Poisson and CAT-GTR [@doi:10.1093/molbev/msh112]. Two independent MCMC chains were run under the CAT-GTR model, and eight independent MCMC chains were run under the CAT-Poisson model. The BI analyses did not converge (CAT-Poisson: maxdiff=1, meandiff=0.0148; CAT-GTR: maxdiff=1, meandiff=0.0221709). Only the results from the CAT-Poisson model are presented here. Two chains (chain1 and chain3) did not burn in after 1405 and 4695 iterations and were excluded from the analyses. Visual inspection of the traces indicated that a burn in of `r burn_in` trees was sufficient for all CAT-Poisson runs. This left `r length( phylobayes_trees )` trees in the posterior.
+ML analyses were conducted on the unpartitioned supermatrix using the WAG+$\Gamma$ model of amino acid substitution, and bootstrap values were estimated using `r length(bootstrap_trees)` replicates. BI was conducted using two different CAT models, CAT-Poisson and CAT-GTR [@doi:10.1093/molbev/msh112]. Two independent MCMC chains were run under the CAT-GTR model, and eight independent MCMC chains were run under the CAT-Poisson model. The BI analyses did not converge (CAT-Poisson: maxdiff=1, meandiff=0.0185032; CAT-GTR: maxdiff=1, meandiff=0.045415). Only the results from the CAT-Poisson model are presented here. Two chains (chain1 and chain3) were stuck in local maxima after 1405 and 4695 iterations and were excluded from the analyses. Visual inspection of the traces indicated that a burn in of `r burn_in` trees was sufficient for all CAT-Poisson runs. This left `r length( phylobayes_trees )` trees in the posterior.
 
 We used the Swofford-Olsen-Waddell-Hillis (SOWH) test [@swofford1996phylogenetic] to evaluate two hypotheses (Fig. 3C, S2): (i) "Physonectae" is monophyletic [@totton1965synopsis]; (ii) monoecious species are monophyletic [@Dunn:2005dy]. As the sexual system of *Rudjakovia* sp. is unclear, we carried out two tests of the monophyly of monoecy, one with *Rudjakovia* sp. included as a monoecious species, and one with it considered dioecious (Fig. 3C, S2). We used SOWHAT [@doi:10.1093/sysbio/syv055] dev. version 0.39 (commit fd68ef57) to carry out the SOWH tests in parallel, using the default options and an initial sample size of 100 (analysis code can be found in the git repository). For each hypothesis we defined a topology with a single constrained node that was inconsistent with the most likely topology (Fig. 3). We used a threshold for significance of 0.05 and following the initial 100 samples, we evaluated the confidence interval around the p-value to determine if more samples were necessary.  
 
@@ -699,7 +702,7 @@ modelfit_OU <- fitContinuous(ultratree, median_extended, model="OU")$opt$aicc
 
 ```
 
-```{r supplementary trees, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Phylogenies obtained using different models of evolution. Unlabeled nodes have support >0.99. A. GTR + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -8133157.335; AIC:16266530.7277.  B. JTT + Empirically counted frequencies from alignment + FreeRate model with 7 categories. Likelihood:-8113694.922; AIC: . C. WAG + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -8156043.772; AIC score: 16312303.6120 "}
+```{r supplementary trees, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Phylogenies obtained using different models of evolution. Unlabeled nodes have support >0.99. A. GTR + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -8133157.335; AIC:16266530.7277.  B. JTT + Empirically counted frequencies from alignment + FreeRate model with 7 categories. Likelihood:-8113694.922; AIC:16227609.9565 . C. WAG + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -8156043.772; AIC score: 16312303.6120 "}
 
 fix_trees<-function(tree){
 tree<-fix_names(tree)
