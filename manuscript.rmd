@@ -309,11 +309,11 @@ dev.off()
 
 The phylogenetic relationships recovered in this study received strong support across analysis methods (Fig. 3A), with a couple of localized exceptions (Fig. 3B). The ML results were robust to model selection (Fig. S10). Most clades are consistent with those found in a previous study based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Relationships that receive strong support in both include the placement of Cystonectae as sister to Codonophora (the clade that includes all other siphonophores), the placement of Apolemiidae as sister to all other codonophorans, and the placement of Calycophorae within the paraphyletic "Physonectae". Multiple nodes that were not resolved in the previous two-gene analysis receive strong support in the present 1,423-gene transcriptome analyses. There is strong support for Pyrostephidae as sister to all other non-apolemiid codonophorans. We provisionally refer here to Pyrostephidae as the clade including *Rudjakovia* sp., although sampling of *Pyrostephos vanhoeffeni* is needed in order to determine if *Rudjakovia* sp. falls within Pyrostephidae or is sister to it. Within the clade that is sister to Pyrostephidae, we find two main clades, Calycophorae and a clade we here name Euphysonectae (Fig. 3A). It includes the remaining non-apolemiid, non-pyrostephid "Physonectae". We define Euphysonectae as the clade consisting of *Agalma elegans* and all taxa that are more closely related to it than to *Diphyes dispar*.
 
-Euphysonectae consists of two reciprocally monophyletic groups that we here provisionally refer to as Clade A and Clade B (Fig. 3A). The presence of an involucrum, a fold around the base of the cnidoband [@totton1965synopsis], is a potential synapomorphy for Clade A. Species of Clade A also have a descending mantle canal within the nectophores (Fig. S6), a structure that is also present in some calycophorans. Members of Clade A are also monoecious (Fig. 5). There is not a clear synapomorphy for Clade B. Within Clade B there is low support for the placement of *Erenna richardi*, which is placed as sister to Clade A in some analyses (Fig. 3B). More taxon sampling will be required to determine the relationship of species within this clade.
+In ML analyses Euphysonectae consists of two reciprocally monophyletic groups that we here provisionally refer to as Clade A and Clade B (Fig. 3A). In BI analyses, clade B is graded (Fig. 3B). The presence of an involucrum, a fold around the base of the cnidoband [@totton1965synopsis], is a potential synapomorphy for Clade A. Species of Clade A also have a descending mantle canal within the nectophores (Fig. S6), a structure that is also present in some calycophorans. Members of Clade A are also monoecious (Fig. 5). There is not a clear synapomorphy for Clade B. Within Clade B there is high support for the placement of *Erenna richardi* in ML analyses, but it is placed as sister to Clade A in BI analyses (Fig. 3B). More taxon sampling will be required to determine the relationship of species within this clade.
 
 Within Clade A, *Physophora gilmeri* along with *Lychnagalma utricularia* (Fig. 1I) (both not included in the previous phylogeny) are sister to Agalmatidae, a clade restricted to *Agalma*, *Athorybia*, *Melophysa*, *Halistemma* and *Nanomia* [@Dunn:2005dy; @pugh2006taxonomic]. In the rDNA study, *P. hydrostatica* (the presumed sister species to *P. gilmeri*) was sister to Forskaliidae with low support. The position of *Cordagalma cordiforme* (= *Cordagalma ordinatum*) [@pugh2016synopsis] was previously unresolved, while in this analysis *Cordagalma* sp. is in a clade with *Forskalia asymmetrica*, falling outside of Agalmatidae. Placement of *Cordagalma* outside Agalmatidae is consistent with previous analyses of molecular and morphological data [@pugh2006taxonomic; @Dunn:2005dy].
 
-Within Calycophorae, taxon sampling is less comprehensive here than in the previous study. The calycophoran relationships that can be investigated, however, are in broad agreement with the previous analysis. Calycophorans have in the past been split into two groups, prayomorphs and diphyomorphs, based on morphology after @mackie1987siphonophore. As in the previous study, the results presented here indicate that the prayomorphs are paraphyletic with respect to the diphyomorphs. *Craseoa lathetica* and *Desmophyes* sp. are sister to *Hippopodius hippopus* in this study, while in the previous study, the relationship between *C. lathetica* and the clade including *H. hippopus* was unresolved.
+Within Calycophorae, taxon sampling is less comprehensive here than in the previous study. The calycophoran relationships that can be investigated, however, are in broad agreement with the previous analysis. Calycophorans have in the past been split into two groups, prayomorphs and diphyomorphs, based on morphology after @mackie1987siphonophore. As in the previous study, the results presented here indicate that the prayomorphs are paraphyletic with respect to the diphyomorphs. In the previous study, the relationship between *C. lathetica* and the clade including *H. hippopus* was unresolved. In this study, *Craseoa lathetica* and *Desmophyes* sp. are sister to *Hippopodius hippopus* in ML analyses with high support, while in BI analyses, *H. hippopus* is sister to *Lilyopsis fluoracantha* and the diphyomorphs (Fig. 3B).
 
 ![(A) Maximum likelihood (ML) phylogram with bipartition frequencies from the ML bootstraps and the Bayesian posterior distribution of trees. Unlabeled nodes have support >0.99 for both bootstraps and posteriors. The numbers of valid described species estimated to be in each clade based on taxonomy are shown below each clade name on the right. (B) The topologies found in the posterior distribution of trees that conflict with the ML tree. (C) The topologies evaluated by the SOWH tests. For more details on the SOWH topologies refer to Fig. S2.](figures/Figure3.pdf)
 
@@ -745,6 +745,119 @@ multiplot(p1, p2, p3, ncol=3)
 
 ```
 
+```{r BI tree ancestral trait reconstructions}
+
+BIspeciestree<-read.tree(file="agalma/Outfiles/combined_trimmed60_poisson.con.tre")
+BIspeciestree = ape::ladderize( BIspeciestree )
+
+BIspeciestree = fix_names( BIspeciestree )
+
+BIspeciestree =
+	  ape::root(
+	    BIspeciestree,
+	    c( "Nematostella vectensis", "Aiptasia pallida" ),
+	    resolve.root=TRUE
+	   )
+
+tree<-BIspeciestree
+	
+tree <- drop.tip(tree, which(!(tree$tip.label %in% rownames(cdata))))
+	
+ultratree <- chronos(tree)
+class( ultratree  ) = "phylo"
+
+dpruned_tree <- drop.tip(ultratree, which(!(ultratree$tip.label %in% rownames(dpruned_data))))
+dpruned_data <- dpruned_data[match(dpruned_tree$tip.label, rownames(dpruned_data)),]
+
+depth_median = dpruned_data$Depth.Median
+names(depth_median) = rownames(dpruned_data)
+
+#Stochastic trait mapping:
+#Make simmap objects
+#print("SIMMAP Sex Distribution")
+make.simmap(ultratree , sex, nsim = 100, message=FALSE) -> sex_sim
+#print("SIMMAP Palpons")
+make.simmap(ultratree , palpons, nsim = 100, message=FALSE) -> palpons_sim
+#print("SIMMAP Tentilla")
+make.simmap(ultratree , tentilla, nsim = 100, message=FALSE) -> tentilla_sim
+#print("SIMMAP Tentilla2")
+make.simmap(ultratree , tentilla2, nsim = 100, message=FALSE) -> tentilla_sim2
+#print("SIMMAP Nectosome")
+make.simmap(ultratree , nectosome, nsim = 100, message=FALSE) -> nectosome_sim
+#print("SIMMAP Nectosome Position")
+make.simmap(ultratree , bracts, nsim = 100, message=FALSE) -> bracts_sim
+#print("SIMMAP Habitat")
+
+#Nectophore position SIMMAP setup
+NectoPosTree = drop.tip(ultratree , which(!(ultratree $tip.label %in% names(necto_pos))))
+make.simmap(NectoPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
+
+#Descending mantle Canal SIMMAP Setup
+DescMantleTree =  drop.tip(ultratree , which(!(ultratree $tip.label %in% names(desc_mantle))))
+make.simmap(DescMantleTree, desc_mantle, nsim = 100, message=FALSE) -> desc_mantle_sim
+```
+
+```{r BI mono, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of sexual characters on the consensus Bayesian tree topology." }
+#Simmap SEX
+sex_obj <- densityMap(sex_sim, plot=FALSE)
+sex_obj$cols[1:length(sex_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(sex_obj$cols))
+ plot(sex_obj)
+```
+
+```{r BI palp, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of palpon presence/absence on the consensus Bayesian tree topology." }
+#Simmap PALPONS
+palpons_obj <- densityMap(palpons_sim, plot=FALSE)
+palpons_obj$cols[1:length(palpons_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(palpons_obj$cols))
+
+plot(palpons_obj)
+```
+
+```{r tentilla BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as not bearing tentilla, mapped on the consensus Bayesian tree topology."}
+tentilla_obj <- densityMap(tentilla_sim,plot=FALSE)
+tentilla_obj$cols[1:length(tentilla_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla_obj$cols))
+plot(tentilla_obj)
+```
+
+```{r tentilla ext BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as bearing tentilla, mapped on the consensus Bayesian tree topology."}
+tentilla2_obj <- densityMap(tentilla_sim2, plot=FALSE)
+tentilla2_obj$cols[1:length(tentilla2_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla2_obj$cols))
+plot(tentilla2_obj)
+```
+
+```{r nectosome BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome, mapped on the consensus Bayesian tree topology."}
+nectosome_obj <- densityMap(nectosome_sim, plot=FALSE)
+nectosome_obj$cols[1:length(nectosome_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(nectosome_obj$cols))
+plot(nectosome_obj)
+```
+
+```{r mantle BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of a descending mantle canal in the nectophores, mapped on the consensus Bayesian tree topology."}
+desc_mantle_obj <- densityMap(desc_mantle_sim, plot=FALSE)
+desc_mantle_obj$cols[1:length(desc_mantle_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(desc_mantle_obj$cols))
+plot(desc_mantle_obj)
+```
+
+```{r necto BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map for the evolution of the position of the nectosome, mapped on the consensus Bayesian tree topology."}
+necto_pos_obj <- densityMap(necto_pos_sim, plot=FALSE)
+necto_pos_obj$cols[1:length(necto_pos_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(necto_pos_obj$cols))
+plot(necto_pos_obj)
+```
+
+
+```{r depth BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV, mapped on the consensus Bayesian tree topology."}
+depth_value = depth_median
+depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
+plot(depthmap)
+```
+
+```{r depth BI extended, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations, mapped on the consensus Bayesian tree topology."}
+median_extended = cdata$Depth.Median.Extended
+names(median_extended) = rownames(cdata)
+median_extended = median_extended[match(names(median_extended), ultratree$tip.label)]
+depthmap_ext <- contMap(ultratree, median_extended, plot=F) %>% setMap(colors=c("cyan","blue","black"))
+plot(depthmap_ext)
+
+
+```
 
 \pagebreak
 
