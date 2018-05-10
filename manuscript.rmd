@@ -757,6 +757,44 @@ BIspeciestree =
 	    resolve.root=TRUE
 	   )
 
+siphonophora_node_BI = ape::mrca( BIspeciestree )[ "Physalia physalis", "Agalma elegans" ]
+cystonectae_node_BI = ape::mrca( BIspeciestree )[ "Physalia physalis", "Rhizophysa filiformis" ]
+calycophora_node_BI = ape::mrca( BIspeciestree )[ "Kephyes ovata", "Craseoa lathetica" ]
+euphysonectae_node_BI = ape::mrca( BIspeciestree )[ "Agalma elegans", "Undescribed sp L" ]
+
+	support = as.numeric( BIspeciestree$node.label )
+	support[ support > 99 ] = NA
+
+	# pad tip values
+	support = c( rep( NA, length( BIspeciestree$tip.label ) ), support )
+
+	p_phylogram = ggtree( BIspeciestree ) +
+      geom_text(aes(label=get_node_support(BIspeciestree, phylobayes_trees)), vjust=1.5, hjust=1, size=2.5, col="blue") +
+			geom_tiplab( size=3 ) +
+			xlim( 0, 12 ) +
+			geom_cladelabel( node=cystonectae_node_BI, label="Cystonectae", align=FALSE, offset=1, color='red' ) +
+			geom_cladelabel( node=calycophora_node_BI, label="Calycophora", align=FALSE, offset=1, color='blue' ) +
+			geom_strip(
+				which( species_tree$tip.label=="Agalma elegans" ),
+				which( species_tree$tip.label=="Apolemia white" ),
+				barsize=0.5,
+				color='orange',
+				offset=1,
+				label='"Physonectae"'
+			) +
+			geom_strip(
+				which( species_tree$tip.label=="Hydractinia symbiolongicarpus" ),
+				which( species_tree$tip.label=="Nematostella vectensis" ),
+				barsize=0.5,
+				color='gray',
+				offset=1,
+				label='"Outgroups"'
+			)
+
+pdf("figures_raw/figure_S11_raw.pdf")
+flip(p_phylogram, euphysonectae_node_BI, calycophora_node_BI)
+dev.off()
+
 tree<-BIspeciestree
 	
 tree <- drop.tip(tree, which(!(tree$tip.label %in% rownames(cdata))))
