@@ -89,6 +89,7 @@ output:
     # Returns a vector corresponding to nodes in tree, with percent of trees
     # in treeset that contain the corresponding bipartition
     clades = prop.clades(tree, treeset) / length(treeset)
+    clades[is.na(clades)]<-0
     nodes = c(rep(NA,length(tree$tip.label)), round(clades*100)) # Offset with NA values for tips
     nodes[ length(tree$tip.label) + 1 ] = NA # Set the root value to NA, not a robust way to find root but works in this case
 
@@ -762,11 +763,6 @@ cystonectae_node_BI = ape::mrca( BIspeciestree )[ "Physalia physalis", "Rhizophy
 calycophora_node_BI = ape::mrca( BIspeciestree )[ "Kephyes ovata", "Craseoa lathetica" ]
 euphysonectae_node_BI = ape::mrca( BIspeciestree )[ "Agalma elegans", "Undescribed sp L" ]
 
-	support = as.numeric( BIspeciestree$node.label )
-	support[ support > 99 ] = NA
-
-	# pad tip values
-	support = c( rep( NA, length( BIspeciestree$tip.label ) ), support )
 
 	p_phylogram = ggtree( BIspeciestree ) +
       geom_text(aes(label=get_node_support(BIspeciestree, phylobayes_trees)), vjust=1.5, hjust=1, size=2.5, col="blue") +
