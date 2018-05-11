@@ -306,13 +306,13 @@ dev.off()
 
 ```
 
-The phylogenetic relationships recovered in this study received strong support across analysis methods (Fig. \@ref(phylogeny)A), with a couple of localized exceptions (Fig. \@ref(phylogeny)B). The ML results were robust to model selection (Fig. \@ref(fig:supplementary-trees)). Most clades are consistent with those found in a previous study based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Relationships that receive strong support in both include the placement of Cystonectae as sister to Codonophora (the clade that includes all other siphonophores), the placement of Apolemiidae as sister to all other codonophorans, and the placement of Calycophorae within the paraphyletic "Physonectae". Multiple nodes that were not resolved in the previous two-gene analysis receive strong support in the present 1,423-gene transcriptome analyses. There is strong support for Pyrostephidae as sister to all other non-apolemiid codonophorans. We provisionally refer here to Pyrostephidae as the clade including *Rudjakovia* sp., although sampling of *Pyrostephos vanhoeffeni* is needed in order to determine if *Rudjakovia* sp. falls within Pyrostephidae or is sister to it. Within the clade that is sister to Pyrostephidae, we find two main clades, Calycophorae and a clade we here name Euphysonectae (Fig. \@ref(phylogeny)A). It includes the remaining non-apolemiid, non-pyrostephid "Physonectae". We define Euphysonectae as the clade consisting of *Agalma elegans* and all taxa that are more closely related to it than to *Diphyes dispar*.
+The phylogenetic relationships recovered in this study received strong support across analysis methods (Fig. \@ref(phylogeny)A), with a couple of localized exceptions (Fig. \@ref(phylogeny)B and \@ref(bayesian)). The ML results were robust to model selection (Fig. \@ref(fig:supplementary-trees)). BI results were not robust to model selection: BI CAT models produced strongly supported topologies that differed from the ML topology (Fig. \@ref(phylogeny)B and \@ref(bayesian)), while the BI WAG+$\Gamma$ topology was consistent with the ML topology (Fig. \@ref(fig:BI-WAG)). Most clades are consistent with those found in a previous study based on two genes (16S and 18S ribosomal RNA) [@Dunn:2005dy]. Relationships that receive strong support in both include the placement of Cystonectae as sister to Codonophora (the clade that includes all other siphonophores), the placement of Apolemiidae as sister to all other codonophorans, and the placement of Calycophorae within the paraphyletic "Physonectae". Multiple nodes that were not resolved in the previous two-gene analysis receive strong support in the present 1,423-gene transcriptome analyses. There is strong support for Pyrostephidae as sister to all other non-apolemiid codonophorans. We provisionally refer here to Pyrostephidae as the clade including *Rudjakovia* sp., although sampling of *Pyrostephos vanhoeffeni* is needed in order to determine if *Rudjakovia* sp. falls within Pyrostephidae or is sister to it. Within the clade that is sister to Pyrostephidae, we find two main clades, Calycophorae and a clade we here name Euphysonectae (Fig. \@ref(phylogeny)A). It includes the remaining non-apolemiid, non-pyrostephid "Physonectae". We define Euphysonectae as the clade consisting of *Agalma elegans* and all taxa that are more closely related to it than to *Diphyes dispar*.
 
-In ML analyses Euphysonectae consists of two reciprocally monophyletic groups that we here provisionally refer to as Clade A and Group B (Fig. \@ref(phylogeny)A). In BI analyses, Group B is graded (Fig. \@ref(phylogeny)B). The presence of an involucrum, a fold around the base of the cnidoband [@totton1965synopsis], is a potential synapomorphy for Clade A. Species of Clade A also have a descending mantle canal within the nectophores (Fig. \@ref(fig:desc-mantle), \@ref(fig:mantle-BI)), a structure that is also present in some calycophorans. Members of Clade A are also monoecious (Fig. \@ref(reconstruct)). There is not a clear synapomorphy for Group B. Within Group B there is high support for the placement of *Erenna richardi* in ML analyses, but it is placed as sister to Clade A in BI analyses (Fig. \@ref(phylogeny)B). More taxon sampling will be required to determine the relationship of species within this clade.
+In ML analyses Euphysonectae consists of two reciprocally monophyletic groups that we here provisionally refer to as Clade A and Group B (Fig. \@ref(phylogeny)A). In BI CAT-Poisson analyses, Group B is graded (Fig. \@ref(phylogeny)B). The presence of an involucrum, a fold around the base of the cnidoband [@totton1965synopsis], is a potential synapomorphy for Clade A. Species of Clade A also have a descending mantle canal within the nectophores (Fig. \@ref(fig:desc-mantle), \@ref(fig:mantle-BI)), a structure that is also present in some calycophorans. Members of Clade A are also monoecious (Fig. \@ref(reconstruct)). There is not a clear synapomorphy for Group B. Within Group B there is high support for the placement of *Erenna richardi* in ML analyses, but it is placed as sister to Clade A in BI CAT-Poisson analyses (Fig. \@ref(phylogeny)B). More taxon sampling will be required to determine the relationship of species within this clade.
 
 Within Clade A, *Physophora gilmeri* along with *Lychnagalma utricularia* (Fig. \@ref(siphonophores)I) (both not included in the previous phylogeny) are sister to Agalmatidae, a clade restricted to *Agalma*, *Athorybia*, *Melophysa*, *Halistemma* and *Nanomia* [@Dunn:2005dy; @pugh2006taxonomic]. In the rDNA study, *P. hydrostatica* (the presumed sister species to *P. gilmeri*) was sister to Forskaliidae with low support. The position of *Cordagalma cordiforme* (= *Cordagalma ordinatum*) [@pugh2016synopsis] was previously unresolved, while in this analysis *Cordagalma* sp. is in a clade with *Forskalia asymmetrica*, falling outside of Agalmatidae. Placement of *Cordagalma* outside Agalmatidae is consistent with previous analyses of molecular and morphological data [@pugh2006taxonomic; @Dunn:2005dy].
 
-Within Calycophorae, taxon sampling is less comprehensive here than in the previous study. The calycophoran relationships that can be investigated, however, are in broad agreement with the previous analysis. Calycophorans have in the past been split into two groups, prayomorphs and diphyomorphs, based on morphology after @mackie1987siphonophore. As in the previous study, the results presented here indicate that the prayomorphs are paraphyletic with respect to the diphyomorphs. In the previous study, the relationship between *C. lathetica* and the clade including *H. hippopus* was unresolved. In this study, *Craseoa lathetica* and *Desmophyes* sp. are sister to *Hippopodius hippopus* in ML analyses with high support, while in BI analyses, *H. hippopus* is sister to *Lilyopsis fluoracantha* and the diphyomorphs (Fig. \@ref(phylogeny)B).
+Within Calycophorae, taxon sampling is less comprehensive here than in the previous study. The calycophoran relationships that can be investigated, however, are in broad agreement with the previous analysis. Calycophorans have in the past been split into two groups, prayomorphs and diphyomorphs, based on morphology after @mackie1987siphonophore. As in the previous study, the results presented here indicate that the prayomorphs are paraphyletic with respect to the diphyomorphs. In the previous study, the relationship between *C. lathetica* and the clade including *H. hippopus* was unresolved. In this study, *Craseoa lathetica* and *Desmophyes* sp. are sister to *Hippopodius hippopus* in ML analyses with high support, while in BI CAT-Poisson analyses, *H. hippopus* is sister to *Lilyopsis fluoracantha* and the diphyomorphs (Fig. \@ref(phylogeny)B).
 
 ![\label{phylogeny}(A) Maximum likelihood (ML) phylogram with bipartition frequencies from the ML bootstraps and the Bayesian posterior distribution of trees. Unlabeled nodes have support >0.99 for both bootstraps and posteriors. The numbers of valid described species estimated to be in each clade based on taxonomy are shown below each clade name on the right. (B) The topologies found in the posterior distribution of trees that conflict with the ML tree. (C) The topologies evaluated by the SOWH tests. For more details on the SOWH topologies refer to Fig. \@ref(sowh).](figures/Figure3.pdf)
 
@@ -764,7 +764,7 @@ calycophora_node_BI = ape::mrca( BIspeciestree )[ "Kephyes ovata", "Craseoa lath
 euphysonectae_node_BI = ape::mrca( BIspeciestree )[ "Agalma elegans", "Undescribed sp L" ]
 
 
-	p_phylogram = ggtree( BIspeciestree ) +
+	p_phylogram_BI = ggtree( BIspeciestree ) +
       geom_text(aes(label=get_node_support(BIspeciestree, phylobayes_trees)), vjust=1.5, hjust=1, size=2.5, col="blue") +
 			geom_tiplab( size=3 ) +
 			xlim( 0, 12 ) +
@@ -788,7 +788,7 @@ euphysonectae_node_BI = ape::mrca( BIspeciestree )[ "Agalma elegans", "Undescrib
 			)
 
 pdf("figures_raw/figure_S11_raw.pdf")
-flip(p_phylogram, euphysonectae_node_BI, calycophora_node_BI)
+flip(p_phylogram_BI, euphysonectae_node_BI, calycophora_node_BI)
 dev.off()
 
 tree<-BIspeciestree
@@ -828,6 +828,27 @@ make.simmap(NectoPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
 DescMantleTree =  drop.tip(ultratree , which(!(ultratree $tip.label %in% names(desc_mantle))))
 make.simmap(DescMantleTree, desc_mantle, nsim = 100, message=FALSE) -> desc_mantle_sim
 ```
+![\label{bayesian}Bayesian (BI) CAT poisson phylogram with bipartition frequencies from the Bayesian posterior distribution of trees. Unlabeled nodes have support >0.99. The numbers of valid described species estimated to be in each clade based on taxonomy are shown below each clade name on the right.](supplementary_info/Supplementary_Figure11.pdf)
+
+```{r BI-WAG, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Bayesian (BI) WAG and Gamma phylogram with bipartition frequencies from the Bayesian posterior distribution of trees. Unlabeled nodes have support >0.99." }
+
+WAG_BItree<-ape::read.tree("agalma/Outfiles/combined_trimmed60_WAG.con.tre")
+WAG_BItree<-fix_trees(WAG_BItree)
+
+support = as.numeric( WAG_BItree$node.label )
+support=support*100
+support[ support > 99 ] = NA
+support = c( rep( NA, length( WAG_BItree$tip.label ) ), support )
+
+calycophora_node = ape::mrca( WAG_BItree )[ "Kephyes ovata", "Hippopodius hippopus" ]
+euphysonectae_node = ape::mrca( WAG_BItree )[ "Agalma elegans", "Erenna richardi" ]
+
+
+p<-ggtree(WAG_BItree)+geom_tiplab(size=2)+geom_text(aes(label=support),size=2, hjust=-0.1, col="blue") + xlim(0, 3.5)
+
+flip(p,calycophora_node,euphysonectae_node)
+```
+
 
 ```{r BI-mono, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of sexual characters on the consensus Bayesian tree topology." }
 #Simmap SEX
