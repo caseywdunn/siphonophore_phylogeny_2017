@@ -23,3 +23,5 @@ Voucher 10. Craseoa sp., specimen id:D27-D2. Nectophores and siphosome.
 Voucher 11. Physalia physalis, S237-029-NT. Whole animal.
 
 Voucher 12. Abylopsis tetragona, VF8. Anterior & posterior nectophore. Retracted siphosome.
+
+Voucher 13. Kephyes ovata, D330-SS8. Anterior & posterior nectophore, fixed specimen.
