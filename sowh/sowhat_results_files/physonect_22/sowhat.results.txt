@@ -1,0 +1,46 @@
+
+=============================================================
+                   sowhat results
+=============================================================
+
+Program was called as follows:
+sowhat \
+  --constraint=physonect_22.tre \
+  --aln=alignment.phy \
+  --raxml_model=PROTGAMMAWAG \
+  --dir=physonect_22 \
+  --name=physonect_22 \
+  --rax=raxmlHPC-PTHREADS -T 8 \
+  --reps=100 \
+  --print_tree_scripts \
+  --restart \
+
+  sowhat was version 0.39
+
+  $SEQGEN variable set to 'seq-gen'
+  seq-gen was version 1.3.2x
+  $RAX variable set to 'raxmlHPC-PTHREADS -T 8'
+  RAxML was version 8.2.11
+
+Distributions and frequencies printed to:
+ /n/regal/extavour_lab/shchurch/sowhat_Apr6/physonect_22/sowhat.distribution.txt
+
+Null_Distribution
+    mean  =  0.0001108
+    lowest value  =  0.0001029987
+    25% quartile  =  0.0001090001
+    median  =  0.0001109997
+    75% quartile  =  0.0001130011
+    highest value  =  0.0001189988
+    sample size  =  100
+
+Test_Statistic
+    empirical lnL, unconstrained  =  -8192490.793107
+    empirical lnL, constrained  =  -8207757.692768
+    difference in lnL, test statistic  =  15266.9
+    rank of test statistic  =  0
+
+SOWH_Results
+    upper 95% conf. int. of p-value  =  0.03621669
+    lower 95% conf. int. of p-value  =  0
+    p-value of the null hypothesis   =  <0.01

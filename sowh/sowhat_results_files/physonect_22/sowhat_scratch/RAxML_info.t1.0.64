@@ -1,0 +1,69 @@
+
+
+This is RAxML version 8.2.11 released by Alexandros Stamatakis on June 2017.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 360633 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 31.46%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 1 inferences on the original alignment using 1 user-specified trees
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heterogeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 360633
+Name: No Name Provided
+DataType: AA
+Substitution Matrix: WAG
+Using fixed base frequencies
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC-PTHREADS -T 8 -p 1234 --no-bfgs -w /n/regal/extavour_lab/shchurch/sowhat_Apr6/physonect_22/sowhat_scratch/ -m PROTGAMMAWAG -s /n/regal/extavour_lab/shchurch/sowhat_Apr6/physonect_22/sowhat_scratch/aln.phy.0.64 -n t1.0.64 -g physonect_22.tre >> /n/regal/extavour_lab/shchurch/sowhat_Apr6/physonect_22/sowh_stdout_physonect_22.txt 2>> /n/regal/extavour_lab/shchurch/sowhat_Apr6/physonect_22/sowh_stderr_physonect_22.txt 
+
+
+Partition: 0 with name: No Name Provided
+Base frequencies: 0.087 0.044 0.039 0.057 0.019 0.037 0.058 0.083 0.024 0.048 0.086 0.062 0.020 0.038 0.046 0.070 0.061 0.014 0.035 0.071 
+
+Inference[0]: Time 163077.032008 GAMMA-based likelihood -9362674.590567, best rearrangement setting 15
+alpha[0]: 0.625692 
+
+
+Conducting final model optimizations on all 1 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -9362674.590497 tree written to file /n/regal/extavour_lab/shchurch/sowhat_Apr6/physonect_22/sowhat_scratch/RAxML_result.t1.0.64
+
+
+Starting final GAMMA-based thorough Optimization on tree 0 likelihood -9362674.590497 .... 
+
+Final GAMMA-based Score of best tree -9362674.590497
+
+Program execution info written to /n/regal/extavour_lab/shchurch/sowhat_Apr6/physonect_22/sowhat_scratch/RAxML_info.t1.0.64
+Best-scoring ML tree written to: /n/regal/extavour_lab/shchurch/sowhat_Apr6/physonect_22/sowhat_scratch/RAxML_bestTree.t1.0.64
+
+Overall execution time: 206970.365529 secs or 57.491768 hours or 2.395490 days
+

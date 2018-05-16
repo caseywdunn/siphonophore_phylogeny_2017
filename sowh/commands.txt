@@ -9,10 +9,6 @@
 
 ### (Alatina_alata,Nematostella_vectensis,Clytia_hemisphaerica,Hydra_magnipapillata,Ectopleura_larynx,Hydractinia_symbiolongicarpus,Aiptasia_pallida,Podocoryna_carnea,Chuniphyes_multidentata,Chelophyes_appendiculata,Kephyes_ovata,Prayidae_D27SS7,Prayidae_D27D2,Hippopodius_hippopus,Lilyopsis_fluoracantha,Abylopsis_tetragona,Diphyes_dispar,Physalia_physalis,Rhizophysa_filiformis,(Stephalia_dilata,Bargmannia_amoena,Physonect_sp_,Bargmannia_elongata,Halistemma_rubrum,Physophora_gilmeri,Apolemia_lanosa,Agalma_elegans,Thermopalia_sp,Cordagalma_sp,Athorybia_rosacea,Bargmannia_lata,Marrus_claudanielis,Erenna_richardi,Apolemia_rubriversa,Frillagalma_vityazi,Forskalia_asymmetrica,Nanomia_bijuga,Rudjakovia_sp,Lychnagalma_utricularia,Apolemia_sp,Resomia_ornicephala));
 
-## Monophyletic monoecious siphonophores (-rudjakova)
-
-### (Alatina_alata,Nematostella_vectensis,Clytia_hemisphaerica,Hydra_magnipapillata,Ectopleura_larynx,Hydractinia_symbiolongicarpus,Aiptasia_pallida,Podocoryna_carnea,Physalia_physalis,Rhizophysa_filiformis,Stephalia_dilata,Bargmannia_amoena,Physonect_sp_,Bargmannia_elongata,Apolemia_lanosa,Thermopalia_sp,Bargmannia_lata,Marrus_claudanielis,Erenna_richardi,Apolemia_rubriversa,Rudjakovia_sp,Apolemia_sp,(Chuniphyes_multidentata,Chelophyes_appendiculata,Kephyes_ovata,Prayidae_D27SS7,Prayidae_D27D2,Hippopodius_hippopus,Lilyopsis_fluoracantha,Abylopsis_tetragona,Diphyes_dispar,Frillagalma_vityazi,Halistemma_rubrum,Resomia_ornicephala,Forskalia_asymmetrica,Cordagalma_sp,Lychnagalma_utricularia,Agalma_elegans,Physophora_gilmeri,Nanomia_bijuga,Athorybia_rosacea));
-
 ## Monophyletic monoecious siphonophores (+rudjakova)
 
 ### (Alatina_alata,Nematostella_vectensis,Clytia_hemisphaerica,Hydra_magnipapillata,Ectopleura_larynx,Hydractinia_symbiolongicarpus,Aiptasia_pallida,Podocoryna_carnea,Physalia_physalis,Rhizophysa_filiformis,Stephalia_dilata,Bargmannia_amoena,Physonect_sp_,Bargmannia_elongata,Apolemia_lanosa,Thermopalia_sp,Bargmannia_lata,Marrus_claudanielis,Erenna_richardi,Apolemia_rubriversa,Apolemia_sp,(Rudjakovia_sp,Chuniphyes_multidentata,Chelophyes_appendiculata,Kephyes_ovata,Prayidae_D27SS7,Prayidae_D27D2,Hippopodius_hippopus,Lilyopsis_fluoracantha,Abylopsis_tetragona,Diphyes_dispar,Frillagalma_vityazi,Halistemma_rubrum,Resomia_ornicephala,Forskalia_asymmetrica,Cordagalma_sp,Lychnagalma_utricularia,Agalma_elegans,Physophora_gilmeri,Nanomia_bijuga,Athorybia_rosacea));
@@ -42,8 +38,6 @@ perl sowhat --constraint=physonect_22.tre --aln=alignment.phy --raxml_model=PROT
 
 perl sowhat --constraint=monoecious_20.tre --aln=alignment.phy --raxml_model=PROTGAMMAWAG --dir=good_trees/monoecious_20 --name=monoecious_20 --rax="raxmlHPC-PTHREADS -T 8" --reps=100 --print_tree_scripts
 
-perl sowhat --constraint=monoecious_19.tre --aln=alignment.phy --raxml_model=PROTGAMMAWAG --dir=good_trees/monoecious_19 --name=monoecious_19 --rax="raxmlHPC-PTHREADS -T 8" --reps=100 --print_tree_scripts
-
 ## Run all generated tree scripts simultaneously on the Harvard cluster Odyssey
 
 ## example cluster commands, run for each test
@@ -63,12 +57,9 @@ perl sowhat --constraint=physonect_22.tre --aln=alignment.phy --raxml_model=PROT
 
 perl sowhat --constraint=monoecious_20.tre --aln=alignment.phy --raxml_model=PROTGAMMAWAG --dir=good_trees/monoecious_20 --name=monoecious_20 --rax="raxmlHPC-PTHREADS -T 8" --reps=100 --print_tree_scripts --restart
 
-perl sowhat --constraint=monoecious_19.tre --aln=alignment.phy --raxml_model=PROTGAMMAWAG --dir=good_trees/monoecious_19 --name=monoecious_19 --rax="raxmlHPC-PTHREADS -T 8" --reps=100 --print_tree_scripts --restart
-
 ## Check that sample size is sufficient, report final statistics
 
 cat physonect_22/sowhat.results.txt
-cat monoecious_19/sowhat.results.txt
 cat monoecious_20/sowhat.results.txt
 
 

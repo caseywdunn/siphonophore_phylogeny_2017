@@ -1,0 +1,69 @@
+
+
+This is RAxML version 8.2.11 released by Alexandros Stamatakis on June 2017.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 359070 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 31.46%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 1 inferences on the original alignment using 1 distinct randomized MP trees
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heterogeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 359070
+Name: No Name Provided
+DataType: AA
+Substitution Matrix: WAG
+Using fixed base frequencies
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC-PTHREADS -T 8 -p 1234 --no-bfgs -w /n/regal/extavour_lab/shchurch/sowhat_Apr6/monoecious_20/sowhat_scratch/ -m PROTGAMMAWAG -s /n/regal/extavour_lab/shchurch/sowhat_Apr6/monoecious_20/sowhat_scratch/aln.phy.0.73 -n ml.0.73 >> /n/regal/extavour_lab/shchurch/sowhat_Apr6/monoecious_20/sowh_stdout_monoecious_20.txt 2>> /n/regal/extavour_lab/shchurch/sowhat_Apr6/monoecious_20/sowh_stderr_monoecious_20.txt 
+
+
+Partition: 0 with name: No Name Provided
+Base frequencies: 0.087 0.044 0.039 0.057 0.019 0.037 0.058 0.083 0.024 0.048 0.086 0.062 0.020 0.038 0.046 0.070 0.061 0.014 0.035 0.071 
+
+Inference[0]: Time 92298.740862 GAMMA-based likelihood -8944660.360146, best rearrangement setting 5
+alpha[0]: 0.618945 
+
+
+Conducting final model optimizations on all 1 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -8944660.360146 tree written to file /n/regal/extavour_lab/shchurch/sowhat_Apr6/monoecious_20/sowhat_scratch/RAxML_result.ml.0.73
+
+
+Starting final GAMMA-based thorough Optimization on tree 0 likelihood -8944660.360146 .... 
+
+Final GAMMA-based Score of best tree -8944660.360146
+
+Program execution info written to /n/regal/extavour_lab/shchurch/sowhat_Apr6/monoecious_20/sowhat_scratch/RAxML_info.ml.0.73
+Best-scoring ML tree written to: /n/regal/extavour_lab/shchurch/sowhat_Apr6/monoecious_20/sowhat_scratch/RAxML_bestTree.ml.0.73
+
+Overall execution time: 132823.258446 secs or 36.895350 hours or 1.537306 days
+

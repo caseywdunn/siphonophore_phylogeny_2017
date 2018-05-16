@@ -1,0 +1,2000 @@
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 435673031555836712
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.73 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 1999040868885935173
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.04 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 4220575654831588963
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 6442110440777242753
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.29 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 8589594067191374750
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.01 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -7635615220572523076
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.04 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -5488131594158391079
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.04 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -3192545648681215496
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.17 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -1119113181798605292
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 444543913493901875
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.97 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 2517976380376512079
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.08 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 4739511166322165869
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.94 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 7035097111799341452
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 9182580738213473449
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -7190730868613467963
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -5043247242199335966
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -2969814775316725762
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -674228829839550179
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.13 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 1037241326553591868
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.94 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 3036622633904680279
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.12 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 5332208579381855862
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 7479692205795987859
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.02 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -8819568241499431760
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -6598033455553777970
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -4524600988671167766
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -2229015043193992183
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -81531416779860186
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 1629938739613281861
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 3703371206495892065
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.94 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 5776803673378502269
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 7924287299792634266
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -8374973147502785353
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.93 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -6227489521088653356
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.04 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -4080005894674521359
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.97 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -1710368789665823983
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.09 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 363063677216786221
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.94 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 1926431514546884682
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 4147966300492538472
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.97 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 6147347607843626883
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.02 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 8294831234257758880
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.94 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -7930378053506138946
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -5856945586623528742
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.97 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -3635410800677874952
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 26.94 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -1413876014732221162
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 297594141660920885
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.09 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 2519128927606574675
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.97 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 4666612554020706672
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 6814096180434838669
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.97 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 8961579806848970666
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.03 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -7337680640446448953
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.05 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -5264248173563838749
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.97 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -3116764547149706752
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.1 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -969280920735574755
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.08 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 594086916594523706
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.17 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 2741570543008655703
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 31.67 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 5407412286143440251
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 7554895912557572248
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -8818415694269369164
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.99 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -6744983227386758960
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.05 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -4375346122378061584
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 31.68 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -1709504379243277036
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 1965777149865011
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 26.19 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 2297551722627040594
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 26 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 4445035349041172591
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.13 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 6592518975455304588
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.97 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 8591900282806392999
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.04 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -7633309004957504827
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.13 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -5411774219011851037
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -3264290592597719040
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.94 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -1190858125715108836
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 372509711614989625
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 2594044497560643415
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.03 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 4741528123974775412
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.01 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 6814960590857385616
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 8888393057739995820
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.07 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -7336816230023902006
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -5115281444078248216
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.09 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -2819695498601072633
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.15 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -598160712655418843
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 26.15 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 1261411762800766790
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 3334844229683376994
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.19 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 5556379015629030784
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 7926016120637728160
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.18 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -8447295486189213252
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 27.36 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -6077658381180515876
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -4004225914297905672
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -2004844606946817261
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.94 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 142639019467314736
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.08 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 1706006856797413197
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.09 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 3853490483211545194
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.98 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 6000974109625677191
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.96 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 8148457736039809188
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.14 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -8298905030318654017
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -6225472563436043813
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.94 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -4152040096553433609
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.97 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: -2078607629670823405
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.94 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 216978315806352178
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 27.33 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 2002499631731016018
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 4075932098613626222
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 25.05 seconds
+Sequence Generator - seq-gen
+Version 1.3.2x
+(c) Copyright, 1996-2004 Andrew Rambaut and Nick Grassly
+Department of Zoology, University of Oxford
+South Parks Road, Oxford OX1 3PS, U.K.
+
+Random number generator seed: 6075313405964714633
+
+Simulations of 41 taxa, 395699 amino acids
+  for 1 tree(s) with 1 dataset(s) per tree
+
+Branch lengths assumed to be number of substitutions per site
+
+Continuous gamma rate heterogeneity:
+    shape = 0.643340
+Model = WAG: Whelan & Goldman (2001) Mol Biol Evol 18:691Ð699
+  with amino acid frequencies specified as:
+   A=0.088 R=0.044 N=0.039 D=0.057 C=0.019 Q=0.037 E=0.058 G=0.083 H=0.024 I=0.048 L=0.086 K=0.062 M=0.02 F=0.038 P=0.046 S=0.07 T=0.061 W=0.014 Y=0.035 V=0.071
+
+Time taken: 24.95 seconds
