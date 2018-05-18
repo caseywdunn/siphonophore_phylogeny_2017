@@ -750,7 +750,7 @@ multiplot(p1, p2, p3, ncol=3)
 
 
 
-```{r BI tree ancestral trait reconstructions}
+```{r BI tree ancestral trait reconstructions, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE,}
 
 BIspeciestree<-read.tree(file="agalma/Outfiles/combined_trimmed60_poisson.con.tre")
 BIspeciestree = ape::ladderize( BIspeciestree )
