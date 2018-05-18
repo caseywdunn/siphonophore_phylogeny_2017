@@ -705,7 +705,7 @@ modelfit_OU <- fitContinuous(ultratree, median_extended, model="OU")$opt$aicc
 
 ###Bayesian models & model fit {-}
 
-```{r supplementary-trees, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Phylogenies obtained using different models of evolution. Unlabeled nodes have support >0.99. A. GTR + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -8133157.335; AIC:16266530.7277.  B. JTT + Empirically counted frequencies from alignment + FreeRate model with 7 categories. Likelihood:-8113694.922; AIC:16227609.9565 . C. WAG + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -8156043.772; AIC score: 16312303.6120 "}
+```{r supplementary-trees, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Phylogenies obtained using different models of evolution. Unlabeled nodes have support >0.99. A. JTT + Empirically counted frequencies from alignment + FreeRate model with 7 categories (best model fit). Likelihood:-8113694.922; AIC:16227609.9565 .  B. GTR + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -8133157.335; AIC:16266530.7277. C. WAG + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Likelihood: -8156043.772; AIC score: 16312303.6120 "}
 
 fix_trees<-function(tree){
 tree<-fix_names(tree)
@@ -738,9 +738,9 @@ support = as.numeric( trees[[3]]$node.label )
 support[ support > 99 ] = NA
 support3 = c( rep( NA, length( trees[[3]]$tip.label ) ), support )
 
-p1<-ggtree(trees[[1]])+geom_tiplab(size=2)+geom_text(aes(label=support1),size=2, hjust=-0.1, col="red") + xlim(0, 3.5)+ ggtitle("A. GTR20+FO+R6")
+p1<-ggtree(trees[[2]])+geom_tiplab(size=2)+geom_text(aes(label=support2),size=2, hjust=-0.1, col="red") + xlim(0, 3.5)+ ggtitle("A. JTT+F+R7")
 
-p2<-ggtree(trees[[2]])+geom_tiplab(size=2)+geom_text(aes(label=support2),size=2, hjust=-0.1, col="red") + xlim(0, 3.5)+ ggtitle("B. JTT+F+R7")
+p2<-ggtree(trees[[1]])+geom_tiplab(size=2)+geom_text(aes(label=support1),size=2, hjust=-0.1, col="red") + xlim(0, 3.5)+ ggtitle("B. GTR20+FO+R6")
 
 p3<-ggtree(trees[[3]])+geom_tiplab(size=2)+geom_text(aes(label=support3),size=2, hjust=-0.1, col="red") + xlim(0, 3.5)+ ggtitle("C. WAG+FO+R6")
 
