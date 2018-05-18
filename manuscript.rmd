@@ -222,7 +222,7 @@ Major questions remained after this early work, though. In particular, there was
 
 ## 2. Material and methods {-}
 
-All scripts for the analyses are available in a git repository at [https://github.com/caseywdunn/siphonophore_phylogeny_2017](https://github.com/caseywdunn/siphonophore_phylogeny_2017). The most recent commit at the time of the analysis presented here was `r system("git log | head -n 1", intern=TRUE) %>% str_replace("commit ", "")` with tag "paper_v2".
+All scripts for the analyses are available in a git repository at [https://github.com/caseywdunn/siphonophore_phylogeny_2017](https://github.com/caseywdunn/siphonophore_phylogeny_2017). The most recent commit at the time of the analysis presented here was `r system("git log | head -n 1", intern=TRUE) %>% str_replace("commit ", "") %>% strtrim(8)` with tag "paper_v2".
 
 
 ### 2.1 Collecting{-}
@@ -241,13 +241,14 @@ Two outgroup species, *Atolla vanhoeffeni* and *Aegina citrea*, were removed fro
 
 We used ModelFinder [@kalyaanamoorthy2017modelfinder], as implemented in IQTree v1.6.3 [@doi:10.1093/molbev/msu300], to assess relative model fit. ModelFinder selected JTT + Empirically counted frequencies from alignment + FreeRate model with 7 categories based on the Bayesian Information Criterion. To assess the robustness of our results, we conducted phylogenetic analyses using multiple software programs, methods (Maximum likelihood (ML) and Bayesian Inference (BI)), and models (including the model selected by ModelFinder and several other commonly used models). Maximum likelihood (ML) analyses were conducted with RAxML v8.2.0 [@stamatakis2006raxml] and IQTree v1.6.3 [@doi:10.1093/molbev/msu300; @doi:10.1093/molbev/msx281]. Bayesian Inference (BI) were conducted with Phylobayes v. 1.7a-mpi [@lartillot2009phylobayes]. Sequence alignments, sampled and consensus trees, and voucher information are available in the git repository. Tree figures were rendered with ggtree [@Yu:2016fo].
 
-RAxML ML analyses were conducted on the unpartitioned supermatrix using the WAG+$\Gamma$ model of amino acid substitution (Fig. \@ref(phylogeny)A). RAxML bootstrap values were estimated using `r length(bootstrap_trees)` replicates. IQTree ML analyses were run under JTT + Empirically counted frequencies from alignment + FreeRate model with 7 categories, the best model identified by ModelFinder, and the commonly used model GTR + Optimized base frequencies + Free rate model with 6 categories ((Fig. \@ref(fig:supplementary-trees))). 
+RAxML ML analyses were conducted on the unpartitioned supermatrix using the WAG+$\Gamma$ model of amino acid substitution (Fig. \@ref(phylogeny)A). RAxML bootstrap values were estimated using `r length(bootstrap_trees)` replicates. IQTree ML analyses were run under JTT + Empirically counted frequencies from alignment + FreeRate model with 7 categories, the best model identified by ModelFinder, and the commonly used models GTR + Optimized base frequencies + Free rate model with 6 categories and WAG + Optimized base frequencies + Free rate model with 6 categories ((Fig. \@ref(fig:supplementary-trees))). 
 
 BI was conducted in phylobayes using two different models: fixed-state WAG+$\Gamma$ (Fig. \@ref(fig:BI-WAG)) and CAT-Poisson (Fig. \@ref(bayesian)). Eight chains were run under the CAT-Poisson model. Four chains were run udner WAG+$\Gamma$, these runs did not converge (maxdiff=1, meandiff=0.0130273). The CAT-Poisson runs did not converge (maxdiff=1, meandiff=0.0565898). Closer inspection revealed that chain1 and chain3 were stuck in local maxima with low likelihood relative to other chains after 1405 and 4695 iterations. These two chains were excluded from the analyses, and the results presented here are based on the remaining 6 CAT-Poisson chains (maxdiff=1, meandiff=0.0185032). Visual inspection of the traces indicated that a burn in of `r burn_in` trees was sufficient for all CAT-Poisson runs. This left `r length( phylobayes_trees )` trees in the CAT-Poisson posterior.
 
 We used the Swofford-Olsen-Waddell-Hillis (SOWH) test [@swofford1996phylogenetic] to evaluate two hypotheses (Fig. \@ref(phylogeny)C, S2): (i) "Physonectae" is monophyletic [@totton1965synopsis]; (ii) monoecious species are monophyletic [@Dunn:2005dy]. The sexual mode of *Rudjakovia* is undescribed, but preliminary observations suggest that they are monoecious, so we include *Rudjakovia* as a monoecious species in this test. We used SOWHAT [@doi:10.1093/sysbio/syv055] dev. version 0.39 (commit fd68ef57) to carry out the SOWH tests in parallel, using the default options and an initial sample size of 100 (analysis code can be found in the git repository). For each hypothesis we defined a topology with a single constrained node that was inconsistent with the most likely topology (Fig. \@ref(phylogeny)). We used a threshold for significance of 0.05 and following the initial 100 samples, we evaluated the confidence interval around the p-value to determine if more samples were necessary.  
 
-Morphological character data used in trait mapping were obtained from the literature or direct observation of available voucher material. Depth distribution data was queried from the MBARI VARS database ( http://www.mbari.org/products/research-software/video-annotation-and-reference-system-vars/) [@schlining2006mbari]. We used stochastic character mapping to infer the most probable evolution of traits on the tree in R using the `phytools` package [@MEE3:MEE3169; @huelsenbeck2003stochastic]. Subsequent analyses were conducted in R and integrated into this manuscript with the `knitr` package. See Supplementary Information for R package version numbers.
+Morphological character data used in trait mapping were obtained from the literature or direct observation of available voucher material. Depth distribution data was queried from the MBARI VARS database ( http://www.mbari.org/products/research-software/video-annotation-and-reference-system-vars/) [@schlining2006mbari]. We used stochastic character mapping to infer the most probable evolution of traits on the tree in R using the `phytools` package [@MEE3:MEE3169; @huelsenbeck2003stochastic]. For continuous character traits, model fit was tested using 
+`fitContinuous` in the `geiger` R package. Subsequent analyses were conducted in R and integrated into this manuscript with the `knitr` package. See Supplementary Information for R package version numbers.
 
 ## 3. Results and Discussion{-}
 
@@ -520,11 +521,11 @@ In all siphonophores, each gonophore (sexual medusa that produces gametes) is ei
 
 The distribution of monoecy is consistent with two potential scenarios (Fig. \@ref(traitdist)). In the first, there is a single shift from dioecy to monoecy along the branch that gave rise to the most recent common ancestor of Calycophorae and Euphysonectae, followed by a shift back to dioecy along the branch that gave rise to Group B. In the second, monoecy arose twice: once along the branch that gave rise to Clade A and again along the branch that gave rise to Calycophorae.
 
-Ancestral character state reconstructions favor the hypothesis that monoecy arose twice (Fig. \@ref(reconstruct)A, \@ref(fig:BI-mono)), once in Calycophorae and once in Clade A. This is consistent with differences in the arrangements of male and female gonophores in the two clades. In Clade A, male and female zooids are found within the same cormidium (a single reiterated sequence of zooids along the stem, see Fig. \@ref(colony)). In these species, the male and female zooids are placed at different but well defined locations within the cormidium. Meanwhile in calycophorans, each cormidium bears either male or female gonophores. In this form of monoecy, the male and female cormidia can either occur in an alternating pattern, or there can be several male or female cormidia in a row. In either case, male and female zooids are found at the same corresponding locations within the cormidia. One known exception to this can be found in abylid calycophorans, where both male or female gonophores may be found within the same eudoxid [@carre1967]. In sum, homoplasy in sexual-system evolution along with variation in the spatial arrangement of gonophores within a colony suggest that siphonophores have evolved different ways to be monoecious. The sexual system and cormidial arrangement of *Rudjakovia* is undescribed, although preliminary observations suggest that this species may be monoecious and that monoecy arose a third time in the Pyrostephidae. A detailed redescription of *Rudjakovia* would help clarify this.
+Ancestral character state reconstructions favor the hypothesis that monoecy arose twice (Fig. \@ref(reconstruct)A and \@ref(fig:BI-mono)), once in Calycophorae and once in Clade A. This is consistent with differences in the arrangements of male and female gonophores in the two clades. In Clade A, male and female zooids are found within the same cormidium (a single reiterated sequence of zooids along the stem, see Fig. \@ref(colony)). In these species, the male and female zooids are placed at different but well defined locations within the cormidium. Meanwhile in calycophorans, each cormidium bears either male or female gonophores. In this form of monoecy, the male and female cormidia can either occur in an alternating pattern, or there can be several male or female cormidia in a row. In either case, male and female zooids are found at the same corresponding locations within the cormidia. One known exception to this can be found in abylid calycophorans, where both male or female gonophores may be found within the same eudoxid [@carre1967]. In sum, homoplasy in sexual-system evolution along with variation in the spatial arrangement of gonophores within a colony suggest that siphonophores have evolved different ways to be monoecious. The sexual system and cormidial arrangement of *Rudjakovia* is undescribed, although preliminary observations suggest that this species may be monoecious and that monoecy arose a third time in the Pyrostephidae. A detailed redescription of *Rudjakovia* would help clarify this.
 
 Both Calycophorae and Clade A have a large proportion of shallow water species (see section 3.7), suggesting that there may be an association between habitat depth and sexual mode. Similar independent transitions from gonochorism (separate sex) to hermaphroditism (both sexes in the same individual) have been identified in shallow-water scleractinian corals (Anthozoa, Cnidaria) [@kerr2011correlated]. To test this hypothesis, a more extensive taxon sampling of the Calycophorae is needed.
 
-Within Calycophorae there are additional variations of the sexual mode: in *Sulculeolaria* (not included in this phylogeny) colonies appear to consist of only one sex at a time. However they are monoecious and protandrous, with female gonophores developing after the release of male gonophores [@carre1979]. Environmental influences may also play a role in determining the expressed sex. Colonies of the calycophoran *Chelophyes appendiculata* collected in the field always bear both male and female gonophores, whereas when kept in culture only gonophores of one sex are maintained [@Carre:2000hb]. This suggests a high plasticity of the sexual state in some calycophoran taxa and underlines the need for caution when evaluating the state of this character in rarely collected species. 
+Within Calycophorae there are additional variations of the sexual mode: in *Sulculeolaria* (not included in this phylogeny) colonies appear to present a single sex at a time. However they are monoecious and protandrous, with female gonophores developing after the release of male gonophores [@carre1979]. Environmental influences may also play a role in determining the expressed sex. Colonies of the calycophoran *Chelophyes appendiculata* collected in the field always bear both male and female gonophores, whereas when kept in culture only gonophores of one sex are maintained [@Carre:2000hb]. This suggests a high plasticity of the sexual state in some calycophoran taxa and underlines the need for caution when evaluating the state of this character in rarely collected species. 
 
 ### 3.3 The Evolution of Zooid Types {-}
 
@@ -538,7 +539,7 @@ Within the nectosome, the nectophores can be attached along the dorsal or ventra
 
 Bracts are greatly reduced zooids unique to siphonophores, where they are only present in Codonophora (Fig. \@ref(traitdist)). Bracts are functional for protection of the delicate zooids and to help maintain neutral buoyancy [@jacobs1937beobachtungen]. Some calycophorans are able to actively exclude sulphate ions in their bracts to adjust their buoyancy along the colony [@bidigare1980role]. Bracts were lost in Hippopodiidae, some clausophyids, *Physophora hydrostatica* (Fig. \@ref(siphonophores)K), and in *Gymnopraia lapislazula*. These patterns of loss are not captured in this study, as most of these species are not included in the present phylogeny. In species without bracts, other zooids appear to fulfill the roles of buoyancy control and protection. In *P. hydrostatica*, enlarged palpons surround all other siphosomal zooids and move in a coordinated manner to inflict a powerful sting [@totton1965synopsis]. While in *Hippopodius hippopus* the nectophores play a role in maintaining neutral buoyancy and possibly also in defense, by bioluminescing and blanching in response to stimuli (Fig. \@ref(siphonophores)C shows the blanching of nectophores)[@bassot1978bioluminescence].
 
-Palpons are typically defined as modified reduced gastrozooids [@mackie1987siphonophore]. In many species palpons are thought to play a role in digestion and circulation of the gastrovascular fluid, while other species may use them for defense (e.g *Physophora*) or sensory functions [@totton1965synopsis]. Palpons are subcategorised based on their location - palpons that are associated with gonodendra are termed gonopalpons (typically with a reduced tentacle, called a palpacle); palpons found along the stem of the siphosome are termed palpons (typically have a tentacle); and palpons found along the stem of the nectosome are termed nectosomal palpons (as in *Apolemia*) [@totton1965synopsis;@siebert2013re]. It is not clear how structure and function differs among different palpon subtypes, and a detailed histological investigation of palpons found at different locations within species is needed. For this reason, here we only assess the presence or absence of palpons as a category, without assessing subtypes of palpons. This presumes that palpons located at different regions in the colony are derived from other palpons rather than each arising *de novo* by independent modification of gastrozooids, a hypothesis that itself could be challenged upon closer histological examination of palpon diversity. 
+Palpons are typically defined as modified reduced gastrozooids [@mackie1987siphonophore]. In many species palpons are thought to play a role in digestion and circulation of the gastrovascular fluid, while other species may use them for defense (e.g *Physophora*) or sensory functions [@totton1965synopsis]. Palpons are subcategorised based on their location - palpons that are associated with gonodendra are termed gonopalpons (typically with a reduced tentacle, called a palpacle); palpons found along the stem of the siphosome are termed palpons (typically have a palpacle); and palpons found along the stem of the nectosome are termed nectosomal palpons (as in *Apolemia*) [@totton1965synopsis;@siebert2013re]. It is not clear how structure and function differs among different palpon subtypes, and a detailed histological investigation of palpons found at different locations within species is needed. For this reason, here we only assess the presence or absence of palpons as a category, without assessing subtypes of palpons. This presumes that palpons located at different regions in the colony are derived from other palpons rather than each arising *de novo* by independent modification of gastrozooids, a hypothesis that itself could be challenged upon closer histological examination of palpon diversity. 
 
 We reconstruct palpons as present in the common ancestor of siphonophores (Fig. \@ref(reconstruct)B, \@ref(fig:BI-palp)), retained in most species, but lost three times independently in the branches leading to *Bargmannia* and *Rudjakovia* sp., in calycophorans, and in *Marrus claudanielis* and Undescribed sp. L. It remains to be clarified if small buds associated with nectophores within the nectosome of *Bargmannia* species [@Dunn:2005fv] actually correspond to reduced palpons. The pyrostephid *Pyrostephos vanhoeffeni* (not sampled) has modified tentacle-less palpons (termed oleocysts), but the relationship between this species and *Rudjakovia* sp. is not known, so the exact patterns of loss within *Pyrostephidae* (here provisionally including *Rudjakovia* sp.) remain unclear. Within the calycophorans, one species *Stephanophyes superba* (not included in this phylogeny) has polyp-like zooids that have been described as palpons [@totton1965synopsis], but the exact identity of this zooid is not clear and needs further morphological examination.
 
@@ -567,6 +568,7 @@ Using phylogenomic tools we were able to resolve deep relationships within Sipho
 ## Acknowledgements {-}
 
 This work was supported by the National Science Foundation (DEB-1256695, the Waterman Award, and DEB-1701272). CM was also supported in part by a RI-EPSCoR Fellowship, NSF EPS-1004057. Sequencing at the Brown Genomics Core facility was supported in part by NIH P30RR031153 and NSF EPSCoR EPS-1004057. Data transfer was supported by NSF RII-C2 EPS-1005789. Analyses were conducted with computational resources and services at the Center for Computation and Visualization at Brown University, supported in part by the NSF EPSCoR EPS-1004057 and the State of Rhode Island. SOWHAT analyses were carried out on the Odyssey cluster supported by the FAS Division of Science, Research Computing Group at Harvard University -- we thank Cassandra Extavour for use of the Harvard cluster. Analyses were also conducted on the Hoffman2 cluster of the Institute for Digital Research and Education of the University of California, Los Angeles. We thank Rob Sherlock for providing the *Bathyphysa conifera* photograph. We also thank Zack Lewis for help with RNA extractions and the MBARI crews and ROV pilots for collection of the specimens.
+\clearpage
 
 ## Supplementary Information {-}
 \setcounter{figure}{0}
@@ -602,10 +604,6 @@ tentilla_obj <- densityMap(tentilla_sim,plot=FALSE)
 tentilla_obj$cols[1:length(tentilla_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla_obj$cols))
 plot(tentilla_obj)
 
-pdf("supplementary_info/Supplementary_Figure3.pdf")
-plot(tentilla_obj)
-dev.off()
-
 ```
 
 ```{r tentilla2, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as bearing tentilla."}
@@ -620,9 +618,6 @@ tentilla2_obj <- densityMap(tentilla_sim2, plot=FALSE)
 tentilla2_obj$cols[1:length(tentilla2_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla2_obj$cols))
 plot(tentilla2_obj)
 
-pdf("supplementary_info/Supplementary_Figure4.pdf")
-plot(tentilla2_obj)
-dev.off()
 ```
 
 ```{r nectosome-origin, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE,  fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome."}
@@ -637,9 +632,6 @@ nectosome_obj <- densityMap(nectosome_sim, plot=FALSE)
 nectosome_obj$cols[1:length(nectosome_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(nectosome_obj$cols))
 plot(nectosome_obj)
 
-pdf("supplementary_info/Supplementary_Figure5.pdf")
-plot(nectosome_obj)
-dev.off()
 ```
 
 ```{r desc-mantle, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of a descending mantle canal in the nectophores. Cystonects and Athorybia were excluded as they do not have a nectosome. "}
@@ -654,9 +646,6 @@ desc_mantle_obj <- densityMap(desc_mantle_sim, plot=FALSE)
 desc_mantle_obj$cols[1:length(desc_mantle_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(desc_mantle_obj$cols))
 plot(desc_mantle_obj)
 
-pdf("supplementary_info/Supplementary_Figure6.pdf")
-plot(desc_mantle_obj)
-dev.off()
 ```
 
 
@@ -672,9 +661,6 @@ necto_pos_obj <- densityMap(necto_pos_sim, plot=FALSE)
 necto_pos_obj$cols[1:length(necto_pos_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(necto_pos_obj$cols))
 plot(necto_pos_obj)
 
-pdf("supplementary_info/Supplementary_Figure7.pdf")
-plot(necto_pos_obj)
-dev.off()
 ```
 
 ```{r median-cont, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV."}
@@ -682,9 +668,6 @@ depth_value = depth_median
 depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap)
 
-pdf("supplementary_info/Supplementary_Figure8.pdf")
-plot(depthmap)
-dev.off()
 ```
 
 ```{r median-depth-extended, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations." }
@@ -695,10 +678,6 @@ median_extended = median_extended[match(names(median_extended), ultratree$tip.la
 depthmap_ext <- contMap(ultratree, median_extended, plot=F) %>% setMap(colors=c("cyan","blue","black"))
 plot(depthmap_ext)
 
-pdf("supplementary_info/Supplementary_Figure9.pdf")
-plot(depthmap_ext)
-dev.off()
-
 #below are the model fit details
 
 modelfit_white <- fitContinuous(ultratree, median_extended, model="white")$opt$aicc
@@ -706,8 +685,6 @@ modelfit_BM <- fitContinuous(ultratree, median_extended, model="BM")$opt$aicc
 modelfit_OU <- fitContinuous(ultratree, median_extended, model="OU")$opt$aicc
 
 ```
-
-###Bayesian models & model fit {-}
 
 ```{r supplementary-trees, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Phylogenies obtained using different models of evolution in IQTree. We used ModelFinder [@kalyaanamoorthy2017modelfinder] to identify the model with the best relative model fit. We also present results for the commonly used WAG and GTR models. Unlabeled nodes have support >0.99. A. JTT + Empirically counted frequencies from alignment + FreeRate model with 7 categories (the model identified by ModelFinder as having the best fit). Log likelihood:-8113694.922; AIC:16227609.9565 .  B. GTR + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Log likelihood: -8133157.335; AIC:16266530.7277. C. WAG + Optimized base frequencies by maximum-likelihood + Free rate model with 6 categories. Log likelihood: -8156043.772; AIC score: 16312303.6120 "}
 
@@ -752,9 +729,7 @@ multiplot(p1, p2, p3, ncol=3)
 
 ```
 
-
-
-```{r BI tree ancestral trait reconstructions, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE,}
+```{r BI-tree-trait-reconstructions, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, include=F}
 
 BIspeciestree<-read.tree(file="agalma/Outfiles/combined_trimmed60_poisson.con.tre")
 BIspeciestree = ape::ladderize( BIspeciestree )
@@ -817,27 +792,29 @@ names(depth_median) = rownames(dpruned_data)
 #Stochastic trait mapping:
 #Make simmap objects
 #print("SIMMAP Sex Distribution")
-make.simmap(ultratree , sex, nsim = 100, message=FALSE) -> sex_sim
+make.simmap(ultratree , sex, nsim = 100, message=FALSE) -> sex_sim_BI
 #print("SIMMAP Palpons")
-make.simmap(ultratree , palpons, nsim = 100, message=FALSE) -> palpons_sim
+make.simmap(ultratree , palpons, nsim = 100, message=FALSE) -> palpons_sim_BI
 #print("SIMMAP Tentilla")
-make.simmap(ultratree , tentilla, nsim = 100, message=FALSE) -> tentilla_sim
+make.simmap(ultratree , tentilla, nsim = 100, message=FALSE) -> tentilla_sim_BI
 #print("SIMMAP Tentilla2")
-make.simmap(ultratree , tentilla2, nsim = 100, message=FALSE) -> tentilla_sim2
+make.simmap(ultratree , tentilla2, nsim = 100, message=FALSE) -> tentilla_sim2_BI
 #print("SIMMAP Nectosome")
-make.simmap(ultratree , nectosome, nsim = 100, message=FALSE) -> nectosome_sim
+make.simmap(ultratree , nectosome, nsim = 100, message=FALSE) -> nectosome_sim_BI
 #print("SIMMAP Nectosome Position")
-make.simmap(ultratree , bracts, nsim = 100, message=FALSE) -> bracts_sim
+make.simmap(ultratree , bracts, nsim = 100, message=FALSE) -> bracts_sim_BI
 #print("SIMMAP Habitat")
 
 #Nectophore position SIMMAP setup
 NectoPosTree = drop.tip(ultratree , which(!(ultratree $tip.label %in% names(necto_pos))))
-make.simmap(NectoPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim
+make.simmap(NectoPosTree, necto_pos, nsim = 100, message=FALSE) -> necto_pos_sim_BI
 
 #Descending mantle Canal SIMMAP Setup
 DescMantleTree =  drop.tip(ultratree , which(!(ultratree $tip.label %in% names(desc_mantle))))
-make.simmap(DescMantleTree, desc_mantle, nsim = 100, message=FALSE) -> desc_mantle_sim
+make.simmap(DescMantleTree, desc_mantle, nsim = 100, message=FALSE) -> desc_mantle_sim_BI
 ```
+\clearpage
+
 ![\label{bayesian}Bayesian (BI) CAT poisson phylogram with bipartition frequencies from the Bayesian posterior distribution of trees. Unlabeled nodes have support >0.99. The numbers of valid described species estimated to be in each clade based on taxonomy are shown below each clade name on the right.](supplementary_info/Supplementary_Figure11.pdf)
 
 ```{r BI-WAG, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Bayesian (BI) WAG and Gamma phylogram with bipartition frequencies from the Bayesian posterior distribution of trees. Unlabeled nodes have support >0.99." }
@@ -862,67 +839,140 @@ flip(p,calycophora_node,euphysonectae_node)
 
 ```{r BI-mono, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of sexual characters on the consensus Bayesian tree topology." }
 #Simmap SEX
-sex_obj <- densityMap(sex_sim, plot=FALSE)
-sex_obj$cols[1:length(sex_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(sex_obj$cols))
- plot(sex_obj)
+sex_obj_BI <- densityMap(sex_sim_BI, plot=FALSE)
+sex_obj_BI$cols[1:length(sex_obj_BI$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(sex_obj_BI$cols))
+ plot(sex_obj_BI)
 ```
 
 ```{r BI-palp, echo=FALSE, message=FALSE, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of palpon presence/absence on the consensus Bayesian tree topology." }
 #Simmap PALPONS
-palpons_obj <- densityMap(palpons_sim, plot=FALSE)
-palpons_obj$cols[1:length(palpons_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(palpons_obj$cols))
+palpons_obj_BI <- densityMap(palpons_sim_BI, plot=FALSE)
+palpons_obj_BI$cols[1:length(palpons_obj_BI$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(palpons_obj_BI$cols))
 
-plot(palpons_obj)
+plot(palpons_obj_BI)
 ```
 
 ```{r tentilla-BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as not bearing tentilla, mapped on the consensus Bayesian tree topology."}
-tentilla_obj <- densityMap(tentilla_sim,plot=FALSE)
-tentilla_obj$cols[1:length(tentilla_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla_obj$cols))
-plot(tentilla_obj)
+tentilla_obj_BI <- densityMap(tentilla_sim_BI,plot=FALSE)
+tentilla_obj_BI$cols[1:length(tentilla_obj_BI$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla_obj_BI$cols))
+plot(tentilla_obj_BI)
 ```
 
 ```{r tentilla-ext-BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of tentilla with *Physalia* included as bearing tentilla, mapped on the consensus Bayesian tree topology."}
-tentilla2_obj <- densityMap(tentilla_sim2, plot=FALSE)
-tentilla2_obj$cols[1:length(tentilla2_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla2_obj$cols))
-plot(tentilla2_obj)
+tentilla2_obj_BI <- densityMap(tentilla_sim2_BI, plot=FALSE)
+tentilla2_obj_BI$cols[1:length(tentilla2_obj_BI$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(tentilla2_obj_BI$cols))
+plot(tentilla2_obj_BI)
 ```
 
 ```{r nectosome-BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of nectosome, mapped on the consensus Bayesian tree topology."}
-nectosome_obj <- densityMap(nectosome_sim, plot=FALSE)
-nectosome_obj$cols[1:length(nectosome_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(nectosome_obj$cols))
-plot(nectosome_obj)
+nectosome_obj_BI <- densityMap(nectosome_sim_BI, plot=FALSE)
+nectosome_obj_BI$cols[1:length(nectosome_obj_BI$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(nectosome_obj_BI$cols))
+plot(nectosome_obj_BI)
 ```
 
 ```{r mantle-BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map of presence of a descending mantle canal in the nectophores, mapped on the consensus Bayesian tree topology."}
-desc_mantle_obj <- densityMap(desc_mantle_sim, plot=FALSE)
-desc_mantle_obj$cols[1:length(desc_mantle_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(desc_mantle_obj$cols))
-plot(desc_mantle_obj)
+desc_mantle_obj_BI <- densityMap(desc_mantle_sim_BI, plot=FALSE)
+desc_mantle_obj_BI$cols[1:length(desc_mantle_obj_BI$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(desc_mantle_obj_BI$cols))
+plot(desc_mantle_obj_BI)
 ```
 
 ```{r necto-BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Stochastic character map for the evolution of the position of the nectosome, mapped on the consensus Bayesian tree topology."}
-necto_pos_obj <- densityMap(necto_pos_sim, plot=FALSE)
-necto_pos_obj$cols[1:length(necto_pos_obj$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(necto_pos_obj$cols))
-plot(necto_pos_obj)
+necto_pos_obj_BI <- densityMap(necto_pos_sim_BI, plot=FALSE)
+necto_pos_obj_BI$cols[1:length(necto_pos_obj_BI$cols)]<-colorRampPalette(colors=c("#4A4ACC", "orange"), space="Lab")(length(necto_pos_obj_BI$cols))
+plot(necto_pos_obj_BI)
 ```
 
 
 ```{r depth-BI, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species observed with an MBARI ROV, mapped on the consensus Bayesian tree topology."}
 depth_value = depth_median
-depthmap <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
-plot(depthmap)
+depthmap_BI <- contMap(dpruned_tree, depth_value, plot=F) %>% setMap(colors=c("cyan","blue","black"))
+plot(depthmap_BI)
 ```
 
 ```{r depth-BI-extended, echo=FALSE, message=F, warning=FALSE, verbose= FALSE, fig.width=6.5, fig.height=7, fig.cap= "Brownian Motion character map of median depth of species including blue water diving observations, mapped on the consensus Bayesian tree topology."}
 median_extended = cdata$Depth.Median.Extended
 names(median_extended) = rownames(cdata)
 median_extended = median_extended[match(names(median_extended), ultratree$tip.label)]
-depthmap_ext <- contMap(ultratree, median_extended, plot=F) %>% setMap(colors=c("cyan","blue","black"))
-plot(depthmap_ext)
-
-
+depthmap_ext_BI <- contMap(ultratree, median_extended, plot=F) %>% setMap(colors=c("cyan","blue","black"))
+plot(depthmap_ext_BI)
 ```
 
-\pagebreak
+\clearpage
+
+```{r pdf-supplemental, verbose= FALSE, include=F, message = FALSE, echo=FALSE, comment=NA, warning=FALSE }
+pdf("supplementary_info/Supplementary_Figure3.pdf")
+plot(tentilla_obj)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure4.pdf")
+plot(tentilla2_obj)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure5.pdf")
+plot(nectosome_obj)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure6.pdf")
+plot(desc_mantle_obj)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure7.pdf")
+plot(necto_pos_obj)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure8.pdf")
+plot(depthmap)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure9.pdf")
+plot(depthmap_ext)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure10.pdf")
+multiplot(p1, p2, p3, ncol=3)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure12.pdf")
+flip(p,calycophora_node,euphysonectae_node)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure13.pdf")
+plot(sex_obj_BI)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure14.pdf")
+plot(palpons_obj_BI)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure15.pdf")
+plot(tentilla_obj_BI)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure16.pdf")
+plot(tentilla2_obj_BI)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure17.pdf")
+plot(nectosome_obj_BI)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure18.pdf")
+plot(desc_mantle_obj_BI)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure19.pdf")
+plot(necto_pos_obj_BI)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure20.pdf")
+plot(depthmap_BI)
+dev.off()
+
+pdf("supplementary_info/Supplementary_Figure21.pdf")
+plot(depthmap_ext_BI)
+dev.off()
+
+```
 
 ### Software versions {-}
 
