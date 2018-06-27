@@ -2,11 +2,14 @@
 
 ## Introduction
 
-This repository contains all of the code and analyses associated with a phylogenetic analysis of siphonophores. This work is presented in the following bioarxiv preprint:
+This repository contains all of the code and analyses associated with a phylogenetic analysis of siphonophores. This work is presented in the following paper:
 
->Munro C, Siebert S, Zapata F, Howison M, Damian Serrano A, Church SH, Goetz FE, Pugh PR, Haddock SHD, Dunn CW. (2018) Improved phylogenetic resolution within Siphonophora (Cnidaria) with implications for trait evolution. [https://doi.org/10.1101/251116](https://www.biorxiv.org/content/early/2018/01/20/251116)
+>Munro C, Siebert S, Zapata F, Howison M, Damian Serrano A, Church SH, Goetz FE, Pugh PR, Haddock SHD, Dunn CW. (2018) Improved phylogenetic resolution within Siphonophora (Cnidaria) with implications for trait evolution. Molecular Phylogenetics and evolution.[https://doi.org/10.1016/j.ympev.2018.06.030](https://doi.org/10.1016/j.ympev.2018.06.030) 
 
-![Figure 1](https://cdn.rawgit.com/caseywdunn/siphonophore_phylogeny_2017/0847a421/supplementary_info/Graphical_abstract.jpg)
+This paper is also available as a biorxiv pre-print:
+>[https://doi.org/10.1101/251116](https://www.biorxiv.org/content/early/2018/01/20/251116)
+
+![Figure 1](https://raw.githubusercontent.com/caseywdunn/siphonophore_phylogeny_2017/master/supplementary_info/graphical_abstract.jpg)
 
 See [figures](https://github.com/caseywdunn/siphonophore_phylogeny_2017/tree/master/figures) for original figures used in this manuscript.
 
