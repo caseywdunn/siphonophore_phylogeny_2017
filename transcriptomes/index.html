@@ -1,0 +1,1095 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Agalma Diagnostics</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<style>
+#container {padding: 20px;}
+.sticky {
+ position: -webkit-sticky;
+ position: -moz-sticky;
+ position: -ms-sticky;
+ position: -o-sticky;
+ top: 15px;
+}
+th, td { white-space: nowrap; border: 1px solid #ddd; }
+tr td {
+ line-height: 20px;
+ font-size: 13px;
+ font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+}
+td.right {text-align:right;}
+tr td.collapsed:not(.open_cell) {
+ overflow: hidden;
+ text-overflow: ellipsis;
+ max-width: 200px;
+}
+</style>
+<script type="text/javascript">
+function toggle_cell (cell) {
+  cell.classList.toggle('open_cell');
+}
+</script>
+</head>
+<body>
+<div id="container">
+<table class="table table-striped">
+<tr><th colspan="1"><h4>Run</h4></th>
+<th colspan="5"><h4>catalog</h4></th>
+<th colspan="2"><h5><em>agalma.insert_size</em></h5></th>
+<th colspan="3"><h5><em>agalma.rrna</em></h5></th>
+<th colspan="7"><h5><em>agalma.assemble</em></h5></th>
+<th colspan="2"><h5><em>agalma.assemble</em></h5></th>
+<th colspan="4"><h4>profile_aggregate</h4></th>
+</tr>
+<tr><th><h6>ID</h6></th>
+<th><h6>Catalog ID</h6></th>
+<th><h6>Species (ITIS ID)</h6></th>
+<th><h6>Library ID</h6></th>
+<th><h6>Note</h6></th>
+<th><h6>Sample Prep</h6></th>
+<th><h6>Mean insert size (bp)</h6></th>
+<th><h6>Standard deviation (bp)</h6></th>
+<th><h6>Read pairs examined</h6></th>
+<th><h6>Read pairs kept</h6></th>
+<th><h6>Percent kept</h6></th>
+<th><h6>Read pairs examined</h6></th>
+<th><h6>Read pairs kept</h6></th>
+<th><h6>Percent kept</h6></th>
+<th><h6>Illumina quality threshold</h6></th>
+<th><h6>Adapter fails</h6></th>
+<th><h6>Quality fails</h6></th>
+<th><h6>Base composition fails</h6></th>
+<th><h6>Total transcripts</h6></th>
+<th><h6>Nuclear/coding transcripts</h6></th>
+<th><h6>Wall Time (s)</h6></th>
+<th><h6>User Time (s)</h6></th>
+<th><h6>System Time (s)</h6></th>
+<th><h6>Max Memory (KB)</h6></th>
+</tr>
+<tr><td>26,65</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-7-TGACCA/index.html">HWI-ST625-54-C026EACXX-7-TGACCA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Marrus claudanielis</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51390">51390</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG359</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Invitrogen Dynabeads mRNA Purification Kit ; 2 rounds | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">253.03</td>
+<td class="right">53.30</td>
+<td class="right">35,866,092</td>
+<td class="right">34,715,291</td>
+<td class="right">96.8%</td>
+<td class="right">34,715,291</td>
+<td class="right">21,572,547</td>
+<td class="right">62.1%</td>
+<td class="right">33</td>
+<td class="right">113,298</td>
+<td class="right">15,594,637</td>
+<td class="right">4,981,676</td>
+<td class="right">105,439</td>
+<td class="right">22,511</td>
+<td class="right">58142.08</td>
+<td class="right">656168.44</td>
+<td class="right">146526.93</td>
+<td class="right">67,151,932</td>
+</tr>
+<tr><td>15,54</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-6-TTAGGC/index.html">HWI-ST625-54-C026EACXX-6-TTAGGC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Apolemia rubriversa</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51421">51421</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG355</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round & Trizol | Invitrogen Dynabeads mRNA Purification Kit ; 2 rounds | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">290.81</td>
+<td class="right">80.64</td>
+<td class="right">19,228,660</td>
+<td class="right">17,628,120</td>
+<td class="right">91.7%</td>
+<td class="right">17,628,120</td>
+<td class="right">13,716,682</td>
+<td class="right">77.8%</td>
+<td class="right">33</td>
+<td class="right">40,594</td>
+<td class="right">5,179,800</td>
+<td class="right">516,100</td>
+<td class="right">87,701</td>
+<td class="right">17,540</td>
+<td class="right">210931.71</td>
+<td class="right">2804229.80</td>
+<td class="right">893208.41</td>
+<td class="right">18,518,260</td>
+</tr>
+<tr><td>17,56</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-6-GCCAAT/index.html">HWI-ST625-54-C026EACXX-6-GCCAAT</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Chuniphyes multidentata</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51304">51304</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG325</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">284.46</td>
+<td class="right">35.74</td>
+<td class="right">17,999,147</td>
+<td class="right">13,851,767</td>
+<td class="right">77.0%</td>
+<td class="right">13,851,767</td>
+<td class="right">10,291,672</td>
+<td class="right">74.3%</td>
+<td class="right">33</td>
+<td class="right">24,263</td>
+<td class="right">4,941,872</td>
+<td class="right">335,297</td>
+<td class="right">84,341</td>
+<td class="right">22,084</td>
+<td class="right">44955.57</td>
+<td class="right">546648.56</td>
+<td class="right">118246.56</td>
+<td class="right">16,730,824</td>
+</tr>
+<tr><td>39,78</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-159-C4MVCACXX-5-AGTTCC/index.html">HWI-ST625-159-C4MVCACXX-5-AGTTCC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Apolemia sp</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51421">51421</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">CMN0034</td>
+<td class="collapsed" onclick="toggle_cell(this)">Extraction ID: CM41</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq Stranded</td>
+<td class="right">167.41</td>
+<td class="right">53.46</td>
+<td class="right">16,761,717</td>
+<td class="right">13,633,675</td>
+<td class="right">81.3%</td>
+<td class="right">13,633,675</td>
+<td class="right">10,825,362</td>
+<td class="right">79.4%</td>
+<td class="right">33</td>
+<td class="right">1,332,063</td>
+<td class="right">3,062,035</td>
+<td class="right">41,943</td>
+<td class="right">51,470</td>
+<td class="right">14,752</td>
+<td class="right">26095.96</td>
+<td class="right">305135.07</td>
+<td class="right">72356.67</td>
+<td class="right">8,005,640</td>
+</tr>
+<tr><td>38,77</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-159-C4MVCACXX-5-CCGTCC/index.html">HWI-ST625-159-C4MVCACXX-5-CCGTCC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Apolemia lanosa</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=None">None</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">CMN0036</td>
+<td class="collapsed" onclick="toggle_cell(this)">Extraction ID: CM43</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq Stranded</td>
+<td class="right">167.74</td>
+<td class="right">55.30</td>
+<td class="right">18,444,476</td>
+<td class="right">17,777,302</td>
+<td class="right">96.4%</td>
+<td class="right">17,777,302</td>
+<td class="right">14,374,790</td>
+<td class="right">80.9%</td>
+<td class="right">33</td>
+<td class="right">923,922</td>
+<td class="right">3,882,968</td>
+<td class="right">439,569</td>
+<td class="right">70,184</td>
+<td class="right">15,579</td>
+<td class="right">37105.20</td>
+<td class="right">437990.52</td>
+<td class="right">101800.13</td>
+<td class="right">12,294,916</td>
+</tr>
+<tr><td>9,48</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-51-C02UNACXX-8-BARGMANNIA/index.html">HWI-ST625-51-C02UNACXX-8-BARGMANNIA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Bargmannia elongata</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51386">51386</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG311|FEG312|FEG292|FEG295|FEG296</td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">mix, see individual sample numbers | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">271.43</td>
+<td class="right">40.17</td>
+<td class="right">40,008,913</td>
+<td class="right">31,923,307</td>
+<td class="right">79.8%</td>
+<td class="right">31,923,307</td>
+<td class="right">25,044,376</td>
+<td class="right">78.5%</td>
+<td class="right">33</td>
+<td class="right">342,825</td>
+<td class="right">8,084,832</td>
+<td class="right">2,017,709</td>
+<td class="right">152,019</td>
+<td class="right">23,661</td>
+<td class="right">98524.70</td>
+<td class="right">1269761.07</td>
+<td class="right">204735.21</td>
+<td class="right">67,150,128</td>
+</tr>
+<tr><td>103</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./K00162-189-HJTYGBBXX-7-NCAGTG/index.html">K00162-189-HJTYGBBXX-7-NCAGTG</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Diphyes dispar</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51307">51307</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">CMN052|CMN053|CMN054|CMN056|CMN057|CMN167|CMN168</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq Stranded mRNA</td>
+<td class="right">223.14</td>
+<td class="right">58.73</td>
+<td class="right">80,000,000</td>
+<td class="right">62,927,970</td>
+<td class="right">78.7%</td>
+<td class="right">62,927,970</td>
+<td class="right">39,893,504</td>
+<td class="right">63.4%</td>
+<td class="right">33</td>
+<td class="right">14,412,120</td>
+<td class="right">21,322,624</td>
+<td class="right">690,159</td>
+<td class="right">210,406</td>
+<td class="right">50,868</td>
+<td class="right">203729.06</td>
+<td class="right">1723458.94</td>
+<td class="right">205176.13</td>
+<td class="right">67,158,184</td>
+</tr>
+<tr><td>33,72</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./SRX231866/index.html">SRX231866</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Aiptasia pallida</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=52770">52770</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Downloaded 3 runs from SRA, Accession SRX231866</td>
+<td class="collapsed" onclick="toggle_cell(this)"> | </td>
+<td class="right">183.18</td>
+<td class="right">53.88</td>
+<td class="right">74,558,341</td>
+<td class="right">73,369,914</td>
+<td class="right">98.4%</td>
+<td class="right">73,369,914</td>
+<td class="right">58,147,625</td>
+<td class="right">79.3%</td>
+<td class="right">33</td>
+<td class="right">210,730</td>
+<td class="right">23,826,421</td>
+<td class="right">307,520</td>
+<td class="right">83,950</td>
+<td class="right">33,523</td>
+<td class="right">93071.89</td>
+<td class="right">1265175.72</td>
+<td class="right">92905.78</td>
+<td class="right">67,157,728</td>
+</tr>
+<tr><td>32,71</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-8-ACTTGA/index.html">HWI-ST625-54-C026EACXX-8-ACTTGA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Stephalia dilata</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51414">51414</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG350</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Invitrogen Dynabeads mRNA Purification Kit ; 2 rounds | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">267.82</td>
+<td class="right">43.33</td>
+<td class="right">30,953,585</td>
+<td class="right">30,320,190</td>
+<td class="right">98.0%</td>
+<td class="right">30,320,190</td>
+<td class="right">19,370,965</td>
+<td class="right">63.9%</td>
+<td class="right">33</td>
+<td class="right">86,068</td>
+<td class="right">15,731,787</td>
+<td class="right">1,435,119</td>
+<td class="right">107,925</td>
+<td class="right">23,984</td>
+<td class="right">42482.57</td>
+<td class="right">491296.30</td>
+<td class="right">106061.56</td>
+<td class="right">67,149,568</td>
+</tr>
+<tr><td>12,51</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-73-C0JUVACXX-7-TTAGGC/index.html">HWI-ST625-73-C0JUVACXX-7-TTAGGC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Physalia physalis</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=719181">719181</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG0369</td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq RNA Sample Prep Kit RNA Purification Beads ; 2 rounds | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">233.10</td>
+<td class="right">54.37</td>
+<td class="right">36,481,773</td>
+<td class="right">35,224,406</td>
+<td class="right">96.6%</td>
+<td class="right">35,224,406</td>
+<td class="right">31,188,573</td>
+<td class="right">88.5%</td>
+<td class="right">33</td>
+<td class="right">18,553</td>
+<td class="right">5,491,979</td>
+<td class="right">259,497</td>
+<td class="right">74,994</td>
+<td class="right">23,705</td>
+<td class="right">55430.70</td>
+<td class="right">649704.36</td>
+<td class="right">127189.64</td>
+<td class="right">67,149,568</td>
+</tr>
+<tr><td>40,79</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-159-C4MVCACXX-5-GTCCGC/index.html">HWI-ST625-159-C4MVCACXX-5-GTCCGC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Bargmannia amoena</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=719188">719188</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">CMN0037</td>
+<td class="collapsed" onclick="toggle_cell(this)">Extraction ID: CM44</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq Stranded</td>
+<td class="right">161.57</td>
+<td class="right">53.77</td>
+<td class="right">20,195,498</td>
+<td class="right">17,083,715</td>
+<td class="right">84.6%</td>
+<td class="right">17,083,715</td>
+<td class="right">13,689,577</td>
+<td class="right">80.1%</td>
+<td class="right">33</td>
+<td class="right">1,049,110</td>
+<td class="right">3,996,085</td>
+<td class="right">274,520</td>
+<td class="right">66,726</td>
+<td class="right">17,975</td>
+<td class="right">35339.57</td>
+<td class="right">409066.65</td>
+<td class="right">100840.64</td>
+<td class="right">9,949,192</td>
+</tr>
+<tr><td>10,49</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-51-C02UNACXX-6-FRILLAGALMA/index.html">HWI-ST625-51-C02UNACXX-6-FRILLAGALMA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Frillagalma vityazi</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=719183">719183</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG291|FEG286|FEG309</td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">mix, see individual sample numbers | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">283.11</td>
+<td class="right">44.91</td>
+<td class="right">79,902,051</td>
+<td class="right">43,145,758</td>
+<td class="right">54.0%</td>
+<td class="right">43,145,758</td>
+<td class="right">30,363,146</td>
+<td class="right">70.4%</td>
+<td class="right">33</td>
+<td class="right">668,400</td>
+<td class="right">13,591,301</td>
+<td class="right">5,558,767</td>
+<td class="right">181,508</td>
+<td class="right">29,293</td>
+<td class="right">117194.11</td>
+<td class="right">1466926.39</td>
+<td class="right">263193.73</td>
+<td class="right">67,156,332</td>
+</tr>
+<tr><td>34,73</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HISEQ-168-C3DEYACXX-8-ALATINA/index.html">HISEQ-168-C3DEYACXX-8-ALATINA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Alatina alata</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51451">51451</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">ITIS ID for family Carybdeidae. This is a combination of 3 libraries: R3 (mature adult pedalium and tentacle); R54 (blastulae); and R56 (planulae)</td>
+<td class="collapsed" onclick="toggle_cell(this)"> | </td>
+<td class="right">173.96</td>
+<td class="right">60.33</td>
+<td class="right">96,259,870</td>
+<td class="right">50,178,971</td>
+<td class="right">52.1%</td>
+<td class="right">50,178,971</td>
+<td class="right">39,072,296</td>
+<td class="right">77.9%</td>
+<td class="right">33</td>
+<td class="right">1,236,251</td>
+<td class="right">15,771,112</td>
+<td class="right">468,662</td>
+<td class="right">166,584</td>
+<td class="right">28,743</td>
+<td class="right">177175.06</td>
+<td class="right">2774368.13</td>
+<td class="right">204772.13</td>
+<td class="right">67,152,088</td>
+</tr>
+<tr><td>1-2</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./dbEST_CLYHEM/index.html">dbEST_CLYHEM</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Clytia hemisphaerica</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=49583">49583</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">Assembled EST from Cnidaria Tree of Life</td>
+<td class="collapsed" onclick="toggle_cell(this)"> | </td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">11,476</td>
+<td class="right">6,642</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+</tr>
+<tr><td>36,75</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST420-69-D0F2NACXX-3-ECTOPLEURA/index.html">HWI-ST420-69-D0F2NACXX-3-ECTOPLEURA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Ectopleura larynx</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=719103">719103</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">Data generated in the lab of Paulyn Cartwright (Kansas)</td>
+<td class="collapsed" onclick="toggle_cell(this)"> | </td>
+<td class="right">229.05</td>
+<td class="right">37.75</td>
+<td class="right">109,024,653</td>
+<td class="right">104,559,614</td>
+<td class="right">95.9%</td>
+<td class="right">104,559,614</td>
+<td class="right">77,989,023</td>
+<td class="right">74.6%</td>
+<td class="right">33</td>
+<td class="right">432,309</td>
+<td class="right">40,629,127</td>
+<td class="right">897,590</td>
+<td class="right">84,034</td>
+<td class="right">28,015</td>
+<td class="right">83946.78</td>
+<td class="right">922572.42</td>
+<td class="right">110482.81</td>
+<td class="right">67,155,688</td>
+</tr>
+<tr><td>46,85</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-181-C76K5ACXX-2-CTTGTA/index.html">HWI-ST625-181-C76K5ACXX-2-CTTGTA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Athorybia rosacea</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51428">51428</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">CMN0093</td>
+<td class="collapsed" onclick="toggle_cell(this)">extraction ID CM97</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq Stranded mRNA</td>
+<td class="right">221.16</td>
+<td class="right">93.65</td>
+<td class="right">28,696,930</td>
+<td class="right">28,675,982</td>
+<td class="right">99.9%</td>
+<td class="right">28,675,982</td>
+<td class="right">24,915,817</td>
+<td class="right">86.9%</td>
+<td class="right">33</td>
+<td class="right">691,916</td>
+<td class="right">4,026,467</td>
+<td class="right">633,700</td>
+<td class="right">100,839</td>
+<td class="right">24,543</td>
+<td class="right">59654.12</td>
+<td class="right">716703.64</td>
+<td class="right">149421.40</td>
+<td class="right">67,156,012</td>
+</tr>
+<tr><td>20,59</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-7-GGCTAC/index.html">HWI-ST625-54-C026EACXX-7-GGCTAC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Forskalia asymmetrica</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51417">51417</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG357</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">259.42</td>
+<td class="right">35.04</td>
+<td class="right">25,275,184</td>
+<td class="right">14,876,928</td>
+<td class="right">58.9%</td>
+<td class="right">14,876,928</td>
+<td class="right">9,686,856</td>
+<td class="right">65.1%</td>
+<td class="right">33</td>
+<td class="right">41,922</td>
+<td class="right">7,463,840</td>
+<td class="right">841,930</td>
+<td class="right">82,483</td>
+<td class="right">18,419</td>
+<td class="right">41053.57</td>
+<td class="right">477278.00</td>
+<td class="right">121584.65</td>
+<td class="right">15,935,352</td>
+</tr>
+<tr><td>29,68</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-7-CTTGTA/index.html">HWI-ST625-54-C026EACXX-7-CTTGTA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Prayidae D27D2</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51332">51332</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG354</td>
+<td class="collapsed" onclick="toggle_cell(this)">Original ID was Rosacea, but photos look like Craseoa</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">267.32</td>
+<td class="right">45.59</td>
+<td class="right">38,233,199</td>
+<td class="right">32,586,191</td>
+<td class="right">85.2%</td>
+<td class="right">32,586,191</td>
+<td class="right">21,622,904</td>
+<td class="right">66.4%</td>
+<td class="right">33</td>
+<td class="right">59,773</td>
+<td class="right">15,338,562</td>
+<td class="right">1,878,732</td>
+<td class="right">144,909</td>
+<td class="right">28,065</td>
+<td class="right">73845.97</td>
+<td class="right">880764.99</td>
+<td class="right">180248.50</td>
+<td class="right">67,158,136</td>
+</tr>
+<tr><td>24,63</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-7-CGATGT/index.html">HWI-ST625-54-C026EACXX-7-CGATGT</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Lilyopsis fluoracantha</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51350">51350</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG344</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Invitrogen Dynabeads mRNA Purification Kit ; 1 rounds | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">259.39</td>
+<td class="right">39.08</td>
+<td class="right">51,855,968</td>
+<td class="right">39,681,901</td>
+<td class="right">76.5%</td>
+<td class="right">39,681,901</td>
+<td class="right">25,930,789</td>
+<td class="right">65.3%</td>
+<td class="right">33</td>
+<td class="right">72,416</td>
+<td class="right">19,809,124</td>
+<td class="right">1,388,875</td>
+<td class="right">114,662</td>
+<td class="right">29,854</td>
+<td class="right">60221.37</td>
+<td class="right">690475.62</td>
+<td class="right">153687.33</td>
+<td class="right">67,158,052</td>
+</tr>
+<tr><td>22,61</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HISEQ-129-C25BFACXX-8-HYDRACTINIA/index.html">HISEQ-129-C25BFACXX-8-HYDRACTINIA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Hydractinia symbiolongicarpus</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=719085">719085</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">Data generated in the lab of Paulyn Cartwright (Kansas)</td>
+<td class="collapsed" onclick="toggle_cell(this)"> | </td>
+<td class="right">175.22</td>
+<td class="right">57.84</td>
+<td class="right">60,462,724</td>
+<td class="right">30,136,895</td>
+<td class="right">49.8%</td>
+<td class="right">30,136,895</td>
+<td class="right">25,684,732</td>
+<td class="right">85.2%</td>
+<td class="right">33</td>
+<td class="right">162,430</td>
+<td class="right">6,678,373</td>
+<td class="right">124,392</td>
+<td class="right">71,450</td>
+<td class="right">24,639</td>
+<td class="right">65559.27</td>
+<td class="right">923525.56</td>
+<td class="right">89728.63</td>
+<td class="right">67,155,688</td>
+</tr>
+<tr><td>31,70</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-8-CAGATC/index.html">HWI-ST625-54-C026EACXX-8-CAGATC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Rhizophysa filiformis</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51433">51433</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG322</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">269.74</td>
+<td class="right">46.52</td>
+<td class="right">26,937,827</td>
+<td class="right">24,922,986</td>
+<td class="right">92.5%</td>
+<td class="right">24,922,986</td>
+<td class="right">16,283,565</td>
+<td class="right">65.3%</td>
+<td class="right">33</td>
+<td class="right">66,010</td>
+<td class="right">13,238,701</td>
+<td class="right">361,376</td>
+<td class="right">110,109</td>
+<td class="right">24,833</td>
+<td class="right">49757.00</td>
+<td class="right">592815.02</td>
+<td class="right">122189.10</td>
+<td class="right">18,769,156</td>
+</tr>
+<tr><td>8,47</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-73-C0JUVACXX-7-AGALMA2/index.html">HWI-ST625-73-C0JUVACXX-7-AGALMA2</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Agalma elegans</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51383">51383</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG0371|FEG0372</td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq RNA Sample Prep Kit RNA Purification Beads ; 2 rounds | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">238.94</td>
+<td class="right">57.54</td>
+<td class="right">40,007,833</td>
+<td class="right">39,849,263</td>
+<td class="right">99.6%</td>
+<td class="right">39,849,263</td>
+<td class="right">34,256,629</td>
+<td class="right">86.0%</td>
+<td class="right">33</td>
+<td class="right">31,957</td>
+<td class="right">7,177,806</td>
+<td class="right">748,977</td>
+<td class="right">122,053</td>
+<td class="right">26,601</td>
+<td class="right">76647.93</td>
+<td class="right">1007569.23</td>
+<td class="right">126424.14</td>
+<td class="right">67,158,048</td>
+</tr>
+<tr><td>16,55</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-6-ACAGTG/index.html">HWI-ST625-54-C026EACXX-6-ACAGTG</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Chelophyes appendiculata</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51272">51272</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG351</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Invitrogen Dynabeads mRNA Purification Kit ; 1 rounds | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">275.93</td>
+<td class="right">39.43</td>
+<td class="right">21,103,284</td>
+<td class="right">18,777,893</td>
+<td class="right">89.0%</td>
+<td class="right">18,777,893</td>
+<td class="right">13,932,849</td>
+<td class="right">74.2%</td>
+<td class="right">33</td>
+<td class="right">63,548</td>
+<td class="right">6,777,022</td>
+<td class="right">344,708</td>
+<td class="right">110,612</td>
+<td class="right">32,309</td>
+<td class="right">51693.70</td>
+<td class="right">617624.71</td>
+<td class="right">140459.69</td>
+<td class="right">17,729,436</td>
+</tr>
+<tr><td>28,67</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-7-GATCAG/index.html">HWI-ST625-54-C026EACXX-7-GATCAG</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Prayidae D27SS7</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51332">51332</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG329</td>
+<td class="collapsed" onclick="toggle_cell(this)">undescribed species</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">303.39</td>
+<td class="right">50.83</td>
+<td class="right">25,233,164</td>
+<td class="right">16,827,486</td>
+<td class="right">66.7%</td>
+<td class="right">16,827,486</td>
+<td class="right">11,032,242</td>
+<td class="right">65.6%</td>
+<td class="right">33</td>
+<td class="right">39,061</td>
+<td class="right">8,616,289</td>
+<td class="right">347,189</td>
+<td class="right">94,917</td>
+<td class="right">24,211</td>
+<td class="right">51543.85</td>
+<td class="right">658577.71</td>
+<td class="right">119293.30</td>
+<td class="right">20,063,844</td>
+</tr>
+<tr><td>42,81</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-181-C76K5ACXX-2-ATCACG/index.html">HWI-ST625-181-C76K5ACXX-2-ATCACG</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Rudjakovia sp</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=None">None</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">CMN0089</td>
+<td class="collapsed" onclick="toggle_cell(this)">D494-D8 Rudjakovia #19, original ID CM91</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq Stranded mRNA</td>
+<td class="right">213.88</td>
+<td class="right">89.71</td>
+<td class="right">20,582,477</td>
+<td class="right">20,407,124</td>
+<td class="right">99.1%</td>
+<td class="right">20,407,124</td>
+<td class="right">16,256,940</td>
+<td class="right">79.7%</td>
+<td class="right">33</td>
+<td class="right">489,520</td>
+<td class="right">3,936,086</td>
+<td class="right">1,546,686</td>
+<td class="right">91,695</td>
+<td class="right">24,184</td>
+<td class="right">50772.72</td>
+<td class="right">618607.12</td>
+<td class="right">119049.66</td>
+<td class="right">23,012,428</td>
+</tr>
+<tr><td>13,52</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-6-ATCACG/index.html">HWI-ST625-54-C026EACXX-6-ATCACG</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Abylopsis tetragona</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51370">51370</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG339</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">292.16</td>
+<td class="right">38.32</td>
+<td class="right">21,575,176</td>
+<td class="right">15,812,390</td>
+<td class="right">73.3%</td>
+<td class="right">15,812,390</td>
+<td class="right">11,672,156</td>
+<td class="right">73.8%</td>
+<td class="right">33</td>
+<td class="right">38,764</td>
+<td class="right">5,759,144</td>
+<td class="right">370,604</td>
+<td class="right">102,946</td>
+<td class="right">25,268</td>
+<td class="right">51356.90</td>
+<td class="right">634240.84</td>
+<td class="right">133551.54</td>
+<td class="right">20,270,064</td>
+</tr>
+<tr><td>5-6</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./JGI_NEMVEC/index.html">JGI_NEMVEC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Nematostella vectensis</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=52498">52498</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">Filtered transcript predictions from JGI used in Nematostella paper (Rebecca et al).  See paper for details</td>
+<td class="collapsed" onclick="toggle_cell(this)"> | </td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">26,511</td>
+<td class="right">18,080</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+</tr>
+<tr><td>21,60,88</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-8-ATCACG/index.html">HWI-ST625-54-C026EACXX-8-ATCACG</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Hippopodius hippopus</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51331">51331</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG337</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">266.99</td>
+<td class="right">45.11</td>
+<td class="right">35,638,254</td>
+<td class="right">30,106,265</td>
+<td class="right">84.5%</td>
+<td class="right">30,106,265</td>
+<td class="right">19,954,113</td>
+<td class="right">66.3%</td>
+<td class="right">33</td>
+<td class="right">56,152</td>
+<td class="right">15,490,291</td>
+<td class="right">535,026</td>
+<td class="right">137,341</td>
+<td class="right">35,031</td>
+<td class="right">68736.09</td>
+<td class="right">863554.06</td>
+<td class="right">154758.79</td>
+<td class="right">67,153,972</td>
+</tr>
+<tr><td>44,83</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-181-C76K5ACXX-2-TAGCTT/index.html">HWI-ST625-181-C76K5ACXX-2-TAGCTT</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Physophora gilmeri</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=None">None</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">CMN0091</td>
+<td class="collapsed" onclick="toggle_cell(this)">extraction ID CM93</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq Stranded mRNA</td>
+<td class="right">214.97</td>
+<td class="right">93.78</td>
+<td class="right">19,847,377</td>
+<td class="right">19,712,178</td>
+<td class="right">99.3%</td>
+<td class="right">19,712,178</td>
+<td class="right">16,022,789</td>
+<td class="right">81.3%</td>
+<td class="right">33</td>
+<td class="right">936,617</td>
+<td class="right">3,464,079</td>
+<td class="right">1,007,839</td>
+<td class="right">52,639</td>
+<td class="right">17,381</td>
+<td class="right">28965.74</td>
+<td class="right">301264.34</td>
+<td class="right">75466.45</td>
+<td class="right">10,829,304</td>
+</tr>
+<tr><td>41,80</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-159-C4MVCACXX-5-TGACCA/index.html">HWI-ST625-159-C4MVCACXX-5-TGACCA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Bargmannia lata</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=719189">719189</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">CMN0028</td>
+<td class="collapsed" onclick="toggle_cell(this)">Extraction ID: CM28</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq Stranded</td>
+<td class="right">166.71</td>
+<td class="right">62.80</td>
+<td class="right">16,984,483</td>
+<td class="right">16,767,469</td>
+<td class="right">98.7%</td>
+<td class="right">16,767,469</td>
+<td class="right">11,930,000</td>
+<td class="right">71.1%</td>
+<td class="right">33</td>
+<td class="right">3,118,496</td>
+<td class="right">4,227,140</td>
+<td class="right">868,584</td>
+<td class="right">59,051</td>
+<td class="right">16,451</td>
+<td class="right">34681.47</td>
+<td class="right">418673.99</td>
+<td class="right">96643.85</td>
+<td class="right">13,684,220</td>
+</tr>
+<tr><td>11,50</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-51-C02UNACXX-7-NANOMIA/index.html">HWI-ST625-51-C02UNACXX-7-NANOMIA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Nanomia bijuga</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51389">51389</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG298|FEG284|FEG283</td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">mix, see individual sample numbers | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">296.69</td>
+<td class="right">44.20</td>
+<td class="right">39,983,229</td>
+<td class="right">34,257,525</td>
+<td class="right">85.7%</td>
+<td class="right">34,257,525</td>
+<td class="right">25,865,642</td>
+<td class="right">75.5%</td>
+<td class="right">33</td>
+<td class="right">155,093</td>
+<td class="right">10,854,240</td>
+<td class="right">795,226</td>
+<td class="right">165,792</td>
+<td class="right">28,927</td>
+<td class="right">79927.08</td>
+<td class="right">1021954.41</td>
+<td class="right">170322.95</td>
+<td class="right">67,156,092</td>
+</tr>
+<tr><td>19,58,87</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-7-TAGCTT/index.html">HWI-ST625-54-C026EACXX-7-TAGCTT</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Erenna richardi</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51396">51396</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG356</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">291.53</td>
+<td class="right">36.76</td>
+<td class="right">29,776,547</td>
+<td class="right">19,109,789</td>
+<td class="right">64.2%</td>
+<td class="right">19,109,789</td>
+<td class="right">12,723,269</td>
+<td class="right">66.6%</td>
+<td class="right">33</td>
+<td class="right">39,775</td>
+<td class="right">8,958,200</td>
+<td class="right">1,245,523</td>
+<td class="right">89,423</td>
+<td class="right">18,236</td>
+<td class="right">43174.83</td>
+<td class="right">506878.19</td>
+<td class="right">114289.50</td>
+<td class="right">20,655,948</td>
+</tr>
+<tr><td>27,66</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-8-ACAGTG/index.html">HWI-ST625-54-C026EACXX-8-ACAGTG</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Physonect sp </em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=718936">718936</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG348</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Invitrogen Dynabeads mRNA Purification Kit ; 1 rounds | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">261.09</td>
+<td class="right">35.96</td>
+<td class="right">38,243,543</td>
+<td class="right">9,290,728</td>
+<td class="right">24.3%</td>
+<td class="right">9,290,728</td>
+<td class="right">6,193,560</td>
+<td class="right">66.7%</td>
+<td class="right">33</td>
+<td class="right">12,494</td>
+<td class="right">4,517,982</td>
+<td class="right">274,838</td>
+<td class="right">57,746</td>
+<td class="right">12,596</td>
+<td class="right">27313.72</td>
+<td class="right">299898.79</td>
+<td class="right">91258.85</td>
+<td class="right">12,313,664</td>
+</tr>
+<tr><td>7,43,82</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-181-C76K5ACXX-2-ACTTGA/index.html">HWI-ST625-181-C76K5ACXX-2-ACTTGA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Thermopalia sp</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=None">None</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">CMN0090</td>
+<td class="collapsed" onclick="toggle_cell(this)">extraction ID CM92</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq Stranded mRNA</td>
+<td class="right">201.29</td>
+<td class="right">84.79</td>
+<td class="right">19,074,319</td>
+<td class="right">19,021,946</td>
+<td class="right">99.7%</td>
+<td class="right">19,021,946</td>
+<td class="right">16,238,768</td>
+<td class="right">85.4%</td>
+<td class="right">33</td>
+<td class="right">736,393</td>
+<td class="right">2,809,499</td>
+<td class="right">531,359</td>
+<td class="right">50,572</td>
+<td class="right">16,913</td>
+<td class="right">26066.77</td>
+<td class="right">263175.52</td>
+<td class="right">66944.27</td>
+<td class="right">8,293,724</td>
+</tr>
+<tr><td>18,57,86</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-6-CAGATC/index.html">HWI-ST625-54-C026EACXX-6-CAGATC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Cordagalma sp</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51393">51393</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG328</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">289.42</td>
+<td class="right">37.89</td>
+<td class="right">20,416,265</td>
+<td class="right">12,736,521</td>
+<td class="right">62.4%</td>
+<td class="right">12,736,521</td>
+<td class="right">9,845,222</td>
+<td class="right">77.3%</td>
+<td class="right">33</td>
+<td class="right">22,069</td>
+<td class="right">3,875,945</td>
+<td class="right">387,383</td>
+<td class="right">88,468</td>
+<td class="right">22,604</td>
+<td class="right">38846.38</td>
+<td class="right">489447.36</td>
+<td class="right">96461.60</td>
+<td class="right">15,934,184</td>
+</tr>
+<tr><td>25,64</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-8-TTAGGC/index.html">HWI-ST625-54-C026EACXX-8-TTAGGC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Lychnagalma utricularia</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=719187">719187</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG358</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round & Trizol | Invitrogen Dynabeads mRNA Purification Kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">266.38</td>
+<td class="right">50.25</td>
+<td class="right">35,833,131</td>
+<td class="right">22,881,308</td>
+<td class="right">63.9%</td>
+<td class="right">22,881,308</td>
+<td class="right">15,030,583</td>
+<td class="right">65.7%</td>
+<td class="right">33</td>
+<td class="right">60,019</td>
+<td class="right">11,691,276</td>
+<td class="right">714,049</td>
+<td class="right">95,708</td>
+<td class="right">21,057</td>
+<td class="right">47458.35</td>
+<td class="right">560573.41</td>
+<td class="right">135324.18</td>
+<td class="right">13,324,060</td>
+</tr>
+<tr><td>23,62</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-73-C0JUVACXX-7-ATCACG/index.html">HWI-ST625-73-C0JUVACXX-7-ATCACG</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Kephyes ovata</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=718958">718958</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG0367</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq RNA Sample Prep Kit RNA Purification Beads ; 2 rounds | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">243.52</td>
+<td class="right">61.49</td>
+<td class="right">42,044,676</td>
+<td class="right">41,709,771</td>
+<td class="right">99.2%</td>
+<td class="right">41,709,771</td>
+<td class="right">35,625,817</td>
+<td class="right">85.4%</td>
+<td class="right">33</td>
+<td class="right">12,567</td>
+<td class="right">7,982,239</td>
+<td class="right">496,206</td>
+<td class="right">146,394</td>
+<td class="right">31,286</td>
+<td class="right">87831.91</td>
+<td class="right">1127385.32</td>
+<td class="right">157096.55</td>
+<td class="right">67,156,012</td>
+</tr>
+<tr><td>3-4</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./NCBI_HYDMAG/index.html">NCBI_HYDMAG</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Hydra magnipapillata</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=50845">50845</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">Gene predictions from genome sequencing</td>
+<td class="collapsed" onclick="toggle_cell(this)"> | </td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">17,741</td>
+<td class="right">12,581</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+<td class="right">-</td>
+</tr>
+<tr><td>30,69</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-54-C026EACXX-8-GCCAAT/index.html">HWI-ST625-54-C026EACXX-8-GCCAAT</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Resomia ornicephala</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=718936">718936</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">FEG341</td>
+<td class="collapsed" onclick="toggle_cell(this)">None</td>
+<td class="collapsed" onclick="toggle_cell(this)">Invitrogen Dynabeads mRNA DIRECT kit ; 1 round | Illumina TruSeq RNA Sample Prep Kit</td>
+<td class="right">258.55</td>
+<td class="right">36.28</td>
+<td class="right">42,998,185</td>
+<td class="right">29,469,118</td>
+<td class="right">68.5%</td>
+<td class="right">29,469,118</td>
+<td class="right">19,183,590</td>
+<td class="right">65.1%</td>
+<td class="right">33</td>
+<td class="right">47,093</td>
+<td class="right">14,776,612</td>
+<td class="right">1,429,610</td>
+<td class="right">103,682</td>
+<td class="right">22,777</td>
+<td class="right">57285.55</td>
+<td class="right">724652.19</td>
+<td class="right">122175.69</td>
+<td class="right">67,153,652</td>
+</tr>
+<tr><td>45,84</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HWI-ST625-181-C76K5ACXX-2-GGCTAC/index.html">HWI-ST625-181-C76K5ACXX-2-GGCTAC</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Halistemma rubrum</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=51400">51400</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)">CMN0092</td>
+<td class="collapsed" onclick="toggle_cell(this)">extraction ID CM94</td>
+<td class="collapsed" onclick="toggle_cell(this)">Trizol | Illumina TruSeq Stranded mRNA</td>
+<td class="right">224.84</td>
+<td class="right">100.91</td>
+<td class="right">26,331,113</td>
+<td class="right">25,770,989</td>
+<td class="right">97.9%</td>
+<td class="right">25,770,989</td>
+<td class="right">21,930,082</td>
+<td class="right">85.1%</td>
+<td class="right">33</td>
+<td class="right">439,185</td>
+<td class="right">4,294,857</td>
+<td class="right">714,798</td>
+<td class="right">87,526</td>
+<td class="right">25,351</td>
+<td class="right">41582.63</td>
+<td class="right">450124.04</td>
+<td class="right">109775.19</td>
+<td class="right">67,157,732</td>
+</tr>
+<tr><td>37,76</td>
+<td class="collapsed" onclick="toggle_cell(this)"><a href="./HISEQ-134-C27MTACXX-2-PODOCORYNA/index.html">HISEQ-134-C27MTACXX-2-PODOCORYNA</a></td>
+<td class="collapsed" onclick="toggle_cell(this)"><em>Podocoryna carnea</em> <small>(<a href="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=719298">719298</a>)</small></td>
+<td class="collapsed" onclick="toggle_cell(this)"></td>
+<td class="collapsed" onclick="toggle_cell(this)">Combined Med1 and RP135 libraries from Paulyn's lab.  Med1 is medusa and RP135 is polyp with medusae buds at some developmental stage.</td>
+<td class="collapsed" onclick="toggle_cell(this)"> | </td>
+<td class="right">173.51</td>
+<td class="right">52.58</td>
+<td class="right">46,216,536</td>
+<td class="right">33,659,970</td>
+<td class="right">72.8%</td>
+<td class="right">33,659,970</td>
+<td class="right">24,934,861</td>
+<td class="right">74.1%</td>
+<td class="right">33</td>
+<td class="right">121,866</td>
+<td class="right">13,195,545</td>
+<td class="right">142,954</td>
+<td class="right">109,584</td>
+<td class="right">45,849</td>
+<td class="right">68973.86</td>
+<td class="right">882996.30</td>
+<td class="right">134468.51</td>
+<td class="right">67,155,692</td>
+</tr>
+</table></div></body></html>
